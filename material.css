@@ -1,0 +1,88 @@
+.card {
+    width: 100%;
+    min-height: 400px;
+    background: white;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    color: black;
+}
+
+.card-top {
+    width: 100%;
+    min-height: 200px;
+    background: blue;
+    background-image: url("images/bagels.jpg");
+    background-size: cover;
+    position: relative;
+    z-index: 997;
+    -webkit-transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+    -o-transition: all ease 500ms;
+    transition: all ease 500ms;
+}
+
+.collapsed {
+    min-height: 0px;
+}
+
+.card-fab {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    font-size: 28pt;
+    text-align: center;
+    color: white;
+    background: red;
+    position: relative;
+    left: calc(100% - 105px);
+    top: -45px;
+    z-index: 999;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -webkit-transition-duration: 500ms;
+    -moz-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transition: -webkit-transform ease;
+    -moz-transition: -moz-transform ease;
+    -o-transition: -o-transform ease;
+    transition: transform ease;
+}
+
+.card-fab-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.rotated {
+    transform: rotate(45deg);
+}
+
+.card-bottom {
+    width: 100%;
+    min-height: 200px;
+    background: white;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 15px;
+    z-index: 998;
+    margin-top: -90px;
+    -webkit-transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+    -o-transition: all ease 500ms;
+    transition: all ease 500ms;
+}
+
+.expanded {
+    min-height: 400px;
+}
+
+.card-bottom .title {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.card-bottom .subtitle {
+    font-size: 24px;
+}
