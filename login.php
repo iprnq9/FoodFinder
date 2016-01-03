@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Sign In/title>
+<title>Sign In</title>
 <link rel="stylesheet" type="text/css" href="style-sign.css">
 </head>
 <body id="body-color">
