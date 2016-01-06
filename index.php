@@ -44,7 +44,7 @@
                 </div>
                 <div class="row">
                   <div class="col s12 m12 l12 center-align">
-                    <a href="material-profile.html" class="waves-effect waves-light btn green center-align"><i class="material-icons left">person_pin</i>View Profile</a>
+                    <a href="material-profile.php" class="waves-effect waves-light btn green center-align"><i class="material-icons left">person_pin</i>View Profile</a>
                   </div>
                 </div>
               </div>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="row">
                   <div class="col s12 m12 l12 center-align">
-                    <a href="material-profile.html" class="waves-effect waves-light btn green center-align"><i class="material-icons left">person_pin</i>View Profile</a>
+                    <a href="material-profile.php" class="waves-effect waves-light btn green center-align"><i class="material-icons left">person_pin</i>View Profile</a>
                   </div>
                 </div>
               </div>
