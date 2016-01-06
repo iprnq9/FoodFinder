@@ -51,3 +51,7 @@
 .closing-soon:before {
     content: "CLOSING SOON";
 }
+
+.current-day {
+  background-color: gray;
+}
