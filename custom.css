@@ -1,4 +1,49 @@
+@font-face {
+    font-family: Scoreboard;
+    src: url(fonts/scoreboard.ttf);
+}
+
 .current-day {
   background-color: lightgray;
   font-weight: bold;
+}
+
+.caption {
+    text-align: center;
+    font-family: Scoreboard;
+    margin-bottom: 0;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    /*-webkit-transition: height 0.5s ease;*/
+    /*transition: height 0.5s ease;*/
+    -webkit-transition: height 0.5s ease, min-height 0.5s ease;
+    transition: height 0.5s ease, min-height 0.5s ease;
+    overflow: hidden;
+    font-size: 28pt;
+    color: black;
+}
+
+.closed {
+    color: rgba(223, 86, 71, 0.8);
+}
+
+.closing-soon {
+    color: rgba(233, 185, 89, 0.8);
+}
+
+.open {
+    color: rgba(108, 162, 103, 0.8);
+    color: black;
+}
+
+.closed::before {
+    content: "CLOSED";
+}
+
+.open:before {
+    content: "OPEN";
+}
+
+.closing-soon:before {
+    content: "CLOSING SOON";
 }

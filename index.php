@@ -10,6 +10,7 @@
   <link href="custom.css" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script type="text/javascript" src="js/date.js"></script>
 </head>
 <body style="background-color: #eeeeee;">
 
