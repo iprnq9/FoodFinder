@@ -107,6 +107,17 @@
     });
   </script>
 
+  <script>
+    $(document).ready(function(){
+
+      var dateVar = new Date();
+      var n = dateVar.getDay();
+
+      $('tr.day-' + n).addClass('current-day');
+
+    });
+  </script>
+
 
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
