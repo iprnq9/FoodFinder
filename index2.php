@@ -19,7 +19,14 @@
   <div class="container">
     <div class="section">
       <ul class="flex-container">
-      <li class="flex-item card">1</li>
+      <li class="flex-item card open">
+        <div class="card-status open"></div>
+        <div class="card-image"><img src="images/bagels2.jpg" /></div>
+        <div class="card-info">
+          <p class="card-title">Einstein Bros Bagels</p>
+          <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
+        </div>
+      </li>
       <li class="flex-item card">2</li>
       <li class="flex-item card">3</li>
       <li class="flex-item card">4</li>
@@ -37,12 +44,9 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script>
     $(document).ready(function(){
-
       var dateVar = new Date();
       var n = dateVar.getDay();
-
       $('tr.day-' + n).addClass('current-day');
-
     });
   </script>
   <script src="js/materialize.js"></script>
