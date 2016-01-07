@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Material 3</title>
+  <title>FoodFinder</title>
 
   <!-- CSS  -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -12,6 +12,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script type="text/javascript" src="js/date.js"></script>
+
 </head>
 <body style="background-color: #eeeeee;">
 
@@ -19,95 +20,83 @@
 
   <div class="container">
     <div class="section">
-
-      <!--   Tiles Section   -->
-      <div class="row">
-        <div class="col m1 l2">&nbsp;</div>
-        <div class="col s12 m10 l8 offset-l2 offset-m1">
-          <div class="card hoverable">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/bagels.jpg">
-            </div>
-            <div class="card-content green lighten-3">
-              <span class="card-title activator grey-text text-darken-4"><i class="material-icons">event_available</i>Einstein Bros. Bagels<i class="material-icons right">add</i></span>
-              <p>A coffee shop for students serving delicious bagels and more.</p>
-            </div>
-            <div class="card-reveal green lighten-3">
-              <div class="row">
-                <span class="card-title grey-text text-darken-4"><i class="material-icons">event_available</i>Einstein Bros. Bagels<i class="material-icons right">close</i></span>
-                <p>A coffee shop for students serving delicious bagels and more.</p>
-              </div>
-              <div class="">
-                <div class="row">
-                  <div class="col s12 m12 l12">
-                    <?php include 'hours-tj.php' ?>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 m12 l12 center-align">
-                    <a href="material-profile.php" class="waves-effect waves-light btn green center-align"><i class="material-icons left">person_pin</i>View Profile</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card hoverable">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/bagels.jpg">
-            </div>
-            <div class="card-content red lighten-3">
-              <span class="card-title activator grey-text text-darken-4"><i class="material-icons">event_busy</i>Einstein Bros. Bagels<i class="material-icons right">add</i></span>
-              <p>A coffee shop for students serving delicious bagels and more.</p>
-            </div>
-            <div class="card-reveal red lighten-3">
-              <div class="row">
-                <span class="card-title grey-text text-darken-4"><i class="material-icons">event_busy</i>Einstein Bros. Bagels<i class="material-icons right">close</i></span>
-                <p>A coffee shop for students serving delicious bagels and more.</p>
-              </div>
-              <div class="">
-                <div class="row">
-                  <div class="col s12 m12 l12">
-                    <?php include 'hours-einsteins.php' ?>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12 m12 l12 center-align">
-                    <a href="material-profile.php" class="waves-effect waves-light btn green center-align"><i class="material-icons left">person_pin</i>View Profile</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
+      <ul class="flex-container">
+      <li class="flex-item card">
+        <div class="card-status open"></div>
+        <div class="card-image"><img src="images/bagels2.jpg" /></div>
+        <div class="card-info">
+          <p class="card-title">Einstein Bros Bagels</p>
+          <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
+          <p class="card-hours">
+            <table class="table centered bordered white">
+            <thead><tr>
+              <th>Day</th>
+              <th>Open</th>
+              <th>-</th>
+              <th>Closed</th>
+              <th>Open</th>
+              <th>-</th>
+              <th>Closed</th>
+            </tr></thead>
+            <tr>
+              <td>Monday</td>
+              <td>7:00am</td>
+              <td>-</td>
+              <td>12:00pm</td>
+              <td>1:00pm</td>
+              <td>-</td>
+              <td>7:00pm</td>
+            </tr>
+            </table>
+          </p>
+          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
-      </div>
-    <br><br>
+      </li>
+      <li class="flex-item card">
+        <div class="card-status closed"></div>
+        <div class="card-image"><img src="images/rustic2-2.jpg" /></div>
+        <div class="card-info">
+          <p class="card-title">Rustic Range</p>
+          <p class="card-subtitle">Classic burgers, made as desired.</p>
+          <p class="card-hours">
+            <table class="table centered bordered white">
+            <thead><tr>
+              <th>Day</th>
+              <th>Open</th>
+              <th>-</th>
+              <th>Closed</th>
+              <th>Open</th>
+              <th>-</th>
+              <th>Closed</th>
+            </tr></thead>
+            <tr>
+              <td>Monday</td>
+              <td>7:00am</td>
+              <td>-</td>
+              <td>12:00pm</td>
+              <td>1:00pm</td>
+              <td>-</td>
+              <td>7:00pm</td>
+            </tr>
+            </table>
+          </p>
+        <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
+        </div>
+      </li>
+      <li class="flex-item card">3</li>
+      <li class="flex-item card">4</li>
+      <li class="flex-item card">5</li>
+      <li class="flex-item card">6</li>
+      <li class="flex-item card">7</li>
+      <li class="flex-item card">8</li>
+      </ul>
     </div>
-    </div>
-
-
-
+  </div>
 
   <?php include 'footer.php' ?>
-
-
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script>
-    $(document).ready(function(){
-
-      var dateVar = new Date();
-      var n = dateVar.getDay();
-
-      $('tr.day-' + n).addClass('current-day');
-
-    });
-  </script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
   </body>
 </html>
