@@ -73,6 +73,7 @@
   height: 35%;
   overflow: hidden;
   position: relative;
+  border-radius: 0px;
 }
 
 .card-info {
@@ -93,6 +94,7 @@
   transition: height 0.5s ease, min-height 0.5s ease;
   overflow: hidden;
   font-size: 28pt;
+  line-height: 5vh;
   color: black;
 }
 
