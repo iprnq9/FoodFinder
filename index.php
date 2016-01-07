@@ -103,8 +103,10 @@
   <script src="js/init.js"></script>
 
   <script>
+  function updateTimes()
+  {
     var n = moment().format("dddd");
-    $(".today").append(n);
+    $(".today").text(n);
     var m = moment().format("hh:mma");
     var day = moment().format("d");
     var hour = moment().format("H");
@@ -130,7 +132,11 @@
       else
         meal = "brunch";
     }
-    $(".currently").append("It is currently " + n + ", " + m + " (" + meal + ").");
+    $(".currently").text("It is currently " + n + ", " + m + " (" + meal + ").");
+  }
+
+  setInterval(updateTimes, 1);
+  setInterval(updateTimes, 5000);
   </script>
   </body>
 </html>
