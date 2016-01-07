@@ -14,7 +14,7 @@
         <li><a href="#"><i class="material-icons left">dashboard</i>Dashboard</a></li>
         <li><a href="#"><i class="material-icons left">settings</i>Manage</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i>Menu</a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 </div>
