@@ -27,7 +27,14 @@
           <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
         </div>
       </li>
-      <li class="flex-item card">2</li>
+      <li class="flex-item card">
+        <div class="card-status closed"></div>
+        <div class="card-image"><img src="images/bagels2.jpg" /></div>
+        <div class="card-info">
+          <p class="card-title">Einstein Bros Bagels</p>
+          <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
+        </div>
+      </li>
       <li class="flex-item card">3</li>
       <li class="flex-item card">4</li>
       <li class="flex-item card">5</li>
