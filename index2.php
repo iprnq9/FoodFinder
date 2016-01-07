@@ -19,12 +19,35 @@
   <div class="container">
     <div class="section">
       <ul class="flex-container">
-      <li class="flex-item card open">
+      <li class="flex-item card">
         <div class="card-status open"></div>
         <div class="card-image"><img src="images/bagels2.jpg" /></div>
         <div class="card-info">
           <p class="card-title">Einstein Bros Bagels</p>
           <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
+          <p class="card-hours">
+            <table class="table centered bordered white">
+            <thead><tr>
+              <th>Day</th>
+              <th>Open</th>
+              <th>-</th>
+              <th>Closed</th>
+              <th>Open</th>
+              <th>-</th>
+              <th>Closed</th>
+            </tr></thead>
+            <tr class="day-1">
+              <td>Monday</td>
+              <td>7:00am</td>
+              <td>-</td>
+              <td>12:00pm</td>
+              <td>1:00pm</td>
+              <td>-</td>
+              <td>7:00pm</td>
+            </tr>
+            </table>
+          </p>
+        <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
       </li>
       <li class="flex-item card">
