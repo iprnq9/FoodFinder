@@ -36,7 +36,7 @@
               <th>-</th>
               <th>Closed</th>
             </tr></thead>
-            <tr class="day-1">
+            <tr>
               <td>Monday</td>
               <td>7:00am</td>
               <td>-</td>
@@ -69,16 +69,8 @@
   </div>
 
   <?php include 'footer.php' ?>
-
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      var dateVar = new Date();
-      var n = dateVar.getDay();
-      $('tr.day-' + n).addClass('current-day');
-    });
-  </script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   </body>
