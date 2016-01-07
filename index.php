@@ -11,7 +11,7 @@
   <link href="custom.css" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script type="text/javascript" src="js/date.js"></script>
+  <script type="text/javascript" src="js/moment.js"></script>
 
 </head>
 <body style="background-color: #eeeeee;">
@@ -19,6 +19,7 @@
   <?php include 'header.php' ?>
 
   <div class="container">
+    <div class="currently"></div>
     <div class="section">
       <ul class="flex-container">
       <li class="flex-item card">
@@ -39,7 +40,7 @@
               <th>Closed</th>
             </tr></thead>
             <tr>
-              <td>Monday</td>
+              <td class="today"></td>
               <td>7:00am</td>
               <td>-</td>
               <td>12:00pm</td>
@@ -71,7 +72,7 @@
               <th>Closed</th>
             </tr></thead>
             <tr>
-              <td>Monday</td>
+              <td class="today"></td>
               <td>7:00am</td>
               <td>-</td>
               <td>12:00pm</td>
@@ -100,5 +101,36 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+  <script>
+    var n = moment().format("dddd");
+    $(".today").append(n);
+    var m = moment().format("hh:mma");
+    var day = moment().format("d");
+    var hour = moment().format("H");
+    var minute = moment().format("m");
+    var lunchTime = moment("10:45", "hh:mm");
+    var dinnerTime = moment("16:45", "hh:mm");
+    var nowTime = moment().format("hh:mm");
+    var meal;
+    if (day < 6 && day > 0)
+    {
+      if (lunchTime.isBefore() && dinnerTime.isAfter())
+        meal = "lunch";
+      else if (dinnerTime.isBefore())
+        meal = "dinner";
+      else if (lunchTime.isAfter())
+        meal = "breakfast";
+    }
+
+    else if (day == 0 || day == 6)
+    {
+      if (dinnerTime.isBefore())
+        meal = "dinner";
+      else
+        meal = "brunch";
+    }
+    $(".currently").append("It is currently " + n + ", " + m + " (" + meal + ").");
+  </script>
   </body>
 </html>

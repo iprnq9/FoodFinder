@@ -135,3 +135,11 @@
 .somewhat-busy:before {
     content: "SOMEWHAT BUSY";
 }
+
+.currently {
+  width: auto;
+  height: auto;
+  font-size: 25pt;
+  margin: 0 auto;
+  text-align: center;
+}
