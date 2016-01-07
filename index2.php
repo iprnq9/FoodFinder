@@ -8,9 +8,11 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="custom.css" rel="stylesheet">
+  <link href="css/gauge.css" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script type="text/javascript" src="js/date.js"></script>
+
 </head>
 <body style="background-color: #eeeeee;">
 
@@ -52,10 +54,33 @@
       </li>
       <li class="flex-item card">
         <div class="card-status closed"></div>
-        <div class="card-image"><img src="images/bagels2.jpg" /></div>
+        <div class="card-image"><img src="images/rustic2-2.jpg" /></div>
         <div class="card-info">
-          <p class="card-title">Einstein Bros Bagels</p>
-          <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
+          <p class="card-title">Rustic Range</p>
+          <p class="card-subtitle">Classic burgers, made as desired.</p>
+          <p class="card-hours">
+            <table class="table centered bordered white">
+            <thead><tr>
+              <th>Day</th>
+              <th>Open</th>
+              <th>-</th>
+              <th>Closed</th>
+              <th>Open</th>
+              <th>-</th>
+              <th>Closed</th>
+            </tr></thead>
+            <tr>
+              <td>Monday</td>
+              <td>7:00am</td>
+              <td>-</td>
+              <td>12:00pm</td>
+              <td>1:00pm</td>
+              <td>-</td>
+              <td>7:00pm</td>
+            </tr>
+            </table>
+          </p>
+        <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
       </li>
       <li class="flex-item card">3</li>
@@ -70,7 +95,8 @@
 
   <?php include 'footer.php' ?>
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="js/gauge.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   </body>
