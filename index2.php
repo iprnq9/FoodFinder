@@ -8,7 +8,6 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="custom.css" rel="stylesheet">
-  <link href="css/gauge.css" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script type="text/javascript" src="js/date.js"></script>
@@ -49,7 +48,7 @@
             </tr>
             </table>
           </p>
-        <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
+          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
       </li>
       <li class="flex-item card">
@@ -96,7 +95,6 @@
   <?php include 'footer.php' ?>
   <!--  Scripts-->
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-  <script type="text/javascript" src="js/gauge.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   </body>
