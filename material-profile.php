@@ -28,9 +28,9 @@
 
         <div class="row">
           <div class="col s12 m12 l8">
-            <div class="card lighten-3 green">
+            <div class="card open">
               <div class="card-content" style="margin-top: -20px;">
-                <h4 class="caption open center-align"></h4>
+                <h4 class="caption center-align"></h4>
                 <h4 class="center-align">Hours of Operation</h4>
                 <h6 class="center-align week-of"></h6>
                 <?php include 'hours-einsteins.php' ?>
