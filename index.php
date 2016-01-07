@@ -51,6 +51,7 @@
           </p>
           <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
+        <div class="card-status busy"></div>
       </li>
       <li class="flex-item card">
         <div class="card-status closed"></div>

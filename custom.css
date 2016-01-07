@@ -46,6 +46,7 @@
 .closing-soon:before {
     content: "CLOSING SOON";
 }
+
 @import "compass/css3";
 
 .flex-container {
@@ -63,7 +64,7 @@
 
 .flex-item {
   width: 400px;
-  height: 450px;
+  height: 550px;
   margin-top: 10px;
   color: black;
 }
@@ -78,6 +79,7 @@
 
 .card-info {
   padding: 10px;
+  height: auto;
 }
 
 .card-status {
@@ -103,9 +105,33 @@
   height: auto;
   text-align:center;
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .card-title, .card-subtitle {
   text-align: center;
+}
+
+.busy {
+    background-color: rgba(223, 86, 71, 0.8);
+}
+
+.somewhat-busy {
+    background-color: rgba(233, 185, 89, 0.8);
+}
+
+.not-busy {
+    background-color: rgba(108, 162, 103, 0.8);
+}
+
+.busy::before {
+    content: "BUSY";
+}
+
+.not-busy:before {
+    content: "NOT BUSY";
+}
+
+.somewhat-busy:before {
+    content: "SOMEWHAT BUSY";
 }
