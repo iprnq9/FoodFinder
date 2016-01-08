@@ -1,41 +1,42 @@
-<!DOCTYPE html>
+
 <html>
 <body>
 
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "FoodFinder";
-  $dbname = "foodfinders";
+$servername = "localhost";
+$username = "root";
+$password = "FoodFinder";
+$dbname = "foodfinders";
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  
-  // Check connection
-  if ($conn->connect_error)
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn)
+{
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT location_id, location_name FROM locations";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) >= 0)
+{
+  echo "<table><tr><th>ID</th><th>Name</th></tr>";
+  //output data of each row
+  while($row = $result->fetch_assoc())
   {
-      die("Connection failed: " . $conn->connect_error);
+      echo "<tr><td>".$row["location_id"]."</td><td>".$row["location_name"]."</td></tr>";
   }
-
-  $sql = "SELECT location_id, location_name FROM locations";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0)
-  {
-      echo "<table><tr><th>ID</th><th>Name</th></tr>";
-      // output data of each row
-      while($row = $result->fetch_assoc())
-      {
-          echo "<tr><td>".$row["location_id"]."</td><td>".$row["location_name"]."</td></tr>";
-      }
-      echo "</table>";
+  echo "</table>";
   }
+}
 
-  else {
-      echo "0 results";
-  }
+else
+{
+  echo "0 results";
+}
 
-  $conn->close();
+mysqli_close($conn);
 ?>
 
 </body>
