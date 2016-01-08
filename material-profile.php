@@ -28,7 +28,7 @@
             <div class="quick-info green">
               <div class="card-status closing-soon">CLOSING SOON</div>
               <div class="card-content">
-                <h4 class="center-align">Hours of Operation</h4>
+                <h4 class="center-align" style="margin-top: -5px;">Hours of Operation</h4>
                 <h6 class="center-align week-of"></h6>
                 <?php include 'hours-einsteins.php' ?>
               </div>
