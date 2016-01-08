@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Material Profile</title>
+  <title>Profile 2</title>
 
   <!-- CSS  -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -22,22 +22,28 @@
     <div class="section">
       <div class="row" style="text-align: center;">
         <div class="profile-image einsteins"></div>
-        <div class="profile-name">Einstein Bros Bagels</div>
-
-            <div class="card open">
-              <div class="card-content" style="margin-top: -20px;">
-                <h4 class="caption center-align"></h4>
+        <div class="profile-name green z-depth-2">Einstein Bros Bagels</div>
+        <ul class="flex-container">
+          <li class="flex-item-wide">
+            <div class="quick-info open">
+              <div class="card-content">
+                <h4 class="caption center-align">OPEN</h4>
                 <h4 class="center-align">Hours of Operation</h4>
                 <h6 class="center-align week-of"></h6>
                 <?php include 'hours-einsteins.php' ?>
               </div>
             </div>
-
-
-            <div class="quick-info z-depth-2">
+          </li>
+          
+          <li class="flex-item">
+            <div class="quick-info green z-depth-2">
+              <div class="quick-info-text">Text goes here.</div>
               <div class="quick-info-image circle einsteins">&nbsp;<div>
             </div>
+          </li>
 
+
+        </ul>
       </div>
     </div>
   </div>
