@@ -29,7 +29,7 @@
           <p class="card-title">Einstein Bros Bagels</p>
           <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
           <br>
-          <p class="card-hours center-align"><span class="todays-hours-text">Today's Hours</span>
+          <p class="card-hours center-align"><span class="todays-hours-text">Today's Hours&nbsp;<i class="material-icons">schedule</i></span>
             <table class="table centered bordered white" style="width: 50%;margin: 0 auto;">
             <thead><tr>
               <th>Open</th>

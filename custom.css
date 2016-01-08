@@ -223,4 +223,6 @@ hr {
 
 .todays-hours-text {
   font-size: 14pt;
+  vertical-align: middle;
+  display: inline-flex;
 }

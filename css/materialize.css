@@ -5426,7 +5426,9 @@ nav {
   background-color: #003B49;
   width: 100%;
   height: 56px;
-  line-height: 56px; }
+  line-height: 56px;
+  vertical-align: middle;
+  display: inline-flex; }
   nav a {
     color: #fff; }
   nav .nav-wrapper {
