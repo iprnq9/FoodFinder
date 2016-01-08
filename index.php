@@ -23,18 +23,15 @@
     <div class="section">
       <ul class="flex-container">
       <li class="flex-item card">
-        <div class="card-status open">OPEN</div>
+        <div class="card-status open">OPEN &middot; BUSY</div>
         <div class="card-image einsteins"></div>
         <div class="card-info">
           <p class="card-title">Einstein Bros Bagels</p>
           <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
-          <hr />
+          <br>
           <p class="card-hours center-align"><span class="todays-hours-text">Today's Hours</span>
-            <table class="table centered bordered white">
+            <table class="table centered bordered white" style="width: 50%;margin: 0 auto;">
             <thead><tr>
-              <th>Open</th>
-              <th>-</th>
-              <th>Closed</th>
               <th>Open</th>
               <th>-</th>
               <th>Closed</th>
@@ -43,6 +40,8 @@
               <td>7:00am</td>
               <td>-</td>
               <td>12:00pm</td>
+            </tr>
+            <tr>
               <td>1:00pm</td>
               <td>-</td>
               <td>7:00pm</td>
@@ -51,7 +50,6 @@
           </p>
           <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
-        <div class="card-status busy">BUSY</div>
       </li>
       <li class="flex-item card">
         <div class="card-status closed">CLOSED</div>
@@ -59,13 +57,10 @@
         <div class="card-info">
           <p class="card-title">Rustic Range</p>
           <p class="card-subtitle">Classic burgers, made as desired.</p>
-          <hr />
+          <br>
           <p class="card-hours center-align"><span class="todays-hours-text">Today's Hours</span>
-            <table class="table centered bordered white">
+            <table class="table centered bordered white" style="width: 50%;margin: 0 auto;">
             <thead><tr>
-              <th>Open</th>
-              <th>-</th>
-              <th>Closed</th>
               <th>Open</th>
               <th>-</th>
               <th>Closed</th>
@@ -74,15 +69,16 @@
               <td>7:00am</td>
               <td>-</td>
               <td>12:00pm</td>
+            </tr>
+            <tr>
               <td>1:00pm</td>
               <td>-</td>
               <td>7:00pm</td>
             </tr>
             </table>
           </p>
-        <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
+          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
-        <div class="card-status not-busy">NOT BUSY</div>
       </li>
       <li class="flex-item card">3</li>
       <li class="flex-item card">4</li>
