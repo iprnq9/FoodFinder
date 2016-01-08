@@ -19,7 +19,7 @@
   <?php include 'header.php' ?>
 
   <div class="container">
-    <div class="currently"></div>
+    <div style="text-align: center;"><div class="currently z-depth-1 green"></div></div>
     <div class="section">
       <ul class="flex-container">
       <li class="flex-item card">
