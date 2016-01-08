@@ -37,13 +37,43 @@
 
           <li class="flex-item">
             <div class="quick-info green z-depth-2">
-              <div class="quick-info-text">Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
+              <div class="card-image einsteins1"></div>
+              <div class="quick-info-text">
+                <h3>Tons of Bagels</h3>
+                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
               </div>
-              <div class="quick-info-image circle einsteins">&nbsp;<div>
             </div>
           </li>
 
+          <li class="flex-item">
+            <div class="quick-info green z-depth-2">
+              <div class="card-image einsteins1"></div>
+              <div class="quick-info-text">
+                <h3>Tons of Bagels</h3>
+                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
+              </div>
+            </div>
+          </li>
 
+          <li class="flex-item">
+            <div class="quick-info green z-depth-2">
+              <div class="card-image einsteins1"></div>
+              <div class="quick-info-text">
+                <h3>Tons of Bagels</h3>
+                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
+              </div>
+            </div>
+          </li>
+
+          <li class="flex-item">
+            <div class="quick-info green z-depth-2">
+              <div class="card-image einsteins1"></div>
+              <div class="quick-info-text">
+                <h3>Download Menu</h3>
+                <img src="images/foodMenu.png" class="menu-download" />
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
