@@ -3,7 +3,7 @@
 <body>
 
 <?php
-$servername = "";
+$servername = "localhost";
 $username = "root";
 $password = "FoodFinder";
 $dbname = "foodfinders";
@@ -11,7 +11,8 @@ $dbname = "foodfinders";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
-if (!$conn)�{
+if (!$conn)
+{
   die("Connection failed: " . mysqli_connect_error());
 }
 
