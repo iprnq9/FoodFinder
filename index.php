@@ -23,15 +23,15 @@
     <div class="section">
       <ul class="flex-container">
       <li class="flex-item card">
-        <div class="card-status open"></div>
-        <div class="card-image"><img src="images/bagels2.jpg" /></div>
+        <div class="card-status open">OPEN</div>
+        <div class="card-image einsteins"></div>
         <div class="card-info">
           <p class="card-title">Einstein Bros Bagels</p>
           <p class="card-subtitle">A coffee shop serving delicious bagels and more.</p>
-          <p class="card-hours">
+          <hr />
+          <p class="card-hours center-align"><span class="todays-hours-text">Today's Hours</span>
             <table class="table centered bordered white">
             <thead><tr>
-              <th>Day</th>
               <th>Open</th>
               <th>-</th>
               <th>Closed</th>
@@ -40,7 +40,6 @@
               <th>Closed</th>
             </tr></thead>
             <tr>
-              <td class="today"></td>
               <td>7:00am</td>
               <td>-</td>
               <td>12:00pm</td>
@@ -52,18 +51,18 @@
           </p>
           <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
-        <div class="card-status busy"></div>
+        <div class="card-status busy">BUSY</div>
       </li>
       <li class="flex-item card">
-        <div class="card-status closed"></div>
+        <div class="card-status closed">CLOSED</div>
         <div class="card-image"><img src="images/rustic2-2.jpg" /></div>
         <div class="card-info">
           <p class="card-title">Rustic Range</p>
           <p class="card-subtitle">Classic burgers, made as desired.</p>
-          <p class="card-hours">
+          <hr />
+          <p class="card-hours center-align"><span class="todays-hours-text">Today's Hours</span>
             <table class="table centered bordered white">
             <thead><tr>
-              <th>Day</th>
               <th>Open</th>
               <th>-</th>
               <th>Closed</th>
@@ -72,7 +71,6 @@
               <th>Closed</th>
             </tr></thead>
             <tr>
-              <td class="today"></td>
               <td>7:00am</td>
               <td>-</td>
               <td>12:00pm</td>
@@ -84,7 +82,7 @@
           </p>
         <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
         </div>
-        <div class="card-status not-busy"></div>
+        <div class="card-status not-busy">NOT BUSY</div>
       </li>
       <li class="flex-item card">3</li>
       <li class="flex-item card">4</li>
@@ -106,8 +104,8 @@
   function updateTimes()
   {
     var n = moment().format("dddd");
-    $(".today").text(n);
-    var m = moment().format("hh:mma");
+    //$(".today").text(n);
+    var m = moment().format("h:mma");
     var day = moment().format("d");
     var hour = moment().format("H");
     var minute = moment().format("m");
@@ -132,10 +130,10 @@
       else
         meal = "brunch";
     }
-    $(".currently").text("It is currently " + n + ", " + m + " (" + meal + ").");
+    $(".currently").text(n + ", " + m + ": " + meal);
   }
 
-  setInterval(updateTimes, 1);
+  updateTimes();
   setInterval(updateTimes, 5000);
   </script>
   </body>
