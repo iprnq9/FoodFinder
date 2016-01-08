@@ -234,6 +234,11 @@ hr {
   display: inline-flex;
 }
 
+.brand-logo {
+  vertical-align: middle;
+  display: inline-flex;
+}
+
 .menu-download {
   width: 70%;
   height: auto;
