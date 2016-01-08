@@ -514,10 +514,10 @@
   color: #42A5F5 !important; }
 
 .blue {
-  background-color: #2196F3 !important; }
+  background-color: #003B49 !important; }
 
 .blue-text {
-  color: #2196F3 !important; }
+  color: #003B49 !important; }
 
 .blue.darken-1 {
   background-color: #1E88E5 !important; }
@@ -5423,7 +5423,7 @@ nav ul a span.badge {
 
 nav {
   color: #fff;
-  background-color: #ee6e73;
+  background-color: #003B49;
   width: 100%;
   height: 56px;
   line-height: 56px; }
@@ -7372,7 +7372,7 @@ select {
   border-color: #26a69a; }
 
 .spinner-blue, .spinner-blue-only {
-  border-color: #4285f4; }
+  border-color: #003B49; }
 
 .spinner-red, .spinner-red-only {
   border-color: #db4437; }
