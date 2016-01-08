@@ -11,7 +11,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script type="text/javascript" src="js/date.js"></script>
+  <script type="text/javascript" src="js/moment.js"></script>
 </head>
 <body style="background-color: #eeeeee;">
 
@@ -24,20 +24,21 @@
         <div class="profile-image einsteins"></div>
         <div class="profile-name green z-depth-2">Einstein Bros Bagels</div>
         <ul class="flex-container">
-          <li class="flex-item-wide">
-            <div class="quick-info open">
+          <li class="flex-item-wide z-depth-2">
+            <div class="quick-info green">
+              <div class="card-status closing-soon">CLOSING SOON</div>
               <div class="card-content">
-                <h4 class="caption center-align">OPEN</h4>
                 <h4 class="center-align">Hours of Operation</h4>
                 <h6 class="center-align week-of"></h6>
                 <?php include 'hours-einsteins.php' ?>
               </div>
             </div>
           </li>
-          
+
           <li class="flex-item">
             <div class="quick-info green z-depth-2">
-              <div class="quick-info-text">Text goes here.</div>
+              <div class="quick-info-text">Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
+              </div>
               <div class="quick-info-image circle einsteins">&nbsp;<div>
             </div>
           </li>
@@ -55,7 +56,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script>
     $(document).ready(function(){
-      var n = Date.today().previous().monday().toString("MMMM dd");
+      var n = moment().startOf('week').add(1, 'days').format("MMMM Do");
       $(".week-of").append("Week of " + n);
 
     });

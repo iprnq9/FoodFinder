@@ -68,6 +68,13 @@ html, body {
   color: black;
 }
 
+.flex-item-tall {
+  width: 400px;
+  height: 1210px;
+  margin-top: 10px;
+  color: black;
+}
+
 .flex-item-wide {
   width: 800px;
   height: 600px;
@@ -165,6 +172,7 @@ html, body {
 
 .quick-info {
   width: auto;
+  height: 100%;
   background: ;
   border: solid white 12px;
 }
@@ -180,7 +188,7 @@ html, body {
 .quick-info-text {
   float: right;
   width: calc(100% - 200px);
-  height: 100%;
+  height: auto;
   padding: 10px;
   text-align: left;
   font-size: 12pt;
