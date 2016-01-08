@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Material Profile</title>
+  <title>Profile 2</title>
 
   <!-- CSS  -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -11,7 +11,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script type="text/javascript" src="js/date.js"></script>
+  <script type="text/javascript" src="js/moment.js"></script>
 </head>
 <body style="background-color: #eeeeee;">
 
@@ -20,76 +20,61 @@
 <main>
   <div class="container">
     <div class="section">
-      <div class="row">
-
-        <div class="col s12 center-align" style="margin-top: -30px;"><h1 class="profile-title">Einstein Bros Bagels</h1></div>
-
-        <div class="col l2 hide-on-med-and-down">&nbsp;</div>
-
-        <div class="row">
-          <div class="col s12 m12 l8">
-            <div class="card open">
-              <div class="card-content" style="margin-top: -20px;">
-                <h4 class="caption center-align"></h4>
+      <div class="row" style="text-align: center;">
+        <div class="profile-image einsteins"></div>
+        <div class="profile-name green z-depth-2">Einstein Bros Bagels</div>
+        <ul class="flex-container">
+          <li class="flex-item-wide z-depth-2">
+            <div class="quick-info green">
+              <div class="card-status closing-soon">CLOSING SOON</div>
+              <div class="card-content">
                 <h4 class="center-align">Hours of Operation</h4>
                 <h6 class="center-align week-of"></h6>
                 <?php include 'hours-einsteins.php' ?>
               </div>
             </div>
-          </div>
-        </div>
+          </li>
 
-        <div class="col l2 hide-on-med-and-down">&nbsp;</div>
-
-        <div class="row">
-          <div class="col s12 m12 l8">
-            <div class="card medium">
-              <div class="card-image">
-                <img src="images/bagels2.jpg" class="materialboxed" data-caption="Bagels. Tons of bagels.">
-                <span class="card-title">&nbsp;</span>
-              </div>
-              <div class="card-content" style="margin-top: -20px;">
-                <h4>Bagels. Tons of Bagels.</h4>
-                <p>These bagels are good. I mean delicious. Tons of flavors. Gotta love a warm bagel. Yum.</p>
+          <li class="flex-item">
+            <div class="quick-info green z-depth-2">
+              <div class="card-image einsteins1"></div>
+              <div class="quick-info-text">
+                <h3>Tons of Bagels</h3>
+                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
               </div>
             </div>
-          </div>
-        </div>
+          </li>
 
-        <div class="col l2 hide-on-med-and-down">&nbsp;</div>
-
-        <div class="row">
-          <div class="col s12 m12 l8">
-            <div class="card medium">
-              <div class="card-image">
-                <img src="images/bagels2.jpg" class="materialboxed" data-caption="Bagels. Tons of bagels.">
-                <span class="card-title">&nbsp;</span>
-              </div>
-              <div class="card-content" style="margin-top: -20px;">
-                <h4>Bagels. Tons of Bagels.</h4>
-                <p>These bagels are good. I mean delicious. Tons of flavors. Gotta love a warm bagel. Yum.</p>
+          <li class="flex-item">
+            <div class="quick-info green z-depth-2">
+              <div class="card-image einsteins1"></div>
+              <div class="quick-info-text">
+                <h3>Tons of Bagels</h3>
+                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
               </div>
             </div>
-          </div>
-        </div>
+          </li>
 
-        <div class="col l2 hide-on-med-and-down">&nbsp;</div>
-
-        <div class="row">
-          <div class="col s12 m12 l8">
-            <div class="card medium">
-              <div class="card-image">
-                <img src="images/bagels2.jpg" class="materialboxed" data-caption="Bagels. Tons of bagels.">
-                <span class="card-title">&nbsp;</span>
-              </div>
-              <div class="card-content" style="margin-top: -20px;">
-                <h4>Bagels. Tons of Bagels.</h4>
-                <p>These bagels are good. I mean delicious. Tons of flavors. Gotta love a warm bagel. Yum.</p>
+          <li class="flex-item">
+            <div class="quick-info green z-depth-2">
+              <div class="card-image einsteins1"></div>
+              <div class="quick-info-text">
+                <h3>Tons of Bagels</h3>
+                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
               </div>
             </div>
-          </div>
-        </div>
+          </li>
 
+          <li class="flex-item">
+            <div class="quick-info green z-depth-2">
+              <div class="card-image einsteins1"></div>
+              <div class="quick-info-text">
+                <h3>Download Menu</h3>
+                <img src="images/foodMenu.png" class="menu-download" />
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -101,7 +86,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script>
     $(document).ready(function(){
-      var n = Date.today().previous().monday().toString("MMMM dd");
+      var n = moment().startOf('week').add(1, 'days').format("MMMM Do");
       $(".week-of").append("Week of " + n);
 
     });
