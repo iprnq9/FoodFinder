@@ -157,7 +157,7 @@
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $sql = "SELECT id, location FROM MyGuests";
+  $sql = "SELECT id, location FROM newlocations";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0)
