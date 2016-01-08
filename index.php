@@ -116,25 +116,30 @@
     if (day < 6 && day > 0)
     {
       if (lunchTime.isBefore() && dinnerTime.isAfter())
-        meal = "lunch";
+        meal = "Lunch";
       else if (dinnerTime.isBefore())
-        meal = "dinner";
+        meal = "Dinner";
       else if (lunchTime.isAfter())
-        meal = "breakfast";
+        meal = "Breakfast";
     }
 
     else if (day == 0 || day == 6)
     {
       if (dinnerTime.isBefore())
-        meal = "dinner";
+        meal = "Dinner";
       else
-        meal = "brunch";
+        meal = "Brunch";
     }
     $(".currently").text(n + ", " + m + ": " + meal);
   }
 
   updateTimes();
   setInterval(updateTimes, 5000);
+  </script>
+
+  <script>
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
   </script>
 
   <?php
@@ -145,23 +150,30 @@
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
+
   // Check connection
-  if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
+  if ($conn->connect_error)
+  {
+    die("Connection failed: " . $conn->connect_error);
   }
 
   $sql = "SELECT id, location FROM MyGuests";
   $result = $conn->query($sql);
 
-  if ($result->num_rows > 0) {
-       echo "<table><tr><th>ID</th><th>Name</th></tr>";
-       // output data of each row
-       while($row = $result->fetch_assoc()) {
-           echo "<tr><td>" . $row["id"]. "</td><td>" . $row["firstname"]. " " . $row["lastname"]. "</td></tr>";
-       }
-       echo "</table>";
-  } else {
-       echo "0 results";
+  if ($result->num_rows > 0)
+  {
+    echo "<table><tr><th>ID</th><th>Name</th></tr>";
+    // output data of each row
+    while($row = $result->fetch_assoc())
+    {
+       echo "<tr><td>" . $row["id"]. "</td><td>" . $row["firstname"]. "</td></tr>";
+     }
+    echo "</table>";
+  }
+
+  else
+  {
+    echo "0 results";
   }
 
   $conn->close();
