@@ -9,6 +9,10 @@ $password = "FoodFinder";
 $dbname = "foodfinders";
 
 echo "1";
+echo $servername;
+echo $username;
+echo $password;
+echo $dbname;
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
