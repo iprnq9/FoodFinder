@@ -8,8 +8,12 @@ $username = "root";
 $password = "FoodFinder";
 $dbname = "foodfinders";
 
+echo "1";
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+echo "2";
 
 // Check connection
 if (!$conn)
