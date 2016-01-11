@@ -18,7 +18,7 @@ if (!$conn)
 $sql = "SELECT location_id, location_name FROM locations";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) >= 0)
+if (mysqli_num_rows($result) > 0)
 {
   echo "<table><tr><th>ID</th><th>Name</th></tr>";
   //output data of each row

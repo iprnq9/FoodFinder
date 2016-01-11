@@ -53,12 +53,12 @@
       </li>
       <li class="flex-item card">
         <div class="card-status closed">CLOSED</div>
-        <div class="card-image"><img src="images/rustic2-2.jpg" /></div>
+        <div class="card-image rustic-range"></div>
         <div class="card-info">
           <p class="card-title">Rustic Range</p>
           <p class="card-subtitle">Classic burgers, made as desired.</p>
           <br>
-          <p class="card-hours center-align"><span class="todays-hours-text">Today's Hours</span>
+          <p class="card-hours center-align"><span class="todays-hours-text">Today's Hours&nbsp;<i class="material-icons">schedule</i></span>
             <table class="table centered bordered white" style="width: 50%;margin: 0 auto;">
             <thead><tr>
               <th>Open</th>

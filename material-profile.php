@@ -70,7 +70,7 @@
               <div class="card-image einsteins1"></div>
               <div class="quick-info-text">
                 <h3>Download Menu</h3>
-                <img src="images/foodMenu.png" class="menu-download" />
+                <a href="#" target="_blank"><img src="images/foodMenu.png" class="menu-download" /></a>
               </div>
             </div>
           </li>
