@@ -29,8 +29,8 @@ if (mysqli_num_rows($result) > 0)
   // output data of each row
   while($row = mysqli_fetch_assoc($result))
   {
-    echo "<div class=\"card\">";
-    echo "<h1>ID: " . $row["location_id"]. "<br>Name: " . $row["location_name"]. "</h1>";
+    echo "<div class=\"card\">\n";
+    echo "<h1>ID: " . $row["location_id"]. "<br>Name: " . $row["location_name"]. "</h1>\n";
     echo "</div>";
   }
 }
