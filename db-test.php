@@ -8,10 +8,9 @@ $username = "root";
 $password = "FoodFinder";
 $dbname = "foodfinders";
 
-echo "hello";
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+
 // Check connection
 if (!$conn)
 {
@@ -20,6 +19,8 @@ if (!$conn)
 
 $sql = "SELECT location_id, location_name FROM locations";
 $result = mysqli_query($conn, $sql);
+
+echo mysqli_error($conn);
 
 if (mysqli_num_rows($result) >= 0)
 {
