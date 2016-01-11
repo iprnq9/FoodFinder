@@ -53,7 +53,7 @@
       </li>
       <li class="flex-item card">
         <div class="card-status closed">CLOSED</div>
-        <div class="card-image rustic-range"></div>
+        <div class="card-image rustic"></div>
         <div class="card-info">
           <p class="card-title">Rustic Range</p>
           <p class="card-subtitle">Classic burgers, made as desired.</p>
