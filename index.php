@@ -12,6 +12,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script type="text/javascript" src="js/moment.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
 
 </head>
 <body style="background-color: #eeeeee;">
@@ -23,7 +24,7 @@
     <div class="section">
       <ul class="flex-container">
       <li class="flex-item card">
-        <div class="card-status open">OPEN &middot; BUSY</div>
+        <div class="card-status einsteins-status"></div>
         <div class="card-image einsteins"></div>
         <div class="card-info">
           <p class="card-title">Einstein Bros Bagels</p>
@@ -138,42 +139,25 @@
     $(".button-collapse").sideNav();
   </script>
 
-  <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "FoodFinder";
-  $dbname = "foodfinders";
+  <script>
+  var openTime = moment("07:00", "hh:mm");
+  var closeTime = moment("22:20", "hh:mm");
+  var nowTime = moment().format("hh:mm");
+  var nowTimeX = moment();
+  var closingIn = closeTime.diff(nowTimeX, 'minutes');
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  // Check connection
-  if ($conn->connect_error)
+  if (openTime.isBefore() && closeTime.isAfter())
   {
-    die("Connection failed: " . $conn->connect_error);
-  }
+    $(".einsteins-status").html("OPEN").addClass("open");
 
-  $sql = "SELECT id, location FROM newlocations";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0)
-  {
-    echo "<table><tr><th>ID</th><th>Name</th></tr>";
-    // output data of each row
-    while($row = $result->fetch_assoc())
-    {
-       echo "<tr><td>" . $row["id"]. "</td><td>" . $row["firstname"]. "</td></tr>";
-     }
-    echo "</table>";
+    if (closingIn <= 30)
+      $(".einsteins-status").html("CLOSES IN " + (closingIn+1) + " MIN").addClass("closing-soon").removeClass("open");
   }
 
   else
-  {
-    echo "0 results";
-  }
+    $(".einsteins-status").text("CLOSED").addClass("closed");
 
-  $conn->close();
-  ?>
+  </script>
 
-  </body>
+</body>
 </html>

@@ -173,9 +173,12 @@ nav {
   margin-top: -40px;
   margin-bottom: 10px;
   text-align: center;
-  font-family: ;
+  font-family: Oswald;
+  font-weight: 400;
   font-size: 34pt;
   color: black;
+  text-transform: ;
+  font-variant: small-caps;
 }
 
 .quick-info {
@@ -221,6 +224,7 @@ nav {
   background-image: url(images/rustic2-2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 /*-----------------------------------------------------------------*/
