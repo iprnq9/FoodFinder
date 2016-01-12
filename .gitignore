@@ -1,1 +1,4 @@
 *.xlsx
+*.xml
+*.name
+.idea/food-finder.iml
