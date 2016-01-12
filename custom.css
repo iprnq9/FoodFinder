@@ -55,6 +55,10 @@ nav {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: row;
+  flex-flow: wrap;
   justify-content: space-around;
 }
 
