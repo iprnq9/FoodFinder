@@ -29,7 +29,7 @@ if(isset($_POST['update'])) {
 
     if (!$result)
     {
-        die('Could not update data: ' . mysqli_error($result));
+        echo ('Could not update data.');
     }
 
     else
