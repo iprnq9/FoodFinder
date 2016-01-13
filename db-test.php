@@ -23,12 +23,6 @@ if (!$conn)
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT location_id, location_name FROM locations WHERE location_id = $location_id LEFT JOIN SELECT ";
-
-$result = mysqli_query($conn, $sql);
-
-echo "Row Count: " . $numRows . "\n";
-
 $sql = "SELECT location_id, location_name FROM locations WHERE location_id = $location_id";
 $result = mysqli_query($conn, $sql);
 
