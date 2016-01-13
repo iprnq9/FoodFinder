@@ -12,8 +12,6 @@ $username = "root";
 $password = "FoodFinder";
 $dbname = "foodfinders";
 
-$location_id = 2;
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -23,7 +21,7 @@ if (!$conn)
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT location_id, location_name FROM locations WHERE location_id = $location_id";
+$sql = "SELECT location_id, location_name FROM locations";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0)
