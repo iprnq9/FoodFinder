@@ -48,13 +48,13 @@ else
                cellpadding = "2">
 
             <tr>
-                <td width = "100">Employee ID</td>
+                <td width = "100">Location ID</td>
                 <td><input name = "location_id" type = "text"
                            id = "location_id"></td>
             </tr>
 
             <tr>
-                <td width = "100">Employee Salary</td>
+                <td width = "100">New Name</td>
                 <td><input name = "location_name" type = "text"
                            id = "location_name"></td>
             </tr>
