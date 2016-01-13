@@ -12,7 +12,7 @@ $username = "root";
 $password = "FoodFinder";
 $dbname = "foodfinders";
 
-$location_id = 1;
+$location_id = 2;
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -23,6 +23,7 @@ if (!$conn)
   die("Connection failed: " . mysqli_connect_error());
 }
 
+<<<<<<< HEAD
 $sql = "SELECT location_id, location_name FROM locations WHERE location_id = $location_id LEFT JOIN SELECT ";
 
 $result = mysqli_query($conn, $sql);
@@ -31,6 +32,11 @@ $numRows = mysqli_num_rows($result);
 
 echo "Row Count: " . $numRows . "\n";
 
+=======
+$sql = "SELECT location_id, location_name FROM locations WHERE location_id = $location_id";
+$result = mysqli_query($conn, $sql);
+
+>>>>>>> parent of 86d6038... Testing.
 if (mysqli_num_rows($result) > 0)
 {
   // output data of each row
