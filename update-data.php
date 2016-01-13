@@ -29,7 +29,7 @@ $result = mysqli_query($conn, $sql);
 
 if (!$result)
 {
-    die('Could not update data: ' . mysqli_error($result))
+    die('Could not update data: ' . mysqli_error($result));
 }
 
 else
