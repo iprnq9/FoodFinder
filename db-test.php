@@ -25,9 +25,9 @@ if (!$conn)
 
 $sql = "SELECT location_id, location_name FROM locations WHERE location_id = $location_id LEFT JOIN SELECT ";
 $result = mysqli_query($conn, $sql);
-$numRows = mysqli_num_rows($result);
+$numRows = $result->$numRows;
 
-echo $numRows;
+echo "Row number: " . $numRows;
 
 if ($numRows > 0)
 {
