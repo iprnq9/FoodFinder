@@ -27,6 +27,8 @@ $sql = "SELECT location_id, location_name FROM locations WHERE location_id = $lo
 $result = mysqli_query($conn, $sql);
 $numRows = mysqli_num_rows($result);
 
+echo $numRows;
+
 if ($numRows > 0)
 {
   // output data of each row
