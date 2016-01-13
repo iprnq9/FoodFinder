@@ -25,18 +25,19 @@ if (!$conn)
 
 $sql = "SELECT location_id, location_name FROM locations WHERE location_id = $location_id LEFT JOIN SELECT ";
 $result = mysqli_query($conn, $sql);
-$numRows = $result->num_rows;
 
-echo "Row number: " . $numRows;
+$numRows = mysqli_num_rows($result);
 
-if ($numRows > 0)
+echo "Row Count: " . $numRows . "\n";
+
+if (mysqli_num_rows($result) > 0)
 {
   // output data of each row
-  for ($i=0; $i<$numRows; $i++)
+  while($row = mysqli_fetch_assoc($result))
   {
     echo "<div class=\"card\">\n";
     echo "<h1>ID: " . $row["location_id"]. "<br>Name: " . $row["location_name"]. "</h1>\n";
-    echo "</div>\n\n";
+    echo "</div>";
   }
 }
 
