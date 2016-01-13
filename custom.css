@@ -231,6 +231,48 @@ nav {
   background-position: center center;
 }
 
+.miner-break {
+  background-image: url(images/coffee.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.miner-munchies {
+  background-image: url(images/munchies.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.mondo {
+  background-image: url(images/sandwich.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.patio {
+  background-image: url(images/patio.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.havener {
+  background-image: url(images/havener.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.tj {
+  background-image: url(images/buffet.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 /*-----------------------------------------------------------------*/
 
 hr {
