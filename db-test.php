@@ -12,7 +12,7 @@ $username = "root";
 $password = "FoodFinder";
 $dbname = "foodfinders";
 
-$location_id = 1;
+$location_id = 2;
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
