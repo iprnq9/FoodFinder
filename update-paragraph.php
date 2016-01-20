@@ -13,7 +13,7 @@ if(isset($_POST['update'])) {
   $password = "FoodFinder";
   $dbname = "foodfinders";
 
-  $location_id = $_POST['location_id'];
+  $id = $_POST['id'];
   $text = $_POST['text'];
 
   // Create connection
@@ -24,7 +24,7 @@ if(isset($_POST['update'])) {
     die("Connection failed: " . mysqli_connect_error());
   }
 
-  $sql = "INSERT INTO paragraphs (id, paragraph) VALUES ($location_id, \"$text\")";
+  $sql = "INSERT INTO paragraphs (id, paragraph) VALUES ($id, \"$paragraph\")";
   $result = mysqli_query($conn, $sql);
 
   if (!$result)
@@ -50,16 +50,16 @@ else
 
       <tr>
         <td width = "100">Location ID</td>
-        <td><input name = "location_id" type = "text"
-                   id = "location_id"></td>
+        <td><input name = "id" type = "text"
+                   id = "id"></td>
       </tr>
 
       <tr>
-        <td width = "300" height="400">Text</td>
-        <td><input name = "text" type = "text"
-                   id = "text"></td>
+        <td width = "300">Text</td>
+        <td><input name = "paragraph" type = "text"
+                   id = "paragraph" style="height: 400px;"></td>
       </tr>
-      
+
       <tr>
         <td width = "100"> </td>
         <td>
