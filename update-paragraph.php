@@ -13,8 +13,8 @@ if(isset($_POST['update'])) {
   $password = "FoodFinder";
   $dbname = "foodfinders";
 
-  $id = $_POST['id'];
-  $paragraph = $_POST['paragraph'];
+  $location_id = $_POST['location_id'];
+  $location_name = $_POST['location_name'];
 
   // Create connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -24,7 +24,7 @@ if(isset($_POST['update'])) {
     die("Connection failed: " . mysqli_connect_error());
   }
 
-  $sql = "INSERT INTO paragraphs (id, paragraph) VALUES ($id, \"$paragraph\")";
+  $sql = "UPDATE paragraphs SET paragraphs = \"$location_name\" WHERE id = $location_id";
   $result = mysqli_query($conn, $sql);
 
   if (!$result)
@@ -34,7 +34,7 @@ if(isset($_POST['update'])) {
 
   else
   {
-    echo "Added successfully!";
+    echo "Name updated successfully!";
   }
 
   mysqli_close($conn);
@@ -43,21 +43,26 @@ if(isset($_POST['update'])) {
 else
 {
   ?>
-  <h1>Add new location:</h1>
+  <h1>Update name of location:</h1>
   <form method = "post" action = "<?php $_PHP_SELF ?>">
     <table width = "400" border =" 0" cellspacing = "1"
            cellpadding = "2">
 
       <tr>
         <td width = "100">Location ID</td>
-        <td><input name = "id" type = "text"
-                   id = "id"></td>
+        <td><input name = "location_id" type = "text"
+                   id = "location_id"></td>
       </tr>
 
       <tr>
-        <td width = "300">Text</td>
-        <td><input name = "paragraph" type = "text"
-                   id = "paragraph" style="height: 400px;"></td>
+        <td width = "100">New Name</td>
+        <td><input name = "location_name" type = "text"
+                   id = "location_name"></td>
+      </tr>
+
+      <tr>
+        <td width = "100"> </td>
+        <td> </td>
       </tr>
 
       <tr>
@@ -74,5 +79,6 @@ else
 }
 
 ?>
+
 </body>
 </html>
