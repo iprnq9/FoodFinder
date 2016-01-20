@@ -24,7 +24,7 @@ if(isset($_POST['update'])) {
     die("Connection failed: " . mysqli_connect_error());
   }
 
-  $sql = "UPDATE paragraphs SET paragraph = \"$location_name\" WHERE id = $location_id";
+  $sql = "UPDATE paragraphs SET paragraph = \"$location_name\" WHERE id = \"$location_id\"";
   $result = mysqli_query($conn, $sql);
 
   if (!$result)
