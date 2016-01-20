@@ -14,7 +14,7 @@ if(isset($_POST['update'])) {
   $dbname = "foodfinders";
 
   $id = $_POST['id'];
-  $text = $_POST['text'];
+  $paragraph = $_POST['paragraph'];
 
   // Create connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
