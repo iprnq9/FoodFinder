@@ -40,28 +40,28 @@
             <div class="quick-info green z-depth-2">
               <div class="card-image einsteins1"></div>
               <div class="quick-info-text">
-                <h3>Tons of Bagels</h3>
-                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
+                <h3>Our Mission</h3>
+                Einstein Bros. Bagels is your neighborhood bagel shop. We’re proud to provide our guests with freshly baked bagels, breakfast sandwiches, lunch sandwiches, coffee, catering and so much more. Stop on in. We’ll have a fresh bagel and cup of coffee ready for you.
               </div>
             </div>
           </li>
 
           <li class="flex-item">
             <div class="quick-info green z-depth-2">
-              <div class="card-image einsteins1"></div>
+              <div class="card-image einsteins3"></div>
               <div class="quick-info-text">
-                <h3>Tons of Bagels</h3>
-                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
+                <h3>Darn Good Coffee</h3>
+                We serve up your soon-to-be favorite drinks. Whether they be hot, cold, or iced, a cup of happiness awaits your hectic workday, relaxing day at home, or fun day out with friends.
               </div>
             </div>
           </li>
 
           <li class="flex-item">
             <div class="quick-info green z-depth-2">
-              <div class="card-image einsteins1"></div>
+              <div class="card-image einsteins2"></div>
               <div class="quick-info-text">
-                <h3>Tons of Bagels</h3>
-                Lorem ipsum dolor sit amet, ei quo iusto soleat, vero zril nobis has cu. Ut sed iriure interpretaris, quo prima persius no, quas convenire quo id. Vim at sumo error mnesarchum. Quo at congue oblique efficiendi, oratio cetero ne quo. Id commune scaevola urbanitas sed, pri et propriae honestatis necessitatibus. Atomorum pertinacia maiestatis at vel, vidit democritum consequuntur ius et, cu alii iisque ius.
+                <h3>More Than A Snack</h3>
+                 In addition to serving up delicious bagels and coffee, we cook gourmet breakfast and lunch sandwiches. High-five your tastebuds!
               </div>
             </div>
           </li>
@@ -71,7 +71,7 @@
               <div class="card-image einsteins1"></div>
               <div class="quick-info-text">
                 <h3>Download Menu</h3>
-                <a href="#" target="_blank"><img src="images/foodMenu.png" class="menu-download" alt="Download image"/></a>
+                <a href="images/einstieins-menu.pdf" target="_blank"><img src="images/foodMenu.png" class="menu-download" alt="Download image"/></a>
               </div>
             </div>
           </li>

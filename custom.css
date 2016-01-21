@@ -244,6 +244,18 @@ nav {
   background-repeat: no-repeat;
 }
 
+.einsteins2 {
+  background-image: url(images/einsteins-sandwhich.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.einsteins3 {
+  background-image: url(images/einsteins-coffee.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .rustic {
   background-image: url(images/rustic2-2.jpg);
   background-size: cover;
@@ -330,4 +342,13 @@ hr {
   .flex-item, .flex-item-tall, .flex-item-wide, .flex-item-large {
     width: 100%;
   }
+}
+
+.currently, .quick-info-text h3, .card-content h4 {
+  font-family: Oswald;
+}
+
+.quick-info-text {
+  line-height: 30px;
+  font-size: 12pt;
 }
