@@ -3,6 +3,21 @@
     src: url(fonts/scoreboard.ttf);
 }
 
+@font-face {
+  font-family: 'MST';
+  src:  url('font/mst.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MST-bold';
+  src:  url('font/mst-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MST-head';
+  src:  url('font/mst-head.woff') format('woff');
+}
+
 html, body {
   height: 100%;
 }
@@ -197,7 +212,6 @@ nav {
   margin-top: -40px;
   margin-bottom: 10px;
   text-align: center;
-  font-family: Oswald;
   font-weight: 400;
   font-size: 34pt;
   color: black;
@@ -344,8 +358,8 @@ hr {
   }
 }
 
-.currently, .quick-info-text h3, .card-content h4 {
-  font-family: Oswald;
+.currently, .profile-name, .quick-info-text h3, .card-content h4 {
+  font-family: MST;
 }
 
 .quick-info-text {
