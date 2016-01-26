@@ -319,6 +319,36 @@ nav {
   background-position: center center;
 }
 
+.bbq {
+  background-image: url(images/bbq.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bake {
+  background-image: url(images/bake.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.donuts {
+  background-image: url(images/donuts.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.soup {
+  background-image: url(images/soup.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+
 /*-----------------------------------------------------------------*/
 
 hr {
@@ -365,4 +395,13 @@ hr {
 .quick-info-text {
   line-height: 30px;
   font-size: 12pt;
+}
+
+.shrink-grow {
+  flex-shrink: 1;
+}
+
+.minerbytes {
+  height: 100%;
+  width: 100%
 }

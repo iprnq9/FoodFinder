@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
-  <title>FoodFinder</title>
+  <title>S&T Dining | FoodFinder</title>
 
   <!-- CSS  -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -20,6 +20,10 @@
 <body style="background-color: #eeeeee;">
 
   <?php include 'header.php' ?>
+
+  <script>
+    $("li.dining").addClass("active");
+  </script>
 
   <div class="container">
     <div style="text-align: center;"><div class="currently z-depth-1 green"></div></div>
