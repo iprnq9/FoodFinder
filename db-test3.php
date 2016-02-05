@@ -12,23 +12,18 @@ $username = "root";
 $password = "FoodFinder";
 $dbname = "foodfinders";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$mysqli = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if (!$conn)
-{
-  die("Connection failed: " . mysqli_connect_error());
+if ($mysqli->connect_errno) {
+  echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
-$location_name = $mysqli->query("SELECT location_name FROM locations WHERE location_id=1")->fetch_object()->location_name;
-
-echo $location_name;
-
-mysqli_close($conn);
+else {
+  $location_name = $mysqli->query("SELECT location_name FROM locations WHERE location_id=1")->fetch_object()->location_name;
+  echo $location_name;
+}
 
 ?>
-
 
 </body>
 </html>
