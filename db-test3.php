@@ -21,7 +21,7 @@ if (!$conn)
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$name = $mysqli->query("SELECT location_name FROM locations WHERE locatin_id = 1")->fetch_object()->location_name;
+$name = $mysqli->query("SELECT location_name FROM locations WHERE location_id = 1")->fetch_object()->location_name;
 
 echo $name;
 
