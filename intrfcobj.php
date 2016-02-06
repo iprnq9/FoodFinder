@@ -1,14 +1,14 @@
 <?php
 
 
-$host="127.0.0.1";
+$host="localhost";
 $port=3306;
 $socket="";
 $user="joemnr";
 $password="engineer";
 $dbname="goldgreen";
 
-$con = new mysqli($host, $user, $password, $dbname, $port, $socket);
+$con = new mysqli($host, $user, $password, $dbname);
 $tj = new joeMinr;
 $tj->setName("Thomas Jefferson");
 if ($con->connect_errno) {
