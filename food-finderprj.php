@@ -5,9 +5,6 @@ class joeMinr{
 	protected $opntme = array(); /*container for the opening times*/
 	protected $clstme = array(array()); /*container for the closing times*/
 
-
-
-
     /* construtor */
     public function __construct(){
         for($x=0; $x <= 7; $x++){
