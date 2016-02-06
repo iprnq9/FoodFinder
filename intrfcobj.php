@@ -2,6 +2,9 @@
 <html>
 <body>
 <?php
+
+
+include 'food-finderprj.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 ini_set('html_errors', 'On');
@@ -13,7 +16,7 @@ $user="root";
 $password="FoodFinder";
 $dbname="goldgreen";
 
-include 'food-finderprj.php';
+
 
 $con = new mysqli($host, $user, $password, $dbname);
 $tj = new joeMinr;
@@ -28,7 +31,7 @@ else {
         $tj->setopnTime($x,"brkfst",$opntime);
         }
 
-
+     
 }
 echo $tj->getopnTime(2,"brkfst");
 
