@@ -1,3 +1,7 @@
 AddType application/x-httpd-php .html
 DirectoryIndex index.php
 ErrorDocument 404 /404.php
+AddType font/ttf .ttf
+AddType font/eot .eot
+AddType font/otf .otf
+AddType font/woff .woff
