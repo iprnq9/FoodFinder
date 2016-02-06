@@ -8,7 +8,19 @@ $user="joemnr";
 $password="engineer";
 $dbname="goldgreen";
 
-$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
-	or die ('Could not connect to the database server' . mysqli_connect_error());
+$con = new mysqli($host, $user, $password, $dbname, $port, $socket);
+$tj = new joeMinr;
+$tj->setName("Thomas Jefferson");
+if ($con->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
+}
 
-//$con->close();
+else {
+    for ($x = 0; $x < 7; $x++  ){
+        $opntime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x ")->fetch_object()->$opntime;
+        $tj->setopnTime($x,"brkfst",$con);
+        }
+
+
+}
+echo $tj->getopnTime(2,"brkfst");
