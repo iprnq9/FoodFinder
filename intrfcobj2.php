@@ -9,8 +9,8 @@ ini_set('html_errors', 'On');
 $host="localhost";
 $port=3306;
 $socket="";
-$user="joemnr";
-$password="engineer";
+$user="root";
+$password="FoodFinder";
 $dbname="goldgreen";
 
 $con = new mysqli($host, $user, $password, $dbname);
