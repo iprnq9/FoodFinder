@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?php
 
 
@@ -24,3 +27,8 @@ else {
 
 }
 echo $tj->getopnTime(2,"brkfst");
+
+?>
+
+</body>
+</html>
