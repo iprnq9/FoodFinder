@@ -24,7 +24,7 @@ else {
     for ($x = 0; $x < 7; $x++  ){
         $opntime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x ")->fetch_object()->$opntime;
         $tj->setopnTime($x,"brkfst",$opntime);
-        }
+    }
 
 
 }

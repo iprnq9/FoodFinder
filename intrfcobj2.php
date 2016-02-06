@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
@@ -28,3 +31,5 @@ else {
 echo $tj->getopnTime(2,"brkfst");
 
 ?>
+</body>
+</html>
