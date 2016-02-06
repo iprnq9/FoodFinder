@@ -13,6 +13,8 @@ $user="root";
 $password="FoodFinder";
 $dbname="goldgreen";
 
+include 'food-finderprj.php';
+
 $con = new mysqli($host, $user, $password, $dbname);
 $tj = new joeMinr;
 $tj->setName("Thomas Jefferson");
