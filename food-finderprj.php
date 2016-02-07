@@ -142,7 +142,7 @@ class joeMinr{
     }
 
 }
-/*create tj object */
+/*create tj object 
 $tj = new joeMinr;
 $tj->setName("Thomas Jefferson");
 for($x=0; $x <= 7; $x++){
@@ -181,7 +181,7 @@ echo "thursday dinner open:   " . $tj->getopnTime(6,"dnnr") ."<br>";
 echo "thursday dinner close:   " . $tj->getclsTime(6,"dnnr") ."<br>";
 echo "current server time" . date('h:i') ."<br>";
 echo $var . "<br>";
-echo $tj->status()
+echo $tj->status()*/
 
 
 ?>
