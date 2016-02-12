@@ -28,7 +28,7 @@ if ($con->connect_errno) {
 else {
     $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day = 5")->fetch_object()->opentime;
     $this = $opentime->num_rows;
-    echo $this;
+   // echo $this;
   //  $tj->setopnTime(1,"brkfst",$opentime);
     /* ->fetch_object()->opentime
  * for ($x = 0; $x < 7; $x++  ){
