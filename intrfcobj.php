@@ -26,9 +26,9 @@ if ($con->connect_errno) {
 }
 
 else {
-    $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =7")->fetch_object()->opentime;
+    $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =1")->fetch_object()->opentime;
     echo $opentime;
-    $tj->setopnTime(7,"brkfst",$opentime);
+    $tj->setopnTime(1,"brkfst",$opentime);
 /*    for ($x = 0; $x < 7; $x++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
         if(!empty($opentime)){           
@@ -39,7 +39,7 @@ else {
      
 }*/
 }
-echo $tj->getopnTime(7,"brkfst");
+echo $tj->getopnTime(1,"brkfst");
 
 ?>
 </body>
