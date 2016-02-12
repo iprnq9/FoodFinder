@@ -35,8 +35,8 @@ else {
     $row_cnt = $opentime->num_rows;
 
     printf("Result set has %d rows.\n", $row_cnt);
-
- // $tj->setopnTime(1,"brkfst",$opentime);
+    $this = $opentime->fetch_object()->opentime;
+  $tj->setopnTime(1,"brkfst",$this);
     /* ->fetch_object()->opentime
  * for ($x = 0; $x < 7; $x++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
@@ -48,7 +48,7 @@ else {
      
 }*/
 }
-// echo $tj->getopnTime(1,"brkfst");
+ echo $tj->getopnTime(1,"brkfst");
 
 ?>
 </body>
