@@ -32,13 +32,13 @@ else {
         $row_cnt = $opentime->num_rows;
         if($row_cnt > 0){
             $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x")->fetch_object()->opentime;
-            //$tj->setopnTime($x,"brkfst",$opentime);
+            $tj->setopnTime($x,"brkfst",$opentime);
         }
 
      
 }
 }
-// echo $tj->getopnTime(1,"brkfst");
+ echo $tj->getopnTime(1,"brkfst");
 
 ?>
 </body>
