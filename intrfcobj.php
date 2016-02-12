@@ -26,10 +26,17 @@ if ($con->connect_errno) {
 }
 
 else {
-    $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day = 5")->fetch_object()->opentime;
- //   $this = $opentime->num_rows;
-   // echo $this;
-  //  $tj->setopnTime(1,"brkfst",$opentime);
+
+
+
+
+    $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day = 5");
+    
+    $row_cnt = $opentime->num_rows;
+
+    printf("Result set has %d rows.\n", $row_cnt);
+
+ // $tj->setopnTime(1,"brkfst",$opentime);
     /* ->fetch_object()->opentime
  * for ($x = 0; $x < 7; $x++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
