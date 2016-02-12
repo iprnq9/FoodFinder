@@ -30,23 +30,23 @@ else {
 
 
 
-    $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day = 5");
+ //   $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day = 5");
     
-    $row_cnt = $opentime->num_rows;
+ //   $row_cnt = $opentime->num_rows;
 
-    printf("Result set has %d rows.\n", $row_cnt);
-    $this = $opentime->fetch_object()->opentime;
-  $tj->setopnTime(1,"brkfst",$this);
-    /* ->fetch_object()->opentime
- * for ($x = 0; $x < 7; $x++  ){
+ //   printf("Result set has %d rows.\n", $row_cnt);
+   
+   
+  for ($x = 0; $x < 7; $x++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
-        if(!empty($opentime)){           
-            $opentime->fetch_object()->opentime;
+        $row_cnt = $opentime->num_rows;
+        if($row_cnt > 0)){
+            $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x")->fetch_object()->opentime;
             $tj->setopnTime($x,"brkfst",$opentime);
         }
 
      
-}*/
+}
 }
  echo $tj->getopnTime(1,"brkfst");
 
