@@ -27,7 +27,7 @@ if ($con->connect_errno) {
 
 else {
   
-  for ($x = 0; $x < 7; $x++  ){
+  for ($x = 1; $x < 7; $x++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
         $row_cnt = $opentime->num_rows;
         if($row_cnt > 0){
