@@ -26,17 +26,7 @@ if ($con->connect_errno) {
 }
 
 else {
-
-
-
-
- //   $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day = 5");
-    
- //   $row_cnt = $opentime->num_rows;
-
- //   printf("Result set has %d rows.\n", $row_cnt);
-   
-   
+  
   for ($x = 0; $x < 7; $x++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
         $row_cnt = $opentime->num_rows;
