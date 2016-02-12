@@ -2,7 +2,7 @@
 class joeMinr{
  
     protected $name;
-	protected $opntme = array(); /*container for the opening times*/
+	protected $opntme = array(array()); /*container for the opening times*/
 	protected $clstme = array(array()); /*container for the closing times*/
 
     /* construtor */
