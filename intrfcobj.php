@@ -41,8 +41,8 @@ else {
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
         $row_cnt = $opentime->num_rows;
         if($row_cnt > 0)){
-            $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x")->fetch_object()->opentime;
-            $tj->setopnTime($x,"brkfst",$opentime);
+            $opentime1 = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x")->fetch_object()->opentime;
+            $tj->setopnTime($x,"brkfst",$opentime1);
         }
 
      
