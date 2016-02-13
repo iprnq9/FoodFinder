@@ -23,11 +23,13 @@ class joeMinr{
 
     public function getopnTime($day, $time){
         /*will return specified time */
+        $day = $day-1;
 		return $this->opntme[$day][$time];
     }
 
     public function getclsTime($day, $time){
         /*will return specified time */
+        $day = $day-1;
         return $this->clstme[$day][$time];
     }
 
@@ -133,16 +135,18 @@ class joeMinr{
 
     public function setopnTime($day, $tme, $val){
         /* takes in array for times of day*/
+        $day = $day-1;
         $this->opntme[$day][$tme] = $val;
     }
 
     public function setclsTime($day, $tme, $val){
         /* takes in array for times of day*/
+        $day = $day-1;
         $this->clstme[$day][$tme] = $val;
     }
 
 }
-//create tj object 
+/* create tj object 
 $tj = new joeMinr;
 $tj->setName("Thomas Jefferson");
 for($x=0; $x <= 7; $x++){
