@@ -30,10 +30,10 @@ else {
   for ($x = 1; $x < 7; $x++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
         $row_cnt = $opentime->num_rows;
-        echo $row_cnt  ."<br>";
+        echo "row". $row_cnt  ."<br>";
         if($row_cnt > 0){
             $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x")->fetch_object()->opentime;
-            echo $x;
+            echo "x". $x ."<br>";
             $tj->setopnTime($x,"brkfst",$opentime);
         }
 
