@@ -39,7 +39,7 @@ else {
      
 }
 }
- echo $tj->getopnTime(1,"brkfst");
+ echo $tj->getopnTime(3,"brkfst");
 
 ?>
 </body>
