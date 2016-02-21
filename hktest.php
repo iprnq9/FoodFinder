@@ -110,7 +110,7 @@ else {
 //}}
 
 $max = sizeof($objArray);
-for($i = 0; $i < $max ; $i++){
+for($i = 0; $i < ($max-1) ; $i++){
     echo "Location Name: " . $objArray[$i]->getName() ."<br>";
     echo "Location ID: " . $objArray[$i]->getId() ."<br>";
     echo "Current status: " . $objArray[$i]->status() ."<br>";
