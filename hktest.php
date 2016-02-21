@@ -38,8 +38,8 @@ if ($con->connect_errno) {
 }
 
 else {
-        $resource = $con->query("SELECT COUNT(col) FROM table");
-        $count = mysqli_result($resource,0);
+        $resource = $con->query("SELECT * FROM location_id");
+        $count = $resource->num_rows; 
         echo $count;
 
 
