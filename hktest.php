@@ -6,9 +6,9 @@
 
 
 include 'food-finderprj.php';
-//error_reporting(E_ALL);
-//ini_set('display_errors', 'On');
-//ini_set('html_errors', 'On');
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+ini_set('html_errors', 'On');
 
 $host="localhost";
 $port=3306;
@@ -42,7 +42,7 @@ else {
         //echo $count; testing
 
         //create objects in array
-        for($x=0; $x <= $count; $x++){
+        for($x=0; $x < $count; $x++){
             $objArray[$x] = new joeMinr;
         }
 
@@ -56,7 +56,7 @@ else {
 }
 
     //get brkfst times
-    for($x=0; $x <= $count; $x++){
+    for($x=0; $x < $count; $x++){
         $curid = $objArray[$x]->getId();
         for ($y = 1; $y < 7; $y++  ){
             $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=$curid AND day =$y");
@@ -69,7 +69,7 @@ else {
     }
     
     //lunch times
-    for($x=0; $x <= $count; $x++){
+    for($x=0; $x < $count; $x++){
         $curid = $objArray[$x]->getId();
         for ($y = 1; $y < 7; $y++  ){
             $opentime = $con->query("SELECT opentime FROM lunch WHERE id=$curid AND day =$y");
@@ -82,7 +82,7 @@ else {
     }
 
     //dinner times
-    for($x=0; $x <= $count; $x++){
+    for($x=0; $x < $count; $x++){
         $curid = $objArray[$x]->getId();
         for ($y = 1; $y < 7; $y++  ){
             $opentime = $con->query("SELECT opentime FROM dinner WHERE id=$curid AND day =$y");
