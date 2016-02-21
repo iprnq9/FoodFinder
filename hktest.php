@@ -29,26 +29,30 @@ $con = new mysqli($host, $user, $password, $dbname);
 //$obj7 = new joeMinr;
 $objArray = array();
 
-for($x=0; $x <= 7; $x++){
-            $objArray[$x] = new joeMinr;
-        }
+
 
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
 }
 
 else {
+        //get the number of objects in database
         $resource = $con->query("SELECT * FROM location_id");
         $count = $resource->num_rows; 
         echo $count;
 
+        //create objects in array
+        for($x=0; $x <= $count; $x++){
+            $objArray[$x] = new joeMinr;
+        }
 
-
-
-    for ($x = 1; $x < 8; $x++  ){
+        //assign names to objects || set ids
+        $nameC = $count+1;
+    for ($x = 1; $x < $nameC; $x++  ){
         $location_name = $con->query("SELECT location_name FROM location_id WHERE id=$x")->fetch_object()->location_name;
         $y = $x-1;
         $objArray[$y]->setName($location_name);
+        $objArray[$y]->setId($x);
 }
 
 

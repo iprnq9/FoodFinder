@@ -2,6 +2,7 @@
 class joeMinr{
  
     protected $name;
+    protected $locId; //needed for queries
 	protected $opntme = array(array()); /*container for the opening times*/
 	protected $clstme = array(array()); /*container for the closing times*/
 
@@ -19,6 +20,10 @@ class joeMinr{
     /* Get functions*/
     public function getName(){
         return $this->name;
+    }
+
+     public function getId(){
+        return $this->locId;
     }
 
     public function getopnTime($day, $time){
@@ -131,6 +136,10 @@ class joeMinr{
     /*set functions */
     public function setName($value){
         $this->name = $value;
+    }
+
+    public function setId($value){
+        $this->locId = $value;
     }
 
     public function setopnTime($day, $tme, $val){
