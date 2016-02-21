@@ -79,9 +79,9 @@ else {
 
 //check info by pulling info out of object
 for ($x = 1; $x < 7; $x++  ){
-$this20 = $objArray[0]->getopnTime($x,"brkfst");
+$this20 = $objArray[5]->getopnTime($x,"brkfst");
 if( $this20 != Null){
-echo $x . $objArray[0]->getopnTime($x,"brkfst") ."<br>";
+echo $x . $objArray[5]->getopnTime($x,"brkfst") ."<br>";
 }}
 
 
