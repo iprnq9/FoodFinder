@@ -54,8 +54,8 @@ else {
         $objArray[$y]->setName($location_name);
         $objArray[$y]->setId($x);
 }
-$test1 = $objArray[0]->getName;
-$test2 = $objArray[0]->getId;
+$test1 = $objArray[0]->getName();
+$test2 = $objArray[0]->getId();
 echo $test1 ."<br>";
 echo $test2 ."<br>";
 
