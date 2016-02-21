@@ -20,14 +20,19 @@ $dbname="goldgreen";
 
 
 $con = new mysqli($host, $user, $password, $dbname);
-$obj1 = new joeMinr;
-$obj2 = new joeMinr;
-$obj3 = new joeMinr;
-$obj4 = new joeMinr;
-$obj5 = new joeMinr;
-$obj6 = new joeMinr;
-$obj7 = new joeMinr;
-$objArray = array($obj1, $obj2, $obj3, $obj4, $obj5, $obj6, $obj7 );
+//$obj1 = new joeMinr;
+//$obj2 = new joeMinr;
+//$obj3 = new joeMinr;
+//$obj4 = new joeMinr;
+//$obj5 = new joeMinr;
+//$obj6 = new joeMinr;
+//$obj7 = new joeMinr;
+$objArray = array();
+
+for($x=0; $x <= 7; $x++){
+            $objArray[$x] = new joeMinr;
+        }
+
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
 }
@@ -36,7 +41,8 @@ else {
     for ($x = 1; $x < 8; $x++  ){
         $location_name = $con->query("SELECT location_name FROM location_id WHERE id=$x")->fetch_object()->location_name;
         $y = $x+1;
-        $objArray[$y]->setName($location_name);}
+//        $objArray[$y]->setName($location_name);
+}
 
 
 
