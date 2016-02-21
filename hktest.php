@@ -55,6 +55,7 @@ else {
         $objArray[$y]->setId($x);
 }
 
+//OPEN TIMES
     //get brkfst times
     for($x=0; $x < $count; $x++){
         $curid = $objArray[$x]->getId();
@@ -94,21 +95,19 @@ else {
         }
     }
 
+//CLOSETIMES
+    //NOT ADDED YET
 
 
 
-//$test1 = $objArray[0]->getName();
-//$test2 = $objArray[0]->getId();
-//echo $test1 ."<br>";
-//echo $test2 ."<br>";
 
-//check info by pulling info out of object
-//for ($x = 1; $x < 7; $x++  ){
-//$this20 = $objArray[5]->getopnTime($x,"brkfst");
-//if( $this20 != Null){
-//echo $x . $objArray[5]->getopnTime($x,"brkfst") ."<br>";
-//}}
 
+
+
+
+
+
+//for testing
 $max = sizeof($objArray);
 for($i = 0; $i < ($max-1) ; $i++){
     echo "Location Name: " . $objArray[$i]->getName() ."<br>";
