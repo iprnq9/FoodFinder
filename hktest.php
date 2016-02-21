@@ -39,7 +39,7 @@ else {
         //get the number of objects in database
         $resource = $con->query("SELECT * FROM location_id");
         $count = $resource->num_rows; 
-        echo $count;
+        //echo $count; testing
 
         //create objects in array
         for($x=0; $x <= $count; $x++){
@@ -55,6 +55,8 @@ else {
         $objArray[$y]->setId($x);
 }
 
+echo $objArray[0]->getName ."<br>";
+echo $objArray[0]->getId ."<br>";
 
 
 
