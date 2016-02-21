@@ -67,7 +67,32 @@ else {
                 }
         }
     }
+    
+    //lunch times
+    for($x=0; $x <= $count; $x++){
+        $curid = $objArray[$x]->getId();
+        for ($y = 1; $y < 7; $y++  ){
+            $opentime = $con->query("SELECT opentime FROM lunch WHERE id=$curid AND day =$y");
+            $row_cnt = $opentime->num_rows;
+                if($row_cnt > 0){
+                    $opentime = $con->query("SELECT opentime FROM lunch WHERE id=$curid AND day =$y")->fetch_object()->opentime;
+                    $objArray[$x]->setopnTime($y,"lnch",$opentime);
+                }
+        }
+    }
 
+    //dinner times
+    for($x=0; $x <= $count; $x++){
+        $curid = $objArray[$x]->getId();
+        for ($y = 1; $y < 7; $y++  ){
+            $opentime = $con->query("SELECT opentime FROM dinner WHERE id=$curid AND day =$y");
+            $row_cnt = $opentime->num_rows;
+                if($row_cnt > 0){
+                    $opentime = $con->query("SELECT opentime FROM dinner WHERE id=$curid AND day =$y")->fetch_object()->opentime;
+                    $objArray[$x]->setopnTime($y,"dnnr",$opentime);
+                }
+        }
+    }
 
 
 
@@ -78,13 +103,36 @@ else {
 //echo $test2 ."<br>";
 
 //check info by pulling info out of object
-for ($x = 1; $x < 7; $x++  ){
-$this20 = $objArray[5]->getopnTime($x,"brkfst");
-if( $this20 != Null){
-echo $x . $objArray[5]->getopnTime($x,"brkfst") ."<br>";
-}}
+//for ($x = 1; $x < 7; $x++  ){
+//$this20 = $objArray[5]->getopnTime($x,"brkfst");
+//if( $this20 != Null){
+//echo $x . $objArray[5]->getopnTime($x,"brkfst") ."<br>";
+//}}
 
+$max = sizeof($objArray);
+for($i = 0; $i <= $max ; $i++){
+    echo "Location Name: " . $objArray[$i]->getName() ."<br>";
+    echo "Location ID: " . $objArray[$i]->getId() ."<br>";
+    echo "Current status: " . $objArray[$i]->status() ."<br>";
+    for ($x = 1; $x < 7; $x++  ){
+        $this20 = $objArray[$i]->getopnTime($x,"brkfst");
+        if( $this20 != Null){
+            echo "breakfast " . $x . " : ". $objArray[$i]->getopnTime($x,"brkfst") ."<br>";
+     }}
 
+     for ($x = 1; $x < 7; $x++  ){
+        $this20 = $objArray[$i]->getopnTime($x,"lnch");
+        if( $this20 != Null){
+            echo "Lunch " . $x . " : ". $objArray[$i]->getopnTime($x,"lnch") ."<br>";
+     }}
+
+     for ($x = 1; $x < 7; $x++  ){
+        $this20 = $objArray[$i]->getopnTime($x,"dnnr");
+        if( $this20 != Null){
+            echo "Lunch " . $x . " : ". $objArray[$i]->getopnTime($x,"dnnr") ."<br>";
+     }}
+
+}
 
 
 
