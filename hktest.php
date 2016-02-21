@@ -72,12 +72,17 @@ else {
 
 
 
-$test1 = $objArray[0]->getName();
-$test2 = $objArray[0]->getId();
-echo $test1 ."<br>";
-echo $test2 ."<br>";
+//$test1 = $objArray[0]->getName();
+//$test2 = $objArray[0]->getId();
+//echo $test1 ."<br>";
+//echo $test2 ."<br>";
 
-
+//check info by pulling info out of object
+for ($x = 1; $x < 7; $x++  ){
+$this20 = $objArray[0]->getopnTime($x,"brkfst");
+if( $this20 != Null){
+echo $x . $objArray[0]->getopnTime($x,"brkfst") ."<br>";
+}}
 
 
 
