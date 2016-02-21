@@ -38,6 +38,13 @@ if ($con->connect_errno) {
 }
 
 else {
+        $resource = mysql_query("SELECT COUNT(col) FROM table");
+        $count = mysql_result($resource,0);
+        echo $count;
+
+
+
+
     for ($x = 1; $x < 8; $x++  ){
         $location_name = $con->query("SELECT location_name FROM location_id WHERE id=$x")->fetch_object()->location_name;
         $y = $x-1;
