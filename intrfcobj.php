@@ -40,13 +40,13 @@ else {
      
 }
 }
- echo $tj->getopnTime(1,"brkfst") ."<br>";
- echo $tj->getopnTime(2,"brkfst") ."<br>";
- echo $tj->getopnTime(3,"brkfst") ."<br>";
- echo $tj->getopnTime(4,"brkfst") ."<br>";
- echo $tj->getopnTime(5,"brkfst") ."<br>";
- echo $tj->getopnTime(6,"brkfst") ."<br>";
- echo $tj->getopnTime(7,"brkfst") ."<br>";
+ echo "1" . $tj->getopnTime(1,"brkfst") ."<br>";
+ echo "2" . $tj->getopnTime(2,"brkfst") ."<br>";
+ echo "3" . $tj->getopnTime(3,"brkfst") ."<br>";
+ echo "4" .  $tj->getopnTime(4,"brkfst") ."<br>";
+ echo "5" . $tj->getopnTime(5,"brkfst") ."<br>";
+ echo "6" . $tj->getopnTime(6,"brkfst") ."<br>";
+ echo "7" . $tj->getopnTime(7,"brkfst") ."<br>";
 
 ?>
 </body>
