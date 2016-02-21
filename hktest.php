@@ -54,6 +54,24 @@ else {
         $objArray[$y]->setName($location_name);
         $objArray[$y]->setId($x);
 }
+
+    //get brkfst times
+    for($x=0; $x <= $count; $x++){
+        $curid = $objArray[$x]->getId();
+        for ($y = 1; $y < 7; $y++  ){
+            $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=$curid AND day =$y");
+            $row_cnt = $opentime->num_rows;
+                if($row_cnt > 0){
+                    $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=$curid AND day =$y")->fetch_object()->opentime;
+                    $objArray[$x]->setopnTime($y,"brkfst",$opentime);
+                }
+        }
+    }
+
+
+
+
+
 $test1 = $objArray[0]->getName();
 $test2 = $objArray[0]->getId();
 echo $test1 ."<br>";
