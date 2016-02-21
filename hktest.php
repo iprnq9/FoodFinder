@@ -38,8 +38,8 @@ if ($con->connect_errno) {
 }
 
 else {
-        $resource = mysql_query("SELECT COUNT(col) FROM table");
-        $count = mysql_result($resource,0);
+        $resource = $con->query("SELECT COUNT(col) FROM table");
+        $count = mysqli_result($resource,0);
         echo $count;
 
 
