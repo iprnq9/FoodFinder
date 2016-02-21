@@ -41,7 +41,8 @@ else {
 }
 }
 for ($x = 1; $x < 7; $x++  ){
-if($tj->getopnTime($x,"brkfst") != Null){
+$this20 = $tj->getopnTime($x,"brkfst");
+if( $this20 != Null){
 echo $x . $tj->getopnTime($x,"brkfst") ."<br>";
 }
 
