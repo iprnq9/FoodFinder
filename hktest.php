@@ -40,8 +40,8 @@ if ($con->connect_errno) {
 else {
     for ($x = 1; $x < 8; $x++  ){
         $location_name = $con->query("SELECT location_name FROM location_id WHERE id=$x")->fetch_object()->location_name;
-        $y = $x+1;
-//        $objArray[$y]->setName($location_name);
+        $y = $x-1;
+        $objArray[$y]->setName($location_name);
 }
 
 
