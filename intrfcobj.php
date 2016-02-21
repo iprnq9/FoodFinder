@@ -26,7 +26,9 @@ if ($con->connect_errno) {
 }
 
 else {
-  
+
+
+//this loads info from database into object|| breakfast times for tj
   for ($x = 1; $x < 7; $x++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=6 AND day =$x");
         $row_cnt = $opentime->num_rows;
@@ -40,6 +42,8 @@ else {
      
 }
 }
+
+//check info by pulling info out of object
 for ($x = 1; $x < 7; $x++  ){
 $this20 = $tj->getopnTime($x,"brkfst");
 if( $this20 != Null){
