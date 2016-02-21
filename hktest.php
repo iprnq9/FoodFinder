@@ -110,7 +110,7 @@ else {
 //}}
 
 $max = sizeof($objArray);
-for($i = 0; $i <= $max ; $i++){
+for($i = 0; $i < $max ; $i++){
     echo "Location Name: " . $objArray[$i]->getName() ."<br>";
     echo "Location ID: " . $objArray[$i]->getId() ."<br>";
     echo "Current status: " . $objArray[$i]->status() ."<br>";
@@ -129,7 +129,7 @@ for($i = 0; $i <= $max ; $i++){
      for ($x = 1; $x < 7; $x++  ){
         $this20 = $objArray[$i]->getopnTime($x,"dnnr");
         if( $this20 != Null){
-            echo "Lunch " . $x . " : ". $objArray[$i]->getopnTime($x,"dnnr") ."<br>";
+            echo "Dinner " . $x . " : ". $objArray[$i]->getopnTime($x,"dnnr") ."<br>";
      }}
 
 }
