@@ -27,7 +27,7 @@
         <ul class="flex-container">
           <li class="flex-item-wide z-depth-2">
             <div class="quick-info green">
-              <div class="card-status closing-soon">CLOSING IN 6 MINUTES</div>
+              <div class="card-status open">OPEN</div>
               <div class="card-content">
                 <h4 class="center-align" style="margin-top: -5px;">Hours of Operation</h4>
                 <h6 class="center-align week-of"></h6>
