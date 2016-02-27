@@ -99,7 +99,7 @@
       var dateVar = new Date();
       var n = dateVar.getDay();
 
-      $('tr.day-' + n).addClass('current-day');
+      $('tr.day-1').addClass('current-day');
 
     });
   </script>
