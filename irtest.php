@@ -10,7 +10,9 @@ $con = new mysqli($host, $user, $password, $dbname);
 
 $objArray = array();
 
-echo date("w")+1;
+$dayNumber = date("w")+1;
+
+echo 'Current day #' . $dayNumber . '<br>';
 
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
