@@ -10,6 +10,8 @@ $con = new mysqli($host, $user, $password, $dbname);
 
 $objArray = array();
 
+echo date("w")+1;
+
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
 }
@@ -120,21 +122,21 @@ else {
         echo "Location Name: " . $objArray[$i]->getName() ."<br>";
         echo "Location ID: " . $objArray[$i]->getId() ."<br>";
         echo "Current status: " . $objArray[$i]->status() ."<br>";
-        for ($x = 1; $x < 8; $x++  ){
+        for ($x = 1; $x < 7; $x++  ){
             $this20 = $objArray[$i]->getopnTime($x,"brkfst");
             if( $this20 != Null){
                 echo "breakfast " . $x . " : ". $objArray[$i]->getopnTime($x,"brkfst") ."<br>";
             }
         }
 
-        for ($x = 1; $x < 8; $x++  ){
+        for ($x = 1; $x < 7; $x++  ){
             $this20 = $objArray[$i]->getopnTime($x,"lnch");
             if( $this20 != Null){
                 echo "Lunch " . $x . " : ". $objArray[$i]->getopnTime($x,"lnch") ."<br>";
             }
         }
 
-        for ($x = 1; $x < 8; $x++  ){
+        for ($x = 1; $x < 7; $x++  ){
             $this20 = $objArray[$i]->getopnTime($x,"dnnr");
             if( $this20 != Null){
                 echo "Dinner " . $x . " : ". $objArray[$i]->getopnTime($x,"dnnr") ."<br>";
