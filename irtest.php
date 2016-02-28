@@ -69,8 +69,8 @@ else {
     include 'pullData.php';
 
     echo '<div class="container"><div style="text-align: center;"><div class="currently z-depth-1 green">' . $currently . '</div></div><div class="section"><ul class="flex-container">';
-
-    for($i = 0; $i < 3; $i++){
+    $max = sizeof($objArray);
+    for($i = 0; $i < ($max-1); $i++){
         $imageClass = "imageClass-" . $objArray[$i]->getId();
         echo "      <li class=\"flex-item card\">\n";
         echo "        <div class=\"card-status " . $objArray[$i]->status() . "\">". $objArray[$i]->status() ."</div>\n";
@@ -104,6 +104,7 @@ else {
     }
 }
 
+include 'footer.php';
 ?>
 </body>
 </html>
