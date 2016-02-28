@@ -26,8 +26,10 @@ $con = new mysqli($host, $user, $password, $dbname);
 $objArray = array();
 
 $dayNumber = date("w")+1;
-$lunchStart = new DateTime("10:45:00");
-$dinnerStart = new DateTime("4:45:00");
+$lunchStart = new DateTime("today");
+$lunchStart->setTime(10,45);
+$dinnerStart = new DateTime("today");
+$dinnerStart->setTime(16,45);
 $nowTime = new DateTime("now");
 $currentMeal = "Lunch";
 
