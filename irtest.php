@@ -102,6 +102,7 @@ else {
         echo "        </div>\n";
         echo "      </li>";
     }
+    echo "</ul></div></div>";
 }
 
 include 'footer.php';
