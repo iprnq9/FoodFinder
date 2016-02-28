@@ -249,8 +249,7 @@
               <td>7:30pm</td>
             </tr>
           </table>
-          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
-        </div>
+          </div>
       </li>
       <li class="flex-item card">
         <div class="card-status open">OPEN</div>
@@ -273,8 +272,7 @@
               <td>4:30pm</td>
             </tr>
           </table>
-          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
-        </div>
+          </div>
       </li>
       <li class="flex-item card">
         <div class="card-status open">OPEN</div>
@@ -297,8 +295,7 @@
               <td>3:30pm</td>
             </tr>
           </table>
-          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
-        </div>
+          </div>
       </li>
       <li class="flex-item card">
         <div class="card-status open">OPEN</div>
@@ -321,8 +318,7 @@
               <td>2:30pm</td>
             </tr>
           </table>
-          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
-        </div>
+          </div>
       </li>
       </ul>
 
