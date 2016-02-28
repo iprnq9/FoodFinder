@@ -25,6 +25,11 @@ else {
         echo "Location Name: " . $objArray[$i]->getName() ."<br>";
         echo "Location ID: " . $objArray[$i]->getId() ."<br>";
         echo "Current status: " . $objArray[$i]->status() ."<br>";
+        echo "<ul>";
+            echo "<li>" . "Breakfast Open: " . $objArray[$i]->getopnTime($dayNumber, "brkfst") . "</li>";
+            echo "<li>" . "Lunch Open: " . $objArray[$i]->getopnTime($dayNumber, "lnch") . "</li>";
+            echo "<li>" . "Dinner Open: " . $objArray[$i]->getopnTime($dayNumber, "dnnr") . "</li>";
+        echo "</ul>";
     }
 }
 
