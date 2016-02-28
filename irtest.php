@@ -26,9 +26,30 @@ $con = new mysqli($host, $user, $password, $dbname);
 $objArray = array();
 
 $dayNumber = date("w")+1;
-$currently = date("l, g:sa");
+$lunchStart = new DateTime("10:45:00");
+$dinnerStart = new DateTime("4:45:00");
+$nowTime = new DateTime("now");
+$currentMeal = "Lunch";
 
-echo 'Current day #' . $dayNumber . '<br>';
+if($dayNumber < 7 && $dayNumber > 1){
+    if ($nowTime->diff($dinnerStart) > 0){
+        $currentMeal = "Dinner";
+    }
+    else if ($lunchStart->diff($nowTime) > 0){
+        $currentMeal = "Breakfast";
+    }
+}
+
+else {
+    if ($nowTime->diff($dinnerStart) > 0){
+        $currentMeal = "Dinner";
+    }
+    else {
+        $currentMeal = "Brunch";
+    }
+}
+$currently = date("l, g:sa") . ': ' . $currentMeal;
+//echo 'Current day #' . $dayNumber . '<br>';
 
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
