@@ -51,10 +51,11 @@ else {
     }
 }
 $currently = date("l, g:sa") . ': ' . $currentMeal;
-echo $currentMeal . '<br>';
-echo $lunchStart . '<br>';
-echo $dinnerStart . '<br>';
-echo $nowTime . '<br>';
+echo $currentMeal . "<br>";
+echo $nowTime->format('Y-m-d H:i:s') . "<br>";
+echo $lunchStart->format('Y-m-d H:i:s') . "<br>";
+echo $dinnerStart->format('Y-m-d H:i:s') . "<br>";
+
 //echo 'Current day #' . $dayNumber . '<br>';
 
 if ($con->connect_errno) {
