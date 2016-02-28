@@ -96,12 +96,45 @@ else {
     }
 
 //CLOSETIMES
-    //NOT ADDED YET
+    //get brkfst close times
+    for($x=0; $x < $count; $x++){
+        $curid = $objArray[$x]->getId();
+        for ($y = 1; $y < 7; $y++  ){
+            $closetime = $con->query("SELECT closetime FROM breakfast WHERE id=$curid AND day =$y");
+            $row_cnt = $closetime->num_rows;
+            if($row_cnt > 0){
+                $closetime = $con->query("SELECT closetime FROM breakfast WHERE id=$curid AND day =$y")->fetch_object()->closetime;
+                $objArray[$x]->setclsTime($y,"brkfst",$closetime);
+            }
+        }
+    }
+
+    //get lunch close times
+    for($x=0; $x < $count; $x++){
+        $curid = $objArray[$x]->getId();
+        for ($y = 1; $y < 7; $y++  ){
+            $closetime = $con->query("SELECT closetime FROM lunch WHERE id=$curid AND day =$y");
+            $row_cnt = $closetime->num_rows;
+            if($row_cnt > 0){
+                $closetime = $con->query("SELECT closetime FROM lunch WHERE id=$curid AND day =$y")->fetch_object()->closetime;
+                $objArray[$x]->setclsTime($y,"lnch",$closetime);
+            }
+        }
+    }
 
 
-
-
-
+    //get dinner close times
+    for($x=0; $x < $count; $x++){
+        $curid = $objArray[$x]->getId();
+        for ($y = 1; $y < 7; $y++  ){
+            $closetime = $con->query("SELECT closetime FROM dinner WHERE id=$curid AND day =$y");
+            $row_cnt = $closetime->num_rows;
+            if($row_cnt > 0){
+                $closetime = $con->query("SELECT closetime FROM dinner WHERE id=$curid AND day =$y")->fetch_object()->closetime;
+                $objArray[$x]->setclsTime($y,"dnnr",$closetime);
+            }
+        }
+    }
 
 
 
