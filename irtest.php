@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+<title>S&T Dining | FoodFinder</title>
+
+<!-- CSS  -->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="custom.css" rel="stylesheet">
+<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<script type="text/javascript" src="js/moment.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
+
 <body>
 <?php
 include 'food-finderprj.php';
@@ -21,15 +36,10 @@ if ($con->connect_errno) {
 else {
     include 'pullData.php';
 
+    echo '<div class="container"><div style="text-align: center;"><div class="currently z-depth-1 green"></div></div><div class="section"><ul class="flex-container">';
+
     for($i = 0; $i < 3; $i++){
-        echo "Location Name: " . $objArray[$i]->getName() ."<br>";
-        echo "Location ID: " . $objArray[$i]->getId() ."<br>";
-        echo "Current status: " . $objArray[$i]->status() ."<br>";
-        echo "<ul>";
-            echo "<li>" . "Breakfast Open: " . $objArray[$i]->getopnTime($dayNumber, "brkfst") . "</li>";
-            echo "<li>" . "Lunch Open: " . $objArray[$i]->getopnTime($dayNumber, "lnch") . "</li>";
-            echo "<li>" . "Dinner Open: " . $objArray[$i]->getopnTime($dayNumber, "dnnr") . "</li>";
-        echo "</ul>";
+
     }
 }
 
