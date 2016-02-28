@@ -26,6 +26,7 @@ $con = new mysqli($host, $user, $password, $dbname);
 $objArray = array();
 
 $dayNumber = date("w")+1;
+$currently = date("l, g:sa");
 
 echo 'Current day #' . $dayNumber . '<br>';
 
@@ -36,7 +37,7 @@ if ($con->connect_errno) {
 else {
     include 'pullData.php';
 
-    echo '<div class="container"><div style="text-align: center;"><div class="currently z-depth-1 green"></div></div><div class="section"><ul class="flex-container">';
+    echo '<div class="container"><div style="text-align: center;"><div class="currently z-depth-1 green">' . $currently . '</div></div><div class="section"><ul class="flex-container">';
 
     for($i = 0; $i < 3; $i++){
 
