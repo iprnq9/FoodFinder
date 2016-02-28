@@ -34,16 +34,16 @@ $nowTime = new DateTime("now");
 $currentMeal = "Lunch";
 
 if($dayNumber < 7 && $dayNumber > 1){
-    if ($nowTime->diff($dinnerStart) > 0){
+    if ($nowTime > $dinnerStart){
         $currentMeal = "Dinner";
     }
-    else if ($lunchStart->diff($nowTime) > 0){
+    else if ($lunchStart > $nowTime){
         $currentMeal = "Breakfast";
     }
 }
 
 else {
-    if ($nowTime->diff($dinnerStart) > 0){
+    if ($nowTime > $dinnerStart){
         $currentMeal = "Dinner";
     }
     else {
