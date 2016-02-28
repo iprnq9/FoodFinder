@@ -19,6 +19,8 @@
 <?php
 include 'food-finderprj.php';
 
+include 'header.php';
+
 include 'db-connect.php';
 
 $con = new mysqli($host, $user, $password, $dbname);
@@ -51,10 +53,11 @@ else {
     }
 }
 $currently = date("l, g:sa") . ': ' . $currentMeal;
-echo $currentMeal . "<br>";
-echo $nowTime->format('Y-m-d H:i:s') . "<br>";
-echo $lunchStart->format('Y-m-d H:i:s') . "<br>";
-echo $dinnerStart->format('Y-m-d H:i:s') . "<br>";
+
+//echo $currentMeal . "<br>";
+//echo $nowTime->format('Y-m-d H:i:s') . "<br>";
+//echo $lunchStart->format('Y-m-d H:i:s') . "<br>";
+//echo $dinnerStart->format('Y-m-d H:i:s') . "<br>";
 
 //echo 'Current day #' . $dayNumber . '<br>';
 
@@ -68,7 +71,36 @@ else {
     echo '<div class="container"><div style="text-align: center;"><div class="currently z-depth-1 green">' . $currently . '</div></div><div class="section"><ul class="flex-container">';
 
     for($i = 0; $i < 3; $i++){
-
+        $imageClass = "imageClass-" . $objArray[$i]->getId();
+        echo "      <li class=\"flex-item card\">\n";
+        echo "        <div class=\"card-status einsteins-status\"></div>\n";
+        echo "        <div class=\"card-image ". $imageClass . "\"></div>\n";
+        echo "        <div class=\"card-info\">\n";
+        echo "          <p class=\"card-title\">" . $objArray[$i]->getName() . "</p>\n";
+        echo "          <p class=\"card-subtitle\">A coffee shop serving delicious bagels and more.</p>\n";
+        echo "          <br>\n";
+        echo "          <p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>\n";
+        echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">\n";
+        echo "            <thead><tr>\n";
+        echo "              <th>Open</th>\n";
+        echo "              <th>-</th>\n";
+        echo "              <th>Closed</th>\n";
+        echo "            </tr></thead>\n";
+        echo "            <tr>\n";
+        echo "              <td>7:00am</td>\n";
+        echo "              <td>-</td>\n";
+        echo "              <td>12:00pm</td>\n";
+        echo "            </tr>\n";
+        echo "            <tr>\n";
+        echo "              <td>1:00pm</td>\n";
+        echo "              <td>-</td>\n";
+        echo "              <td>7:00pm</td>\n";
+        echo "            </tr>\n";
+        echo "            </table>\n";
+        echo "          </p>\n";
+        echo "          <div class=\"profile-button\"><a href=\"material-profile.php\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
+        echo "        </div>\n";
+        echo "      </li>";
     }
 }
 
