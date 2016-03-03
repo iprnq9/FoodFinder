@@ -53,7 +53,7 @@ class joeMinr{
             if ($chck = NULL){
                 return "closed";
             }
-            elseif($chck < $currentMin){
+            elseif($chck > $currentMin){
                 return "closed";
             }
             else{
