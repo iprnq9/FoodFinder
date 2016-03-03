@@ -142,7 +142,7 @@ else {
 
 //for testing
 $max = sizeof($objArray);
-for($i = 0; $i < ($max) ; $i++){
+/*for($i = 0; $i < ($max) ; $i++){
     echo "Location Name: " . $objArray[$i]->getName() ."<br>";
     echo "Location ID: " . $objArray[$i]->getId() ."<br>";
     echo "Current status: " . $objArray[$i]->status() ."<br>";
@@ -164,10 +164,16 @@ for($i = 0; $i < ($max) ; $i++){
             echo "Dinner " . $x . " : ". $objArray[$i]->getopnTime($x,"dnnr") ."<br>";
      }}
 
-}
+}*/
 
-
-
+    $x= 4;
+    echo "Location Name: " . $objArray[3]->getName() ."<br>";
+    echo "Location ID: " . $objArray[3]->getId() ."<br>";
+    echo "Lunch " . $x . " : ". $objArray[3]->getopnTime($x,"lnch") ."<br>";
+    echo "Lunch close" . $x . " : ". $objArray[3]->getclsTime($x,"lnch") ."<br>";
+    echo "Dinner " . $x . " : ". $objArray[3]->getopnTime($x,"dnnr") ."<br>";
+    echo "Dinner close" . $x . " : ". $objArray[3]->getclsTime($x,"dnnr") ."<br>";
+    echo "Current status: " . $objArray[3]->status() ."<br>";
 
 }
 ?>
