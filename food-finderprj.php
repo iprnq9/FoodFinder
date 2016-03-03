@@ -1,6 +1,6 @@
 <?php
 class joeMinr{
- 
+
     protected $name;
     protected $locId; //needed for queries
 	protected $opntme = array(array()); /*container for the opening times*/
@@ -64,10 +64,10 @@ class joeMinr{
                     return "open";
                 }
             }
-        
+
         }
         elseif ($currentMin >600 && $currentMin <= 660){/*check brkfst and lnch*/
-            
+
             if($open1 != NULL){
                 if($cls1 > $currentMin){
                     if($cls1-$currentMin <= 30){
@@ -126,7 +126,7 @@ class joeMinr{
             else{
                 return "closed";
             }
-        
+
         }
         else{
             return "closed";
@@ -155,7 +155,7 @@ class joeMinr{
     }
 
 }
-/* create tj object 
+/* create tj object
 $tj = new joeMinr;
 $tj->setName("Thomas Jefferson");
 for($x=0; $x <= 7; $x++){
@@ -195,7 +195,6 @@ echo "thursday dinner close:   " . $tj->getclsTime(6,"dnnr") ."<br>";
 echo "current server time" . date('h:i') ."<br>";
 echo $var . "<br>";
 echo $tj->status()
-
+*/
 
 ?>
-    

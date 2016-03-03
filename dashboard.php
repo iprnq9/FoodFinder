@@ -18,7 +18,9 @@
 </head>
 <body style="background-color: #eeeeee;zoom: 75%;">
 
-<div style="text-align: center;"><div class="currently z-depth-1 green"></div></div>
+<div style="text-align: center;">
+  <div class="currently z-depth-1 green"></div>
+</div>
 
 <ul class="flex-container">
       <li class="flex-item card">
@@ -329,6 +331,7 @@
 
   <script>
     $(".currently").text("Monday" + ", " + "10:05am" + ": " + "Breakfast");
+    $(".currently").append("  <img src=\"images/logo-icon.png\" alt=\"FoodFinder logo image\" style=\"vertical-align: middle;\"/>&nbsp;Food Finder");
   </script>
 
 

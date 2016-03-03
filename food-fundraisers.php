@@ -20,6 +20,10 @@
 
   <?php include 'header.php' ?>
 
+  <script>
+    $("li.fundraisers").addClass("active");
+  </script>
+
   <div class="container">
     <div style="text-align: center;"><div class="currently z-depth-1 green"></div></div>
     <div class="section">
