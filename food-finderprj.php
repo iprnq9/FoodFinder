@@ -122,6 +122,9 @@ class joeMinr{
                         return "open";
                     }
                 }
+                elseif($cls3 < $currentMin){
+                    return "closed";
+                }
             }
             else{
                 return "closed";
