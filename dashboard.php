@@ -18,7 +18,9 @@
 </head>
 <body style="background-color: #eeeeee;zoom: 75%;">
 
-<div style="text-align: center;"><div class="currently z-depth-1 green"></div></div>
+<div style="text-align: center;">
+  <div class="currently z-depth-1 green"></div>
+</div>
 
 <ul class="flex-container">
       <li class="flex-item card">
@@ -249,8 +251,7 @@
               <td>7:30pm</td>
             </tr>
           </table>
-          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
-        </div>
+          </div>
       </li>
       <li class="flex-item card">
         <div class="card-status open">OPEN</div>
@@ -273,8 +274,7 @@
               <td>4:30pm</td>
             </tr>
           </table>
-          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
-        </div>
+          </div>
       </li>
       <li class="flex-item card">
         <div class="card-status open">OPEN</div>
@@ -297,8 +297,7 @@
               <td>3:30pm</td>
             </tr>
           </table>
-          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
-        </div>
+          </div>
       </li>
       <li class="flex-item card">
         <div class="card-status open">OPEN</div>
@@ -321,8 +320,7 @@
               <td>2:30pm</td>
             </tr>
           </table>
-          <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
-        </div>
+          </div>
       </li>
       </ul>
 
@@ -333,6 +331,7 @@
 
   <script>
     $(".currently").text("Monday" + ", " + "10:05am" + ": " + "Breakfast");
+    $(".currently").append("  <img src=\"images/logo-icon.png\" alt=\"FoodFinder logo image\" style=\"vertical-align: middle;\"/>&nbsp;Food Finder");
   </script>
 
 

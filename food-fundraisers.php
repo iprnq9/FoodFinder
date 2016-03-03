@@ -20,6 +20,10 @@
 
   <?php include 'header.php' ?>
 
+  <script>
+    $("li.fundraisers").addClass("active");
+  </script>
+
   <div class="container">
     <div style="text-align: center;"><div class="currently z-depth-1 green"></div></div>
     <div class="section">
@@ -45,7 +49,6 @@
                 <td>7:30pm</td>
               </tr>
             </table>
-            <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
           </div>
         </li>
         <li class="flex-item card">
@@ -69,7 +72,6 @@
                 <td>4:30pm</td>
               </tr>
             </table>
-            <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
           </div>
         </li>
         <li class="flex-item card">
@@ -93,7 +95,6 @@
                 <td>3:30pm</td>
               </tr>
             </table>
-            <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
           </div>
         </li>
         <li class="flex-item card">
@@ -117,7 +118,6 @@
                 <td>2:30pm</td>
               </tr>
             </table>
-            <div class="profile-button"><a href="material-profile.php" class="waves-effect waves-light btn green center-align z-depth-2"><i class="material-icons left">person_pin</i>View Profile</a></div>
           </div>
         </li>
       </ul>

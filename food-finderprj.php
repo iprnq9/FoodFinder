@@ -1,6 +1,6 @@
 <?php
 class joeMinr{
- 
+
     protected $name;
     protected $locId; //needed for queries
 	protected $opntme = array(array()); /*container for the opening times*/
@@ -58,20 +58,20 @@ class joeMinr{
             }
             else{
                 if((($this->getclsTime($curday, "brkfst"))-$currentMin) <= 30 ){
-                    return "closing soon";
+                    return "closing-soon";
                 }
                 else{
-                    return "Open";
+                    return "open";
                 }
             }
-        
+
         }
         elseif ($currentMin >600 && $currentMin <= 660){/*check brkfst and lnch*/
-            
+
             if($open1 != NULL){
                 if($cls1 > $currentMin){
                     if($cls1-$currentMin <= 30){
-                        return "Closing soon";
+                        return "closing-soon";
                     }
                     else {
                         return "open";
@@ -81,7 +81,7 @@ class joeMinr{
             if($open2 != NULL){
                 if($cls2 > $currentMin){
                     if($cls2-$currentMin <= 30){
-                        return "Closing soon";
+                        return "closing-soon";
                     }
                     else {
                         return "open";
@@ -89,14 +89,14 @@ class joeMinr{
                 }
             }
             else{
-                return "Closed";
+                return "closed";
             }
         }
         elseif($currentMin > 660){/* gotta check em all bra*/
             if($open1 != NULL){
                 if($cls1 > $currentMin){
                     if($cls1-$currentMin <= 30){
-                        return "Closing soon";
+                        return "closing-soon";
                     }
                     else {
                         return "open";
@@ -106,7 +106,7 @@ class joeMinr{
             if($open2 != NULL){
                 if($cls2 > $currentMin){
                     if($cls2-$currentMin <= 30){
-                        return "Closing soon";
+                        return "closing-soon";
                     }
                     else {
                         return "open";
@@ -116,7 +116,7 @@ class joeMinr{
             if($open3 != NULL){
                 if($cls3 > $currentMin){
                     if($cls3-$currentMin <= 30){
-                        return "Closing soon";
+                        return "closing-soon";
                     }
                     else {
                         return "open";
@@ -124,12 +124,12 @@ class joeMinr{
                 }
             }
             else{
-                return "Closed";
+                return "closed";
             }
-        
+
         }
         else{
-            return "Closed";
+            return "closed";
         }
     }
 
@@ -155,7 +155,7 @@ class joeMinr{
     }
 
 }
-/* create tj object 
+/* create tj object
 $tj = new joeMinr;
 $tj->setName("Thomas Jefferson");
 for($x=0; $x <= 7; $x++){
@@ -195,7 +195,6 @@ echo "thursday dinner close:   " . $tj->getclsTime(6,"dnnr") ."<br>";
 echo "current server time" . date('h:i') ."<br>";
 echo $var . "<br>";
 echo $tj->status()
-
+*/
 
 ?>
-    

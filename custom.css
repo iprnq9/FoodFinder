@@ -246,7 +246,7 @@ nav {
 
 /*---------------Location Classes for Images---------------------*/
 
-.einsteins {
+.imageClass-1 {
   background-image: url(images/bagels2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -270,14 +270,14 @@ nav {
   background-repeat: no-repeat;
 }
 
-.rustic {
+.imageClass-2 {
   background-image: url(images/rustic2-2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.miner-break {
+.imageClass-5 {
   background-image: url(images/coffee.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -291,7 +291,7 @@ nav {
   background-position: center center;
 }
 
-.mondo {
+.imageClass-3 {
   background-image: url(images/sandwich.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -305,14 +305,14 @@ nav {
   background-position: center center;
 }
 
-.havener {
+.imageClass-4 {
   background-image: url(images/havener.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.tj {
+.imageClass-6 {
   background-image: url(images/buffet.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -404,4 +404,12 @@ hr {
 .minerbytes {
   height: 100%;
   width: 100%
+}
+
+.green2 {
+  background-color: #308446;
+}
+
+.backgroundColor {
+  background-color: #575757;
 }

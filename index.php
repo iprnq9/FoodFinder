@@ -1,3 +1,4 @@
+<!--Thanks to Russell Bell for his help-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
   <script type="text/javascript" src="js/moment.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
-
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body style="background-color: #eeeeee;">
 
@@ -99,7 +100,6 @@
 
   <?php include 'footer.php' ?>
   <!--  Scripts-->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 
