@@ -22,7 +22,7 @@
   <div class="container">
     <div class="section">
       <div class="row" style="text-align: center;">
-        <div class="profile-image einsteins"></div>
+        <div class="profile-image imageClass-1"></div>
         <div class="profile-name green z-depth-2">Einstein Bros Bagels</div>
         <ul class="flex-container">
           <li class="flex-item-wide z-depth-2">
