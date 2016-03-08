@@ -20,8 +20,8 @@
   <div class="container">
     <div class="section">
       <div class="large card center-align">
-        <h1>Error 404<br>No food found here. :/</h1>
-        <h3>That was our bad probably.<br>Make sure, though, that you typed the URL correctly. :)</h3><br>
+        <h1 class="heading">Error 404<br>No food found here.<br>¯\_(ツ)_/¯</h1>
+        <h3>That was probably our fault.<br><br>Make sure that you typed the URL correctly. :]</h3><br>
         <div class="center-align"><a href="index.php" class="waves-effect waves-light btn-large green center-align z-depth-2"><i class="material-icons left">home</i>Homepage</a></div>
       </div>
     </div>

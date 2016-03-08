@@ -69,46 +69,215 @@ if(isset($_POST['update'])) {
 else
 {
     ?>
-    <h4 class="heading center-align">Add New Location</h4>
+    <h4 class="heading center-align"><i class="material-icons small">add_location</i>Add New Location</h4>
     <div class="row">
-        <form class="col s12 m12 l8 push-l2" method = "post" action = "<?php $_PHP_SELF ?>">
+        <form class="col s12 m12 l10 push-l1" method = "post" action = "<?php $_PHP_SELF ?>">
             <ul class="collapsible popout" data-collapsible="expandable">
                 <li>
-                    <div class="collapsible-header active"><i class="material-icons">store</i>Basic Information</div>
-                    <div class="collapsible-body">
+                    <div class="collapsible-header green active"><i class="material-icons">store</i>Basic Information</div>
+                    <div class="collapsible-body grey darken-4 green-text">
                         <div class="row" style="padding: 10px;">
                             <div class="input-field col s12 m12">
-                                <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">
+                                <i class="material-icons prefix">info_outline</i>
+                                <input placeholder='Ex: "Einstein Bros Bagels"' id="location_name" type="text" length="45" class="validate">
                                 <label for="location_name">Dining Location Name</label>
                             </div>
                             <div class="input-field col s12 m12">
-                                <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">
+                                <i class="material-icons prefix">place</i>
+                                <input placeholder='Ex: "Havener Center"' id="location_location" type="text" length="45" class="validate">
                                 <label for="location_location">Location</label>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">schedule</i>Weekly Hours</div>
-                    <div class="collapsible-body">
-                        <div class="row" style="padding: 10px;">
-                            <div class="input-field col s12 m12 l6">
-                                <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">
-                                <label for="location_name">Dining Location Name</label>
+                    <div class="collapsible-header green"><i class="material-icons">schedule</i>Weekly Hours</div>
+                    <div class="collapsible-body grey darken-4" style="padding: 10px;">
+                    <ul class="collapsible" data-collapsible="expandable">
+                        <li>
+                            <div class="collapsible-header active green lighten-2"><i class="material-icons">today</i>Sunday</div>
+                            <div class="collapsible-body white" style="padding: 10px;">
+                                <div class="row">
+                                    <form class="input-field">
+                                    <div class="input-field col s12 m6 l2">
+                                        <select>
+                                            <option value="" disabled selected>Select</option>
+                                            <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <label>Breakfast Open</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                        <select>
+                                            <option value="" disabled selected>Select</option>
+                                            <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <label>Breakfast Close</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                        <select>
+                                            <option value="" disabled selected>Select</option>
+                                            <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <label>Lunch Open</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                        <select>
+                                            <option value="" disabled selected>Select</option>
+                                            <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <label>Lunch Close</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                        <select>
+                                            <option value="" disabled selected>Select</option>
+                                            <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <label>Dinner Open</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                        <select>
+                                            <option value="" disabled selected>Select</option>
+                                            <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <label>Dinner Close</label>
+                                    </div>
+                                </form>
+                                </div>
                             </div>
-                            <div class="input-field col s12 m12 l6">
-                                <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">
-                                <label for="location_location">Location</label>
+                        </li>
+                        <li>
+                            <div class="collapsible-header green lighten-2"><i class="material-icons">today</i>Monday</div>
+                            <div class="collapsible-body white" style="padding: 10px;">
+                                <div class="row">
+                                    <form class="input-field">
+                                        <div class="input-field col s12 m6 l2">
+                                            <select>
+                                                <option value="" disabled selected>Select</option>
+                                                <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                            <label>Breakfast Open</label>
+                                        </div>
+                                        <div class="input-field col s12 m6 l2">
+                                            <select>
+                                                <option value="" disabled selected>Select</option>
+                                                <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                            <label>Breakfast Close</label>
+                                        </div>
+                                        <div class="input-field col s12 m6 l2">
+                                            <select>
+                                                <option value="" disabled selected>Select</option>
+                                                <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                            <label>Lunch Open</label>
+                                        </div>
+                                        <div class="input-field col s12 m6 l2">
+                                            <select>
+                                                <option value="" disabled selected>Select</option>
+                                                <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                            <label>Lunch Close</label>
+                                        </div>
+                                        <div class="input-field col s12 m6 l2">
+                                            <select>
+                                                <option value="" disabled selected>Select</option>
+                                                <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                            <label>Dinner Open</label>
+                                        </div>
+                                        <div class="input-field col s12 m6 l2">
+                                            <select>
+                                                <option value="" disabled selected>Select</option>
+                                                <?php
+                                                for ($i=5; $i<24; $i++) {
+                                                    for ($j=0; $j < 2; $j++) {
+                                                        echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+                                            <label>Dinner Close</label>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
+                        </li>
+
+                    <ul>
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header slab"><i class="material-icons">assignment</i>Profile Card #1</div>
-                    <div class="collapsible-body" style="padding-top: 10px;">
+                    <div class="collapsible-header green slab"><i class="material-icons">description</i>Profile Card #1</div>
+                    <div class="collapsible-body grey darken-4 green-text" style="padding-top: 10px;">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">label_outline</i>
-                            <input placeholder="Darn Good Coffee" id="par1_heading" type="text" length="45" class="validate">
+                            <input placeholder='Ex: "Darn Good Coffee"' id="par1_heading" type="text" length="45" class="validate">
                             <label for="par1_heading">Paragraph 1 Heading</label>
                         </div>
                         <div class="row" style="padding: 10px">
@@ -122,7 +291,7 @@ else
                             <div class="btn green lighten-1">
                                 <span>Upload</span>
                                 <input type="file">
-                                <i class="material-icons right">open_in_browser</i>
+                                <i class="material-icons right">add_a_photo</i>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Must use .JPG or .PNG">
@@ -130,7 +299,7 @@ else
                         </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">note_add</i>Profile Card #2</div>
+                    <div class="collapsible-header"><i class="material-icons">web</i>Profile Card #2</div>
                     <div class="collapsible-body">
                         <div class="row" style="margin-top: 15px;padding: 10px;">
                             <div class="input-field col s12 m8">
@@ -192,6 +361,12 @@ else
 include 'footer.php';
 
 ?>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
 
 </body>
 </html>
