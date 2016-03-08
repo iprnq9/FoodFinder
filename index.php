@@ -55,7 +55,7 @@ else {
         $currentMeal = "Brunch";
     }
 }
-$currently = date("l, g:sa") . ': ' . $currentMeal;
+$currently = date("l, g:ia") . ': ' . $currentMeal;
 
 //echo $currentMeal . "<br>";
 //echo $nowTime->format('Y-m-d H:i:s') . "<br>";
