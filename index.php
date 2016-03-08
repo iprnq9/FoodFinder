@@ -24,6 +24,10 @@ include 'food-finderprj.php';
 
 include 'header.php';
 
+<script>
+  $("li.dining").addClass("active");
+</script>
+
 include 'db-connect.php';
 
 $con = new mysqli($host, $user, $password, $dbname);

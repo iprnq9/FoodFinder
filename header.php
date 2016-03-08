@@ -1,6 +1,6 @@
 <div class="navbar-fixed">
   <nav class="green lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo waves-effect waves-light"><img src="images/logo-icon.png" alt="FoodFinder logo image" style="vertical-align: middle;"/>&nbsp;Food Finder</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo waves-effect waves-light"><img src="images/logo-icon.png" alt="FoodFinder logo image" style="vertical-align: middle;"/>&nbsp;FoodFinder</a>
       <ul class="right hide-on-med-and-down">
         <li class="dining"><a href="index.php" class="waves-effect waves-light"><i class="material-icons left">local_dining</i>S&T Dining</a></li>
         <li class="fundraisers"><a href="food-fundraisers.php" class="waves-effect waves-light"><i class="material-icons left">local_atm</i>Food Fundraisers</a></li>

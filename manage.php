@@ -30,19 +30,19 @@ include 'header.php'; ?>
 
     <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
         <div class="col s12 center-align">
-            <a class="btn-large tooltipped" style="vertical-align: ;" data-position="bottom" data-delay="50" data-tooltip="Update the hours of location, a location's text, location, description, or other information found on the site."><i class="material-icons left">create</i>Update a Location's Information</a>
+            <a class="btn-large tooltipped" href="update-location.php" style="vertical-align: ;" data-position="bottom" data-delay="50" data-tooltip="Update the hours of location, a location's text, location, description, or other information found on the site."><i class="material-icons left">create</i>Update a Location's Information</a>
         </div>
     </div>
 
     <div class="row" style="margin-top: 70px; margin-bottom: 10px;">
         <div class="col s12 center-align">
-            <a class="btn-large tooltipped" style="vertical-align: ;" data-position="bottom" data-delay="50" data-tooltip="Add a new location to the list of S&T Dining options. You'll be prompted to input all of the following: weekly hours, location, short description, four cover photos, three paragraphs of text, and a downloadable menu."><i class="material-icons left">add_location</i>Add a New Location</a>
+            <a class="btn-large tooltipped" href="add-location.php" style="vertical-align: ;" data-position="bottom" data-delay="50" data-tooltip="Add a new location to the list of S&T Dining options. You'll be prompted to input all of the following: weekly hours, location, short description, four cover photos, three paragraphs of text, and a downloadable menu."><i class="material-icons left">add_location</i>Add a New Location</a>
         </div>
     </div>
 
     <div class="row" style="margin-top: 70px; margin-bottom: 80px;">
         <div class="col s12 center-align">
-            <a class="btn-large tooltipped" style="vertical-align: ;" data-position="bottom" data-delay="50" data-tooltip="Submit a request to for FoodFinder to display your organization's food fundraiser. Be aware that confirmation of the fundraiser's credibility may take up to one week."><i class="material-icons left">local_atm</i>Add Your Organization's Food Fundraiser</a>
+            <a class="btn-large tooltipped" href="add-fundraiser.php" style="vertical-align: ;" data-position="bottom" data-delay="50" data-tooltip="Submit a request to for FoodFinder to display your organization's food fundraiser. Be aware that confirmation of the fundraiser's credibility may take up to one week."><i class="material-icons left">local_atm</i>Add Your Organization's Food Fundraiser</a>
         </div>
     </div>
 </div>

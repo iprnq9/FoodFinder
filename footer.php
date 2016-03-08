@@ -6,4 +6,10 @@
       </div>
     </div>
   </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2015-2016 | Made by the coolest kids at Missouri S&T
+      <a class="grey-text text-lighten-4 right" target="_blank" href="http://bebetter.mst.edu/">Missouri S&T ITRSS</a>
+    </div>
+  </div>
 </footer>
