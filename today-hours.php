@@ -72,23 +72,13 @@ else {
         echo "              <th>-</th>\n";
         echo "              <th>Closed</th>\n";
         echo "            </tr></thead>\n";
-        echo "            <tr>\n";
-        echo "              <td>7:00am</td>\n";
-        echo "              <td>-</td>\n";
-        echo "              <td>12:00pm</td>\n";
-        echo "            </tr>\n";
-        echo "            <tr>\n";
-        echo "              <td>1:00pm</td>\n";
-        echo "              <td>-</td>\n";
-        echo "              <td>7:00pm</td>\n";
-        echo "            </tr>\n";
-        echo "            </table>\n";
-        echo "          </p>";
-        echo '<li>Name: ' . $objArray[$k]->getName() . '</li>';
+
         for ($i = 0; $i < ($numOpenCloseTimes); $i++) {
             echo '<tr>\n<td>' . $openTimes[$i] . '</td>\n<td>-</td>\n<td>' . $closeTimes[$i] . '</td></tr>';
         }
-        echo '</ul>';
+
+        echo "            </table>\n";
+        echo "          </p>";
     }
 
 }
