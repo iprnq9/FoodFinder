@@ -72,11 +72,8 @@ else {
     include 'pullData.php';
 
     $max = sizeof($objArray);
-    $time = $objArray[0]->getopnTime(2, brkfst);
 
-    $openTime1 = new DateTime($time);
-    echo $openTime1->format('g:ia') . '<br><br>';
-
+    echo strtotime($objArray[0]->getopnTime(2, brkfst) . " seconds"), "\n";
 
     echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
     echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
