@@ -77,9 +77,23 @@ else {
     $openTime0 = $openTime0*60+$sinceEpoch;
     $openTime0 = date('H:i', $openTime0);
 
+    $closeTime0 = $objArray[0]->getclsTime(2, brkfst);
+    $closeTime0 = $closeTime0*60+$sinceEpoch;
+    $closeTime0 = date('H:i', $closeTime0);
 
+    $mealArray = array("brkfst", "lnch", "dnnr");
+    $numOfMeals = sizeof($mealArray);
 
-    echo '4: ' . $openTime0 . '<br><br>';
+    for($i = 0; $i < $numOfMeals - 1; $i++){
+        $openTime0 = $objArray[0]->getopnTime(2, $mealArray[$i]);
+        $openTime0 = $openTime0*60+$sinceEpoch;
+        $openTime0 = date('H:i', $openTime0);
+        if ($openTime0 !== NULL)
+            echo $openTime0 . '<br><br>';
+    }
+
+    //echo 'Open: '  . $openTime0  . '<br><br>';
+    // 'Close: ' . $closeTime0 . '<br><br>';
 
     //echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
     //echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
