@@ -95,6 +95,10 @@ else {
     //echo 'Open: '  . $openTime0  . '<br><br>';
     // 'Close: ' . $closeTime0 . '<br><br>';
 
+    echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
+    echo $objArray[0]->getopnTime(2, lnch) . '<br><br>';
+    echo $objArray[0]->getopnTime(2, dnnr) . '<br><br>';
+
     //echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
     //echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
     //echo $objArray[0]->getopnTime(2, lnch) . '<br><br>';
