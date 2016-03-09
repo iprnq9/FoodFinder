@@ -73,8 +73,14 @@ else {
 
     $max = sizeof($objArray);
     $sinceEpoch = strtotime("yesterday");
-    $openTime1 = strtotime(($objArray[0]->getopnTime(2, brkfst))*60+$sinceEpoch . " seconds");
+    $openTime0 = $objArray[0]->getopnTime(2, brkfst);
+    $openTime01 = $openTime0*60+$sinceEpoch;
+    $openTime1 = strtotime($openTime01. " seconds");
     $openTime2 = date('H:i', $openTime1);
+
+    echo $openTime0 . '<br><br>';
+
+    echo $openTime01 . '<br><br>';
 
     echo $openTime1 . '<br><br>';
 
