@@ -83,8 +83,8 @@ else {
             }
         }
 
-        echo $openTimes[0] . ':' . $openTimes[1] . ":" . $openTimes[2] . "<br><br>";
-        echo $closeTimes[0] . ':' . $closeTimes[1] . ":" . $closeTimes[2] . "<br><br>";
+        //echo $openTimes[0] . ':' . $openTimes[1] . ":" . $openTimes[2] . "<br><br>";
+        //echo $closeTimes[0] . ':' . $closeTimes[1] . ":" . $closeTimes[2] . "<br><br>";
 
         $numOpenCloseTimes = sizeof($openTimes);
 
