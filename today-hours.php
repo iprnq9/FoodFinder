@@ -74,10 +74,9 @@ else {
     $max = sizeof($objArray);
     $time = $objArray[0]->getopnTime(2, brkfst);
 
-    $timeHrs = intval($time / 60);
-    $timeMin = $time % 60;
+    $openTime1 = new DateTime($time);
+    echo $openTime1->format('g:ia') . '<br><br>';
 
-    echo $timeHrs . ':' . $timeMin . '<br><br>';
 
     echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
     echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
