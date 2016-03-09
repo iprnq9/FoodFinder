@@ -84,10 +84,10 @@ else {
     $mealArray = array("brkfst", "lnch", "dnnr");
     $numOfMeals = sizeof($mealArray);
 
-    $openTimes = array();
-    $closeTimes = array();
+    $openTimes = array(NULL, NULL, NULL);
+    $closeTimes = array(NULL, NULL, NULL);
 
-    for($i = 0; $i < $numOfMeals - 1; $i++){
+    for($i = 0; $i < ($numOfMeals - 1); $i++){
         $openTime0 = $objArray[0]->getopnTime(2, $mealArray[$i]);
         if ($openTime0 !== NULL){
             $openTime0 = $openTime0*60+$sinceEpoch;
@@ -106,14 +106,14 @@ else {
 
     $numOpenCloseTimes = sizeof($openTimes);
 
-    for($i = 0; $i < $numOpenCloseTimes - 1; $i++){
+    for($i = 0; $i < ($numOpenCloseTimes - 1); $i++){
         echo $openTimes[$i] . ' : ' . $closeTimes[$i] . '<br><br>';
     }
 
-    echo $numOfMeals . '<br><br>';
-    echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
-    echo $objArray[0]->getopnTime(2, lnch) . '<br><br>';
-    echo $objArray[0]->getopnTime(2, dnnr) . '<br><br>';
+//    echo $numOfMeals . '<br><br>';
+//    echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
+//    echo $objArray[0]->getopnTime(2, lnch) . '<br><br>';
+//    echo $objArray[0]->getopnTime(2, dnnr) . '<br><br>';
 
 }
 
