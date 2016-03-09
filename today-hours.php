@@ -71,15 +71,7 @@ if ($con->connect_errno) {
 else {
     include 'pullData.php';
 
-    $max = sizeof($objArray);
     $sinceEpoch = strtotime("today");
-/*    $openTime0 = $objArray[0]->getopnTime(2, brkfst);
-    $openTime0 = $openTime0*60+$sinceEpoch;
-    $openTime0 = date('H:i', $openTime0);
-
-    $closeTime0 = $objArray[0]->getclsTime(2, brkfst);
-    $closeTime0 = $closeTime0*60+$sinceEpoch;
-    $closeTime0 = date('H:i', $closeTime0);*/
 
     $mealArray = array("brkfst", "lnch", "dnnr");
     $numOfMeals = sizeof($mealArray);
@@ -87,33 +79,33 @@ else {
     $openTimes = array();
     $closeTimes = array();
 
-    for($i = 0; $i < ($numOfMeals); $i++){
-        $openTime0 = $objArray[0]->getopnTime(2, $mealArray[$i]);
-        if ($openTime0 !== NULL){
-            $openTime0 = $openTime0*60+$sinceEpoch;
-            $openTime0 = date('H:i', $openTime0);
-            $openTimes[$i] = $openTime0;
+    $max = sizeof($objArray);
+    for ($k = 0; $k < ($max - 1); $k++){
+        for ($i = 0; $i < ($numOfMeals); $i++) {
+            $openTime0 = $objArray[$k]->getopnTime($dayNumber, $mealArray[$i]);
+            if ($openTime0 !== NULL) {
+                $openTime0 = $openTime0 * 60 + $sinceEpoch;
+                $openTime0 = date('H:i', $openTime0);
+                $openTimes[$i] = $openTime0;
+            }
+
+            $closeTime0 = $objArray[$k]->getclsTime($dayNumber, $mealArray[$i]);
+            if ($closeTime0 !== NULL) {
+                $closeTime0 = $closeTime0 * 60 + $sinceEpoch;
+                $closeTime0 = date('H:i', $closeTime0);
+                $closeTimes[$i] = $closeTime0;
+            }
+
         }
 
-        $closeTime0 = $objArray[0]->getclsTime(2, $mealArray[$i]);
-        if($closeTime0 !== NULL){
-            $closeTime0 = $closeTime0*60+$sinceEpoch;
-            $closeTime0 = date('H:i', $closeTime0);
-            $closeTimes[$i] = $closeTime0;
+        $numOpenCloseTimes = sizeof($openTimes);
+        echo '<ul>';
+        echo '<li>Name: ' . $objArray[$k]->getName() . '</li>';
+        for ($i = 0; $i < ($numOpenCloseTimes); $i++) {
+            echo '<li>' . $openTimes[$i] . ' : ' . $closeTimes[$i] . '</li>';
         }
-
+        echo '</ul>';
     }
-
-    $numOpenCloseTimes = sizeof($openTimes);
-
-    for($i = 0; $i < ($numOpenCloseTimes); $i++){
-        echo $openTimes[$i] . ' : ' . $closeTimes[$i] . '<br><br>';
-    }
-
-//    echo $numOfMeals . '<br><br>';
-//    echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
-//    echo $objArray[0]->getopnTime(2, lnch) . '<br><br>';
-//    echo $objArray[0]->getopnTime(2, dnnr) . '<br><br>';
 
 }
 
