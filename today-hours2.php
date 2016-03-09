@@ -111,5 +111,10 @@ else {
 include 'footer.php';
 
 ?>
+
+<script>
+    $("li.dining").addClass("active");
+</script>
+
 </body>
 </html>
