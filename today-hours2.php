@@ -22,6 +22,8 @@
 <?php
 include 'food-finderprj.php';
 
+include 'header.php';
+
 include 'db-connect.php';
 
 $con = new mysqli($host, $user, $password, $dbname);
@@ -47,6 +49,14 @@ else {
 
     $max = sizeof($objArray);
     for ($k = 0; $k < ($max - 1); $k++){
+        $imageClass = "imageClass-" . $objArray[$k]->getId();
+        echo "      <li class=\"flex-item card\">\n";
+        echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">". $objArray[$k]->status() ."</div>\n";
+        echo "        <div class=\"card-image ". $imageClass . "\"></div>\n";
+        echo "        <div class=\"card-info\">\n";
+        echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
+        echo "          <p class=\"card-subtitle\">Description here...</p>\n";
+        echo "          <br>\n";
         for ($i = 0; $i < ($numOfMeals); $i++) {
             $openTime0 = $objArray[$k]->getopnTime($dayNumber, $mealArray[$i]);
             if ($openTime0 !== NULL) {
@@ -77,12 +87,16 @@ else {
         for ($i = 0; $i < ($numOpenCloseTimes); $i++) {
             echo '<tr><td>' . $openTimes[$i] . '</td><td>-</td><td>' . $closeTimes[$i] . '</td></tr>';
         }
-
         echo "            </table>";
         echo "          </p>";
+        echo "          <div class=\"profile-button\"><a href=\"material-profile.php\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
+        echo "        </div>\n";
+        echo "      </li>";
     }
-
+    echo "</ul></div></div>";
 }
+
+include 'footer.php';
 
 ?>
 </body>
