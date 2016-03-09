@@ -51,7 +51,7 @@ else {
             $openTime0 = $objArray[$k]->getopnTime($dayNumber, $mealArray[$i]);
             if ($openTime0 !== NULL) {
                 $openTime0 = $openTime0 * 60 + $sinceEpoch;
-                $openTime0 = date('H:ia', $openTime0);
+                $openTime0 = date('g:ia', $openTime0);
                 $openTimes[$i] = $openTime0;
             }
 
@@ -65,19 +65,20 @@ else {
         }
 
         $numOpenCloseTimes = sizeof($openTimes);
-        echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>\n";
-        echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">\n";
-        echo "            <thead><tr>\n";
-        echo "              <th>Open</th>\n";
-        echo "              <th>-</th>\n";
-        echo "              <th>Closed</th>\n";
-        echo "            </tr></thead>\n";
+
+        echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>";
+        echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">";
+        echo "            <thead><tr>";
+        echo "              <th>Open</th>";
+        echo "              <th>-</th>";
+        echo "              <th>Closed</th>";
+        echo "            </tr></thead>";
 
         for ($i = 0; $i < ($numOpenCloseTimes); $i++) {
-            echo '<tr>\n<td>' . $openTimes[$i] . '</td>\n<td>-</td>\n<td>' . $closeTimes[$i] . '</td></tr>';
+            echo '<tr><td>' . $openTimes[$i] . '</td><td>-</td><td>' . $closeTimes[$i] . '</td></tr>';
         }
 
-        echo "            </table>\n";
+        echo "            </table>";
         echo "          </p>";
     }
 
