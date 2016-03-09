@@ -63,14 +63,14 @@ else {
         echo "          <br>\n";
         for ($i = 0; $i < ($numOfMeals); $i++) {
             $openTime0 = $objArray[$k]->getopnTime($dayNumber, $mealArray[$i]);
-            if (!empty($openTime0)) {
+            if ($openTime0 != NULL) {
                 $openTime0 = $openTime0 * 60 + $sinceEpoch;
                 $openTime0 = date('g:ia', $openTime0);
                 $openTimes[$i] = $openTime0;
             }
 
             $closeTime0 = $objArray[$k]->getclsTime($dayNumber, $mealArray[$i]);
-            if (!empty($closeTime0)) {
+            if ($closeTime0 != NULL) {
                 $closeTime0 = $closeTime0 * 60 + $sinceEpoch;
                 $closeTime0 = date('g:ia', $closeTime0);
                 $closeTimes[$i] = $closeTime0;
