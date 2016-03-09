@@ -22,8 +22,6 @@
 <?php
 include 'food-finderprj.php';
 
-include 'header.php';
-
 include 'db-connect.php';
 
 $con = new mysqli($host, $user, $password, $dbname);
@@ -31,38 +29,6 @@ $con = new mysqli($host, $user, $password, $dbname);
 $objArray = array();
 
 $dayNumber = date("w")+1;
-$lunchStart = new DateTime("today");
-$lunchStart->setTime(10,45);
-$dinnerStart = new DateTime("today");
-$dinnerStart->setTime(16,45);
-$nowTime = new DateTime("now");
-$currentMeal = "Lunch";
-
-if($dayNumber < 7 && $dayNumber > 1){
-    if ($nowTime > $dinnerStart){
-        $currentMeal = "Dinner";
-    }
-    else if ($lunchStart > $nowTime){
-        $currentMeal = "Breakfast";
-    }
-}
-
-else {
-    if ($nowTime > $dinnerStart){
-        $currentMeal = "Dinner";
-    }
-    else {
-        $currentMeal = "Brunch";
-    }
-}
-$currently = date("l, g:ia") . ': ' . $currentMeal;
-
-//echo $currentMeal . "<br>";
-//echo $nowTime->format('Y-m-d H:i:s') . "<br>";
-//echo $lunchStart->format('Y-m-d H:i:s') . "<br>";
-//echo $dinnerStart->format('Y-m-d H:i:s') . "<br>";
-
-//echo 'Current day #' . $dayNumber . '<br>';
 
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
@@ -85,31 +51,48 @@ else {
             $openTime0 = $objArray[$k]->getopnTime($dayNumber, $mealArray[$i]);
             if ($openTime0 !== NULL) {
                 $openTime0 = $openTime0 * 60 + $sinceEpoch;
-                $openTime0 = date('H:i', $openTime0);
+                $openTime0 = date('H:ia', $openTime0);
                 $openTimes[$i] = $openTime0;
             }
 
             $closeTime0 = $objArray[$k]->getclsTime($dayNumber, $mealArray[$i]);
             if ($closeTime0 !== NULL) {
                 $closeTime0 = $closeTime0 * 60 + $sinceEpoch;
-                $closeTime0 = date('H:i', $closeTime0);
+                $closeTime0 = date('H:ia', $closeTime0);
                 $closeTimes[$i] = $closeTime0;
             }
 
         }
 
         $numOpenCloseTimes = sizeof($openTimes);
-        echo '<ul style="list-style-type: circle;">';
+        echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>\n";
+        echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">\n";
+        echo "            <thead><tr>\n";
+        echo "              <th>Open</th>\n";
+        echo "              <th>-</th>\n";
+        echo "              <th>Closed</th>\n";
+        echo "            </tr></thead>\n";
+        echo "            <tr>\n";
+        echo "              <td>7:00am</td>\n";
+        echo "              <td>-</td>\n";
+        echo "              <td>12:00pm</td>\n";
+        echo "            </tr>\n";
+        echo "            <tr>\n";
+        echo "              <td>1:00pm</td>\n";
+        echo "              <td>-</td>\n";
+        echo "              <td>7:00pm</td>\n";
+        echo "            </tr>\n";
+        echo "            </table>\n";
+        echo "          </p>";
         echo '<li>Name: ' . $objArray[$k]->getName() . '</li>';
         for ($i = 0; $i < ($numOpenCloseTimes); $i++) {
-            echo '<li>' . $openTimes[$i] . ' : ' . $closeTimes[$i] . '</li>';
+            echo '<tr>\n<td>' . $openTimes[$i] . '</td>\n<td>-</td>\n<td>' . $closeTimes[$i] . '</td></tr>';
         }
         echo '</ul>';
     }
 
 }
 
-include 'footer.php';
 ?>
 </body>
 </html>
