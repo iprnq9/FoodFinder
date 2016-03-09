@@ -58,6 +58,11 @@ else {
         echo "          <p class=\"card-subtitle\">Description here...</p>\n";
         echo "          <br>\n";
         //include 'today-hours.php';
+        $sinceEpoch = strtotime("today");
+        $mealArray = array("brkfst", "lnch", "dnnr");
+        $numOfMeals = sizeof($mealArray);
+        $openTimes = array();
+        $closeTimes = array();
         for ($k = 0; $k < ($numOfMeals); $k++) {
             $openTime0 = $objArray[$i]->getopnTime($dayNumber, $mealArray[$k]);
             if ($openTime0 !== NULL) {
@@ -74,9 +79,7 @@ else {
             }
 
         }
-
         $numOpenCloseTimes = sizeof($openTimes);
-
         echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>";
         echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">";
         echo "            <thead><tr>";
@@ -84,11 +87,9 @@ else {
         echo "              <th>-</th>";
         echo "              <th>Closed</th>";
         echo "            </tr></thead>";
-
         for ($k = 0; $k < ($numOpenCloseTimes); $k++) {
             echo '<tr><td>' . $openTimes[$k] . '</td><td>-</td><td>' . $closeTimes[$k] . '</td></tr>';
         }
-
         echo "            </table>";
         echo "          </p>";
         echo "          <div class=\"profile-button\"><a href=\"material-profile.php\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
