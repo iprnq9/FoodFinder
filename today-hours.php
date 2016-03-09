@@ -86,10 +86,11 @@ else {
 
     for($i = 0; $i < $numOfMeals - 1; $i++){
         $openTime0 = $objArray[0]->getopnTime(2, $mealArray[$i]);
-        $openTime0 = $openTime0*60+$sinceEpoch;
-        $openTime0 = date('H:i', $openTime0);
-        if ($openTime0 !== NULL)
+        if ($openTime0 !== NULL){
+            $openTime0 = $openTime0*60+$sinceEpoch;
+            $openTime0 = date('H:i', $openTime0);
             echo $openTime0 . '<br><br>';
+        }
     }
 
     echo $numOfMeals . '<br><br>';
