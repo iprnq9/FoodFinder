@@ -72,8 +72,8 @@ else {
     include 'pullData.php';
 
     $max = sizeof($objArray);
-    $sinceEpoch = strtotime("-1 day");
-    $openTime1 = strtotime($objArray[0]->getopnTime(2, brkfst) * 60 + $sinceEpoch . " seconds");
+    $sinceEpoch = strtotime("yesterday");
+    $openTime1 = strtotime(($objArray[0]->getopnTime(2, brkfst))*60+$sinceEpoch . " seconds");
     $openTime2 = date('H:i', $openTime1);
 
     echo $openTime1 . '<br><br>';
