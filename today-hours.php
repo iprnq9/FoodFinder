@@ -22,6 +22,7 @@
 <?php
 include 'food-finderprj.php';
 
+include 'header.php';
 
 include 'db-connect.php';
 
@@ -71,6 +72,12 @@ else {
     include 'pullData.php';
 
     $max = sizeof($objArray);
+    $time = $objArray[0]->getopnTime(2, brkfst);
+
+    $timeHrs = intval($time / 60);
+    $timeMin = $time % 60;
+
+    echo $timeHrs . ':' . $timeMin . '<br><br>';
 
     echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
     echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
