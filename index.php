@@ -58,6 +58,7 @@ else {
         echo "          <p class=\"card-subtitle\">Description here...</p>\n";
         echo "          <br>\n";
         //include 'today-hours.php';
+        $dayNumber = date("w")+1;
         $sinceEpoch = strtotime("today");
         $mealArray = array("brkfst", "lnch", "dnnr");
         $numOfMeals = sizeof($mealArray);
@@ -77,7 +78,6 @@ else {
                 $closeTime0 = date('g:ia', $closeTime0);
                 $closeTimes[$k] = $closeTime0;
             }
-
         }
         $numOpenCloseTimes = sizeof($openTimes);
         echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>";
@@ -87,8 +87,8 @@ else {
         echo "              <th>-</th>";
         echo "              <th>Closed</th>";
         echo "            </tr></thead>";
-        for ($k = 0; $k < ($numOpenCloseTimes); $k++) {
-            echo '<tr><td>' . $openTimes[$k] . '</td><td>-</td><td>' . $closeTimes[$k] . '</td></tr>';
+        for ($j = 0; $j < ($numOpenCloseTimes); $j++) {
+            echo '<tr><td>' . $openTimes[$j] . '</td><td>-</td><td>' . $closeTimes[$j] . '</td></tr>';
         }
         echo "            </table>";
         echo "          </p>";
