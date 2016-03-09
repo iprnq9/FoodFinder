@@ -61,17 +61,19 @@ else {
         echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
         echo "          <p class=\"card-subtitle\">Description here...</p>\n";
         echo "          <br>\n";
+        $counter = 0;
         for ($i = 0; $i < ($numOfMeals); $i++) {
             $openTime0 = $objArray[$k]->getopnTime($dayNumber, $mealArray[$i]);
-            $counter = 0;
             if ($openTime0 != NULL) {
                 $openTime0 = $openTime0 * 60 + $sinceEpoch;
                 $openTime0 = date('g:ia', $openTime0);
                 $openTimes[$counter] = $openTime0;
                 $counter++;
             }
+        }
 
-            $counter2 = 0;
+        $counter2 = 0;
+        for ($i = 0; $i < ($numOfMeals); $i++) {
             $closeTime0 = $objArray[$k]->getclsTime($dayNumber, $mealArray[$i]);
             if ($closeTime0 != NULL) {
                 $closeTime0 = $closeTime0 * 60 + $sinceEpoch;
@@ -79,7 +81,6 @@ else {
                 $closeTimes[$counter2] = $closeTime0;
                 $counter2++;
             }
-
         }
 
         echo $openTimes[0] . ':' . $openTimes[1] . ":" . $openTimes[2] . "<br><br>";
