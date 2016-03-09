@@ -48,7 +48,7 @@ else {
     include 'currently.php';
     echo '</div><div class="section"><ul class="flex-container">';
     $max = sizeof($objArray);
-    for($i = 0; $i < ($max-1); $i++){
+    for($i = 0; $i < ($max); $i++){
         $imageClass = "imageClass-" . $objArray[$i]->getId();
         echo "      <li class=\"flex-item card\">\n";
         echo "        <div class=\"card-status " . $objArray[$i]->status() . "\">". $objArray[$i]->status() ."</div>\n";
@@ -57,7 +57,40 @@ else {
         echo "          <p class=\"card-title\">" . $objArray[$i]->getName() . "</p>\n";
         echo "          <p class=\"card-subtitle\">Description here...</p>\n";
         echo "          <br>\n";
-        include 'today-hours.php';
+        //include 'today-hours.php';
+        for ($k = 0; $k < ($numOfMeals); $k++) {
+            $openTime0 = $objArray[$i]->getopnTime($dayNumber, $mealArray[$k]);
+            if ($openTime0 !== NULL) {
+                $openTime0 = $openTime0 * 60 + $sinceEpoch;
+                $openTime0 = date('g:ia', $openTime0);
+                $openTimes[$k] = $openTime0;
+            }
+
+            $closeTime0 = $objArray[$i]->getclsTime($dayNumber, $mealArray[$k]);
+            if ($closeTime0 !== NULL) {
+                $closeTime0 = $closeTime0 * 60 + $sinceEpoch;
+                $closeTime0 = date('g:ia', $closeTime0);
+                $closeTimes[$k] = $closeTime0;
+            }
+
+        }
+
+        $numOpenCloseTimes = sizeof($openTimes);
+
+        echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>";
+        echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">";
+        echo "            <thead><tr>";
+        echo "              <th>Open</th>";
+        echo "              <th>-</th>";
+        echo "              <th>Closed</th>";
+        echo "            </tr></thead>";
+
+        for ($k = 0; $k < ($numOpenCloseTimes); $k++) {
+            echo '<tr><td>' . $openTimes[$k] . '</td><td>-</td><td>' . $closeTimes[$k] . '</td></tr>';
+        }
+
+        echo "            </table>";
+        echo "          </p>";
         echo "          <div class=\"profile-button\"><a href=\"material-profile.php\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
         echo "        </div>\n";
         echo "      </li>";
