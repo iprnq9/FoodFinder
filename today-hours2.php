@@ -60,7 +60,7 @@ else {
         echo "        <div class=\"card-info\">\n";
         echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
         echo "          <p class=\"card-subtitle\">Description here...</p>\n";
-        echo "          <br>\n";
+        //echo "          <br>\n";
         $counter = 0;
         for ($i = 0; $i < ($numOfMeals); $i++) {
             $openTime0 = $objArray[$k]->getopnTime($dayNumber, $mealArray[$i]);
