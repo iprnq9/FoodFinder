@@ -73,10 +73,11 @@ else {
 
     $max = sizeof($objArray);
     $openTime1 = strtotime($objArray[0]->getopnTime(2, brkfst) . "seconds");
-
+    $openTime2 = date('H:i', $openTime1);
+    
     echo $openTime1 . '<br><br>';
 
-    echo $openTime1->format('H:i') . '<br><br>';
+    echo $openTime2 . '<br><br>';
 
     echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
     echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
