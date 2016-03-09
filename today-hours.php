@@ -78,20 +78,20 @@ else {
     $openTime1 = strtotime($openTime01. " seconds");
     $openTime2 = date('H:i', $openTime1);
 
-    echo $openTime0 . '<br><br>';
+    echo '1: ' . $openTime0 . '<br><br>';
 
-    echo $openTime01 . '<br><br>';
+    echo '2: ' . $openTime01 . '<br><br>';
 
-    echo $openTime1 . '<br><br>';
+    echo '3: ' . $openTime1 . '<br><br>';
 
-    echo $openTime2 . '<br><br>';
+    echo '4: ' . $openTime2 . '<br><br>';
 
-    echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
-    echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
-    echo $objArray[0]->getopnTime(2, lnch) . '<br><br>';
-    echo $objArray[0]->getclsTime(2, lnch) . '<br><br>';
-    echo $objArray[0]->getopnTime(2, dnnr) . '<br><br>';
-    echo $objArray[0]->getclsTime(2, dnnr) . '<br><br>';
+    //echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
+    //echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
+    //echo $objArray[0]->getopnTime(2, lnch) . '<br><br>';
+    //echo $objArray[0]->getclsTime(2, lnch) . '<br><br>';
+    //echo $objArray[0]->getopnTime(2, dnnr) . '<br><br>';
+    //echo $objArray[0]->getclsTime(2, dnnr) . '<br><br>';
 
 }
 
