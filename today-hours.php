@@ -72,7 +72,7 @@ else {
     include 'pullData.php';
 
     $max = sizeof($objArray);
-    $openTime1 = strtotime($objArray[0]->getopnTime(2, brkfst) . "seconds");
+    $openTime1 = strtotime($objArray[0]->getopnTime(2, brkfst) . " seconds");
     $openTime2 = date('H:i', strtotime($objArray[0]->getopnTime(2, brkfst) . "seconds"));
 
     echo $openTime1 . '<br><br>';
