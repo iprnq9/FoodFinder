@@ -44,15 +44,15 @@ else {
     $mealArray = array("brkfst", "lnch", "dnnr");
     $numOfMeals = sizeof($mealArray);
 
-    $openTimes = array();
-    $closeTimes = array();
-
     echo '<div class="container"><div style="text-align: center;">';
     include 'currently.php';
     echo '</div><div class="section"><ul class="flex-container">';
 
     $max = sizeof($objArray);
     for ($k = 0; $k < ($max); $k++){
+        $openTimes = array();
+        $closeTimes = array();
+
         $imageClass = "imageClass-" . $objArray[$k]->getId();
         echo "      <li class=\"flex-item card\">\n";
         echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">" . $objArray[$k]->status() . "</div>\n";
