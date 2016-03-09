@@ -99,7 +99,7 @@ else {
         }
 
         $numOpenCloseTimes = sizeof($openTimes);
-        echo '<ul>';
+        echo '<ul style="list-style-type: circle;">';
         echo '<li>Name: ' . $objArray[$k]->getName() . '</li>';
         for ($i = 0; $i < ($numOpenCloseTimes); $i++) {
             echo '<li>' . $openTimes[$i] . ' : ' . $closeTimes[$i] . '</li>';
