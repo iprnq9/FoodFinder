@@ -51,8 +51,8 @@ else {
     for($i = 0; $i < ($max); $i++){
         $imageClass = "imageClass-" . $objArray[$i]->getId();
         echo "      <li class=\"flex-item card\">\n";
-        echo "        <div class=\"card-status " . $objArray[$i]->status() . "\">". $objArray[$i]->status() ."</div>\n";
-        echo "        <div class=\"card-image ". $imageClass . "\"></div>\n";
+        echo "        <div class=\"card-status " . $objArray[$i]->status() . "\">" . $objArray[$i]->status() . "</div>\n";
+        echo "        <div class=\"card-image " . $imageClass . "\"></div>\n";
         echo "        <div class=\"card-info\">\n";
         echo "          <p class=\"card-title\">" . $objArray[$i]->getName() . "</p>\n";
         echo "          <p class=\"card-subtitle\">Description here...</p>\n";

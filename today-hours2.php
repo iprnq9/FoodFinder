@@ -47,12 +47,16 @@ else {
     $openTimes = array();
     $closeTimes = array();
 
+    echo '<div class="container"><div style="text-align: center;">';
+    include 'currently.php';
+    echo '</div><div class="section"><ul class="flex-container">';
+
     $max = sizeof($objArray);
-    for ($k = 0; $k < ($max - 1); $k++){
+    for ($k = 0; $k < ($max); $k++){
         $imageClass = "imageClass-" . $objArray[$k]->getId();
         echo "      <li class=\"flex-item card\">\n";
-        echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">". $objArray[$k]->status() ."</div>\n";
-        echo "        <div class=\"card-image ". $imageClass . "\"></div>\n";
+        echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">" . $objArray[$k]->status() . "</div>\n";
+        echo "        <div class=\"card-image " . $imageClass . "\"></div>\n";
         echo "        <div class=\"card-info\">\n";
         echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
         echo "          <p class=\"card-subtitle\">Description here...</p>\n";
@@ -68,7 +72,7 @@ else {
             $closeTime0 = $objArray[$k]->getclsTime($dayNumber, $mealArray[$i]);
             if ($closeTime0 !== NULL) {
                 $closeTime0 = $closeTime0 * 60 + $sinceEpoch;
-                $closeTime0 = date('H:ia', $closeTime0);
+                $closeTime0 = date('g:ia', $closeTime0);
                 $closeTimes[$i] = $closeTime0;
             }
 
