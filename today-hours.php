@@ -84,10 +84,10 @@ else {
     $mealArray = array("brkfst", "lnch", "dnnr");
     $numOfMeals = sizeof($mealArray);
 
-    $openTimes = array(NULL, NULL, NULL);
-    $closeTimes = array(NULL, NULL, NULL);
+    $openTimes = array();
+    $closeTimes = array();
 
-    for($i = 0; $i < ($numOfMeals - 1); $i++){
+    for($i = 0; $i < ($numOfMeals); $i++){
         $openTime0 = $objArray[0]->getopnTime(2, $mealArray[$i]);
         if ($openTime0 !== NULL){
             $openTime0 = $openTime0*60+$sinceEpoch;
@@ -106,7 +106,7 @@ else {
 
     $numOpenCloseTimes = sizeof($openTimes);
 
-    for($i = 0; $i < ($numOpenCloseTimes - 1); $i++){
+    for($i = 0; $i < ($numOpenCloseTimes); $i++){
         echo $openTimes[$i] . ' : ' . $closeTimes[$i] . '<br><br>';
     }
 
