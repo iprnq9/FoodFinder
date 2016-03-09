@@ -74,14 +74,12 @@ else {
     $max = sizeof($objArray);
     $sinceEpoch = strtotime("today");
     $openTime0 = $objArray[0]->getopnTime(2, brkfst);
-    $openTime01 = $openTime0*60+$sinceEpoch;
-    $openTime2 = date('H:i', $openTime01);
+    $openTime0 = $openTime0*60+$sinceEpoch;
+    $openTime0 = date('H:i', $openTime0);
 
-    echo '1: ' . $openTime0 . '<br><br>';
 
-    echo '2: ' . $openTime01 . '<br><br>';
 
-    echo '4: ' . $openTime2 . '<br><br>';
+    echo '4: ' . $openTime0 . '<br><br>';
 
     //echo $objArray[0]->getopnTime(2, brkfst) . '<br><br>';
     //echo $objArray[0]->getclsTime(2, brkfst) . '<br><br>';
