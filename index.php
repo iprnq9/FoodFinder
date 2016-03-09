@@ -30,8 +30,6 @@ $con = new mysqli($host, $user, $password, $dbname);
 
 $objArray = array();
 
-
-
 //echo $currentMeal . "<br>";
 //echo $nowTime->format('Y-m-d H:i:s') . "<br>";
 //echo $lunchStart->format('Y-m-d H:i:s') . "<br>";
@@ -57,7 +55,7 @@ else {
         echo "        <div class=\"card-image ". $imageClass . "\"></div>\n";
         echo "        <div class=\"card-info\">\n";
         echo "          <p class=\"card-title\">" . $objArray[$i]->getName() . "</p>\n";
-        echo "          <p class=\"card-subtitle\">A coffee shop serving delicious bagels and more.</p>\n";
+        echo "          <p class=\"card-subtitle\">Description here...</p>\n";
         echo "          <br>\n";
         include 'today-hours.php';
         echo "          <div class=\"profile-button\"><a href=\"material-profile.php\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";

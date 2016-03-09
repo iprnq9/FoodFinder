@@ -37,7 +37,7 @@ $dayNumber = date("w")+1;
             $closeTime0 = $objArray[$i]->getclsTime($dayNumber, $mealArray[$k]);
             if ($closeTime0 !== NULL) {
                 $closeTime0 = $closeTime0 * 60 + $sinceEpoch;
-                $closeTime0 = date('H:ia', $closeTime0);
+                $closeTime0 = date('g:ia', $closeTime0);
                 $closeTimes[$k] = $closeTime0;
             }
 
