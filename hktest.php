@@ -182,10 +182,10 @@ else {
     for ($x = 1; $x <= 7; $x++  ){
           $this20 = $objArray[$i]->getopnTime($x,"brkfst");
           if( $this20 != Null){
-              echo $objArray[$i]->getopnTime($x,"brkfst"); .",";
+              echo $objArray[$i]->getopnTime($x,"brkfst") .",";
           }
           else{
-              echo -1.",";
+              echo "-1,";
           }}}/*
 
           //$this20 = null;
