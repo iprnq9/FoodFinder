@@ -20,7 +20,7 @@
 <script src="js/init.js"></script>
 <body>
 <?php
-include 'food-finderprj.php';
+include 'food-finderprj2.php';
 
 include 'header.php';
 
