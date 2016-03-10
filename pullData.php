@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+ini_set('html_errors', 'On');
+
 //get the number of objects in database
 $resource = $con->query("SELECT * FROM location_id");
 $count = $resource->num_rows;
@@ -16,7 +20,7 @@ for ($x = 1; $x < $nameC; $x++) {
     $y = $x - 1;
     $objArray[$y]->setName($location_name);
     $objArray[$y]->setId($x);
-    $objArray[$y]->setOpenCloseArray($dayNumber);
+    //$objArray[$y]->setOpenCloseArray($dayNumber);
 }
 
 //OPEN TIMES
@@ -97,6 +101,11 @@ for($x=0; $x < $count; $x++){
             $objArray[$x]->setclsTime($y,"dnnr",$closetime);
         }
     }
+}
+
+for ($x = 1; $x < $nameC; $x++) {
+    $y = $x - 1;
+    $objArray[$y]->setOpenCloseArray($dayNumber);
 }
 
 ?>
