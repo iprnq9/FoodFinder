@@ -41,7 +41,7 @@ if ($con->connect_errno) {
 else {
     include 'pullData2.php';
 
-    $k = 1;
+    $k = 3;
     $dayArray = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
     echo "<table class=\"responsive-table centered bordered white\">\n";
@@ -70,8 +70,6 @@ else {
     }
 
     echo "                                </table>\n";
-
-    echo $objArray[$k]->getopnTime(7,2);
 
 
 //    echo "                                        <td>7:00am</td>\n";
