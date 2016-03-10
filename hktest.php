@@ -186,7 +186,7 @@ else {
           }
           else{
               echo "-1,";
-          }}}/*
+          }
 
           //$this20 = null;
           $this20 = $objArray[$i]->getclsTime($x,"brkfst");
@@ -194,8 +194,8 @@ else {
               echo $this20 .",";
           }
           else{
-              echo -1. ",";
-          }
+              echo "-1,";
+          }}}/*
 
 
           //$this20 = null;
