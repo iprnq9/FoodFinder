@@ -173,7 +173,7 @@ else {
         echo "Current status: " . $objArray[3]->status() ."<br>";
 
     }
-    */
+
     //sending shit to android
     $max = sizeof($objArray);
     for($i = 0; $i <= ($max) ; $i++){
@@ -238,7 +238,7 @@ else {
         echo "<br>";
     }
 
-
+*/
 
 
 
