@@ -6,9 +6,9 @@
 
 
 include 'food-finderprj.php';
-//error_reporting(E_ALL);
-//ini_set('display_errors', 'On');
-//ini_set('html_errors', 'On');
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+ini_set('html_errors', 'On');
 
 $host="localhost";
 $port=3306;
@@ -135,10 +135,10 @@ else {
             }
         }
     }
-
-
+}
 //for testing
-    /*$max = sizeof($objArray);
+    /*
+    $max = sizeof($objArray);
     for($i = 0; $i < ($max) ; $i++){
         echo "Location Name: " . $objArray[$i]->getName() ."<br>";
         echo "Location ID: " . $objArray[$i]->getId() ."<br>";
@@ -237,8 +237,8 @@ else {
         }
         echo "<br>";
     }
-}
-//send to android
+
+
 
 
 
