@@ -45,11 +45,11 @@ else {
 
     echo "<br><br>Close Time 0: " . $objArray[0]->getCloseTime(0);
 
-    echo "Open Time 1: " . $objArray[0]->getOpenTime(1);
+    echo "<br><br>Open Time 1: " . $objArray[0]->getOpenTime(1);
 
     echo "<br><br>Close Time 1: " . $objArray[0]->getCloseTime(1);
 
-    echo "Open Time 2: " . $objArray[0]->getOpenTime(2);
+    echo "<br><br>Open Time 2: " . $objArray[0]->getOpenTime(2);
 
     echo "<br><br>Close Time 2: " . $objArray[0]->getCloseTime(2);
 }

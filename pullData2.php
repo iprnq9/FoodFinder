@@ -98,8 +98,7 @@ for($x=0; $x < $count; $x++){
     }
 }
 
-for ($x = 1; $x < $nameC; $x++) {
-    $y = $x - 1;
-    $objArray[$y]->setOpenCloseArray($dayNumber);
+for ($x = 0; $x < $count; $x++) {
+    $objArray[$x]->setOpenCloseArray($dayNumber);
 }
 ?>
