@@ -37,44 +37,40 @@ if ($con->connect_errno) {
 else {
     include 'pullData.php';
 
-    $sinceEpoch = strtotime("today");
-
-    $mealArray = array("brkfst", "lnch", "dnnr");
-    $numOfMeals = sizeof($mealArray);
-
     echo '<div class="container"><div style="text-align: center;">';
     include 'currently.php';
     echo '</div><div class="section"><ul class="flex-container">';
 
 
-        $imageClass = "imageClass-" . $objArray[$k]->getId();
-        echo "      <li class=\"flex-item card\">\n";
-        echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">" . $objArray[$k]->status() . "</div>\n";
-        echo "        <div class=\"card-image " . $imageClass . "\"></div>\n";
-        echo "        <div class=\"card-info\">\n";
-        echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
-        echo "          <p class=\"card-subtitle\">Description here...</p>\n";
-        //echo "          <br>\n";
+    $imageClass = "imageClass-" . $objArray[0]->getId();
+    echo "      <li class=\"flex-item card\">\n";
+    echo "        <div class=\"card-status " . $objArray[0]->status() . "\">" . $objArray[0]->status() . "</div>\n";
+    echo "        <div class=\"card-image " . $imageClass . "\"></div>\n";
+    echo "        <div class=\"card-info\">\n";
+    echo "          <p class=\"card-title\">" . $objArray[0]->getName() . "</p>\n";
+    echo "          <p class=\"card-subtitle\">Description here...</p>\n";
+    //echo "          <br>\n";
 
 
 
 
-        echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>";
-        echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">";
-        echo "            <thead><tr>";
-        echo "              <th>Open</th>";
-        echo "              <th>-</th>";
-        echo "              <th>Closed</th>";
-        echo "            </tr></thead>";
+    echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>";
+    echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">";
+    echo "            <thead><tr>";
+    echo "              <th>Open</th>";
+    echo "              <th>-</th>";
+    echo "              <th>Closed</th>";
+    echo "            </tr></thead>";
 
-        for ($i = 0; $i < ($objArray[0]->getNumOpenCloseTimes); $i++) {
-            echo '<tr><td>' . $objArray[0]->getOpenTime($i) . '</td><td>-</td><td>' . $objArray[0]->getCloseTimes($i) . '</td></tr>';
-        }
-        echo "            </table>";
-        echo "          </p>";
-        echo "          <div class=\"profile-button\"><a href=\"material-profile.php\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
-        echo "        </div>\n";
-        echo "      </li>";
+    //for ($i = 0; $i < ($objArray[0]->getNumOpenCloseTimes); $i++) {
+    //    echo '<tr><td>' . $objArray[0]->getOpenTime($i) . '</td><td>-</td><td>' . $objArray[0]->getCloseTimes($i) . '</td></tr>';
+    //}
+
+    echo "            </table>";
+    echo "          </p>";
+    echo "          <div class=\"profile-button\"><a href=\"material-profile.php\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
+    echo "        </div>\n";
+    echo "      </li>";
 
     echo "</ul></div></div>";
 }
