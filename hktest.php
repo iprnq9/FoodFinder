@@ -179,65 +179,65 @@ else {
     for($i = 0; $i <= ($max) ; $i++){
 
         echo $objArray[$i]->getName(). ",";
-        for ($x = 1; $x <= 7; $x++  ){
-            $this20 = $objArray[$i]->getopnTime($x,"brkfst");
-            if( $this20 != Null){
-                echo $objArray[$i]->getopnTime($x,"brkfst"); .",";
-            }
-            //else{
-           //     echo -1.",";
-           // }
-    /*
-            //$this20 = null;
-            $this20 = $objArray[$i]->getclsTime($x,"brkfst");
-            if( $this20 != Null){
-                echo $this20 .",";
-            }
-            else{
-                echo -1. ",";
-            }
+/*      for ($x = 1; $x <= 7; $x++  ){
+          $this20 = $objArray[$i]->getopnTime($x,"brkfst");
+          if( $this20 != Null){
+              echo $objArray[$i]->getopnTime($x,"brkfst"); .",";
+          }
+          //else{
+         //     echo -1.",";
+         // }
+
+          //$this20 = null;
+          $this20 = $objArray[$i]->getclsTime($x,"brkfst");
+          if( $this20 != Null){
+              echo $this20 .",";
+          }
+          else{
+              echo -1. ",";
+          }
 
 
-            //$this20 = null;
-            $this20 = $objArray[$i]->getopnTime($x,"lnch");
-            if( $this20 != Null){
-                echo $this20 .",";
-            }
-            else{
-                echo -1. ",";
-            }
-            //$this20 = null;
-            $this20 = $objArray[$i]->getclsTime($x,"lnch");
-            if( $this20 != Null){
-                echo $this20 .",";
-            }
-            else{
-                echo -1. ",";
-            }
+          //$this20 = null;
+          $this20 = $objArray[$i]->getopnTime($x,"lnch");
+          if( $this20 != Null){
+              echo $this20 .",";
+          }
+          else{
+              echo -1. ",";
+          }
+          //$this20 = null;
+          $this20 = $objArray[$i]->getclsTime($x,"lnch");
+          if( $this20 != Null){
+              echo $this20 .",";
+          }
+          else{
+              echo -1. ",";
+          }
 
 
 
-            //$this20 = null;
-            $this20 = $objArray[$i]->getopnTime($x,"dnnr");
-            if( $this20 != Null){
-                echo $this20 . ",";
-            }
-            else{
-                echo -1.",";
-            }
-            //$this20 = null;
-            $this20 = $objArray[$i]->getclsTime($x,"dnnr");
-            if( $this20 != Null){
-                echo $this20 . ",";
-            }
-            else{
-                echo -1. ",";
-            }
+          //$this20 = null;
+          $this20 = $objArray[$i]->getopnTime($x,"dnnr");
+          if( $this20 != Null){
+              echo $this20 . ",";
+          }
+          else{
+              echo -1.",";
+          }
+          //$this20 = null;
+          $this20 = $objArray[$i]->getclsTime($x,"dnnr");
+          if( $this20 != Null){
+              echo $this20 . ",";
+          }
+          else{
+              echo -1. ",";
+          }
 
 
-        }
-        echo "<br>";
-    }
+      }
+      echo "<br>";
+  }
 
 */
 
