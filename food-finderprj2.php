@@ -169,14 +169,14 @@ class joeMinr{
         $this->numOpenCloseTimes = $val;
     }
 
-    public function setOpenCloseArray($day){
+    public function setOpenCloseArray($curday){
         $sinceEpoch = strtotime("today");
         $mealArray = array("brkfst", "lnch", "dnnr");
         $numOfMeals = sizeof($mealArray);
 
         $counter = 0;
         for ($i = 0; $i < ($numOfMeals); $i++) {
-            $openTime = $this->getopnTime($day, $mealArray[$i]);
+            $openTime = $this->getopnTime($curday, $mealArray[$i]);
             if ($openTime != NULL) {
                 $openTime = $openTime * 60 + $sinceEpoch;
                 $openTime = date('g:ia', $openTime);
@@ -187,7 +187,7 @@ class joeMinr{
 
         $counter2 = 0;
         for ($i = 0; $i < ($numOfMeals); $i++) {
-            $closeTime = $this->getclsTime($day, $mealArray[$i]);
+            $closeTime = $this->getclsTime($curday, $mealArray[$i]);
             if ($closeTime != NULL) {
                 $closeTime = $closeTime * 60 + $sinceEpoch;
                 $closeTime = date('g:ia', $closeTime);
