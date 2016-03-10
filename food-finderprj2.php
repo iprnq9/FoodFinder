@@ -180,7 +180,7 @@ class joeMinr{
             if ($openTime != NULL) {
                 $openTime = $openTime * 60 + $sinceEpoch;
                 $openTime = date('g:ia', $openTime);
-                $todayOpenTimes[$counter] = $openTime;
+                $this->todayOpenTimes[$counter] = $openTime;
                 $counter++;
             }
         }
@@ -191,7 +191,7 @@ class joeMinr{
             if ($closeTime != NULL) {
                 $closeTime = $closeTime * 60 + $sinceEpoch;
                 $closeTime = date('g:ia', $closeTime);
-                $todayCloseTimes[$counter2] = $closeTime;
+                $this->todayCloseTimes[$counter2] = $closeTime;
                 $counter2++;
             }
         }
