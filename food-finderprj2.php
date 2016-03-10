@@ -10,9 +10,9 @@ class joeMinr{
     protected $opntme = array(array()); /*container for the opening times*/
     protected $clstme = array(array()); /*container for the closing times*/
 
-    protected $todayCloseTimes = array();
-    protected $todayOpenTimes = array();
-    protected $numOpenCloseTimes;
+    public $todayCloseTimes = array();
+    public $todayOpenTimes = array();
+    public $numOpenCloseTimes;
 
     /* construtor */
     public function __construct(){
@@ -199,6 +199,7 @@ class joeMinr{
         $this->setNumOpenCloseTimes(sizeof($this->todayOpenTimes));
     }
 
+    // $val should be [0-2] since there will be at most 3 meals in a day
     public function getOpenTime($val){
         return $this->todayOpenTimes[$val];
     }
