@@ -173,7 +173,7 @@ else {
         echo "Current status: " . $objArray[3]->status() ."<br>";
 
     }
-
+*/
     //sending shit to android
     $max = sizeof($objArray);
     for($i = 0; $i <= ($max) ; $i++){
@@ -184,9 +184,9 @@ else {
           if( $this20 != Null){
               echo $objArray[$i]->getopnTime($x,"brkfst"); .",";
           }
-          //else{
-         //     echo -1.",";
-         // }
+          else{
+              echo -1.",";
+          }}}/*
 
           //$this20 = null;
           $this20 = $objArray[$i]->getclsTime($x,"brkfst");
