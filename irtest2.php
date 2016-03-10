@@ -20,9 +20,9 @@
 <script src="js/init.js"></script>
 <body>
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-ini_set('html_errors', 'On');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'On');
+//ini_set('html_errors', 'On');
 
 include 'food-finderprj2.php';
 
@@ -41,9 +41,9 @@ if ($con->connect_errno) {
 else {
     include 'pullData2.php';
 
-    echo $objArray[0]->getOpenTime(0);
+    echo "Open Time 0: " . $objArray[0]->getOpenTime(0);
 
-    echo $objArray[0]->getCloseTime(0);
+    echo "<br><br>Close Time 0: " . $objArray[0]->getCloseTime(0);
 }
 
 include 'footer.php';
