@@ -199,6 +199,7 @@ class joeMinr{
         $this->setNumOpenCloseTimes(sizeof($this->todayOpenTimes));
     }
 
+    // $val should be [0-2] since there will be at most 3 meals in a day
     public function getOpenTime($val){
         return $this->todayOpenTimes[$val];
     }
