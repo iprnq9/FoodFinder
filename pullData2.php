@@ -2,6 +2,7 @@
 //get the number of objects in database
 $resource = $con->query("SELECT * FROM location_id");
 $count = $resource->num_rows;
+$dayNumber = date("w")+1;;
 
 //create objects in array
 for($x=0; $x < $count; $x++){
