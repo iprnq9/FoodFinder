@@ -71,7 +71,7 @@ else {
 
     echo "                                </table>\n";
 
-    echo $objArray[$k]->getOpenTime(2);
+    echo $objArray[$k]->getopnTime(7,2);
 
 
 //    echo "                                        <td>7:00am</td>\n";
