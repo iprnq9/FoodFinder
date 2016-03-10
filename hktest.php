@@ -195,7 +195,7 @@ else {
           }
           else{
               echo "-1,";
-          }}}/*
+          }
 
 
           //$this20 = null;
@@ -204,7 +204,7 @@ else {
               echo $this20 .",";
           }
           else{
-              echo -1. ",";
+              echo "-1,";
           }
           //$this20 = null;
           $this20 = $objArray[$i]->getclsTime($x,"lnch");
@@ -212,7 +212,7 @@ else {
               echo $this20 .",";
           }
           else{
-              echo -1. ",";
+              echo "-1.,";
           }
 
 
@@ -223,7 +223,7 @@ else {
               echo $this20 . ",";
           }
           else{
-              echo -1.",";
+              echo "-1,";
           }
           //$this20 = null;
           $this20 = $objArray[$i]->getclsTime($x,"dnnr");
@@ -231,7 +231,7 @@ else {
               echo $this20 . ",";
           }
           else{
-              echo -1. ",";
+              echo "-1,";
           }
 
 
@@ -239,7 +239,7 @@ else {
       echo "<br>";
   }
 
-*/
+
 
 
 
