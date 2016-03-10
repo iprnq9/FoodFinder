@@ -169,6 +169,10 @@ class joeMinr{
         $this->numOpenCloseTimes = $val;
     }
 
+    public function getNumOpenCloseTimes(){
+        return $this->numOpenCloseTimes;
+    }
+
     public function setOpenCloseArray($curday){
         $sinceEpoch = strtotime("today");
         $mealArray = array("brkfst", "lnch", "dnnr");

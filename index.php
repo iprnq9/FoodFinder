@@ -60,34 +60,6 @@ else {
         echo "        <div class=\"card-info\">\n";
         echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
         echo "          <p class=\"card-subtitle\">Description here...</p>\n";
-        //echo "          <br>\n";
-        $counter = 0;
-        for ($i = 0; $i < ($numOfMeals); $i++) {
-            $openTime0 = $objArray[$k]->getopnTime($dayNumber, $mealArray[$i]);
-            if ($openTime0 != NULL) {
-                $openTime0 = $openTime0 * 60 + $sinceEpoch;
-                $openTime0 = date('g:ia', $openTime0);
-                $openTimes[$counter] = $openTime0;
-                $counter++;
-            }
-        }
-
-        $counter2 = 0;
-        for ($i = 0; $i < ($numOfMeals); $i++) {
-            $closeTime0 = $objArray[$k]->getclsTime($dayNumber, $mealArray[$i]);
-            if ($closeTime0 != NULL) {
-                $closeTime0 = $closeTime0 * 60 + $sinceEpoch;
-                $closeTime0 = date('g:ia', $closeTime0);
-                $closeTimes[$counter2] = $closeTime0;
-                $counter2++;
-            }
-        }
-
-        //echo $openTimes[0] . ':' . $openTimes[1] . ":" . $openTimes[2] . "<br><br>";
-        //echo $closeTimes[0] . ':' . $closeTimes[1] . ":" . $closeTimes[2] . "<br><br>";
-
-        $numOpenCloseTimes = sizeof($openTimes);
-
         echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\">Today's Hours <i class=\"material-icons\">schedule</i></span>";
         echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">";
         echo "            <thead><tr>";
@@ -96,8 +68,8 @@ else {
         echo "              <th>Closed</th>";
         echo "            </tr></thead>";
 
-        for ($i = 0; $i < ($numOpenCloseTimes); $i++) {
-            echo '<tr><td>' . $openTimes[$i] . '</td><td>-</td><td>' . $closeTimes[$i] . '</td></tr>';
+        for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes()); $i++) {
+            echo '<tr><td>' . $objArray[$k]->getOpenTime($i) . '</td><td>-</td><td>' . $objArray[$k]->getCloseTime($i) . '</td></tr>';
         }
         echo "            </table>";
         echo "          </p>";
