@@ -54,6 +54,8 @@ else {
     echo "<br><br>Open Time 2: " . $objArray[0]->getOpenTime(2);
 
     echo "<br><br>Close Time 2: " . $objArray[0]->getCloseTime(2);
+
+
 }
 
 include 'footer.php';
