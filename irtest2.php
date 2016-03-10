@@ -41,19 +41,70 @@ if ($con->connect_errno) {
 else {
     include 'pullData2.php';
 
-    echo $objArray[0]->status();
+    $k = 1;
+    $dayArray = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
-    echo "<br><br>Open Time 0: " . $objArray[0]->todayOpenTimes[0];
+    echo "<table class=\"responsive-table centered bordered white\">\n";
+    echo "                                    <thead><tr>\n";
+    echo "                                        <th>Day</th>\n";
 
-    echo "<br><br>Close Time 0: " . $objArray[0]->getCloseTime(0);
+    for($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes()); $i++){
+        echo "                                        <th>Open</th>\n";
+        echo "                                        <th>Closed</th>\n";
+    }
 
-    echo "<br><br>Open Time 1: " . $objArray[0]->getOpenTime(1);
+    echo "                                    </tr></thead>\n";
 
-    echo "<br><br>Close Time 1: " . $objArray[0]->getCloseTime(1);
+    for($day = 0; $day < 7; $day++) {
+        echo "                                    <tr class=\"day-" . $day+1 . "\">\n";
+        echo "                                        <td>" . $dayArray[$day] . "</td>\n";
 
-    echo "<br><br>Open Time 2: " . $objArray[0]->getOpenTime(2);
+        for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes()); $i++) {
+            echo "                                        <td>" . $objArray[$k]->getOpenTime($i) . "</td>\n";
+            echo "                                        <td>" . $objArray[$k]->getCloseTime($i) . "</td>\n";
+        }
 
-    echo "<br><br>Close Time 2: " . $objArray[0]->getCloseTime(2);
+        echo "                                    </tr>\n";
+    }
+
+    echo "                                </table>\n";
+
+
+//    echo "                                        <td>7:00am</td>\n";
+//    echo "                                        <td>7:00pm</td>\n";
+//    echo "                                    </tr>\n";
+//    echo "                                    <tr class=\"day-2\">\n";
+//    echo "                                        <td>Tuesday</td>\n";
+//    echo "                                        <td>7:00am</td>\n";
+//    echo "                                        <td>7:00pm</td>\n";
+//    echo "                                    </tr>\n";
+//    echo "                                    <tr class=\"day-3\">\n";
+//    echo "                                        <td>Wednesday</td>\n";
+//    echo "                                        <td>7:00am</td>\n";
+//    echo "                                        <td>7:00pm</td>\n";
+//    echo "                                    </tr>\n";
+//    echo "                                    <tr class=\"day-4\">\n";
+//    echo "                                        <td>Thursday</td>\n";
+//    echo "                                        <td>7:00am</td>\n";
+//    echo "                                        <td>7:00pm</td>\n";
+//    echo "                                    </tr>\n";
+//    echo "                                    <tr class=\"day-5\">\n";
+//    echo "                                        <td>Friday</td>\n";
+//    echo "                                        <td>7:00am</td>\n";
+//    echo "                                        <td>7:00pm</td>\n";
+//    echo "                                    </tr>\n";
+//    echo "                                    <tr class=\"day-6\">\n";
+//    echo "                                        <td>Saturday</td>\n";
+//    echo "                                        <td>7:00am</td>\n";
+//    echo "                                        <td>7:00pm</td>\n";
+//    echo "                                    </tr>\n";
+//    echo "                                    <tr class=\"day-0\">\n";
+//    echo "                                        <td>Sunday</td>\n";
+//    echo "                                        <td>7:00am</td>\n";
+//    echo "                                        <td>7:00pm</td>\n";
+//    echo "                                    </tr>\n";
+//    echo "                                </table>\n";
+
 
 
 }

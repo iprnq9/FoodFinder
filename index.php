@@ -39,11 +39,6 @@ if ($con->connect_errno) {
 else {
     include 'pullData2.php';
 
-    $sinceEpoch = strtotime("today");
-
-    $mealArray = array("brkfst", "lnch", "dnnr");
-    $numOfMeals = sizeof($mealArray);
-
     echo '<div class="container"><div style="text-align: center;">';
     include 'currently.php';
     echo '</div><div class="section"><ul class="flex-container">';
