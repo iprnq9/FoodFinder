@@ -43,7 +43,7 @@ else {
 
     echo $objArray[0]->status();
 
-    echo "<br><br>Open Time 0: " . $objArray[0]->getOpenTime(0);
+    echo "<br><br>Open Time 0: " . $objArray[0]->todayOpenTimes[0];
 
     echo "<br><br>Close Time 0: " . $objArray[0]->getCloseTime(0);
 

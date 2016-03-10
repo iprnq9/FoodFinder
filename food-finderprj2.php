@@ -10,9 +10,9 @@ class joeMinr{
     protected $opntme = array(array()); /*container for the opening times*/
     protected $clstme = array(array()); /*container for the closing times*/
 
-    protected $todayCloseTimes = array();
-    protected $todayOpenTimes = array();
-    protected $numOpenCloseTimes;
+    public $todayCloseTimes = array();
+    public $todayOpenTimes = array();
+    public $numOpenCloseTimes;
 
     /* construtor */
     public function __construct(){
