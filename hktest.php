@@ -178,7 +178,7 @@ else {
     $max = sizeof($objArray);
     for($i = 0; $i <= ($max) ; $i++){
 
-        echo $objArray[$i]->getName(). ",";
+        echo $objArray[$i]->getName() . ",";
 /*      for ($x = 1; $x <= 7; $x++  ){
           $this20 = $objArray[$i]->getopnTime($x,"brkfst");
           if( $this20 != Null){
