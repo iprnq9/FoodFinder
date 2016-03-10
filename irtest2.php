@@ -39,7 +39,7 @@ if ($con->connect_errno) {
 }
 
 else {
-    include 'pullData.php';
+    include 'pullData2.php';
 
     echo $objArray[0]->getOpenTime(0);
 
