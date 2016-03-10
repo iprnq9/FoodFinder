@@ -56,8 +56,10 @@ else {
     echo "                                    </tr></thead>\n";
 
     for($day = 0; $day < 7; $day++) {
-        echo "                                    <tr class=\"day-" . $day+1 . "\">\n";
+        echo "                                    <tr class=\"day-" . ($day+1) . "\">\n";
         echo "                                        <td>" . $dayArray[$day] . "</td>\n";
+
+        $objArray[$k]->setOpenCloseTimes($day);
 
         for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes()); $i++) {
             echo "                                        <td>" . $objArray[$k]->getOpenTime($i) . "</td>\n";
