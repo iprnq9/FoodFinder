@@ -16,11 +16,19 @@ class joeMinr{
 
     /* construtor */
     public function __construct(){
+<<<<<<< HEAD
         for($x=0; $x <= 7; $x++){
             $opntme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
         }
         for($x=0; $x <= 7; $x++){
             $clstme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
+=======
+        for($x=0; $x < 7; $x++){
+            $opntme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
+        }
+        for($x=0; $x < 7; $x++){
+            $clstme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
+>>>>>>> 07de1d3a58f509890d94fe037160da8e20c88c21
         }
     }
 
@@ -100,7 +108,7 @@ class joeMinr{
                 return "closed";
             }
         }
-        elseif($currentMin > 660){/* gotta check em all bra*/
+        elseif($currentMin > 660){/* gotta check em all bra*/ // <--- LOL
             if($open1 != NULL){
                 if($cls1 > $currentMin){
                     if($cls1-$currentMin <= 30){
