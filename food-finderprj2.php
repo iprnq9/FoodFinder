@@ -16,11 +16,19 @@ class joeMinr{
 
     /* construtor */
     public function __construct(){
+<<<<<<< 07de1d3a58f509890d94fe037160da8e20c88c21
         for($x=0; $x < 7; $x++){
             $opntme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
         }
         for($x=0; $x < 7; $x++){
             $clstme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
+=======
+        for($x=0; $x <= 7; $x++){
+            $opntme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
+        }
+        for($x=0; $x <= 7; $x++){
+            $clstme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
+>>>>>>> no message
         }
     }
 
