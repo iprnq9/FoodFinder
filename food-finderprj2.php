@@ -17,10 +17,10 @@ class joeMinr{
     /* construtor */
     public function __construct(){
         for($x=0; $x <= 7; $x++){
-            $opntme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
+            $opntme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
         }
         for($x=0; $x <= 7; $x++){
-            $clstme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
+            $clstme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
         }
     }
 
