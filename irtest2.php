@@ -50,6 +50,7 @@ else {
 
     for($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes()); $i++){
         echo "                                        <th>Open</th>\n";
+        echo "<td>-</td>";
         echo "                                        <th>Closed</th>\n";
     }
 
@@ -63,6 +64,7 @@ else {
 
         for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes()); $i++) {
             echo "                                        <td>" . $objArray[$k]->getOpenTime($i) . "</td>\n";
+            echo "<td>-</td>";
             echo "                                        <td>" . $objArray[$k]->getCloseTime($i) . "</td>\n";
         }
 
