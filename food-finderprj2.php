@@ -227,7 +227,7 @@ class joeMinr{
                 }
             }
 
-            $numOpenCloseTimes[$day] = (sizeof($this->openTimes[$day]));
+            $numOpenCloseTimes[$day] = $counter2;
         }
 
     }
