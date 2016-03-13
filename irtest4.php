@@ -32,7 +32,7 @@ else {
         echo "<br><br>";
         echo "Status: " . $objArray[$location]->status();
         echo "<br><br>";
-        print_r($objArray[$location]->opntme);
+        print_r($objArray[$location]->openTimes);
 //        for($day = 0; $day < 7; $day++)
 //        {
 //            echo "<strong>Day #: " . $day . "</strong>";
