@@ -68,8 +68,8 @@ else {
         echo "              <th>Closed</th>";
         echo "            </tr></thead>";
 
-        for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes()); $i++) {
-            echo '<tr><td>' . $objArray[$k]->getOpenTime($i) . '</td><td>-</td><td>' . $objArray[$k]->getCloseTime($i) . '</td></tr>';
+        for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes($dayNumber-1)); $i++) {
+            echo '<tr><td>' . $objArray[$k]->getOpenTime($dayNumber-1,$i) . '</td><td>-</td><td>' . $objArray[$k]->getCloseTime($dayNumber-1, $i) . '</td></tr>';
         }
         echo "            </table>";
         echo "          </p>";
