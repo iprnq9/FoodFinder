@@ -208,7 +208,7 @@ class joeMinr{
             $counter = 0;
             for ($i = 0; $i < ($numOfMeals); $i++) {
                 $openTime = $this->getopnTime(($day+1), $mealArray[$i]);
-                if (isset($openTime)) {
+                if ($openTime) {
                     $openTime = $openTime * 60 + $sinceEpoch;
                     $openTime = date('g:ia', $openTime);
                     $this->openTimes[$day][$i] = $openTime;
@@ -219,7 +219,7 @@ class joeMinr{
             $counter2 = 0;
             for ($i = 0; $i < ($numOfMeals); $i++) {
                 $closeTime = $this->getclsTime(($day+1), $mealArray[$i]);
-                if (isset($closeTime)) {
+                if ($closeTime) {
                     $closeTime = $closeTime * 60 + $sinceEpoch;
                     $closeTime = date('g:ia', $closeTime);
                     $this->closeTimes[$day][$i] = $closeTime;

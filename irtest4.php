@@ -28,28 +28,28 @@ else {
         echo "<br><br>";
         echo "getopnTime(): " . $objArray[$location]->getopnTime(1, "brkfst");
         echo "<br><br>";
-//        echo "Id: " . $objArray[$location]->getId();
-//        echo "<br><br>";
-//        echo "Status: " . $objArray[$location]->status();
-//        echo "<br><br>";
-//        for($day = 0; $day < 7; $day++)
-//        {
-//            echo "<strong>Day #: " . $day . "</strong>";
-//            echo "<br><br>";
-//            echo "Num Open/Close Times: " . $objArray[$location]->getNumOpenCloseTimes($day);
-//            echo "<br><br>";
-//            for($meal = 0; $meal < ($objArray[$location]->getNumOpenCloseTimes($day)); $meal++)
-//            {
-//                echo "Open Time " . $meal . ": " . $objArray[$location]->getOpenTime($day, $meal);
-//                echo "<br><br>";
-//                echo "Close Time " . $meal . ": " . $objArray[$location]->getCloseTime($day, $meal);
-//                echo "<br><br>";
-//                echo " - - -";
-//            }
-//
-//
-//        }
-//        echo "<br><br>";
+        echo "Id: " . $objArray[$location]->getId();
+        echo "<br><br>";
+        echo "Status: " . $objArray[$location]->status();
+        echo "<br><br>";
+        for($day = 0; $day < 7; $day++)
+        {
+            echo "<strong>Day #: " . $day . "</strong>";
+            echo "<br><br>";
+            echo "Num Open/Close Times: " . $objArray[$location]->getNumOpenCloseTimes($day);
+            echo "<br><br>";
+            for($meal = 0; $meal < ($objArray[$location]->getNumOpenCloseTimes($day)); $meal++)
+            {
+                echo "Open Time " . $meal . ": " . $objArray[$location]->getOpenTime($day, $meal);
+                echo "<br><br>";
+                echo "Close Time " . $meal . ": " . $objArray[$location]->getCloseTime($day, $meal);
+                echo "<br><br>";
+                echo " - - -";
+            }
+
+
+        }
+        echo "<br><br>";
         echo "<hr />";
         echo "<br><br>";
 
