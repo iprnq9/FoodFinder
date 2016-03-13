@@ -1,7 +1,7 @@
 <?php
 
 include 'food-finderprj2.php';
-include 'header.php';
+
 include 'db-connect.php';
 
 //get location id from URL variable
@@ -28,7 +28,7 @@ else {
   echo "  <thead><tr>\n";
   echo "    <th>Day</th>\n";
 
-  for ($i = 0; $i < max($objArray[$k]->numOpenCloseTimes); $i++) {
+  for ($i = 0; $i < $objArray[$k]->getNumOpenCloseTimes(3); $i++) {
     echo "    <th>Open</th>\n";
     echo "    <th>Closed</th>\n";
   }
