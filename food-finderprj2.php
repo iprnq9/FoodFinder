@@ -31,10 +31,10 @@ class joeMinr{
 ////=======
 //>>>>>>> c8c2d6310042887bc21e5a70b1bdb0a211ebce57
         for($x=0; $x < 7; $x++){
-            $opntme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
+            $opntme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
         }
         for($x=0; $x < 7; $x++){
-            $clstme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
+            $clstme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
 //<<<<<<< HEAD
 //=======
 //        for($x=0; $x <= 7; $x++){
