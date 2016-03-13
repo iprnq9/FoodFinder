@@ -75,7 +75,7 @@ else {
     for($day = 0; $day < 7; $day++)  {
         echo "  <tr class=\"day-" . ($day+1) . "\">\n";
         echo "    <td>" . $dayArray[$day] . "</td>\n";
-        for($meal = 0; $meal < 3; $meal++){
+        for($meal = 0; $meal < ($objArray[$k]->getNumOpenCloseTimes($day)); $meal++){
             echo "    <td>" . $objArray[$locationId]->getOpenTime($day,$meal) . "</td>\n";
             echo "    <td>" . $objArray[$locationId]->getCloseTime($day, $meal) . "</td>\n";
         }
