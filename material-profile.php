@@ -16,49 +16,7 @@
 </head>
 <body style="background-color: #eeeeee;">
 
-<?php
 
-include 'food-finderprj.php';
-include 'header.php';
-include 'db-connect.php';
-
-//get location id from URL variable
-$locationId = htmlspecialchars($_GET["id"]);
-$k = $locationId - 1;
-$imageClass = "imageClass-" . $locationId;
-
-$con = new mysqli($host, $user, $password, $dbname);
-
-$objArray = array();
-
-$dayNumber = date("w")+1;
-
-if ($con->connect_errno) {
-  echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
-}
-
-else {
-  include 'pullData.php';
-  $sinceEpoch = strtotime("today");
-  $mealArray = array("brkfst", "lnch", "dnnr");
-  $numOfMeals = sizeof($mealArray);
-
-  echo "<main>\n";
-  echo "  <div class=\"container\">\n";
-  echo "    <div class=\"section\">\n";
-  echo "      <div class=\"row\" style=\"text-align: center;\">\n";
-  echo "        <div class=\"profile-image " . $imageClass . "\"></div>\n";
-  echo "        <div class=\"profile-name green z-depth-2\">" . $objArray[$k]->getName() . "</div>\n";
-  echo "        <ul class=\"flex-container\">\n";
-  echo "          <li class=\"flex-item-wide z-depth-2\">\n";
-  echo "            <div class=\"quick-info green\">\n";
-  echo "              <div class=\"card-status " . $objArray[$k]->status() . "\">" . $objArray[$k]->status() . "</div>\n";
-  echo "              <div class=\"card-content\">\n";
-  echo "                <h4 class=\"center-align\" style=\"margin-top: -5px;\">Hours of Operation</h4>\n";
-  echo "                <h6 class=\"center-align week-of\"></h6>\n";
-
-
-?>
 
 <main>
   <div class="container">
