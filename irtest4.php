@@ -51,6 +51,7 @@ else {
                 echo "Close Time " . $meal . ": " . $objArray[$location]->getCloseTime($day, $meal);
                 echo "<br><br>";
                 echo " - - -";
+                echo "<br><br>";
             }
 
 
