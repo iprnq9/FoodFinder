@@ -3,9 +3,9 @@
 <html>
 <body>
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-ini_set('html_errors', 'On');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'On');
+//ini_set('html_errors', 'On');
 
 include 'food-finderprj2.php';
 
@@ -34,7 +34,10 @@ else {
         echo "<br><br>";
         print_r($objArray[$location]->openTimes);
         echo "<br><br>";
+        print_r($objArray[$location]->closeTimes);
+        echo "<br><br>";
         print_r($objArray[$location]->numOpenCloseTimes);
+        echo "<br><br>";
         for($day = 0; $day < 7; $day++)
         {
             echo "<strong>Day #: " . $day . "</strong>";
