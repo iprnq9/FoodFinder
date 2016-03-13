@@ -40,6 +40,7 @@ else {
         echo "<br><br>";
         for($day = 0; $day < 7; $day++)
         {
+            echo "<br><br>";
             echo "<strong>Day #: " . $day . "</strong>";
             echo "<br><br>";
             echo "Num Open/Close Times: " . $objArray[$location]->getNumOpenCloseTimes($day);
@@ -52,6 +53,11 @@ else {
                 echo "<br><br>";
                 echo " - - -";
                 echo "<br><br>";
+            }
+
+            if ($objArray[$location]->getNumOpenCloseTimes($day) == 0)
+            {
+                echo "Closed";
             }
 
 
