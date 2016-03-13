@@ -190,8 +190,8 @@ class joeMinr{
         $this->clstme[$day][$tme] = $val;
     }
 
-    public function setNumOpenCloseTimes($val){
-        $this->numOpenCloseTimes = $val;
+    public function setNumOpenCloseTimes($day, $val){
+        $this->numOpenCloseTimes[$day] = $val;
     }
 
     //$day should be [0-6]
@@ -227,7 +227,7 @@ class joeMinr{
                 }
             }
 
-            $numOpenCloseTimes[$day] = $counter2+1;
+            $numOpenCloseTimes[$day] = ($counter2+1);
         }
 
     }
