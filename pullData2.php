@@ -23,7 +23,7 @@ for ($x = 1; $x < $nameC; $x++  ){
 //get brkfst times
 for($x=0; $x < $count; $x++){
     $curid = $objArray[$x]->getId();
-    for ($y = 1; $y < 7; $y++  ){
+    for ($y = 1; $y <= 7; $y++  ){
         $opentime = $con->query("SELECT opentime FROM breakfast WHERE id=$curid AND day =$y");
         $row_cnt = $opentime->num_rows;
         if($row_cnt > 0){
@@ -36,7 +36,7 @@ for($x=0; $x < $count; $x++){
 //lunch times
 for($x=0; $x < $count; $x++){
     $curid = $objArray[$x]->getId();
-    for ($y = 1; $y < 7; $y++  ){
+    for ($y = 1; $y <= 7; $y++  ){
         $opentime = $con->query("SELECT opentime FROM lunch WHERE id=$curid AND day =$y");
         $row_cnt = $opentime->num_rows;
         if($row_cnt > 0){
@@ -49,7 +49,7 @@ for($x=0; $x < $count; $x++){
 //dinner times
 for($x=0; $x < $count; $x++){
     $curid = $objArray[$x]->getId();
-    for ($y = 1; $y < 7; $y++  ){
+    for ($y = 1; $y <= 7; $y++  ){
         $opentime = $con->query("SELECT opentime FROM dinner WHERE id=$curid AND day =$y");
         $row_cnt = $opentime->num_rows;
         if($row_cnt > 0){
@@ -63,7 +63,7 @@ for($x=0; $x < $count; $x++){
 //get brkfst close times
 for($x=0; $x < $count; $x++){
     $curid = $objArray[$x]->getId();
-    for ($y = 1; $y < 7; $y++  ){
+    for ($y = 1; $y <= 7; $y++  ){
         $closetime = $con->query("SELECT closetime FROM breakfast WHERE id=$curid AND day =$y");
         $row_cnt = $closetime->num_rows;
         if($row_cnt > 0){
@@ -76,7 +76,7 @@ for($x=0; $x < $count; $x++){
 //get lunch close times
 for($x=0; $x < $count; $x++){
     $curid = $objArray[$x]->getId();
-    for ($y = 1; $y < 7; $y++  ){
+    for ($y = 1; $y <= 7; $y++  ){
         $closetime = $con->query("SELECT closetime FROM lunch WHERE id=$curid AND day =$y");
         $row_cnt = $closetime->num_rows;
         if($row_cnt > 0){
@@ -89,7 +89,7 @@ for($x=0; $x < $count; $x++){
 //get dinner close times
 for($x=0; $x < $count; $x++){
     $curid = $objArray[$x]->getId();
-    for ($y = 1; $y < 7; $y++  ){
+    for ($y = 1; $y <= 7; $y++  ){
         $closetime = $con->query("SELECT closetime FROM dinner WHERE id=$curid AND day =$y");
         $row_cnt = $closetime->num_rows;
         if($row_cnt > 0){
