@@ -54,7 +54,7 @@ else {
   echo "  <div class=\"container\">\n";
   echo "    <div class=\"section\">\n";
   echo "      <div class=\"row\" style=\"text-align: center;\">\n";
-  echo "        <div class=\"profile-image imageClass-" . ($locationId+1) . "></div>\n";
+  echo "        <div class=\"profile-image imageClass-" . ($locationId+1) . "\"></div>\n";
   echo "        <div class=\"profile-name green z-depth-2\">" . $name . "</div>\n";
   echo "        <ul class=\"flex-container\">\n";
   echo "          <li class=\"flex-item-wide z-depth-2\">\n";
