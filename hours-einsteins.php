@@ -47,7 +47,7 @@ if ($con->connect_errno) {
 else {
   include 'pullData2.php';
 
-  $status = $objArray[$k]->getStatus();
+  $status = $objArray[$k]->status();
   $name = $objArray[$k]->getName();
 
   echo "<main>\n";
