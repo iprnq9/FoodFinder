@@ -33,24 +33,25 @@ else {
         echo "Status: " . $objArray[$location]->status();
         echo "<br><br>";
         print_r($objArray[$location]->openTimes);
+        echo "<br><br>";
         print_r($objArray[$location]->numOpenCloseTimes);
-//        for($day = 0; $day < 7; $day++)
-//        {
-//            echo "<strong>Day #: " . $day . "</strong>";
-//            echo "<br><br>";
-//            echo "Num Open/Close Times: " . $objArray[$location]->getNumOpenCloseTimes($day);
-//            echo "<br><br>";
-//            for($meal = 0; $meal < ($objArray[$location]->getNumOpenCloseTimes($day)); $meal++)
-//            {
-//                echo "Open Time " . $meal . ": " . $objArray[$location]->getOpenTime($day, $meal);
-//                echo "<br><br>";
-//                echo "Close Time " . $meal . ": " . $objArray[$location]->getCloseTime($day, $meal);
-//                echo "<br><br>";
-//                echo " - - -";
-//            }
-//
-//
-//        }
+        for($day = 0; $day < 7; $day++)
+        {
+            echo "<strong>Day #: " . $day . "</strong>";
+            echo "<br><br>";
+            echo "Num Open/Close Times: " . $objArray[$location]->getNumOpenCloseTimes($day);
+            echo "<br><br>";
+            for($meal = 0; $meal < ($objArray[$location]->getNumOpenCloseTimes($day)); $meal++)
+            {
+                echo "Open Time " . $meal . ": " . $objArray[$location]->getOpenTime($day, $meal);
+                echo "<br><br>";
+                echo "Close Time " . $meal . ": " . $objArray[$location]->getCloseTime($day, $meal);
+                echo "<br><br>";
+                echo " - - -";
+            }
+
+
+        }
         echo "<br><br>";
         echo "<hr />";
         echo "<br><br>";
