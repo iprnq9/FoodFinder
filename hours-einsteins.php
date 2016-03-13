@@ -28,7 +28,7 @@ else {
   echo "  <thead><tr>\n";
   echo "    <th>Day</th>\n";
 
-  for ($i = 0; $i < $objArray[$k]->getNumOpenCloseTimes(3); $i++) {
+  for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes(3)); $i++) {
     echo "    <th>Open</th>\n";
     echo "    <th>Closed</th>\n";
   }
