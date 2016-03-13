@@ -47,6 +47,8 @@ else {
   }
 
   echo "</table>\n";
+
+  echo $objArray[$k]->numOpenCloseTimes[3];
 }
 
 ?>
