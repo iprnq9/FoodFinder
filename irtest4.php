@@ -32,7 +32,7 @@ else {
         echo "<br><br>";
         for($day = 0; $day < 7; $day++)
         {
-            echo "Day #: " . $day;
+            echo "<strong>Day #: " . $day . "</strong>";
             echo "<br><br>";
             echo "Num Open/Close Times: " . $objArray[$location]->getNumOpenCloseTimes($day);
             echo "<br><br>";
