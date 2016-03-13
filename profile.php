@@ -75,14 +75,20 @@ else {
     for($day = 0; $day < 7; $day++)  {
         echo "  <tr class=\"day-" . ($day+1) . "\">\n";
         echo "    <td>" . $dayArray[$day] . "</td>\n";
-        for($meal = 0; $meal < ($objArray[$k]->getNumOpenCloseTimes($day)); $meal++){
-            echo "    <td>" . $objArray[$locationId]->getOpenTime($day,$meal) . "</td>\n";
-            echo "    <td>" . $objArray[$locationId]->getCloseTime($day, $meal) . "</td>\n";
+        for($meal = 0; $meal < ($objArray[$k]->getNumOpenCloseTimes(3)); $meal++){
+            $open = $objArray[$locationId]->getOpenTime($day,$meal);
+            $close = $objArray[$locationId]->getCloseTime($day, $meal);
+            if($open == NULL) {
+                $open = "-";
+                $close = "-";
+            }
+            echo "    <td>" . $open . "</td>\n";
+            echo "    <td>" . $close . "</td>\n";
         }
-        if ($objArray[$locationId]->getNumOpenCloseTimes($day) == 0)
-        {
-            echo "<td>-</td><td>-</td>";
-        }
+//        if ($objArray[$locationId]->getNumOpenCloseTimes($day) == 0)
+//        {
+//            echo "<td>-</td><td>-</td>";
+//        }
         echo "  </tr>\n";
     }
     echo "</table>\n";
