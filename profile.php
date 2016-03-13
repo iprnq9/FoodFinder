@@ -65,10 +65,11 @@ else {
     echo "                <h6 class=\"center-align week-of\"></h6>\n";
 
     echo "<table class=\"responsive-table centered bordered white\">\n";
-    echo "  <thead><tr>\n";
+    echo "  <thead class="green"><tr>\n";
     echo "    <th>Day</th>\n";
     for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes(3)); $i++) {
         echo "    <th>Open</th>\n";
+        echo "<th>-</th>";
         echo "    <th>Closed</th>\n";
     }
     echo "  </tr></thead>\n";
@@ -83,12 +84,10 @@ else {
                 $close = "-";
             }
             echo "    <td>" . $open . "</td>\n";
+            echo "<td>-</td>\n";
             echo "    <td>" . $close . "</td>\n";
         }
-//        if ($objArray[$locationId]->getNumOpenCloseTimes($day) == 0)
-//        {
-//            echo "<td>-</td><td>-</td>";
-//        }
+
         echo "  </tr>\n";
     }
     echo "</table>\n";
