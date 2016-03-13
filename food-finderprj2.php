@@ -83,7 +83,7 @@ class joeMinr{
         $cls3 = $this->getclsTime($curday, "dnnr");
         if ($currentMin <= 600){/*if its before 10:00am only check brkfst*/
             $chck = $this->getopnTime($curday, "brkfst");
-            if ($chck = NULL){
+            if ($chck == NULL){
                 return "closed";
             }
             elseif($chck > $currentMin){
