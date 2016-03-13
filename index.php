@@ -77,8 +77,7 @@ else {
         }
         echo "            </table>";
         echo "          </p>";
-        echo "          <div class=\"profile-button\"><a href=\"profile.php?id=". $k . \"
-          class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
+        echo "          <div class=\"profile-button\"><a href=\"profile.php?id=". $k . "\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
         echo "        </div>\n";
         echo "      </li>";
     }
