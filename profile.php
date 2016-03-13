@@ -79,6 +79,10 @@ else {
             echo "    <td>" . $objArray[$locationId]->getOpenTime($day,$meal) . "</td>\n";
             echo "    <td>" . $objArray[$locationId]->getCloseTime($day, $meal) . "</td>\n";
         }
+        if ($objArray[$locationId]->getNumOpenCloseTimes($day) == 0)
+        {
+            echo "<td>-</td><td>-</td>";
+        }
         echo "  </tr>\n";
     }
     echo "</table>\n";
