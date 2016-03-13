@@ -65,7 +65,7 @@ else {
     echo "                <h6 class=\"center-align week-of\"></h6>\n";
 
     echo "<table class=\"responsive-table centered bordered white\">\n";
-    echo "  <thead class="green"><tr>\n";
+    echo "  <thead class=\"green\"><tr>\n";
     echo "    <th>Day</th>\n";
     for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes(3)); $i++) {
         echo "    <th>Open</th>\n";
