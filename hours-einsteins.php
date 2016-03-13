@@ -6,7 +6,7 @@ include 'db-connect.php';
 
 //get location id from URL variable
 $locationId = htmlspecialchars($_GET["id"]);
-$k = $locationId - 1;
+$k = $locationId;
 $imageClass = "imageClass-" . $locationId;
 
 $con = new mysqli($host, $user, $password, $dbname);
@@ -28,7 +28,7 @@ else {
   echo "  <thead><tr>\n";
   echo "    <th>Day</th>\n";
 
-  for ($i = 0; $i < ($objArray[$k]->numOpenCloseTimes[3]); $i++) {
+  for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes(3)); $i++) {
     echo "    <th>Open</th>\n";
     echo "    <th>Closed</th>\n";
   }
@@ -47,8 +47,7 @@ else {
   }
 
   echo "</table>\n";
-
-  echo $objArray[$k]->numOpenCloseTimes[3];
+  
 }
 
 ?>
