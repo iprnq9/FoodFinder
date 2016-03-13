@@ -235,11 +235,11 @@ class joeMinr{
 
     // $val should be [0-2] since there will be at most 3 meals in a day
     public function getOpenTime($day, $meal){
-        return $this->todayOpenTimes[$day][$meal];
+        return $this->openTimes[$day][$meal];
     }
 
     public function getCloseTime($day, $meal){
-        return $this->todayCloseTimes[$day][$meal];
+        return $this->closeTimes[$day][$meal];
     }
 
 }
