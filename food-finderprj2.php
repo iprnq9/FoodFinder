@@ -12,7 +12,10 @@ class joeMinr{
 
     public $todayCloseTimes = array();
     public $todayOpenTimes = array();
-    public $numOpenCloseTimes;
+    //public $numOpenCloseTimes;
+    public $openTimes = array(array());
+    public $closeTimes = array(array());
+    public $numOpenCloseTimes = array();
 
     /* construtor */
     public function __construct(){
@@ -191,47 +194,51 @@ class joeMinr{
         $this->numOpenCloseTimes = $val;
     }
 
-    public function getNumOpenCloseTimes(){
-        return $this->numOpenCloseTimes;
+    //$day should be [0-6]
+    public function getNumOpenCloseTimes($day){
+        return $this->numOpenCloseTimes[$day];
     }
 
-    public function setOpenCloseArray($curday){
+    public function setOpenCloseArray(){
         $sinceEpoch = strtotime("today");
         $mealArray = array("brkfst", "lnch", "dnnr");
         $numOfMeals = sizeof($mealArray);
 
-        $counter = 0;
-        for ($i = 0; $i < ($numOfMeals); $i++) {
-            $openTime = $this->getopnTime($curday, $mealArray[$i]);
-            if ($openTime != NULL) {
-                $openTime = $openTime * 60 + $sinceEpoch;
-                $openTime = date('g:ia', $openTime);
-                $this->todayOpenTimes[$counter] = $openTime;
-                $counter++;
+        for($day = 0; $day < 7; $day++){
+            $counter = 0;
+            for ($i = 0; $i < ($numOfMeals); $i++) {
+                $openTime = $this->getopnTime(($day+1), $mealArray[$i]);
+                if ($openTime != NULL) {
+                    $openTime = $openTime * 60 + $sinceEpoch;
+                    $openTime = date('g:ia', $openTime);
+                    $this->openTimes[$day][$i] = $openTime;
+                    $counter++;
+                }
             }
+
+            $counter2 = 0;
+            for ($i = 0; $i < ($numOfMeals); $i++) {
+                $closeTime = $this->getclsTime(($day+1), $mealArray[$i]);
+                if ($closeTime != NULL) {
+                    $closeTime = $closeTime * 60 + $sinceEpoch;
+                    $closeTime = date('g:ia', $closeTime);
+                    $this->closeTimes[$day][$i] = $closeTime;
+                    $counter2++;
+                }
+            }
+
+            $numOpenCloseTimes[$day] = (sizeof($this->todayOpenTimes));
         }
 
-        $counter2 = 0;
-        for ($i = 0; $i < ($numOfMeals); $i++) {
-            $closeTime = $this->getclsTime($curday, $mealArray[$i]);
-            if ($closeTime != NULL) {
-                $closeTime = $closeTime * 60 + $sinceEpoch;
-                $closeTime = date('g:ia', $closeTime);
-                $this->todayCloseTimes[$counter2] = $closeTime;
-                $counter2++;
-            }
-        }
-
-        $this->setNumOpenCloseTimes(sizeof($this->todayOpenTimes));
     }
 
     // $val should be [0-2] since there will be at most 3 meals in a day
-    public function getOpenTime($val){
-        return $this->todayOpenTimes[$val];
+    public function getOpenTime($day, $meal){
+        return $this->todayOpenTimes[$day][$meal];
     }
 
-    public function getCloseTime($val){
-        return $this->todayCloseTimes[$val];
+    public function getCloseTime($day, $meal){
+        return $this->todayCloseTimes[$day][$meal];
     }
 
 }

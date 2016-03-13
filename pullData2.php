@@ -100,6 +100,6 @@ for($x=0; $x < $count; $x++){
 }
 
 for ($x = 0; $x < $count; $x++) {
-    $objArray[$x]->setOpenCloseArray($dayNumber);
+    $objArray[$x]->setOpenCloseArray();
 }
 ?>
