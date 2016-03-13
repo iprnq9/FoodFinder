@@ -31,10 +31,10 @@ class joeMinr{
 ////=======
 //>>>>>>> c8c2d6310042887bc21e5a70b1bdb0a211ebce57
         for($x=0; $x < 7; $x++){
-            $opntme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
+            $opntme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
         }
         for($x=0; $x < 7; $x++){
-            $clstme[$x] = array("lnch"=> NULL, "brkfst"=> NULL, "dnnr"=> NULL );
+            $clstme[$x] = array("lnch"=> null, "brkfst"=> null, "dnnr"=> null );
 //<<<<<<< HEAD
 //=======
 //        for($x=0; $x <= 7; $x++){
@@ -208,7 +208,7 @@ class joeMinr{
             $counter = 0;
             for ($i = 0; $i < ($numOfMeals); $i++) {
                 $openTime = $this->getopnTime(($day+1), $mealArray[$i]);
-                if ($openTime != NULL) {
+                if ($openTime != null) {
                     $openTime = $openTime * 60 + $sinceEpoch;
                     $openTime = date('g:ia', $openTime);
                     $this->openTimes[$day][$i] = $openTime;
@@ -219,7 +219,7 @@ class joeMinr{
             $counter2 = 0;
             for ($i = 0; $i < ($numOfMeals); $i++) {
                 $closeTime = $this->getclsTime(($day+1), $mealArray[$i]);
-                if ($closeTime != NULL) {
+                if ($closeTime != null) {
                     $closeTime = $closeTime * 60 + $sinceEpoch;
                     $closeTime = date('g:ia', $closeTime);
                     $this->closeTimes[$day][$i] = $closeTime;
