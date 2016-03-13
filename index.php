@@ -71,6 +71,10 @@ else {
         for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes($dayNumber-1)); $i++) {
             echo '<tr><td>' . $objArray[$k]->getOpenTime($dayNumber-1,$i) . '</td><td>-</td><td>' . $objArray[$k]->getCloseTime($dayNumber-1, $i) . '</td></tr>';
         }
+
+        if($objArray[$k]->getNumOpenCloseTimes($dayNumber-1) == 0){
+            echo '<tr><td>Closed</td><td>-</td><td>Closed</td></tr>';
+        }
         echo "            </table>";
         echo "          </p>";
         echo "          <div class=\"profile-button\"><a href=\"material-profile.php\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons left\">person_pin</i>View Profile</a></div>\n";
