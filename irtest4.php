@@ -26,7 +26,7 @@ else {
     {
         echo "Name: " . $objArray[$location]->getName();
         echo "<br><br>";
-        echo "getopnTime(): " . $objArray[$location]->getopnTime(7, "brkfst");
+        echo "getopnTime(7, \"lnch\"): " . $objArray[$location]->getopnTime(7, "lnch");
         echo "<br><br>";
         echo "Id: " . $objArray[$location]->getId();
         echo "<br><br>";
