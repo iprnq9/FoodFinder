@@ -107,78 +107,72 @@ else
                             echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
                             echo "                                            <select>\n";
                             echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            echo "                                                <?php\n";
-                            echo "                                                    for ($i=5; $i<24; $i++) {\n";
-                            echo "                                                        for ($j=0; $j < 2; $j++) {\n";
-                            echo "                                                            echo '<option value=\"'. ($i).':'.($j*30) . '\">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\\n';\n";
-                            echo "                                                        }\n";
-                            echo "                                                    }\n";
-                            echo "                                                ?>\n";
+
+                            for ($i=5; $i<24; $i++) {
+                                for ($j=0; $j < 2; $j++) {
+                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                }
+                            }
+
                             echo "                                            </select>\n";
                             echo "                                            <label>Breakfast Open</label>\n";
                             echo "                                        </div>\n";
                             echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
                             echo "                                            <select>\n";
                             echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            echo "                                                <?php\n";
-                            echo "                                                    for ($i=5; $i<24; $i++) {\n";
-                            echo "                                                        for ($j=0; $j < 2; $j++) {\n";
-                            echo "                                                            echo '<option value=\"'. ($i).':'.($j*30) . '\">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\\n';\n";
-                            echo "                                                        }\n";
-                            echo "                                                    }\n";
-                            echo "                                                ?>\n";
+
+                            for ($i=5; $i<24; $i++) {
+                                for ($j=0; $j < 2; $j++) {
+                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                }
+                            }
+
                             echo "                                            </select>\n";
                             echo "                                            <label>Breakfast Close</label>\n";
                             echo "                                        </div>\n";
                             echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
                             echo "                                            <select>\n";
                             echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            echo "                                                <?php\n";
-                            echo "                                                    for ($i=5; $i<24; $i++) {\n";
-                            echo "                                                        for ($j=0; $j < 2; $j++) {\n";
-                            echo "                                                            echo '<option value=\"'. ($i).':'.($j*30) . '\">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\\n';\n";
-                            echo "                                                        }\n";
-                            echo "                                                    }\n";
-                            echo "                                                ?>\n";
+
+                            for ($i=5; $i<24; $i++) {
+                                for ($j=0; $j < 2; $j++) {
+                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                }
+                            }
+
                             echo "                                            </select>\n";
                             echo "                                            <label>Lunch Open</label>\n";
                             echo "                                        </div>\n";
                             echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
                             echo "                                            <select>\n";
                             echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            echo "                                                <?php\n";
-                            echo "                                                    for ($i=5; $i<24; $i++) {\n";
-                            echo "                                                        for ($j=0; $j < 2; $j++) {\n";
-                            echo "                                                            echo '<option value=\"'. ($i).':'.($j*30) . '\">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\\n';\n";
-                            echo "                                                        }\n";
-                            echo "                                                    }\n";
-                            echo "                                                ?>\n";
+                            for ($i=5; $i<24; $i++) {
+                                for ($j=0; $j < 2; $j++) {
+                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                }
+                            }
                             echo "                                            </select>\n";
                             echo "                                            <label>Lunch Close</label>\n";
                             echo "                                        </div>\n";
                             echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
                             echo "                                            <select>\n";
                             echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            echo "                                                <?php\n";
-                            echo "                                                    for ($i=5; $i<24; $i++) {\n";
-                            echo "                                                        for ($j=0; $j < 2; $j++) {\n";
-                            echo "                                                            echo '<option value=\"'. ($i).':'.($j*30) . '\">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\\n';\n";
-                            echo "                                                        }\n";
-                            echo "                                                    }\n";
-                            echo "                                                ?>\n";
+                            for ($i=5; $i<24; $i++) {
+                                for ($j=0; $j < 2; $j++) {
+                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                }
+                            }
                             echo "                                            </select>\n";
                             echo "                                            <label>Dinner Open</label>\n";
                             echo "                                        </div>\n";
                             echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
                             echo "                                            <select>\n";
                             echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            echo "                                                <?php\n";
-                            echo "                                                    for ($i=5; $i<24; $i++) {\n";
-                            echo "                                                        for ($j=0; $j < 2; $j++) {\n";
-                            echo "                                                            echo '<option value=\"'. ($i).':'.($j*30) . '\">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\\n';\n";
-                            echo "                                                        }\n";
-                            echo "                                                    }\n";
-                            echo "                                                ?>\n";
+                            for ($i=5; $i<24; $i++) {
+                                for ($j=0; $j < 2; $j++) {
+                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+                                }
+                            }
                             echo "                                            </select>\n";
                             echo "                                            <label>Dinner Close</label>\n";
                             echo "                                        </div>\n";
@@ -186,8 +180,6 @@ else
                             echo "                                    </div>\n";
                             echo "                                </div>\n";
                             echo "                            </li>\n";
-                            echo "                        <li>";
-
                         }
 
                     ?>
