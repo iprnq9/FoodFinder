@@ -17,6 +17,8 @@ class joeMinr{
     public $closeTimes = array(array());
     public $numOpenCloseTimes = array();
 
+    protected $description;
+
     /* construtor */
     public function __construct(){
 //<<<<<<< HEAD
@@ -240,6 +242,14 @@ class joeMinr{
 
     public function getCloseTime($day, $meal){
         return $this->closeTimes[$day][$meal];
+    }
+
+    public function setDescription($desc){
+        $this->description = $desc;
+    }
+
+    public function getDescription(){
+        return $this->description;
     }
 
 }
