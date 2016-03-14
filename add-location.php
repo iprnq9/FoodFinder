@@ -99,8 +99,8 @@ else
 
                         for($day = 0; $day < 7; $day++) {
                             echo " <li>\n";
-                            echo "                                <div class=\"collapsible-header active green
-                            lighten-2\"><i class=\"material-icons\">today</i>" . $dayArray[$day] . "</div>\n";
+                            echo "                                <div class=\"collapsible-header " .
+                                ($day==0?"active ":" ") . "green lighten-2\"><i class=\"material-icons\">today</i>" . $dayArray[$day] . "</div>\n";
                             echo "                                <div class=\"collapsible-body white\" style=\"padding: 10px;\">\n";
                             echo "                                    <div class=\"row\">\n";
                             echo "                                        <form class=\"input-field\">\n";
