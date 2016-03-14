@@ -77,7 +77,7 @@ else {
         }
 
         if($objArray[$k]->getNumOpenCloseTimes($dayNumber-1) == 0){
-            echo '<tr><td>Closed</td><td>-</td><td>Closed</td></tr>';
+            echo '<tr><td>Closed</td><td>-</td><td>Today</td></tr>';
         }
         echo "            </table>";
         echo "          </p>";
