@@ -102,6 +102,6 @@ for($x=0; $x < $count; $x++){
 for ($x = 0; $x < $count; $x++) {
     $objArray[$x]->setOpenCloseArray();
     $desc = $con->query("SELECT description FROM descriptions WHERE id=($x+1)")->fetch_object()->description;
-    $objArray[$k]->setDescription($desc);
+    $objArray[$x]->setDescription($desc);
 }
 ?>
