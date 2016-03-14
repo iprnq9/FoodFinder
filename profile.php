@@ -162,7 +162,7 @@ include "footer.php";
         var dateVar = new Date();
         var n = dateVar.getDay();
 
-        $('tr.day-1').addClass('current-day');
+        $('tr.day-' + n).addClass('current-day');
 
     });
 </script>

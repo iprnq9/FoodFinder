@@ -76,7 +76,7 @@ class joeMinr{
     public function status(){
         /* returns the current status */
         $currentMin = date('H')*60 + date('i');
-        $curday = date('w');
+        $curday = date('w') + 1;
         $open1 = $this->getopnTime($curday, "brkfst");
         $cls1 = $this->getclsTime($curday, "brkfst");
         $open2 = $this->getopnTime($curday, "lnch");
