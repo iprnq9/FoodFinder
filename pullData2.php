@@ -106,11 +106,11 @@ for ($x = 0; $x < $count; $x++) {
 }
 
 for ($x = 0; $x < 1; $x++){
-    for($par = 1; $par <=4; $par++){
-        $val = $con->query("SELECT head$par FROM descriptions WHERE id=($x+1)")->fetch_object()->$val;
-        $objArray[$x]->setHeadingArray($x, $val);
-        $val = $con->query("SELECT par$par FROM descriptions WHERE id=($x+1)")->fetch_object()->$val;
-        $objArray[$x]->setParagraphArray($x, $val);
+    for($card = 1; $card <=4; $card++){
+        $val = $con->query("SELECT head$card FROM descriptions WHERE id=($x+1)")->fetch_object()->$val;
+        $objArray[$x]->setHeadingArray($card, $val);
+        //$val = $con->query("SELECT par$par FROM descriptions WHERE id=($x+1)")->fetch_object()->$val;
+        //$objArray[$x]->setParagraphArray($x, $val);
     }
 }
 ?>
