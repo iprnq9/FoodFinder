@@ -103,10 +103,10 @@ else {
     for($card = 1; $card <= 4; $card++){
         echo "          <li class=\"flex-item\">\n";
         echo "            <div class=\"quick-info green z-depth-2\">\n";
-        echo "              <div class=\"card-image einsteins1\"></div>\n";
+        echo "              <div class=\"card-image\" style=\"background-image: url(images/" . $objArray[$k]->getImage($card-1) . "; background-size: cover; background-repeat: no-repeat;\"></div>\n";
         echo "              <div class=\"quick-info-text\">\n";
         echo "                <h3>" . $objArray[$k]->getHeading($card-1) . "</h3>\n";
-        //echo $objArray[$k]->getParagraph($card-1);
+        echo $objArray[$k]->getParagraph($card-1);
         echo "              </div>\n";
         echo "            </div>\n";
         echo "          </li>\n";

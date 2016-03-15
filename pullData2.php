@@ -111,8 +111,16 @@ for ($x = 0; $x < 1; $x++){
         $colName = "head" . $card;
         $val = $con->query($query)->fetch_object()->$colName;
         $objArray[$x]->setHeadingArray(($card-1), $val);
-        //$val = $con->query("SELECT par$par FROM descriptions WHERE id=($x+1)")->fetch_object()->$val;
-        //$objArray[$x]->setParagraphArray($x, $val);
+
+        $query = "SELECT par" . $card . " FROM descriptions WHERE id=" . ($x+1);
+        $colName = "par" . $card;
+        $val = $con->query($query)->fetch_object()->$colName;
+        $objArray[$x]->setParagraphArray(($card-1), $val);
+
+        $query = "SELECT img" . $card . " FROM descriptions WHERE id=" . ($x+1);
+        $colName = "img" . $card;
+        $val = $con->query($query)->fetch_object()->$colName;
+        $objArray[$x]->setImageArray(($card-1), $val);
     }
 }
 ?>

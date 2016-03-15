@@ -20,6 +20,7 @@ class joeMinr{
     protected $description;
     protected $headingArray = array("Test", "Test", "Test", "Test");
     protected $paragraphArray = array("Test", "Test", "Test", "Test");
+    protected $imagesArray = array("bagels.jpg","bagels.jpg","bagels.jpg","bagels.jpg");
 
 
     /* construtor */
@@ -269,6 +270,14 @@ class joeMinr{
 
     public function getParagraph($index){
         return $this->paragraphArray[$index];
+    }
+
+    public function setImageArray($index, $val){
+        $this->imagesArray[$index] = $val;
+    }
+
+    public function getImage($index){
+        return $this->imagesArray[$index];
     }
 }
 

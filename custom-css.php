@@ -1,0 +1,456 @@
+<?php
+header("Content-type: text/css");
+
+include 'db-connect.php';
+
+
+
+?>
+
+@font-face {
+font-family: Scoreboard;
+src: url(fonts/scoreboard.ttf);
+}
+
+@font-face {
+font-family: 'MST';
+src:  url('font/mst.woff2') format('woff2');
+}
+
+@font-face {
+font-family: 'MST-bold';
+src:  url('font/mst-bold.woff2') format('woff2');
+}
+
+@font-face {
+font-family: 'MST-head';
+src:  url('font/mst-head.woff') format('woff');
+}
+
+html, body {
+height: 100%;
+}
+
+nav {
+background-color: #003B49;
+}
+
+.current-day {
+background-color: lightgray;
+font-weight: bold;
+}
+
+.caption {
+text-align: center;
+font-family: Scoreboard;
+margin-bottom: 0;
+transform: translate3d(0,0,0);
+-webkit-transform: translate3d(0,0,0);
+/*-webkit-transition: height 0.5s ease;*/
+/*transition: height 0.5s ease;*/
+-webkit-transition: height 0.5s ease, min-height 0.5s ease;
+transition: height 0.5s ease, min-height 0.5s ease;
+overflow: hidden;
+font-size: 28pt;
+color: black;
+}
+
+.closed {
+background-color: rgba(223, 86, 71, 0.8);
+}
+
+.closing-soon {
+background-color: rgba(233, 185, 89, 0.8);
+}
+
+.open {
+background-color: rgba(108, 162, 103, 0.8);
+}
+
+@import "compass/css3";
+
+.flex-container {
+padding: 0;
+margin: 0;
+list-style: none;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-flex-flow: row wrap;
+-moz-flex-flow: row wrap;
+-ms-flex-wrap: wrap;
+-ms-flex-direction: row;
+flex-flow: wrap;
+justify-content: space-around;
+}
+
+.flex-item {
+width: 400px;
+height: 600px;
+margin-top: 10px;
+color: black;
+}
+
+.flex-item-large {
+width: 800px;
+height: 1210px;
+margin-top: 10px;
+color: black;
+}
+
+.flex-item-tall {
+width: 400px;
+height: 1210px;
+margin-top: 10px;
+color: black;
+}
+
+.flex-item-wide {
+width: 834px;
+height: 600px;
+margin-top: 10px;
+color: black;
+}
+
+.card-image {
+width: 100%;
+height: 25%;
+overflow: hidden;
+position: relative;
+border-radius: 0px;
+}
+
+.card-info {
+padding: 10px;
+height: 50%;
+text-align: center;
+display: flex;
+flex-flow: column;
+justify-content: flex-start;
+}
+
+.card-content {
+padding: 10px;
+}
+
+.card-status {
+width: 100%;
+height: auto;
+text-align: center;
+font-family: Scoreboard;
+margin-bottom: 0;
+transform: translate3d(0,0,0);
+-webkit-transform: translate3d(0,0,0);
+/*-webkit-transition: height 0.5s ease;*/
+/*transition: height 0.5s ease;*/
+-webkit-transition: height 0.5s ease, min-height 0.5s ease;
+transition: height 0.5s ease, min-height 0.5s ease;
+font-size: 28pt;
+line-height: auto;
+color: black;
+}
+
+.card-hours {
+margin-top: 19px;
+margin-bottom: 10px;
+display: inline-block;
+vertical-align: middle;
+height: auto;
+}
+
+.card-hours caption {
+padding: 2px;
+line-height: auto;
+}
+
+.profile-button {
+width: 100%;
+height: auto;
+text-align:center;
+margin-top: 15px;
+margin-bottom: 15px;
+position: absolute;
+bottom: 0;
+margin-left: -12px;
+}
+
+.card-title, .card-subtitle {
+text-align: center;
+}
+
+.busy {
+background-color: rgba(223, 86, 71, 0.8);
+}
+
+.somewhat-busy {
+background-color: rgba(233, 185, 89, 0.8);
+}
+
+.not-busy {
+background-color: rgba(108, 162, 103, 0.8);
+}
+
+.currently {
+width: auto;
+display: inline-block;
+height: auto;
+font-size: 25pt;
+margin: 0 auto;
+text-align: center;
+margin-top: 15px;
+border: solid white 12px;
+padding: 10px;
+}
+
+.profile-image {
+width: 100%;
+height: 200px;
+margin-top: -20px;
+z-index: -1;
+}
+
+.profile-name {
+display: inline-block;
+padding: 25px;
+line-height: 40px;
+height: auto;
+border: white solid 12px;
+position: relative;
+margin-top: -40px;
+margin-bottom: 10px;
+text-align: center;
+font-weight: 400;
+font-size: 34pt;
+color: black;
+text-transform: ;
+font-variant: small-caps;
+}
+
+.quick-info {
+width: auto;
+height: 100%;
+background: ;
+border: solid white 12px;
+}
+
+.quick-info-image {
+border-radius: 50%;
+width: 150px;
+height: 150px;
+margin: 10px;
+border: solid black 0px;
+}
+
+.quick-info-text {
+width: 100%;
+height: auto;
+text-align: left;
+font-size: 12pt;
+padding-left: 10px;
+padding-right: 10px;
+overflow: hidden;
+}
+
+/*---------------Location Classes for Images---------------------*/
+
+.imageClass-1 {
+background-image: url(images/bagels2.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.einsteins1 {
+background-image: url(images/bagels.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.einsteins2 {
+background-image: url(images/einsteins-sandwhich.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.einsteins3 {
+background-image: url(images/einsteins-coffee.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.imageClass-2 {
+background-image: url(images/rustic2-2.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.imageClass-5 {
+background-image: url(images/coffee.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.imageClass-7 {
+background-image: url(images/munchies.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.imageClass-3 {
+background-image: url(images/sandwich.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.patio {
+background-image: url(images/patio.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.imageClass-4 {
+background-image: url(images/havener.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.imageClass-6 {
+background-image: url(images/buffet.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.bbq {
+background-image: url(images/bbq.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.bake {
+background-image: url(images/bake.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.donuts {
+background-image: url(images/donuts.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+.soup {
+background-image: url(images/soup.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+
+
+/*-----------------------------------------------------------------*/
+
+hr {
+display: block;
+height: 3px;
+border: 0;
+border-top: 1px solid #ccc;
+margin: 1em 0;
+padding: 0;
+width: 50%;
+margin: 0 auto;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.todays-hours-text {
+font-size: 14pt;
+vertical-align: middle;
+display: inline-flex;
+}
+
+.brand-logo {
+vertical-align: middle;
+display: inline-flex;
+}
+
+.menu-download {
+max-width: 40%;
+max-height: 40%;
+display: block;
+margin: 0 auto;
+}
+
+@media only screen and (max-width : 1130px) {
+.flex-item, .flex-item-tall, .flex-item-wide, .flex-item-large {
+width: 100%;
+}
+}
+
+.currently, .profile-name, .quick-info-text h3, .card-content h4, .heading, .collapsible-header {
+font-family: MST;
+}
+
+.quick-info-text {
+line-height: 30px;
+font-size: 12pt;
+}
+
+.shrink-grow {
+flex-shrink: 1;
+}
+
+.minerbytes {
+height: 100%;
+width: 100%
+}
+
+.green2 {
+background-color: #308446;
+}
+
+.backgroundColor {
+background-color: #575757;
+}
+
+/* label color */
+.input-field label {
+color: #4CAF50;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+color: #4CAF50;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+border-bottom: 1px solid #4CAF50;
+box-shadow: 0 1px 0 0 #4CAF50;
+}
+/* valid color */
+.input-field input[type=text].valid {
+border-bottom: 1px solid #4CAF50;
+box-shadow: 0 1px 0 0 #4CAF50;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+border-bottom: 1px solid #ff0000;
+box-shadow: 0 1px 0 0 #ff0000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+color: #4CAF50;
+}
+
+option {
+color: #4CAF50;
+}
