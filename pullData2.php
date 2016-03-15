@@ -109,7 +109,7 @@ for ($x = 0; $x < 1; $x++){
     for($card = 1; $card <=4; $card++){
         $query = "SELECT head" . $card . " FROM descriptions WHERE id=" . ($x+1);
         $colName = "head" . $card;
-        $val = $con->query($query)->fetch_object()->colName;
+        $val = $con->query($query)->fetch_object()->$colName;
         $objArray[$x]->setHeadingArray(($card-1), $val);
         //$val = $con->query("SELECT par$par FROM descriptions WHERE id=($x+1)")->fetch_object()->$val;
         //$objArray[$x]->setParagraphArray($x, $val);
