@@ -107,8 +107,9 @@ for ($x = 0; $x < $count; $x++) {
 
 for ($x = 0; $x < 1; $x++){
     for($card = 1; $card <=4; $card++){
-        $val = $con->query("SELECT head$card FROM descriptions WHERE id=($x+1)")->fetch_object()->head.$card;
-        $objArray[$x]->setHeadingArray($card, $val);
+        $query = "SELECT head" . $card . " FROM descriptions WHERE id=" . ($x+1);
+        $val = $con->query($query)->fetch_object()->head . $card;
+        $objArray[$x]->setHeadingArray(($card-1), $val);
         //$val = $con->query("SELECT par$par FROM descriptions WHERE id=($x+1)")->fetch_object()->$val;
         //$objArray[$x]->setParagraphArray($x, $val);
     }
