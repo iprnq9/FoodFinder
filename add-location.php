@@ -189,7 +189,6 @@ else
                 <li>
                     <div class="collapsible-header green slab"><i class="material-icons">description</i>Profile Card #1</div>
                     <div class="collapsible-body grey darken-4 green-text" style="padding-top: 10px;">
-                        <img src="images/example-profile-card.png" class="materialboxed center-align" />
                         <div class="input-field col s12">
                             <i class="material-icons prefix">label_outline</i>
                             <input placeholder='Ex: "Darn Good Coffee"' id="par1_heading" type="text" length="45" class="validate">

@@ -18,6 +18,9 @@ class joeMinr{
     public $numOpenCloseTimes = array();
 
     protected $description;
+    protected $headingArray = array("Test", "Test", "Test", "Test");
+    protected $paragraphArray = array("Test", "Test", "Test", "Test");
+
 
     /* construtor */
     public function __construct(){
@@ -252,6 +255,21 @@ class joeMinr{
         return $this->description;
     }
 
+    public function setHeadingArray($index, $val){
+        $this->headingArray[$index] = $val;
+    }
+
+    public function getHeading($index){
+        return $this->headingArray[$index];
+    }
+
+    public function setParagraphArray($index, $val){
+        $this->paragraphArray[$index] = $val;
+    }
+
+    public function getParagraph($index){
+        return $this->paragraphArray[$index];
+    }
 }
 
 

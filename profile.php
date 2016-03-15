@@ -96,45 +96,21 @@ else {
     echo "            </div>\n";
     echo "          </li>\n";
     echo "\n";
-    echo "          <li class=\"flex-item\">\n";
-    echo "            <div class=\"quick-info green z-depth-2\">\n";
-    echo "              <div class=\"card-image einsteins1\"></div>\n";
-    echo "              <div class=\"quick-info-text\">\n";
-    echo "                <h3>Our Mission</h3>\n";
-    echo "                Einstein Bros. Bagels is your neighborhood bagel shop. We’re proud to provide our guests with freshly baked bagels, breakfast sandwiches, lunch sandwiches, coffee, catering and so much more. Stop on in. We’ll have a fresh bagel and cup of coffee ready for you.\n";
-    echo "              </div>\n";
-    echo "            </div>\n";
-    echo "          </li>\n";
-    echo "\n";
-    echo "          <li class=\"flex-item\">\n";
-    echo "            <div class=\"quick-info green z-depth-2\">\n";
-    echo "              <div class=\"card-image einsteins3\"></div>\n";
-    echo "              <div class=\"quick-info-text\">\n";
-    echo "                <h3>Darn Good Coffee</h3>\n";
-    echo "                We serve up your soon-to-be favorite drinks. Whether they be hot, cold, or iced, a cup of happiness awaits your hectic workday, relaxing day at home, or fun day out with friends.\n";
-    echo "              </div>\n";
-    echo "            </div>\n";
-    echo "          </li>\n";
-    echo "\n";
-    echo "          <li class=\"flex-item\">\n";
-    echo "            <div class=\"quick-info green z-depth-2\">\n";
-    echo "              <div class=\"card-image einsteins2\"></div>\n";
-    echo "              <div class=\"quick-info-text\">\n";
-    echo "                <h3>More Than A Snack</h3>\n";
-    echo "                 In addition to serving up delicious bagels and coffee, we cook gourmet breakfast and lunch sandwiches. High-five your tastebuds!\n";
-    echo "              </div>\n";
-    echo "            </div>\n";
-    echo "          </li>\n";
-    echo "\n";
-    echo "          <li class=\"flex-item\">\n";
-    echo "            <div class=\"quick-info green z-depth-2\">\n";
-    echo "              <div class=\"card-image einsteins1\"></div>\n";
-    echo "              <div class=\"quick-info-text\">\n";
-    echo "                <h3>Download Menu</h3>\n";
-    echo "                <a href=\"images/einstieins-menu.pdf\" target=\"_blank\"><img src=\"images/foodMenu.png\" class=\"menu-download\" alt=\"Download image\"/></a>\n";
-    echo "              </div>\n";
-    echo "            </div>\n";
-    echo "          </li>\n";
+
+    for($card = 1; $card <= 4; $card++){
+        echo "          <li class=\"flex-item\">\n";
+        echo "            <div class=\"quick-info green z-depth-2\">\n";
+        echo "              <div class=\"card-image einsteins1\"></div>\n";
+        echo "              <div class=\"quick-info-text\">\n";
+        echo "                <h3>" . $objArray[$k]->getHeading($card-1) . "</h3>\n";
+        echo $objArray[$k]->getParagraph($card-1);
+        echo "              </div>\n";
+        echo "            </div>\n";
+        echo "          </li>\n";
+        echo "\n";
+    }
+
+
     echo "        </ul>\n";
     echo "      </div>\n";
     echo "    </div>\n";
