@@ -20,9 +20,9 @@
 <script src="js/init.js"></script>
 <body>
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', 'On');
-//ini_set('html_errors', 'On');
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+ini_set('html_errors', 'On');
 
 include 'food-finderprj2.php';
 
@@ -87,7 +87,7 @@ else {
     }
     echo "</ul></div></div>";
 
-    echo $objArray[0]->getHeading(0);
+    //echo $objArray[0]->getHeading(0);
 }
 
 include 'footer.php';

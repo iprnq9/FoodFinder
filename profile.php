@@ -20,6 +20,9 @@
 <body style="background-color: #eeeeee;">
 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+ini_set('html_errors', 'On');
 
 include 'header.php';
 
@@ -103,7 +106,7 @@ else {
         echo "              <div class=\"card-image einsteins1\"></div>\n";
         echo "              <div class=\"quick-info-text\">\n";
         echo "                <h3>" . $objArray[$k]->getHeading($card-1) . "</h3>\n";
-        echo $objArray[$k]->getParagraph($card-1);
+        //echo $objArray[$k]->getParagraph($card-1);
         echo "              </div>\n";
         echo "            </div>\n";
         echo "          </li>\n";
