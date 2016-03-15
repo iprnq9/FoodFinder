@@ -86,6 +86,8 @@ else {
         echo "      </li>";
     }
     echo "</ul></div></div>";
+
+    echo $objArray[0]->getHeading(0);
 }
 
 include 'footer.php';
