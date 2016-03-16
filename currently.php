@@ -27,6 +27,6 @@ else {
 }
 $currently = date("l, g:ia") . ': ' . $currentMeal;
 
-echo '<div class="currently z-depth-1 green">' . $currently . '</div>';
+echo '<div class="currently z-depth-1 white-text green lighten-1">' . $currently . '</div>';
 
 ?>

@@ -58,10 +58,10 @@ else {
     echo "    <div class=\"section\">\n";
     echo "      <div class=\"row\" style=\"text-align: center;\">\n";
     echo "        <div class=\"profile-image imageClass-" . ($locationId+1) . "\"></div>\n";
-    echo "        <div class=\"profile-name green z-depth-2\">" . $name . "</div>\n";
+    echo "        <div class=\"profile-name green lighten-1 z-depth-2\">" . $name . "</div>\n";
     echo "        <ul class=\"flex-container\">\n";
     echo "          <li class=\"flex-item-wide z-depth-2\">\n";
-    echo "            <div class=\"quick-info green\">\n";
+    echo "            <div class=\"quick-info white-text green lighten-1\">\n";
     echo "              <div class=\"card-status " . $status . "\">" . $status . "</div>\n";
     echo "              <div class=\"card-content\">\n";
     echo "                <h4 class=\"center-align\" style=\"margin-top: -5px;\">Hours of Operation</h4>\n";
@@ -102,12 +102,12 @@ else {
 
     for($card = 1; $card <= 4; $card++){
         echo "          <li class=\"flex-item\">\n";
-        echo "            <div class=\"quick-info green z-depth-2\">\n";
+        echo "            <div class=\"quick-info green lighten-1 z-depth-2\">\n";
         echo "              <div class=\"card-image\" style=\"background-image: url(images/" .
             $objArray[$k]->getImage($card-1) . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
-        echo "              <div class=\"quick-info-text flow-text\">\n";
+        echo "              <div class=\"quick-info-text white-text\">\n";
         echo "                <h3>" . $objArray[$k]->getHeading($card-1) . "</h3>\n";
-        echo "<p class=\"flow-text\">" . $objArray[$k]->getParagraph($card-1) . "</p>";
+        echo "<p class=\"\">" . $objArray[$k]->getParagraph($card-1) . "</p>";
         echo "              </div>\n";
         echo "            </div>\n";
         echo "          </li>\n";
