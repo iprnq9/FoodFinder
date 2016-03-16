@@ -26,7 +26,7 @@
     <div class="section" style="margin-top: 10px;">
         <div class="row">
             <div class="col s12 m12 l8 push-l2 center-align" style="text-align: center">
-                <img class="materialboxed center-align" width="650" src="images/foodfinders.JPG">
+                <img class="materialboxed center-align" style="margin: 0 auto;" width="650" src="images/foodfinders.JPG">
                 <div class="card-panel green">
                     <span class="white-text">
                       We are the FoodFinders. :D<br>
