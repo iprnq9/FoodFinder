@@ -8,7 +8,8 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-      © 2015-2016 | <a href="foodfinders.php">Made by the coolest kids at Missouri S&T</a>
+      © 2015-2016 | <a class="grey-text text-lighten-4" href="foodfinders.php">Made by the coolest kids at Missouri
+        S&T</a>
       <a class="grey-text text-lighten-4 right" target="_blank" href="http://bebetter.mst.edu/">Missouri S&T ITRSS</a>
     </div>
   </div>

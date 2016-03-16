@@ -23,11 +23,12 @@
 <?php include 'header.php'; ?>
 
 <div class="container">
-    <div class="section center-align">
-        <img class="materialboxed" width="650" src="images/foodfinders.JPG">
+    <div class="section center-align" style="margin-top: 10px;">
+        <div class="center-block"><img class="materialboxed" width="650" src="images/foodfinders.JPG"></div>
         <div class="card-panel green">
           <span class="white-text">
-              We are the FoodFinders. :D
+              We are the FoodFinders. :D<br>
+              Hassan Kaous, CpE '17 | Ian Roberts, EE '18 | Brandon Huttsell, IST '16 | Logan Green, AE '16
           </span>
         </div>
     </div>
