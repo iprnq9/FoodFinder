@@ -223,7 +223,7 @@ nav {
   width: auto;
   height: 100%;
   background: ;
-  border: solid white 12px;
+  border: solid #66BB6A 12px;
 }
 
 .quick-info-image {
@@ -445,3 +445,4 @@ hr {
 option {
   color: #4CAF50;
 }
+

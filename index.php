@@ -65,7 +65,7 @@ else {
         echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
         echo "          <p class=\"card-subtitle\">" . $objArray[$k]->getDescription() . "</p>\n";
         echo "<p class=\"card-hours center-align\"><span class=\"todays-hours-text\"><i class=\"material-icons\">schedule</i>&nbsp;Today's Hours</span>";
-        echo "            <table class=\"table centered bordered white\" style=\"width: 50%;margin: 0 auto;\">";
+        echo "            <table class=\"table centered bordered grey darken-4 white-text\" style=\"width: 50%;margin: 0 auto;\">";
         echo "            <thead><tr>";
         echo "              <th>Open</th>";
         echo "              <th>-</th>";
