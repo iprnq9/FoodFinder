@@ -24,7 +24,9 @@
 
 <div class="container">
     <div class="section center-align" style="margin-top: 10px;">
-        <div class="center-block" style="text-align: center;"><img class="materialboxed" width="650" src="images/foodfinders.JPG"></div>
+        <div class="center-block center-align" style="text-align: center;margin: 0 auto;"><img class="materialboxed"
+                                                                                        width="650"
+                                                                    src="images/foodfinders.JPG"></div>
         <div class="card-panel green">
           <span class="white-text">
               We are the FoodFinders. :D<br>
