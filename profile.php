@@ -105,7 +105,7 @@ else {
         echo "            <div class=\"quick-info green z-depth-2\">\n";
         echo "              <div class=\"card-image\" style=\"background-image: url(images/" .
             $objArray[$k]->getImage($card-1) . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
-        echo "              <div class=\"quick-info-text\">\n";
+        echo "              <div class=\"quick-info-text flow-text\">\n";
         echo "                <h3>" . $objArray[$k]->getHeading($card-1) . "</h3>\n";
         echo "<p class=\"flow-text\"" . $objArray[$k]->getParagraph($card-1) . "</p>";
         echo "              </div>\n";
