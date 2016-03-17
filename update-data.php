@@ -107,7 +107,7 @@ else {
 
     <?php
 
-    if(isset($_POST['update2'])) {
+    else if(isset($_POST['update2'])) {
 
         $location_description = $_POST['location_description'];
 
