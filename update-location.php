@@ -188,8 +188,59 @@ else {
             </table>
         </form>
         <?php
+    } ?>
+    <?php
+    if(isset($_POST['update4'])) {
+
+        $card1_paragraph = $_POST['card1_paragraph'];
+
+        $sql = "UPDATE descriptions SET par1=\"$card1_paragraph\" WHERE id=$id";
+        $result = mysqli_query($con, $sql);
+
+        if (!$result)
+        {
+        echo ('Error: Could not update Card 1 Paragraph.');
+        }
+
+        else
+        {
+        echo "Card 1 Paragraph updated successfully!";
+        }
     }
 
+    else
+    {
+    ?>
+        <h4>Update Card 1 Paragraph</h4>
+        <form method = "post" action = "<?php $_PHP_SELF ?>">
+            <table width = "400" border =" 0" cellspacing = "1"
+                   cellpadding = "2">
+
+                <tr>
+                    <td width = "100">New Card 1 Paragraph</td>
+                    <td><input style="width: 200px; height: 200px;" name = "card1_paragraph" type = "text"
+                               id = "card1_paragraph" placeholder="<?php echo $objArray[$id-1]->getParagraph(0);
+                        ?>"></td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td> </td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td>
+                        <input name = "update4" type = "submit"
+                               id = "update4" value = "Update Card 1 Paragraph">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <?php
+    } ?>
+<?php
 }
 ?>
 
