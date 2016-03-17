@@ -211,6 +211,7 @@ else {
     else
     {
     ?>
+
         <h4>Update Card 1 Paragraph</h4>
         <form method = "post" action = "<?php $_PHP_SELF ?>">
             <table width = "400" border =" 0" cellspacing = "1"
@@ -238,6 +239,76 @@ else {
 
             </table>
         </form>
+        <?php
+    } ?>
+
+    <?php
+
+    $target_dir = "images/";
+    $target_file = $target_dir . basename($_FILES["card_image1"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["update5"])) {
+        $check = getimagesize($_FILES["card_image1"]["tmp_name"]);
+        if ($check !== false) {
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+
+        // Check file size
+        if ($_FILES["card_image1"]["size"] > 500000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+        // Allow certain file formats
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif"
+        ) {
+            echo "Sorry, only JPG/JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+            // if everything is ok, try to upload file
+        }
+        else {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                $filename = basename($_FILES["card1_image"]["name"]);
+                $sql = "UPDATE descriptions SET img1=\"" . $filename . "\" WHERE id=" . $id;
+                $result = mysqli_query($con, $sql);
+
+                if (!$result)
+                {
+                    echo ('Error: Could not update Card 1 Image.');
+                }
+
+                else
+                {
+                    echo "The file \" . basename($_FILES[\"card1_image\"][\"name\"]) . \" has been uploaded.";
+                }
+
+            }
+            else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
+    }
+
+    else {
+        echo "<form action=\"<?php $_PHP_SELF ?>\" method=\"post\" enctype=\"multipart/form-data\">";
+        echo "<input type=\"file\" name=\"card_image1\" id=\"card_image1\">";
+        echo "<input type=\"update5\"$ id=\"update5\" value=\"Upload Card Image 1\" name=\"update5\">";
+        echo "</form>";
+    }
+
+        ?>
+
+
         <?php
     } ?>
 <?php
