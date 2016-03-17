@@ -20,7 +20,6 @@
 <link href="custom.css" rel="stylesheet">
 
 <body>
-
 <?php
 $id = NULL;
 
@@ -46,9 +45,9 @@ if(isset($_POST['update'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO location_id (location_name) VALUES (" . $location_name .")";
+    $sql = "INSERT INTO location_id (location_name) VALUES (\"" . $location_name ."\"")";
     $result1 = mysqli_query($conn, $sql);
-    $sql = "SELECT id FROM location_id WHERE location_name=" . $location_name;
+    $sql = "SELECT id FROM location_id WHERE location_name=\"" . $location_name . "\"";
     $location_id = mysqli_query($conn, $sql);
 
     if (!$result1)
@@ -56,7 +55,7 @@ if(isset($_POST['update'])) {
         echo ('Could not add location name.');
     }
 
-    $sql = "INSERT INTO descriptions (id, location) VALUES (" . $location_id . "," . $location_location .")";
+    $sql = "INSERT INTO descriptions (id, location) VALUES (\"" . $location_id . "\"", \"" . $location_location ."\")";
     $result2 = mysqli_query($conn, $sql);
 
     if (!$result2)
@@ -194,86 +193,85 @@ else
                         }
 
                     ?>
-                    <ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header green slab"><i class="material-icons">description</i>Profile Card #1</div>
-                    <div class="collapsible-body grey darken-4 green-text" style="padding-top: 10px;">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">label_outline</i>
-                            <input placeholder='Ex: "Darn Good Coffee"' id="par1_heading" type="text" length="45" class="validate">
-                            <label for="par1_heading">Paragraph 1 Heading</label>
-                        </div>
-                        <div class="row" style="padding: 10px">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">assignment</i>
-                                <textarea id="par1_text" class="materialize-textarea" length="120"></textarea>
-                                <label for="par1_text">Paragraph text</label>
-                            </div>
-                        </div>
-                        <div class="file-field input-field" style="padding: 10px">
-                            <div class="btn green lighten-1">
-                                <span>Upload</span>
-                                <input type="file">
-                                <i class="material-icons right">add_a_photo</i>
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Must use .JPG or .PNG">
-                            </div>
-                        </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">web</i>Profile Card #2</div>
-                    <div class="collapsible-body">
-                        <div class="row" style="margin-top: 15px;padding: 10px;">
-                            <div class="input-field col s12 m8">
-                                <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">
-                                <label for="location_name">Dining Location Name</label>
-                            </div>
-                            <div class="input-field col s12 m8">
-                                <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">
-                                <label for="location_location">Location</label>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">message</i>Profile Card #3</div>
-                    <div class="collapsible-body">
-                        <div class="row" style="margin-top: 15px;padding: 10px;">
-                            <div class="input-field col s12 m8">
-                                <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">
-                                <label for="location_name">Dining Location Name</label>
-                            </div>
-                            <div class="input-field col s12 m8">
-                                <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">
-                                <label for="location_location">Location</label>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">description</i>Profile Card #4</div>
-                    <div class="collapsible-body">
-                        <div class="row" style="margin-top: 15px;padding: 10px;">
-                            <div class="input-field col s12 m8">
-                                <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">
-                                <label for="location_name">Dining Location Name</label>
-                            </div>
-                            <div class="input-field col s12 m8">
-                                <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">
-                                <label for="location_location">Location</label>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <hr />
-            <button class="btn-large waves-effect waves-light green lighten-1" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-        </form>
+<!--                    </ul>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="collapsible-header green slab"><i class="material-icons">description</i>Profile Card #1</div>-->
+<!--                    <div class="collapsible-body grey darken-4 green-text" style="padding-top: 10px;">-->
+<!--                        <div class="input-field col s12">-->
+<!--                            <i class="material-icons prefix">label_outline</i>-->
+<!--                            <input placeholder='Ex: "Darn Good Coffee"' id="par1_heading" type="text" length="45" class="validate">-->
+<!--                            <label for="par1_heading">Paragraph 1 Heading</label>-->
+<!--                        </div>-->
+<!--                        <div class="row" style="padding: 10px">-->
+<!--                            <div class="input-field col s12">-->
+<!--                                <i class="material-icons prefix">assignment</i>-->
+<!--                                <textarea id="par1_text" class="materialize-textarea" length="120"></textarea>-->
+<!--                                <label for="par1_text">Paragraph text</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="file-field input-field" style="padding: 10px">-->
+<!--                            <div class="btn green lighten-1">-->
+<!--                                <span>Upload</span>-->
+<!--                                <input type="file">-->
+<!--                                <i class="material-icons right">add_a_photo</i>-->
+<!--                            </div>-->
+<!--                            <div class="file-path-wrapper">-->
+<!--                                <input class="file-path validate" type="text" placeholder="Must use .JPG or .PNG">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="collapsible-header"><i class="material-icons">web</i>Profile Card #2</div>-->
+<!--                    <div class="collapsible-body">-->
+<!--                        <div class="row" style="margin-top: 15px;padding: 10px;">-->
+<!--                            <div class="input-field col s12 m8">-->
+<!--                                <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">-->
+<!--                                <label for="location_name">Dining Location Name</label>-->
+<!--                            </div>-->
+<!--                            <div class="input-field col s12 m8">-->
+<!--                                <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">-->
+<!--                                <label for="location_location">Location</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="collapsible-header"><i class="material-icons">message</i>Profile Card #3</div>-->
+<!--                    <div class="collapsible-body">-->
+<!--                        <div class="row" style="margin-top: 15px;padding: 10px;">-->
+<!--                            <div class="input-field col s12 m8">-->
+<!--                                <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">-->
+<!--                                <label for="location_name">Dining Location Name</label>-->
+<!--                            </div>-->
+<!--                            <div class="input-field col s12 m8">-->
+<!--                                <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">-->
+<!--                                <label for="location_location">Location</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="collapsible-header"><i class="material-icons">description</i>Profile Card #4</div>-->
+<!--                    <div class="collapsible-body">-->
+<!--                        <div class="row" style="margin-top: 15px;padding: 10px;">-->
+<!--                            <div class="input-field col s12 m8">-->
+<!--                                <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">-->
+<!--                                <label for="location_name">Dining Location Name</label>-->
+<!--                            </div>-->
+<!--                            <div class="input-field col s12 m8">-->
+<!--                                <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">-->
+<!--                                <label for="location_location">Location</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <hr />-->
+<!--            <button class="btn-large waves-effect waves-light green lighten-1" type="submit" name="action">Submit-->
+<!--                <i class="material-icons right">send</i>-->
+<!--            </button>-->
     </div>
 
     <?php
