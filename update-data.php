@@ -129,16 +129,16 @@ else {
     else
     {
         ?>
+        <hr />
         <h4>Update Description</h4>
         <form method = "post" action = "<?php $_PHP_SELF ?>">
             <table width = "600" border =" 0" cellspacing = "1"
                    cellpadding = "2">
 
                 <tr>
-                    <td width = "200" height="200">New Description</td>
-                    <td><input name = "location_description" type = "text"
-                               id = "location_description" placeholder="<?php echo $objArray[$id]->getDescription
-(); ?>"></td>
+                    <td width = "100">New Description</td>
+                    <td><input style="width: 300px;" name = "location_description" type = "text"
+                               id = "location_description" placeholder="<?php echo $objArray[$id]->getDescription(); ?>"></td>
                 </tr>
 
                 <tr>
