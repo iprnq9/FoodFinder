@@ -72,7 +72,7 @@ else {
     else
     {
         ?>
-        <h1>Update existing location:&nbsp;<?php echo $objArray[$id]->getName(); ?></h1>
+        <h1>Update existing location:&nbsp;<?php echo $objArray[$id-1]->getName(); ?></h1>
         <h4>Update Name</h4>
         <form method = "post" action = "<?php $_PHP_SELF ?>">
             <table width = "400" border =" 0" cellspacing = "1"
@@ -138,7 +138,8 @@ else {
                 <tr>
                     <td width = "100">New Description</td>
                     <td><input style="width: 300px;" name = "location_description" type = "text"
-                               id = "location_description" placeholder="<?php echo $objArray[$id]->getDescription(); ?>"></td>
+                               id = "location_description" placeholder="<?php echo $objArray[$id-1]->getDescription();
+                        ?>"></td>
                 </tr>
 
                 <tr>
