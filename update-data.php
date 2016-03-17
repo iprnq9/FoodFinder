@@ -16,9 +16,9 @@ $con = new mysqli($host, $user, $password, $dbname);
 
 $objArray = array();
 
-$max = sizeof($objArray);
-
 include 'pullData2.php';
+
+$max = sizeof($objArray);
 
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
@@ -58,9 +58,9 @@ else {
                     <td>
                         <select name="id" id="id">
                             <?php
-                            for($i=1; $i < $max; $i++){
-                                echo "<option value=\"" . $i . "\">" . $objArray[$k]->getName() . "</option>";
-                            }
+                                for($i=1; $i <= $max; $i++){
+                                    echo "<option value=\"" . $i . "\">" . $objArray[$k]->getName() . "</option>";
+                                }
                             ?>
                         </select>
                     </td>
