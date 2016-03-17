@@ -40,7 +40,7 @@ else {
 
         if (!$result)
         {
-            echo ('Error: Could not update data.');
+            echo ('Error: Could not update name.');
         }
 
         else
@@ -91,7 +91,7 @@ else {
 
         $location_description = $_POST['location_description'];
 
-        $sql = "INSERT INTO descriptions (description) VALUES (\"$location_description\")";
+        $sql = "UPDATE descriptions SET description=\"$location_description\" WHERE id=$id";
         $result = mysqli_query($con, $sql);
 
         if (!$result)
