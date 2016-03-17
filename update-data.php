@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 ini_set('html_errors', 'On');
 
-if(isset($_POST['update'])) {
+if(isset($_POST['update1'])) {
     include 'db-connect.php';
 
     $id = $_POST['id'];
@@ -65,8 +65,8 @@ else
             <tr>
                 <td width = "100"> </td>
                 <td>
-                    <input name = "update" type = "submit"
-                           id = "update" value = "Update">
+                    <input name = "update1" type = "submit"
+                           id = "update1" value = "Update">
                 </td>
             </tr>
 
@@ -83,7 +83,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 ini_set('html_errors', 'On');
 
-if(isset($_POST['update'])) {
+if(isset($_POST['update2'])) {
     include 'db-connect.php';
 
     //$id = $_POST['id'];
@@ -141,8 +141,8 @@ else
             <tr>
                 <td width = "100"> </td>
                 <td>
-                    <input name = "update" type = "submit"
-                           id = "update" value = "Add Location">
+                    <input name = "update2" type = "submit"
+                           id = "update2" value = "Add Location">
                 </td>
             </tr>
 
