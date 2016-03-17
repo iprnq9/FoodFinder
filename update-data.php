@@ -59,7 +59,7 @@ else {
                         <select name="id" id="id">
                             <?php
                                 for($i=1; $i <= $max; $i++){
-                                    echo "<option value=\"" . $i . "\">" . $objArray[$k]->getName() . "</option>";
+                                    echo "<option value=\"" . $i . "\">" . $objArray[$i-1]->getName() . "</option>";
                                 }
                             ?>
                         </select>
