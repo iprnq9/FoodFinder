@@ -32,7 +32,7 @@ if ($con->connect_errno) {
 else {
 
     if ($id < 1 || $id > $max || $id == NULL){
-        echo "<select id=\"dynamic_select\">";
+        echo "Choose a location to update: <select id=\"dynamic_select\">";
             for($i=1; $i <= $max; $i++){
                 echo "<option value=\"update-data.php?id=" . $i . "\">" . $objArray[$i-1]->getName() . "</option>";
             }
@@ -51,7 +51,7 @@ else {
         echo "</script>";
     }
 
-    if(isset($_POST['update1'])) {
+    else if(isset($_POST['update1'])) {
 
         $location_name = $_POST['location_name'];
 
