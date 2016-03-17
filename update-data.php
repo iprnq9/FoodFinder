@@ -14,7 +14,7 @@ if(isset($_POST['update'])) {
     $location_name = $_POST['location_name'];
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = new mysqli($host, $user, $password, $dbname);
 
     // Check connection
     if (!$conn) {
@@ -66,7 +66,7 @@ else
                 <td width = "100"> </td>
                 <td>
                     <input name = "update" type = "submit"
-                           id = "update" value = "Add New Location">
+                           id = "update" value = "Update">
                 </td>
             </tr>
 
@@ -90,7 +90,7 @@ if(isset($_POST['update'])) {
     $location_name = $_POST['location_name'];
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = new mysqli($host, $user, $password, $dbname);
 
     // Check connection
     if (!$conn) {
@@ -142,7 +142,7 @@ else
                 <td width = "100"> </td>
                 <td>
                     <input name = "update" type = "submit"
-                           id = "update" value = "Update">
+                           id = "update" value = "Add Location">
                 </td>
             </tr>
 
