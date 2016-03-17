@@ -7,151 +7,147 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 ini_set('html_errors', 'On');
 
-if(isset($_POST['update1'])) {
-    include 'db-connect.php';
+include 'food-finderprj2.php';
 
-    $id = $_POST['id'];
-    $location_name = $_POST['location_name'];
+include 'db-connect.php';
 
-    // Create connection
-    $conn = new mysqli($host, $user, $password, $dbname);
+// Create connection
+$conn = new mysqli($host, $user, $password, $dbname);
 
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+$objArray = array();
 
-    $sql = "UPDATE location_id SET location_name=\"$location_name\" WHERE id=$id";
-    $result = mysqli_query($conn, $sql);
+include 'pullData2.php';
 
-    if (!$result)
-    {
-        echo ('Error: Could not update data.');
+if ($con->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
+}
+
+else {
+
+    if(isset($_POST['update1'])) {
+        
+        $id = $_POST['id'];
+        $location_name = $_POST['location_name'];
+
+        $sql = "UPDATE location_id SET location_name=\"$location_name\" WHERE id=$id";
+        $result = mysqli_query($conn, $sql);
+
+        if (!$result)
+        {
+            echo ('Error: Could not update data.');
+        }
+
+        else
+        {
+            echo "Name updated successfully!";
+        }
+
+        mysqli_close($conn);
     }
 
     else
     {
-        echo "Name updated successfully!";
+        ?>
+        <h1>Update name of location:</h1>
+        <form method = "post" action = "<?php $_PHP_SELF ?>">
+            <table width = "400" border =" 0" cellspacing = "1"
+                   cellpadding = "2">
+
+                <tr>
+                    <td width = "100">Location ID</td>
+                    <td><input name = "location_id" type = "text"
+                               id = "location_id"></td>
+                </tr>
+
+                <tr>
+                    <td width = "100">New Name</td>
+                    <td><input name = "location_name" type = "text"
+                               id = "location_name"></td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td> </td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td>
+                        <input name = "update1" type = "submit"
+                               id = "update1" value = "Update">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <?php
     }
 
-    mysqli_close($conn);
-}
-
-else
-{
     ?>
-    <h1>Update name of location:</h1>
-    <form method = "post" action = "<?php $_PHP_SELF ?>">
-        <table width = "400" border =" 0" cellspacing = "1"
-               cellpadding = "2">
 
-            <tr>
-                <td width = "100">Location ID</td>
-                <td><input name = "location_id" type = "text"
-                           id = "location_id"></td>
-            </tr>
 
-            <tr>
-                <td width = "100">New Name</td>
-                <td><input name = "location_name" type = "text"
-                           id = "location_name"></td>
-            </tr>
-
-            <tr>
-                <td width = "100"> </td>
-                <td> </td>
-            </tr>
-
-            <tr>
-                <td width = "100"> </td>
-                <td>
-                    <input name = "update1" type = "submit"
-                           id = "update1" value = "Update">
-                </td>
-            </tr>
-
-        </table>
-    </form>
     <?php
-}
 
-?>
+    if(isset($_POST['update2'])) {
 
+        //$id = $_POST['id'];
+        $location_name = $_POST['location_name'];
 
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-ini_set('html_errors', 'On');
+        $sql = "INSERT INTO location_id (location_name) VALUES (\"$location_name\")";
+        $result = mysqli_query($conn, $sql);
 
-if(isset($_POST['update2'])) {
-    include 'db-connect.php';
+        if (!$result)
+        {
+            echo ('Error: Could not update data.');
+        }
 
-    //$id = $_POST['id'];
-    $location_name = $_POST['location_name'];
+        else
+        {
+            echo "Added successfully!";
+        }
 
-    // Create connection
-    $conn = new mysqli($host, $user, $password, $dbname);
-
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    $sql = "INSERT INTO location_id (location_name) VALUES (\"$location_name\")";
-    $result = mysqli_query($conn, $sql);
-
-    if (!$result)
-    {
-        echo ('Error: Could not update data.');
+        mysqli_close($conn);
     }
 
     else
     {
-        echo "Added successfully!";
+        ?>
+        <h1>Add new location:</h1>
+        <form method = "post" action = "<?php $_PHP_SELF ?>">
+            <table width = "400" border =" 0" cellspacing = "1"
+                   cellpadding = "2">
+
+    <!--            <tr>-->
+    <!--                <td width = "100">Location ID</td>-->
+    <!--                <td><input name = "id" type = "text"-->
+    <!--                           id = "id"></td>-->
+    <!--            </tr>-->
+
+                <tr>
+                    <td width = "100">Name</td>
+                    <td><input name = "location_name" type = "text"
+                               id = "location_name"></td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td> </td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td>
+                        <input name = "update2" type = "submit"
+                               id = "update2" value = "Add Location">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <?php
     }
-
-    mysqli_close($conn);
 }
-
-else
-{
     ?>
-    <h1>Add new location:</h1>
-    <form method = "post" action = "<?php $_PHP_SELF ?>">
-        <table width = "400" border =" 0" cellspacing = "1"
-               cellpadding = "2">
-
-<!--            <tr>-->
-<!--                <td width = "100">Location ID</td>-->
-<!--                <td><input name = "id" type = "text"-->
-<!--                           id = "id"></td>-->
-<!--            </tr>-->
-
-            <tr>
-                <td width = "100">Name</td>
-                <td><input name = "location_name" type = "text"
-                           id = "location_name"></td>
-            </tr>
-
-            <tr>
-                <td width = "100"> </td>
-                <td> </td>
-            </tr>
-
-            <tr>
-                <td width = "100"> </td>
-                <td>
-                    <input name = "update2" type = "submit"
-                           id = "update2" value = "Add Location">
-                </td>
-            </tr>
-
-        </table>
-    </form>
-    <?php
-}
-
-?>
 
 </body>
 </html>
