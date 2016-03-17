@@ -34,7 +34,7 @@ else {
     if ($id < 1 || $id > $max || $id == NULL){
         echo "Choose a location to update: <select id=\"dynamic_select\">";
             for($i=1; $i <= $max; $i++){
-                echo "<option value=\"update-data.php?id=" . $i . "\">" . $objArray[$i-1]->getName() . "</option>";
+                echo "<option value=\"update-location.php?id=" . $i . "\">" . $objArray[$i-1]->getName() . "</option>";
             }
         echo "</select>";
 
@@ -107,7 +107,7 @@ else {
 
     <?php
 
-    else if(isset($_POST['update2'])) {
+    if(isset($_POST['update2'])) {
 
         $location_description = $_POST['location_description'];
 

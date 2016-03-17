@@ -1,111 +1,145 @@
-<!--Thanks to Russell Bell for his help-->
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-
-<title>S&T Dining | FoodFinder</title>
-
-<!-- CSS  -->
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-<script type="text/javascript" src="js/moment.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
-<link href="custom.css" rel="stylesheet">
 
 <body>
 
 <?php
-$id = NULL;
-
-include 'header.php';
-
-echo "<div class=\"container\">\n";
-
 //error_reporting(E_ALL);
 //ini_set('display_errors', 'On');
 //ini_set('html_errors', 'On');
 
-if(isset($_POST['update'])) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "goldgreen";
+include 'food-finderprj2.php';
 
-    $id = $_POST['id'];
-    $location_name = $_POST['location_name'];
+include 'db-connect.php';
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+//get location id from URL variable
+$id = htmlspecialchars($_GET["id"]);
 
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+// Create connection
+$con = new mysqli($host, $user, $password, $dbname);
 
-    $sql = "UPDATE location_id2 SET location_name = \"$location_name\" WHERE id = $id";
-    $result = mysqli_query($conn, $sql);
+$objArray = array();
 
-    if (!$result)
-    {
-        echo ('Could not update data.');
+include 'pullData2.php';
+
+$max = sizeof($objArray);
+
+if ($con->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
+}
+
+else {
+
+    if(isset($_POST['update1'])) {
+
+        $location_name = $_POST['location_name'];
+
+        $sql = "UPDATE location_id SET location_name=\"$location_name\" WHERE id=$id";
+        $result = mysqli_query($con, $sql);
+
+        if (!$result)
+        {
+            echo ('Error: Could not update data.');
+        }
+
+        else
+        {
+            echo "Name updated successfully!";
+        }
     }
 
     else
     {
-        echo "Name updated successfully!";
-        include 'db-test.php';
+        ?>
+        <h1>Update existing location:&nbsp;<?php echo $objArray[$id-1]->getName(); ?></h1>
+        <h4>Update Name</h4>
+        <form method = "post" action = "<?php $_PHP_SELF ?>">
+            <table width = "400" border =" 0" cellspacing = "1"
+                   cellpadding = "2">
+
+                <tr>
+                    <td width = "100">New Name</td>
+                    <td><input name = "location_name" type = "text"
+                               id = "location_name"></td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td> </td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td>
+                        <input name = "update1" type = "submit"
+                               id = "update1" value = "Update Name">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <?php
     }
 
-    unset($connection);
-}
-
-else
-{
     ?>
 
-    <div class="row">
-        <form class="col s12 m8 offset-l2" method = "post" action = "<?php $_PHP_SELF ?>">
-            <div class="row" style="margin-top: 15px;">
-                <div class="input-field col s6">
-                    <input placeholder="Einstein Bros Bagels" id="location_name" type="text" length="45" class="validate">
-                    <label for="location_name">Dining Location Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input placeholder="Havener Center" id="location_location" type="text" length="45" class="validate">
-                    <label for="location_location">Location</label>
-                </div>
-            </div>
-            <div class="file-field input-field">
-                <div class="btn">
-                    <span>File</span>
-                    <input type="file" multiple>
-                </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Upload a JPG or PNG">
-                </div>
-            </div>
-            <button class="btn-large waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-        </form>
-    </div>
 
     <?php
+
+    if(isset($_POST['update2'])) {
+
+        $location_description = $_POST['location_description'];
+
+        $sql = "INSERT INTO descriptions (description) VALUES (\"$location_description\")";
+        $result = mysqli_query($con, $sql);
+
+        if (!$result)
+        {
+            echo ('Error: Could not update description.');
+        }
+
+        else
+        {
+            echo "Description updated successfully!";
+        }
+
+    }
+
+    else
+    {
+        ?>
+        <hr />
+        <h4>Update Description</h4>
+        <form method = "post" action = "<?php $_PHP_SELF ?>">
+            <table width = "600" border =" 0" cellspacing = "1"
+                   cellpadding = "2">
+
+                <tr>
+                    <td width = "100">New Description</td>
+                    <td><input style="width: 300px;" name = "location_description" type = "text"
+                               id = "location_description" placeholder="<?php echo $objArray[$id-1]->getDescription();
+                        ?>"></td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td> </td>
+                </tr>
+
+                <tr>
+                    <td width = "100"> </td>
+                    <td>
+                        <input name = "update2" type = "submit"
+                               id = "update2" value = "Update Description">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <?php
+    }
 }
-
-?>
-</div>
-<?php
-
-include 'footer.php';
-
 ?>
 
 </body>
