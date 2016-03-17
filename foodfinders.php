@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
-<title>S&T Dining | FoodFinder</title>
+<title>FoodFinders | FoodFinder</title>
 
 <!-- CSS  -->
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
