@@ -12,7 +12,7 @@ include 'food-finderprj2.php';
 include 'db-connect.php';
 
 // Create connection
-$conn = new mysqli($host, $user, $password, $dbname);
+$con = new mysqli($host, $user, $password, $dbname);
 
 $objArray = array();
 
@@ -25,12 +25,12 @@ if ($con->connect_errno) {
 else {
 
     if(isset($_POST['update1'])) {
-        
+
         $id = $_POST['id'];
         $location_name = $_POST['location_name'];
 
         $sql = "UPDATE location_id SET location_name=\"$location_name\" WHERE id=$id";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($con, $sql);
 
         if (!$result)
         {
@@ -41,8 +41,6 @@ else {
         {
             echo "Name updated successfully!";
         }
-
-        mysqli_close($conn);
     }
 
     else
@@ -94,7 +92,7 @@ else {
         $location_name = $_POST['location_name'];
 
         $sql = "INSERT INTO location_id (location_name) VALUES (\"$location_name\")";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($con, $sql);
 
         if (!$result)
         {
@@ -106,7 +104,7 @@ else {
             echo "Added successfully!";
         }
 
-        mysqli_close($conn);
+        mysqli_close($con);
     }
 
     else
