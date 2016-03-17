@@ -11,6 +11,9 @@ include 'food-finderprj2.php';
 
 include 'db-connect.php';
 
+//get location id from URL variable
+$id = htmlspecialchars($_GET["id"]);
+
 // Create connection
 $con = new mysqli($host, $user, $password, $dbname);
 
@@ -26,9 +29,29 @@ if ($con->connect_errno) {
 
 else {
 
+    if ($id < 1 || $id > $max){
+        echo "  <select id=\"dynamic_select\">";
+            for($i=1; $i <= $max; $i++){
+                echo "<option value=\"update-data.php?id=" . $i . "\">" . $objArray[$i-1]->getName() . "</option>";
+            }
+        echo "</select>";
+
+        echo \"<script>\n\";
+        echo \"    $(function(){\n\";
+        echo \"      // bind change event to select\n\";
+        echo \"      $('#dynamic_select').on('change', function () {\n\";
+        echo \"          var url = $(this).val(); // get selected value\n\";
+        echo \"          if (url) { // require a URL\n\";
+        echo \"              window.location = url; // redirect\n\";
+        echo \"          }\n\";
+        echo \"          return false;\n\";
+        echo \"      });\n\";
+        echo \"    });\n\";
+        echo \"</script>\";
+    }
+
     if(isset($_POST['update1'])) {
 
-        $id = $_POST['id'];
         $location_name = $_POST['location_name'];
 
         $sql = "UPDATE location_id SET location_name=\"$location_name\" WHERE id=$id";
@@ -58,9 +81,7 @@ else {
                     <td>
                         <select name="id" id="id">
                             <?php
-                                for($i=1; $i <= $max; $i++){
-                                    echo "<option value=\"" . $i . "\">" . $objArray[$i-1]->getName() . "</option>";
-                                }
+
                             ?>
                         </select>
                     </td>
