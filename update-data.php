@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
 <body>
 
 <?php
@@ -29,14 +31,14 @@ if ($con->connect_errno) {
 
 else {
 
-    if ($id < 1 || $id > $max){
+    if ($id < 1 || $id > $max || $id == NULL){
         echo "<select id=\"dynamic_select\">";
             for($i=1; $i <= $max; $i++){
                 echo "<option value=\"update-data.php?id=" . $i . "\">" . $objArray[$i-1]->getName() . "</option>";
             }
         echo "</select>";
 
-        echo \"<script>\n";
+        echo "<script>\n";
         echo "    $(function(){ ";
         echo "      $('#dynamic_select').on('change', function () {\n";
         echo "          var url = $(this).val(); \n";
