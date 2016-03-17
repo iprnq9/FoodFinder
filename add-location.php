@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
-<title>S&T Dining | FoodFinder</title>
+<title>Add New Location| FoodFinder</title>
 
 <!-- CSS  -->
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -28,9 +28,9 @@ include 'header.php';
 
 echo "<div class=\"container\">\n";
 
-//error_reporting(E_ALL);
-//ini_set('display_errors', 'On');
-//ini_set('html_errors', 'On');
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+ini_set('html_errors', 'On');
 
 if(isset($_POST['update'])) {
     include 'db-connect.php';
@@ -46,9 +46,9 @@ if(isset($_POST['update'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO location_id (location_name) VALUES ($location_name)";
+    $sql = "INSERT INTO location_id (location_name) VALUES (" . $location_name .")";
     $result1 = mysqli_query($conn, $sql);
-    $sql = "SELECT id FROM location_id WHERE location_name=$location_name";
+    $sql = "SELECT id FROM location_id WHERE location_name=" . $location_name;
     $location_id = mysqli_query($conn, $sql);
 
     if (!$result1)
@@ -56,7 +56,7 @@ if(isset($_POST['update'])) {
         echo ('Could not add location name.');
     }
 
-    $sql = "INSERT INTO descriptions (id, location) VALUES ($location_id, $location_location)";
+    $sql = "INSERT INTO descriptions (id, location) VALUES (" . $location_id . "," . $location_location .")";
     $result2 = mysqli_query($conn, $sql);
 
     if (!$result2)
