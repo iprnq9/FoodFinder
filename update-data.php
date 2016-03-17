@@ -72,21 +72,11 @@ else {
     else
     {
         ?>
-        <h1>Update existing location:</h1>
+        <h1>Update existing location:&nbsp;<?php echo $objArray[$id]->getName(); ?></h1>
+        <h4>Update Name</h4>
         <form method = "post" action = "<?php $_PHP_SELF ?>">
             <table width = "400" border =" 0" cellspacing = "1"
                    cellpadding = "2">
-
-                <tr>
-                    <td width = "100">Choose a location</td>
-                    <td>
-                        <select name="id" id="id">
-                            <?php
-
-                            ?>
-                        </select>
-                    </td>
-                </tr>
 
                 <tr>
                     <td width = "100">New Name</td>
@@ -103,7 +93,7 @@ else {
                     <td width = "100"> </td>
                     <td>
                         <input name = "update1" type = "submit"
-                               id = "update1" value = "Update">
+                               id = "update1" value = "Update Name">
                     </td>
                 </tr>
 
@@ -119,20 +109,19 @@ else {
 
     if(isset($_POST['update2'])) {
 
-        //$id = $_POST['id'];
-        $location_name = $_POST['location_name'];
+        $location_description = $_POST['location_description'];
 
-        $sql = "INSERT INTO location_id (location_name) VALUES (\"$location_name\")";
+        $sql = "INSERT INTO descriptions (description) VALUES (\"$location_description\")";
         $result = mysqli_query($con, $sql);
 
         if (!$result)
         {
-            echo ('Error: Could not update data.');
+            echo ('Error: Could not update description.');
         }
 
         else
         {
-            echo "Added successfully!";
+            echo "Description updated successfully!";
         }
 
     }
@@ -140,15 +129,16 @@ else {
     else
     {
         ?>
-        <h1>Add new location:</h1>
+        <h4>Update Description</h4>
         <form method = "post" action = "<?php $_PHP_SELF ?>">
-            <table width = "400" border =" 0" cellspacing = "1"
+            <table width = "600" border =" 0" cellspacing = "1"
                    cellpadding = "2">
 
                 <tr>
-                    <td width = "100">Name</td>
-                    <td><input name = "location_name" type = "text"
-                               id = "location_name"></td>
+                    <td width = "200" height="200">New Description</td>
+                    <td><input name = "location_description" type = "text"
+                               id = "location_description" placeholder="<?php echo $objArray[$id]->getDescription
+(); ?>"></td>
                 </tr>
 
                 <tr>
@@ -160,7 +150,7 @@ else {
                     <td width = "100"> </td>
                     <td>
                         <input name = "update2" type = "submit"
-                               id = "update2" value = "Add Location">
+                               id = "update2" value = "Update Description">
                     </td>
                 </tr>
 
