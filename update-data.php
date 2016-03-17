@@ -53,8 +53,8 @@ else {
 
                 <tr>
                     <td width = "100">Location ID</td>
-                    <td><input name = "location_id" type = "text"
-                               id = "location_id"></td>
+                    <td><input name = "id" type = "text"
+                               id = "id"></td>
                 </tr>
 
                 <tr>
