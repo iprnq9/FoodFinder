@@ -30,24 +30,23 @@ if ($con->connect_errno) {
 else {
 
     if ($id < 1 || $id > $max){
-        echo "  <select id=\"dynamic_select\">";
+        echo "<select id=\"dynamic_select\">";
             for($i=1; $i <= $max; $i++){
                 echo "<option value=\"update-data.php?id=" . $i . "\">" . $objArray[$i-1]->getName() . "</option>";
             }
         echo "</select>";
 
-        echo \"<script>\n\";
-        echo \"    $(function(){\n\";
-        echo \"      // bind change event to select\n\";
-        echo \"      $('#dynamic_select').on('change', function () {\n\";
-        echo \"          var url = $(this).val(); // get selected value\n\";
-        echo \"          if (url) { // require a URL\n\";
-        echo \"              window.location = url; // redirect\n\";
-        echo \"          }\n\";
-        echo \"          return false;\n\";
-        echo \"      });\n\";
-        echo \"    });\n\";
-        echo \"</script>\";
+        echo \"<script>\n";
+        echo "    $(function(){ ";
+        echo "      $('#dynamic_select').on('change', function () {\n";
+        echo "          var url = $(this).val(); \n";
+        echo "          if (url) { // require a URL\n";
+        echo "              window.location = url; \n";
+        echo "          }\n";
+        echo "          return false;\n";
+        echo "      });\n";
+        echo "    });\n";
+        echo "</script>";
     }
 
     if(isset($_POST['update1'])) {
