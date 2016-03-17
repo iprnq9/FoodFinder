@@ -16,6 +16,8 @@ $con = new mysqli($host, $user, $password, $dbname);
 
 $objArray = array();
 
+$max = sizeof($objArray);
+
 include 'pullData2.php';
 
 if ($con->connect_errno) {
@@ -46,15 +48,22 @@ else {
     else
     {
         ?>
-        <h1>Update name of location:</h1>
+        <h1>Update existing location:</h1>
         <form method = "post" action = "<?php $_PHP_SELF ?>">
             <table width = "400" border =" 0" cellspacing = "1"
                    cellpadding = "2">
 
                 <tr>
-                    <td width = "100">Location ID</td>
-                    <td><input name = "id" type = "text"
-                               id = "id"></td>
+                    <td width = "100">Choose a location</td>
+                    <td>
+                        <select name="id" id="id">
+                            <?php
+                            for($i=1; $i < $max; $i++){
+                                echo "<option value=\"" . $i . "\">" . $objArray[$k]->getName() . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </td>
                 </tr>
 
                 <tr>
