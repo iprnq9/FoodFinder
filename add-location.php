@@ -33,12 +33,9 @@ echo "<div class=\"container\">\n";
 //ini_set('html_errors', 'On');
 
 if(isset($_POST['update'])) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "goldgreen";
+    include 'db-connect.php';
 
-    $id = $_POST['id'];
+    $location_location = $_POST['location_location'];
     $location_name = $_POST['location_name'];
 
     // Create connection
@@ -49,21 +46,31 @@ if(isset($_POST['update'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "UPDATE location_id2 SET location_name = \"$location_name\" WHERE id = $id";
-    $result = mysqli_query($conn, $sql);
+    $sql = "INSERT INTO location_id (location_name) VALUES ($location_name)";
+    $result1 = mysqli_query($conn, $sql);
+    $sql = "SELECT id FROM location_id WHERE location_name=$location_name";
+    $location_id = mysqli_query($conn, $sql);
 
-    if (!$result)
+    if (!$result1)
     {
-        echo ('Could not update data.');
+        echo ('Could not add location name.');
+    }
+
+    $sql = "INSERT INTO descriptions (id, location) VALUES ($location_id, $location_location)";
+    $result2 = mysqli_query($conn, $sql);
+
+    if (!$result2)
+    {
+        echo ('Could not add location.');
     }
 
     else
     {
-        echo "Name updated successfully!";
-        include 'db-test.php';
+        echo "Name and Location added successfully!";
+        //include 'db-test.php';
     }
 
-    unset($connection);
+    unset($conn);
 }
 
 else
@@ -71,115 +78,119 @@ else
     ?>
     <h4 class="heading center-align"><i class="material-icons small">add_location</i>Add New Location</h4>
     <div class="row">
-        <form class="col s12 m12 l10 push-l1" method = "post" action = "<?php $_PHP_SELF ?>">
             <ul class="collapsible popout" data-collapsible="expandable">
                 <li>
-                    <div class="collapsible-header green active"><i class="material-icons">store</i>Basic Information</div>
-                    <div class="collapsible-body grey darken-4 green-text">
-                        <div class="row" style="padding: 10px;">
-                            <div class="input-field col s12 m12">
-                                <i class="material-icons prefix">info_outline</i>
-                                <input placeholder='Ex: "Einstein Bros Bagels"' id="location_name" type="text" length="45" class="validate">
-                                <label for="location_name">Dining Location Name</label>
-                            </div>
-                            <div class="input-field col s12 m12">
-                                <i class="material-icons prefix">place</i>
-                                <input placeholder='Ex: "Havener Center"' id="location_location" type="text" length="45" class="validate">
-                                <label for="location_location">Location</label>
+                    <form class="col s12 m12 l10 push-l1" method = "post" action = "<?php $_PHP_SELF ?>">
+                        <div class="collapsible-header green active"><i class="material-icons">store</i>Basic Information</div>
+                        <div class="collapsible-body grey darken-4 green-text">
+                            <div class="row" style="padding: 10px;">
+                                <div class="input-field col s12 m12">
+                                    <i class="material-icons prefix">info_outline</i>
+                                    <input placeholder='Ex: "Einstein Bros Bagels"' id="location_name" type="text" length="45" class="validate">
+                                    <label for="location_name">Dining Location Name</label>
+                                </div>
+                                <div class="input-field col s12 m12">
+                                    <i class="material-icons prefix">place</i>
+                                    <input placeholder='Ex: "Havener Center"' id="location_location" type="text" length="45" class="validate">
+                                    <label for="location_location">Location</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <button class="btn-large waves-effect waves-light green lighten-1" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
                 </li>
-                <li>
-                    <div class="collapsible-header green"><i class="material-icons">schedule</i>Weekly Hours</div>
-                    <div class="collapsible-body grey darken-4" style="padding: 10px;">
-                    <ul class="collapsible" data-collapsible="expandable">
-                    <?php
-                        $dayArray = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
-
-                        for($day = 0; $day < 7; $day++) {
-                            echo " <li>\n";
-                            echo "                                <div class=\"collapsible-header " .
-                                ($day==0?"active ":" ") . "green lighten-2\"><i class=\"material-icons\">today</i>" . $dayArray[$day] . "</div>\n";
-                            echo "                                <div class=\"collapsible-body white\" style=\"padding: 10px;\">\n";
-                            echo "                                    <div class=\"row\">\n";
-                            echo "                                        <form class=\"input-field\">\n";
-                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
-                            echo "                                            <select>\n";
-                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-
-                            for ($i=5; $i<24; $i++) {
-                                for ($j=0; $j < 2; $j++) {
-                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
-                                }
-                            }
-
-                            echo "                                            </select>\n";
-                            echo "                                            <label>Breakfast Open</label>\n";
-                            echo "                                        </div>\n";
-                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
-                            echo "                                            <select>\n";
-                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-
-                            for ($i=5; $i<24; $i++) {
-                                for ($j=0; $j < 2; $j++) {
-                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
-                                }
-                            }
-
-                            echo "                                            </select>\n";
-                            echo "                                            <label>Breakfast Close</label>\n";
-                            echo "                                        </div>\n";
-                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
-                            echo "                                            <select>\n";
-                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-
-                            for ($i=5; $i<24; $i++) {
-                                for ($j=0; $j < 2; $j++) {
-                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
-                                }
-                            }
-
-                            echo "                                            </select>\n";
-                            echo "                                            <label>Lunch Open</label>\n";
-                            echo "                                        </div>\n";
-                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
-                            echo "                                            <select>\n";
-                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            for ($i=5; $i<24; $i++) {
-                                for ($j=0; $j < 2; $j++) {
-                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
-                                }
-                            }
-                            echo "                                            </select>\n";
-                            echo "                                            <label>Lunch Close</label>\n";
-                            echo "                                        </div>\n";
-                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
-                            echo "                                            <select>\n";
-                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            for ($i=5; $i<24; $i++) {
-                                for ($j=0; $j < 2; $j++) {
-                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
-                                }
-                            }
-                            echo "                                            </select>\n";
-                            echo "                                            <label>Dinner Open</label>\n";
-                            echo "                                        </div>\n";
-                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
-                            echo "                                            <select>\n";
-                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
-                            for ($i=5; $i<24; $i++) {
-                                for ($j=0; $j < 2; $j++) {
-                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
-                                }
-                            }
-                            echo "                                            </select>\n";
-                            echo "                                            <label>Dinner Close</label>\n";
-                            echo "                                        </div>\n";
-                            echo "                                    </form>\n";
-                            echo "                                    </div>\n";
-                            echo "                                </div>\n";
-                            echo "                            </li>\n";
+<!--                <li>-->
+<!--                    <div class="collapsible-header green"><i class="material-icons">schedule</i>Weekly Hours</div>-->
+<!--                    <div class="collapsible-body grey darken-4" style="padding: 10px;">-->
+<!--                    <ul class="collapsible" data-collapsible="expandable">-->
+<!--                    --><?php
+//                        $dayArray = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+//
+//                        for($day = 0; $day < 7; $day++) {
+//                            echo " <li>\n";
+//                            echo "                                <div class=\"collapsible-header " .
+//                                ($day==0?"active ":" ") . "green lighten-2\"><i class=\"material-icons\">today</i>" . $dayArray[$day] . "</div>\n";
+//                            echo "                                <div class=\"collapsible-body white\" style=\"padding: 10px;\">\n";
+//                            echo "                                    <div class=\"row\">\n";
+//                            echo "                                        <form class=\"input-field\">\n";
+//                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
+//                            echo "                                            <select>\n";
+//                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
+//
+//                            for ($i=5; $i<24; $i++) {
+//                                for ($j=0; $j < 2; $j++) {
+//                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+//                                }
+//                            }
+//
+//                            echo "                                            </select>\n";
+//                            echo "                                            <label>Breakfast Open</label>\n";
+//                            echo "                                        </div>\n";
+//                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
+//                            echo "                                            <select>\n";
+//                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
+//
+//                            for ($i=5; $i<24; $i++) {
+//                                for ($j=0; $j < 2; $j++) {
+//                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+//                                }
+//                            }
+//
+//                            echo "                                            </select>\n";
+//                            echo "                                            <label>Breakfast Close</label>\n";
+//                            echo "                                        </div>\n";
+//                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
+//                            echo "                                            <select>\n";
+//                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
+//
+//                            for ($i=5; $i<24; $i++) {
+//                                for ($j=0; $j < 2; $j++) {
+//                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+//                                }
+//                            }
+//
+//                            echo "                                            </select>\n";
+//                            echo "                                            <label>Lunch Open</label>\n";
+//                            echo "                                        </div>\n";
+//                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
+//                            echo "                                            <select>\n";
+//                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
+//                            for ($i=5; $i<24; $i++) {
+//                                for ($j=0; $j < 2; $j++) {
+//                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+//                                }
+//                            }
+//                            echo "                                            </select>\n";
+//                            echo "                                            <label>Lunch Close</label>\n";
+//                            echo "                                        </div>\n";
+//                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
+//                            echo "                                            <select>\n";
+//                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
+//                            for ($i=5; $i<24; $i++) {
+//                                for ($j=0; $j < 2; $j++) {
+//                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+//                                }
+//                            }
+//                            echo "                                            </select>\n";
+//                            echo "                                            <label>Dinner Open</label>\n";
+//                            echo "                                        </div>\n";
+//                            echo "                                        <div class=\"input-field col s12 m6 l2\">\n";
+//                            echo "                                            <select>\n";
+//                            echo "                                                <option value=\"\" disabled selected>Select</option>\n";
+//                            for ($i=5; $i<24; $i++) {
+//                                for ($j=0; $j < 2; $j++) {
+//                                    echo '<option value="'. ($i).':'.($j*30) . '">' . ($i > 12 ? $i-12 : $i) . ':' . ($j*3) . '0 '. ($i < 12 ? 'am' : 'pm'). '</option>\n';
+//                                }
+//                            }
+//                            echo "                                            </select>\n";
+//                            echo "                                            <label>Dinner Close</label>\n";
+//                            echo "                                        </div>\n";
+//                            echo "                                    </form>\n";
+//                            echo "                                    </div>\n";
+//                            echo "                                </div>\n";
+//                            echo "                            </li>\n";
                         }
 
                     ?>
