@@ -11,9 +11,9 @@ if(isset($_POST['update'])) {
     $servername = "localhost";
     $username = "root";
     $password = "FoodFinder";
-    $dbname = "foodfinders";
+    $dbname = "goldgreen";
 
-    $location_id = $_POST['location_id'];
+    $location_id = $_POST['id'];
     $location_name = $_POST['location_name'];
 
     // Create connection
@@ -24,7 +24,7 @@ if(isset($_POST['update'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "UPDATE locations SET location_name = \"$location_name\" WHERE location_id = $location_id";
+    $sql = "UPDATE locations SET location_name = \"$location_name\" WHERE id = $location_id";
     $result = mysqli_query($conn, $sql);
 
     if (!$result)
@@ -90,9 +90,9 @@ if(isset($_POST['update'])) {
     $servername = "localhost";
     $username = "root";
     $password = "FoodFinder";
-    $dbname = "foodfinders";
+    $dbname = "goldgreen";
 
-    $location_id = $_POST['location_id'];
+    $id = $_POST['id'];
     $location_name = $_POST['location_name'];
 
     // Create connection
@@ -103,7 +103,7 @@ if(isset($_POST['update'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO locations (location_id, location_name) VALUES ($location_id, \"$location_name\")";
+    $sql = "INSERT INTO locations (id, location_name) VALUES ($id, \"$location_name\")";
     $result = mysqli_query($conn, $sql);
 
     if (!$result)
@@ -129,8 +129,8 @@ else
 
             <tr>
                 <td width = "100">Location ID</td>
-                <td><input name = "location_id" type = "text"
-                           id = "location_id"></td>
+                <td><input name = "id" type = "text"
+                           id = "id"></td>
             </tr>
 
             <tr>
