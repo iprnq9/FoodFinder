@@ -58,7 +58,8 @@ else {
     echo "                <div class=\"collapsible-header green active\">\n";
     echo "                    <i class=\"material-icons\">store</i>Update Name\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                   <div class=\"row\">\n";
 
     if(isset($_POST['update1'])) {
 
@@ -80,7 +81,7 @@ else {
 
     else
     { ?>
-                        <div class="row">
+
                           <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
                             <div class="row" style="padding: 10px;">
                               <div class="input-field col s6">
@@ -94,10 +95,10 @@ else {
                                 </button>
                             </div>
                           </form>
-                        </div>
+
 <?php
     }
-
+echo "</div>\n";
 echo "                </div>\n";
 echo "            </li>\n";
 echo "        </ul>\n";
