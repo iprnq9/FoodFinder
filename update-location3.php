@@ -51,7 +51,7 @@ if ($con->connect_errno) {
 }
 
 else {
-    echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">add_location</i>Update Location:&nbsp;<?php echo $objArray[$id-1]->getName(); ?></h4>";
+    echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">add_location</i>Update Location:&nbsp;" . $objArray[$id-1]->getName() . "</h4>";
     if(isset($_POST['update1'])) {
 
         $location_name = $_POST['location_name'];
