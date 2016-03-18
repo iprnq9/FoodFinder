@@ -59,7 +59,7 @@ else {
     echo "                    <i class=\"material-icons\">store</i>Update Name\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
-    echo "                   <div class=\"row\">\n";
+    echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     if(isset($_POST['update1'])) {
 
@@ -75,7 +75,7 @@ else {
 
         else
         {
-            echo "<h4><i class=\"material-icons small\">done</i>Name updated successfully!</h4>";
+            echo "<p><i class=\"material-icons small\">done</i>Name updated successfully!</p>";
         }
     }
 
