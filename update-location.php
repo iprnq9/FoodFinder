@@ -5,9 +5,9 @@
 <body>
 
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', 'On');
-//ini_set('html_errors', 'On');
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+ini_set('html_errors', 'On');
 
 include 'food-finderprj2.php';
 
@@ -91,7 +91,7 @@ else {
 
         $location_description = $_POST['location_description'];
 
-        $sql = "UPDATE descriptions SET description=\"$location_description\" WHERE id=$id";
+        $sql = "UPDATE descriptions SET description=\"" . $location_description . "\" WHERE id=" . $id;
         $result = mysqli_query($con, $sql);
 
         if (!$result)
@@ -245,12 +245,12 @@ else {
     <?php
 
     $target_dir = "images/";
-    $target_file = $target_dir . basename($_FILES["card_image1"]["name"]);
+    $target_file = $target_dir . basename($_FILES["card1_image"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     // Check if image file is a actual image or fake image
     if(isset($_POST["update5"])) {
-        $check = getimagesize($_FILES["card_image1"]["tmp_name"]);
+        $check = getimagesize($_FILES["card1_image"]["tmp_name"]);
         if ($check !== false) {
             $uploadOk = 1;
         }
@@ -262,7 +262,7 @@ else {
 
 
         // Check file size
-        if ($_FILES["card_image1"]["size"] > 500000) {
+        if ($_FILES["card1_image"]["size"] > 500000) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
@@ -303,11 +303,12 @@ else {
     }
 
     //if post hasn't been activated, display form
-    else {
-        echo "<form action=\"<?php $_PHP_SELF ?>\" method=\"post\" enctype=\"multipart/form-data\">";
-        echo "<input type=\"file\" name=\"card_image1\" id=\"card_image1\">";
-        echo "<input type=\"update5\"$ id=\"update5\" value=\"Upload Card Image 1\" name=\"update5\">";
-        echo "</form>";
+    else { ?>
+        <form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
+            <input type="file" name="card1_image" id="card1_image">
+            <input type="update5" id="update5" value="Upload Card 1 Image" name="update5">
+        </form>
+    <?php
     }
 
     ?>
