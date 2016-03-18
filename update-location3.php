@@ -258,7 +258,7 @@ else {
     echo "</div></li>";
 
 
-    echo "                   </div>\n";
+    echo "                   </ul></div>\n";
     echo "                </div>\n";
     echo "            </li>\n";
     ?>
