@@ -75,7 +75,7 @@ else {
 
         else
         {
-            echo "<p><i class=\"material-icons small\">done</i>Name updated successfully!</p>";
+            echo "<p style=\"vertical-align: middle;\"><i class=\"material-icons small\">done</i>Name updated successfully!</p>";
         }
     }
 
