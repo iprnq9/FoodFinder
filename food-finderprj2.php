@@ -273,7 +273,8 @@ class joeMinr{
     }
 
     public function setImageArray($index, $val){
-        $this->imagesArray[$index] = $val;
+        if($val)
+            $this->imagesArray[$index] = $val;
     }
 
     public function getImage($index){

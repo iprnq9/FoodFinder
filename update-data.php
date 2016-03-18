@@ -47,7 +47,7 @@ include 'pullData2.php';
 $max = sizeof($objArray);
 
 echo "<div class=\"row\">\n";
-echo "<div class=\"input-field col s12\">\n";
+
 
 
 if ($con->connect_errno) {
@@ -55,7 +55,8 @@ if ($con->connect_errno) {
 }
 
 else {
-        echo "<form>\n";
+        echo "<form class=\"input-field\">\n";
+        echo "<div class=\"input-field col s12\">\n";
         echo "<select class=\"icons\" id=\"dynamic_select\">\n";
             for($i=1; $i <= $max; $i++){
                 echo "<option value=\"update-location.php?id=" . $i . "\" data-icon=\"" . $objArray[$i-1]->getImage(0) . "\" class=\"left circle\">$i. " .
