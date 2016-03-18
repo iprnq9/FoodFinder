@@ -242,8 +242,7 @@ else {
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
-                    <input id="card1_heading" name="card1_heading" type="text" length="45" placeholder="Currently: <?php echo $objArray[$id-1]->getHeading(0);
-                    ?>">
+                    <input id="card1_heading" name="card1_heading" type="text" length="45" placeholder="Currently: <?php echo $objArray[$id-1]->getHeading(0);?>">
                     <label for="card1_heading">New Card 1 Heading</label>
                 </div>
             </div>
@@ -258,7 +257,7 @@ else {
     echo "</div></div></li>";
 
 
-    echo "                   </ul></div>\n";
+    echo "                   </ul>\n";
     echo "                </div>\n";
     echo "            </li>\n";
     ?>
