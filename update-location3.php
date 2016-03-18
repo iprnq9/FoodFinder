@@ -209,7 +209,7 @@ else {
         </form>
         <?php
     }
-    echo "</li>";
+    echo "</div></li>";
 
     echo "            <li>\n";
     echo "                <div class=\"collapsible-header green active\">\n";
@@ -255,7 +255,7 @@ else {
         </form>
         <?php
     }
-    echo "</li>";
+    echo "</div></li>";
 
 
     echo "                   </div>\n";
