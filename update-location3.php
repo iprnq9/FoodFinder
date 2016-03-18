@@ -160,13 +160,13 @@ else {
 
     <?php
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green active\">\n";
+    echo "                <div class=\"collapsible-header black-text green active\">\n";
     echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 1\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green active\">\n";
+    echo "                <div class=\"collapsible-header green black-text active\">\n";
     echo "                    <i class=\"material-icons\">store</i>Update Card 1 Heading\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
@@ -212,27 +212,27 @@ else {
     echo "</div></div></li>";
 
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green active\">\n";
+    echo "                <div class=\"collapsible-header green black-text active\">\n";
     echo "                    <i class=\"material-icons\">store</i>Update Card 1 Paragraph\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
-    if(isset($_POST['update3'])) {
+    if(isset($_POST['update4'])) {
 
-        $card1_heading = $_POST['card1_heading'];
+        $card1_paragraph = $_POST['card1_paragraph'];
 
-        $sql = "UPDATE descriptions SET head1=\"" . $card1_heading . "\" WHERE id=" . $id;
+        $sql = "UPDATE descriptions SET par1=\"" . $card1_paragraph . "\" WHERE id=" . $id;
         $result = mysqli_query($con, $sql);
 
         if (!$result)
         {
-            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Error: Could not update Card 1 Heading.</div>";
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Error: Could not update Card 1 Paragraph.</div>";
         }
 
         else
         {
-            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>&nbsp;Card 1 Heading updated successfully!</div>";
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>&nbsp;Card 1 Paragraph updated successfully!</div>";
         }
     }
 
@@ -242,12 +242,12 @@ else {
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
-                    <input id="card1_heading" name="card1_heading" type="text" length="45" placeholder="Currently: <?php echo $objArray[$id-1]->getHeading(0);?>">
-                    <label for="card1_heading">New Card 1 Heading</label>
+                    <input id="card1_paragraph" name="card1_paragraph" type="text" length="45" placeholder="Currently: <?php echo $objArray[$id-1]->getParagraph(0);?>">
+                    <label for="card1_paragraph">New Card 1 Paragraph</label>
                 </div>
             </div>
             <div class="input-field col s6">
-                <button class="btn waves-effect waves-light" type="submit" name="update3" id="update3">Update
+                <button class="btn waves-effect waves-light" type="submit" name="update4" id="update4">Update
                     <i class="material-icons right">send</i>
                 </button>
             </div>
