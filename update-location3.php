@@ -63,10 +63,7 @@ else {
                             <div class="row" style="padding: 10px;">
                                 <div class="input-field col s12 m12">
                                     <i class="material-icons prefix">info_outline</i>
-                                    <input placeholder="<?php echo $objArray[$id-1]->getName(); ?>" id="location_name"
-                                           type="text"
-                                           length="45"
-                                           class="validate">
+                                    <input placeholder="<?php echo $objArray[$id-1]->getName(); ?>" id="location_name" type="text" length="45" class="validate">
                                     <label for="location_name">Updated Name</label>
                                 </div>
                             </div>
