@@ -158,6 +158,57 @@ else {
     echo "            </li>\n";
     ?>
 
+    <?php
+    echo "            <li>\n";
+    echo "                <div class=\"collapsible-header green active\">\n";
+    echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 1\n";
+    echo "                </div>\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
+
+    if(isset($_POST['update3'])) {
+
+        $card1_heading = $_POST['card1_heading'];
+
+        $sql = "UPDATE descriptions SET head1=\"" . $card1_heading . "\" WHERE id=" . $id;
+        $result = mysqli_query($con, $sql);
+
+        if (!$result)
+        {
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Error: Could not update Card 1 Heading.</div>";
+        }
+
+        else
+        {
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>&nbsp;Card 1 Heading updated successfully!</div>";
+        }
+    }
+
+    else
+    { ?>
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+            <div class="row" style="padding: 10px;">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">label_outline</i>
+                    <input id="card1_heading" name="card1_heading" type="text" length="45" placeholder="Currently: <?php echo $objArray[$id-1]->getHeading(0);
+                    ?>">
+                    <label for="card1_heading">New Card 1 Heading</label>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <button class="btn waves-effect waves-light" type="submit" name="update3" id="update3">Update
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+        <?php
+    }
+    echo "                   </div>\n";
+    echo "                </div>\n";
+    echo "            </li>\n";
+    ?>
+
+
 <?php
     echo "        </ul>\n";
     echo "    </div>";

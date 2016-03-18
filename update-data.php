@@ -29,7 +29,7 @@
 include 'header.php';
 
 echo "<div class=\"container\">\n";
-echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">assignment_ind</i>Update a Location</h4>";
+echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">assignment_ind</i>&nbsp;Update a Location</h4>";
 
 include 'food-finderprj2.php';
 
