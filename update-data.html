@@ -44,7 +44,7 @@
 
 <main>
     <div class="container">
-        <div class="row" style="padding: 25px; margin-bottom: 20px;">
+        <div id="select" class="row" style="padding: 25px; margin-bottom: 20px;">
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12 m6">
@@ -78,6 +78,14 @@
         </div>
     </div>
 </footer>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+
 
 </body>
 </html>
