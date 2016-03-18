@@ -357,6 +357,212 @@ else {
     echo "            </li>\n";
     ?>
 
+
+    //--------------------------------------------------------------------------------
+
+
+    <?php
+    echo "            <li>\n";
+    echo "                <div class=\"collapsible-header black-text green\">\n";
+    echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 2\n";
+    echo "                </div>\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\" style=\"padding: 10px;\">\n";
+    echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
+    echo "            <li>\n";
+    echo "                <div class=\"collapsible-header green black-text\">\n";
+    echo "                    <i class=\"material-icons\">title</i>Update Card 2 Heading\n";
+    echo "                </div>\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
+
+    if(isset($_POST['update6'])) {
+
+        $card1_heading = $_POST['card2_heading'];
+
+        $sql = "UPDATE descriptions SET head2=\"" . $card1_heading . "\" WHERE id=" . $id;
+        $result = mysqli_query($con, $sql);
+
+        if (!$result)
+        {
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Error: Could not update Card 2 Heading.</div>";
+        }
+
+        else
+        {
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>&nbsp;Card 2 Heading updated successfully!</div>";
+        }
+    }
+
+    else
+    { ?>
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+            <div class="row" style="padding: 10px;">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">label_outline</i>
+                    <input id="card2_heading" name="card2_heading" type="text" length="45" placeholder="Currently: <?php echo $objArray[$id-1]->getHeading(1);
+                    ?>">
+                    <label for="card2_heading">New Card 2 Heading</label>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <button class="btn waves-effect waves-light" type="submit" name="update6" id="update6">Update
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+        <?php
+    }
+    echo "</div></div></li>";
+
+    echo "            <li>\n";
+    echo "                <div class=\"collapsible-header green black-text\">\n";
+    echo "                    <i class=\"material-icons\">subject</i>Update Card 2 Paragraph\n";
+    echo "                </div>\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
+
+    if(isset($_POST['update7'])) {
+
+        $card1_paragraph = $_POST['card2_paragraph'];
+
+        $sql = "UPDATE descriptions SET par2=\"" . $card1_paragraph . "\" WHERE id=" . $id;
+        $result = mysqli_query($con, $sql);
+
+        if (!$result)
+        {
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Error: Could not update Card 2 Paragraph.</div>";
+        }
+
+        else
+        {
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>&nbsp;Card 2 Paragraph updated successfully!</div>";
+        }
+    }
+
+    else
+    { ?>
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+            <div class="row" style="padding: 10px;">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">label_outline</i>
+                    <textarea class="materialize-textarea" id="card1_paragraph" name="card1_paragraph" type="text" length="300" placeholder="Currently: <?php echo
+                    $objArray[$id-1]->getParagraph(1);  ?>"></textarea>
+                    <label for="card2_paragraph">New Card 2 Paragraph</label>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <button class="btn waves-effect waves-light" type="submit" name="update7" id="update7">Update
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+        <?php
+    }
+    echo "</div></div></li>";
+
+    echo "            <li>\n";
+    echo "                <div class=\"collapsible-header green black-text\">\n";
+    echo "                    <i class=\"material-icons\">insert_photo</i>Update Card 2 Image\n";
+    echo "                </div>\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
+
+    $target_dir = "images/" . $id . "/";
+    $target_file = $target_dir . basename($_FILES["card2_image"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    // Check if image file is a actual image or fake image
+    if(isset($_POST['update8'])) {
+        $check = getimagesize($_FILES["card2_image"]["tmp_name"]);
+        if ($check !== false) {
+            $uploadOk = 1;
+        }
+
+        else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+
+        // Check file size
+        if ($_FILES["card2_image"]["size"] > 1000000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+        // Allow certain file formats
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif") {
+            echo "Sorry, only JPG/JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+
+        }
+
+        // if everything is ok, try to upload file
+        else {
+            $filename = basename($_FILES["card2_image"]["name"]);
+            if (move_uploaded_file($_FILES["card2_image"]["tmp_name"], $target_file)) {
+                $sql = "UPDATE descriptions SET img2=\"" . $filename . "\" WHERE id=" . $id;
+                $result = mysqli_query($con, $sql);
+                //echo $sql;
+                //echo $filename;
+
+                if (!$result)
+                {
+                    echo ('Error: Could not update Card 2 Image.');
+                }
+
+                else
+                {
+                    echo "The file \"" . $filename . "\" has been uploaded.";
+                }
+
+            }
+            else {
+                echo "Sorry, there was an error uploading your file \"" . $filename . "\".";
+            }
+        }
+    }
+
+    else
+    { ?>
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
+            <div class="row" style="padding: 10px;">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Choose File</span>
+                        <input type="file" name="card2_image" id="card2_image" placeholder="<?php $objArray[$id-1]->getImage(1);?>">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <button class="btn waves-effect waves-light" type="submit" name="update8" id="update8">Update
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+        <?php
+    }
+    echo "</div></div></li>";
+
+
+    ?>
+
+    <?php
+    echo "                   </ul>\n";
+    //echo "                </div>\n";
+    echo "            </li>\n";
+    ?>
+
+    //----------------------------------------------------------------------------------------------------------------------
+
+
 <?php
     echo "        </ul>\n";
     echo "    </div>";
