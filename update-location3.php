@@ -52,6 +52,14 @@ if ($con->connect_errno) {
 
 else {
     echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">add_location</i>Update Location:&nbsp;" . $objArray[$id-1]->getName() . "</h4>";
+    echo " <div class=\"row\">\n";
+    echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
+    echo "            <li>\n";
+    echo "                <div class=\"collapsible-header green active\">\n";
+    echo "                    <i class=\"material-icons\">store</i>Update Name\n";
+    echo "                </div>\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\">";
+
     if(isset($_POST['update1'])) {
 
         $location_name = $_POST['location_name'];
@@ -66,20 +74,12 @@ else {
 
         else
         {
-            echo "Name updated successfully!";
+            echo "<h4>Name updated successfully!</h4>";
         }
     }
 
     else
     { ?>
-
-    <div class="row">
-        <ul class="collapsible popout" data-collapsible="expandable">
-            <li>
-                <div class="collapsible-header green active">
-                    <i class="material-icons">store</i>Update Name
-                </div>
-                <div class="collapsible-body grey darken-4 green-text">
                         <div class="row">
                           <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
                             <div class="row" style="padding: 10px;">
@@ -93,15 +93,14 @@ else {
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
-                          </form>
-                        </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-
 <?php
-}
+    }
+echo "                          </form>\n";
+echo "                        </div>\n";
+echo "                </div>\n";
+echo "            </li>\n";
+echo "        </ul>\n";
+echo "    </div>";
 }
 echo "</div>";
 include 'footer.php';
