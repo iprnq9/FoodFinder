@@ -242,7 +242,9 @@ else {
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
-                    <textarea id="card1_paragraph" name="card1_paragraph" type="text" length="120" placeholder="Currently: <?php echo $objArray[$id-1]->getParagraph(0);
+                    <textarea style="padding: 10px; border: none; outline: none;" id="card1_paragraph" name="card1_paragraph" type="text" length="120" placeholder="Currently:
+                    <?php echo
+                    $objArray[$id-1]->getParagraph(0);
                     ?>"></textarea>
                     <label for="card1_paragraph">New Card 1 Paragraph</label>
                 </div>
@@ -275,6 +277,7 @@ include 'footer.php';
 <script>
     $(document).ready(function() {
         $('select').material_select();
+        $('#card1_paragraph').trigger('autoresize');
     });
 </script>
 
