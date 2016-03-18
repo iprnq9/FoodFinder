@@ -51,39 +51,54 @@ if ($con->connect_errno) {
 }
 
 else {
+    if(isset($_POST['update1'])) {
 
-        ?>
-        <h4 class="heading center-align"><i class="material-icons small">add_location</i>Add New Location</h4>
-        <div class="row">
-            <ul class="collapsible popout" data-collapsible="expandable">
-                <li>
-                    <div class="collapsible-header green active">
-                        <i class="material-icons">store</i>Update Name
-                    </div>
-                    <div class="collapsible-body grey darken-4 green-text">
-                            <div class="row">
-                              <form class="col s12">
-                                <div class="row">
-                                  <div class="input-field col s6">
-                                    <input id="input_text" type="text" length="10">
-                                    <label for="input_text">Input text</label>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="input-field col s12">
-                                    <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
-                                    <label for="textarea1">Textarea</label>
-                                  </div>
-                                </div>
-                              </form>
+        $location_name = $_POST['location_name'];
+
+        $sql = "UPDATE location_id SET location_name=\"$location_name\" WHERE id=$id";
+        $result = mysqli_query($con, $sql);
+
+        if (!$result)
+        {
+            echo ('Error: Could not update name.');
+        }
+
+        else
+        {
+            echo "Name updated successfully!";
+        }
+    }
+
+    else
+    { ?>
+    <h4 class="heading center-align"><i class="material-icons small">add_location</i>Update Location:&nbsp;<?php echo $objArray[$id-1]->getName(); ?></h4>
+    <div class="row">
+        <ul class="collapsible popout" data-collapsible="expandable">
+            <li>
+                <div class="collapsible-header green active">
+                    <i class="material-icons">store</i>Update Name
+                </div>
+                <div class="collapsible-body grey darken-4 green-text">
+                        <div class="row">
+                          <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+                            <div class="row" style="padding: 10px;">
+                              <div class="input-field col s6">
+                                <input id="location_name" name="location_name" type="text" length="45">
+                                <label for="location_name">New Name</label>
+                              </div>
                             </div>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
+                            <div class="input-field col s6">
+                              <input name="update1" type="submit" id="update1" value="Update Name">
+                            </div>
+                          </form>
+                        </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
 <?php
+}
 }
 include 'footer.php';
 
