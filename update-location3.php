@@ -682,7 +682,7 @@ else {
         }
 
         else {
-            echo "File is not an image.";
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Sorry, file uploaded isn't recognized as an image.</div>";
             $uploadOk = 0;
         }
 
@@ -695,12 +695,12 @@ else {
         // Allow certain file formats
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif") {
-            echo "Sorry, only JPG/JPEG, PNG & GIF files are allowed.";
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Sorry, only JPG/JPEG, PNG & GIF files are allowed.</div>";
             $uploadOk = 0;
         }
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Sorry, your file was not uploaded.</div>";
 
         }
 
@@ -720,12 +720,13 @@ else {
 
                 else
                 {
-                    echo "The file \"" . $filename . "\" has been uploaded.";
+                    echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>&nbsp;Your file \"" . $filename . "\" has been uploaded.</div>";
+                    //echo "The file \"" . $filename . "\" has been uploaded.";
                 }
 
             }
             else {
-                echo "Sorry, there was an error uploading your file \"" . $filename . "\".";
+                echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;There was an error in uploading your file.</div>";
             }
         }
     }
