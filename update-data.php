@@ -58,6 +58,7 @@ else {
         echo "<form class=\"input-field\">\n";
         echo "<div class=\"input-field col s12\">\n";
         echo "<select class=\"icons\" id=\"dynamic_select\">\n";
+        echo "   <option value=\"\" disabled selected>Choose a location to update</option>";
             for($i=1; $i <= $max; $i++){
                 echo "<option value=\"update-location.php?id=" . $i . "\" data-icon=\"images/$i/" . $objArray[$i-1]->getImage(0) . "\" class=\"left circle\">$i. " .
                 $objArray[$i-1]->getName() .
