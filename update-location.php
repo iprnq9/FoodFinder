@@ -280,10 +280,12 @@ else {
 
         // if everything is ok, try to upload file
         else {
+            $filename = basename($_FILES["card1_image"]["name"]);
             if (move_uploaded_file($_FILES["card1_image"]["tmp_name"], $target_file)) {
-                $filename = basename($_FILES["card1_image"]["name"]);
                 $sql = "UPDATE descriptions SET img1=\"" . $filename . "\" WHERE id=" . $id;
                 $result = mysqli_query($con, $sql);
+                echo $sql;
+                echo $filename;
 
                 if (!$result)
                 {
