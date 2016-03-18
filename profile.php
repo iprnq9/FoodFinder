@@ -103,7 +103,7 @@ else {
     for($card = 1; $card <= 4; $card++){
         echo "          <li class=\"flex-item\">\n";
         echo "            <div class=\"quick-info grey darken-4 white-text z-depth-2\">\n";
-        echo "              <div class=\"card-image\" style=\"background-image: url(images/" .
+        echo "              <div class=\"card-image\" style=\"background-image: url(images/" . ($locationId+1) . "/" .
             $objArray[$k]->getImage($card-1) . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
         echo "              <div class=\"quick-info-text white-text\">\n";
         echo "                <h3>" . $objArray[$k]->getHeading($card-1) . "</h3>\n";

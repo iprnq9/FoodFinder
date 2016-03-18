@@ -262,7 +262,7 @@ else {
 
 
         // Check file size
-        if ($_FILES["card1_image"]["size"] > 500000) {
+        if ($_FILES["card1_image"]["size"] > 1000000) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
@@ -284,8 +284,8 @@ else {
             if (move_uploaded_file($_FILES["card1_image"]["tmp_name"], $target_file)) {
                 $sql = "UPDATE descriptions SET img1=\"" . $filename . "\" WHERE id=" . $id;
                 $result = mysqli_query($con, $sql);
-                echo $sql;
-                echo $filename;
+                //echo $sql;
+                //echo $filename;
 
                 if (!$result)
                 {
