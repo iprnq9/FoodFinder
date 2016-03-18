@@ -280,7 +280,7 @@ else {
 
         // if everything is ok, try to upload file
         else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            if (move_uploaded_file($_FILES["card1_image"]["tmp_name"], $target_file)) {
                 $filename = basename($_FILES["card1_image"]["name"]);
                 $sql = "UPDATE descriptions SET img1=\"" . $filename . "\" WHERE id=" . $id;
                 $result = mysqli_query($con, $sql);
@@ -292,7 +292,7 @@ else {
 
                 else
                 {
-                    echo "The file \" . basename(" . $_FILES["card1_image"]["name"]) . "\" has been uploaded.";
+                    echo "The file \"" . basename($_FILES["card1_image"]["name"]) . "\" has been uploaded.";
                 }
 
             }
