@@ -75,7 +75,7 @@ else {
 
         else
         {
-            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign center-block\">done</i>Name updated successfully!</div>";
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>Name updated successfully!</div>";
         }
     }
 
