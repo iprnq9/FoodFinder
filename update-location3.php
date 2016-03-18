@@ -255,7 +255,7 @@ else {
         </form>
         <?php
     }
-    echo "</div></li>";
+    echo "</div></div></li>";
 
 
     echo "                   </ul></div>\n";
