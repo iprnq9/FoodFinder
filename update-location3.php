@@ -57,22 +57,24 @@ else {
         <div class="row">
             <ul class="collapsible popout" data-collapsible="expandable">
                 <li>
-                    <form class="col s12 m12 l10 push-l1" method="post" action="<?php $_PHP_SELF ?>">
-                        <div class="collapsible-header green active"><i class="material-icons">store</i>Update Name</div>
-                        <div class="collapsible-body grey darken-4 green-text">
-                            <div class="row" style="padding: 10px;">
-                                <div class="input-field col s12 m12">
-                                    <i class="material-icons prefix">info_outline</i>
-                                    <input placeholder="<?php echo $objArray[$id-1]->getName(); ?>" id="location_name" type="text" length="45" class="validate">
-                                    <label for="location_name">Updated Name</label>
-                                </div>
-                            </div>
-                        </div>
-                        <input class="btn-large waves-effect waves-light green lighten-1" type="submit" name="update1"
-                               id="update1">Update Name
-                        <i class="material-icons right">send</i>
-                        </input>
-                    </form>
+                <div class="collapsible-header green active"><i class="material-icons">store</i>Basic Information</div>
+                <div class="collapsible-body grey darken-4 green-text">Test</div>
+<!--                    <form class="col s12 m12 l10 push-l1" method="post" action="--><?php //$_PHP_SELF ?><!--">-->
+<!--                        <div class="collapsible-header green active"><i class="material-icons">store</i>Update Name</div>-->
+<!--                        <div class="collapsible-body grey darken-4 green-text">-->
+<!--                            <div class="row" style="padding: 10px;">-->
+<!--                                <div class="input-field col s12 m12">-->
+<!--                                    <i class="material-icons prefix">info_outline</i>-->
+<!--                                    <input placeholder="--><?php //echo $objArray[$id-1]->getName(); ?><!--" id="location_name" type="text" length="45" class="validate">-->
+<!--                                    <label for="location_name">Updated Name</label>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <input class="btn-large waves-effect waves-light green lighten-1" type="submit" name="update1"-->
+<!--                               id="update1">Update Name-->
+<!--                        <i class="material-icons right">send</i>-->
+<!--                        </input>-->
+<!--                    </form>-->
                 </li>
             </ul>
         </div>
