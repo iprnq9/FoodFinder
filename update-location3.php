@@ -51,6 +51,7 @@ if ($con->connect_errno) {
 }
 
 else {
+    echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">add_location</i>Update Location:&nbsp;<?php echo $objArray[$id-1]->getName(); ?></h4>";
     if(isset($_POST['update1'])) {
 
         $location_name = $_POST['location_name'];
@@ -71,7 +72,7 @@ else {
 
     else
     { ?>
-    <h4 class="heading center-align"><i class="material-icons small">add_location</i>Update Location:&nbsp;<?php echo $objArray[$id-1]->getName(); ?></h4>
+
     <div class="row">
         <ul class="collapsible popout" data-collapsible="expandable">
             <li>
@@ -88,7 +89,9 @@ else {
                               </div>
                             </div>
                             <div class="input-field col s6">
-                              <input name="update1" type="submit" id="update1" value="Update Name">
+                                <button class="btn waves-effect waves-light" type="submit" name="update1" id="update1">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
                             </div>
                           </form>
                         </div>
@@ -96,10 +99,11 @@ else {
             </li>
         </ul>
     </div>
-</div>
+
 <?php
 }
 }
+echo "</div>";
 include 'footer.php';
 
 ?>
