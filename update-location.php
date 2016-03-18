@@ -5,9 +5,9 @@
 <body>
 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-ini_set('html_errors', 'On');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'On');
+//ini_set('html_errors', 'On');
 
 include 'food-finderprj2.php';
 
@@ -244,7 +244,7 @@ else {
 
     <?php
 
-    $target_dir = "images/";
+    $target_dir = "images/" . $id . "/";
     $target_file = $target_dir . basename($_FILES["card1_image"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
