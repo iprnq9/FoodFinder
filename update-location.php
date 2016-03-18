@@ -306,7 +306,7 @@ else {
     else { ?>
         <form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
             <input type="file" name="card1_image" id="card1_image">
-            <input type="update5" id="update5" value="Upload Card 1 Image" name="update5">
+            <input type="submit" id="update5" name="update5">
         </form>
     <?php
     }
