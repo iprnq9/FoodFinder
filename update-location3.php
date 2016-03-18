@@ -61,7 +61,7 @@ else {
     echo " <div class=\"row\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green active\">\n";
+    echo "                <div class=\"collapsible-header green\">\n";
     echo "                    <i class=\"material-icons\">info</i>Update Name\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
@@ -110,7 +110,7 @@ else {
 
     <?php
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green active\">\n";
+    echo "                <div class=\"collapsible-header green\">\n";
     echo "                    <i class=\"material-icons\">assignment_ind</i>Update Description\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
@@ -160,13 +160,13 @@ else {
 
     <?php
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header black-text green active\">\n";
+    echo "                <div class=\"collapsible-header black-text green\">\n";
     echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 1\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body white darken-4 green-text\" style=\"padding: 10px;\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green black-text active\">\n";
+    echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">title</i>Update Card 1 Heading\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
@@ -212,7 +212,7 @@ else {
     echo "</div></div></li>";
 
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green black-text active\">\n";
+    echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">subject</i>Update Card 1 Paragraph\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
@@ -258,7 +258,7 @@ else {
     echo "</div></div></li>";
 
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green black-text active\">\n";
+    echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">insert_photo</i>Update Card 1 Image\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
