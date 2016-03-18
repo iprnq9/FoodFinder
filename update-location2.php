@@ -24,6 +24,8 @@
 
 include 'header.php';
 
+echo "<div class=\"container\">\n";
+
 //error_reporting(E_ALL);
 //ini_set('display_errors', 'On');
 //ini_set('html_errors', 'On');
@@ -75,7 +77,7 @@ else {
         <div class="row">
             <ul class="collapsible popout" data-collapsible="expandable">
                 <li>
-                    <form class="col s12 m12 l10 push-l1" method="post" action = "<?php $_PHP_SELF ?>">
+                    <form class="col s12 m12 l10 push-l1" method="post" action="<?php $_PHP_SELF ?>">
                         <div class="collapsible-header green active"><i class="material-icons">store</i>Update Name</div>
                         <div class="collapsible-body grey darken-4 green-text">
                             <div class="row" style="padding: 10px;">
@@ -98,6 +100,7 @@ else {
             </ul>
         </div>
 <?php } ?>
+
 <?php
 }
 
