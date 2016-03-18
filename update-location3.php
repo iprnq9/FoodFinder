@@ -264,7 +264,7 @@ else {
 
 <?php
     echo "        </ul>\n";
-    //echo "    </div>";
+    echo "    </div>";
 }
 //close container
 echo "</div>";
