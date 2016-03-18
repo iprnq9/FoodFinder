@@ -70,18 +70,17 @@ else {
 
         if (!$result)
         {
-            echo ('<i class="material-icons small">error_outline</i>Error: Could not update name.');
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Error: Could not update name.</div>";
         }
 
         else
         {
-            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>Name updated successfully!</div>";
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>&nbsp;Name updated successfully!</div>";
         }
     }
 
     else
     { ?>
-
                           <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
                             <div class="row" style="padding: 10px;">
                               <div class="input-field col s6">
@@ -95,7 +94,6 @@ else {
                                 </button>
                             </div>
                           </form>
-
 <?php
     }
     echo "                   </div>\n";
