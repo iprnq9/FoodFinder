@@ -163,7 +163,7 @@ else {
     echo "                <div class=\"collapsible-header black-text green active\">\n";
     echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 1\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\" style=\"padding: 10px;\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
     echo "            <li>\n";
     echo "                <div class=\"collapsible-header green black-text active\">\n";
@@ -242,7 +242,8 @@ else {
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
-                    <input id="card1_paragraph" name="card1_paragraph" type="text" length="45" placeholder="Currently: <?php echo $objArray[$id-1]->getParagraph(0);?>">
+                    <textarea id="card1_paragraph" name="card1_paragraph" type="text" length="120" placeholder="Currently: <?php echo $objArray[$id-1]->getParagraph(0);
+                    ?>"></textarea>
                     <label for="card1_paragraph">New Card 1 Paragraph</label>
                 </div>
             </div>
