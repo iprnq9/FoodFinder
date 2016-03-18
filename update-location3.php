@@ -99,6 +99,57 @@ else {
     echo "                   </div>\n";
     echo "                </div>\n";
     echo "            </li>\n";
+?>
+
+<?php
+    echo "            <li>\n";
+    echo "                <div class=\"collapsible-header green active\">\n";
+    echo "                    <i class=\"material-icons\">store</i>Update Name\n";
+    echo "                </div>\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
+
+    if(isset($_POST['update1'])) {
+
+    $location_name = $_POST['location_name'];
+
+    $sql = "UPDATE location_id SET location_name=\"$location_name\" WHERE id=$id";
+    $result = mysqli_query($con, $sql);
+
+    if (!$result)
+    {
+    echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Error: Could not update name.</div>";
+    }
+
+    else
+    {
+    echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">done</i>&nbsp;Name updated successfully!</div>";
+    }
+    }
+
+    else
+    { ?>
+    <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+        <div class="row" style="padding: 10px;">
+            <div class="input-field col s6">
+                <input id="location_name" name="location_name" type="text" length="45">
+                <label for="location_name">New Name</label>
+            </div>
+        </div>
+        <div class="input-field col s6">
+            <button class="btn waves-effect waves-light" type="submit" name="update1" id="update1">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+    <?php
+    }
+    echo "                   </div>\n";
+    echo "                </div>\n";
+    echo "            </li>\n";
+    ?>
+
+<?php
     echo "        </ul>\n";
     echo "    </div>";
 }
