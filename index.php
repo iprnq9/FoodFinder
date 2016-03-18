@@ -61,7 +61,7 @@ else {
         echo "      <li class=\"flex-item grey darken-4 white-text card\">\n";
         echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">" . $objArray[$k]->status() . "</div>\n";
         echo "              <div class=\"card-image\" style=\"background-image: url(images/" . ($k+1) . "/" .
-            $objArray[$k]->getImage($card-1) . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
+            $objArray[$k]->getImage(0) . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
         //echo "        <div class=\"card-image " . $imageClass . "\"></div>\n";
         echo "        <div class=\"card-info\">\n";
         echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
