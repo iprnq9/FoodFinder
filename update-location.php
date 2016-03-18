@@ -306,6 +306,7 @@ else {
 
     //if post hasn't been activated, display form
     else { ?>
+        <h4>Update Card 1 Image</h4>
         <form action="<?php $_PHP_SELF ?>" method="post" enctype="multipart/form-data">
             <input type="file" name="card1_image" id="card1_image" placeholder="<?php $objArray[$id-1]->getImage(0);?>">
             <input type="submit" id="update5" name="update5">
