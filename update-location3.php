@@ -84,8 +84,8 @@ else {
                           <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
                             <div class="row" style="padding: 10px;">
                               <div class="input-field col s6">
-                                  <i class="material-icons prefix">info_outline</i>
-                                  <input id="location_name" name="location_name" type="text" length="45">
+                                  <i class="material-icons prefix">label_outline</i>
+                                  <input id="location_name" name="location_name" type="text" length="45" placeholder="<?php echo $objArray[$id-1]->getName(); ?>">
                                   <label for="location_name">New Name</label>
                               </div>
                             </div>
@@ -133,7 +133,7 @@ else {
         <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
-                    <i class="material-icons prefix">message</i>
+                    <i class="material-icons prefix">label_outline</i>
                     <input id="location_description" name="location_description" type="text" length="45" placeholder="<?php echo $objArray[$id-1]->getDescription(); ?>">
                     <label for="location_description">New Description</label>
                 </div>
