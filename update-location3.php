@@ -51,7 +51,7 @@ if ($con->connect_errno) {
 }
 
 else {
-    echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">add_location</i>Update Location:&nbsp;" . $objArray[$id-1]->getName() . "</h4>";
+    echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">add_location</i>Update Location:<br>" . $objArray[$id-1]->getName() . "</h4>";
     echo " <div class=\"row\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
     echo "            <li>\n";
@@ -83,13 +83,13 @@ else {
     { ?>
                           <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
                             <div class="row" style="padding: 10px;">
-                              <div class="input-field col s6">
+                              <div class="input-field col s6 left">
                                   <i class="material-icons prefix">label_outline</i>
                                   <input id="location_name" name="location_name" type="text" length="45" placeholder="<?php echo $objArray[$id-1]->getName(); ?>">
                                   <label for="location_name">New Name</label>
                               </div>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s3 right">
                                 <button class="btn waves-effect waves-light" type="submit" name="update1" id="update1">Submit
                                     <i class="material-icons right">send</i>
                                 </button>
