@@ -30,7 +30,7 @@ include 'header.php'; ?>
 
     <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
         <div class="col s12 center-align">
-            <a class="btn-large tooltipped" href="update-location.php" style="vertical-align: ;" data-position="bottom" data-delay="50" data-tooltip="Update the hours of location, a location's text, location, description, or other information found on the site."><i class="material-icons left">create</i>Update a Location's Information</a>
+            <a class="btn-large tooltipped" href="update-data.php" style="vertical-align: ;" data-position="bottom" data-delay="50" data-tooltip="Update the hours of location, a location's text, location, description, or other information found on the site."><i class="material-icons left">create</i>Update a Location's Information</a>
         </div>
     </div>
 

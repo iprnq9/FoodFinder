@@ -9,6 +9,10 @@
 //ini_set('display_errors', 'On');
 //ini_set('html_errors', 'On');
 
+include 'header.php';
+
+echo "<div class=\"container\">\n";
+
 include 'food-finderprj2.php';
 
 include 'db-connect.php';
@@ -25,17 +29,22 @@ include 'pullData2.php';
 
 $max = sizeof($objArray);
 
+echo "<div class=\"row\">\n";
+echo "<div class=\"input-field col s12\">";
+
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
 }
 
 else {
-        echo "Choose a location to update: <select id=\"dynamic_select\">";
+        echo "Choose a location to update: <select class=\"icons\" id=\"dynamic_select\">";
             for($i=1; $i <= $max; $i++){
-                echo "<option value=\"update-location.php?id=" . $i . "\">$i. " . $objArray[$i-1]->getName() .
+                echo "<option value=\"update-location.php?id=" . $i . "\" data-icon=\"" . $objArray[$i-1]->getImage(0) . "\" class=\"left circle\">$i. " .
+                $objArray[$i-1]->getName() .
                     "</option>";
             }
         echo "</select>";
+        echo " <label>Choose a location to update:</label>";
 
         echo "<script>\n";
         echo "    $(function(){ ";
@@ -48,7 +57,11 @@ else {
         echo "      });\n";
         echo "    });\n";
         echo "</script>";
-    }
+}
+
+echo "</div>";
+echo "</div>";
+echo "</div>";
 
 ?>
 
