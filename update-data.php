@@ -47,24 +47,27 @@ include 'pullData2.php';
 $max = sizeof($objArray);
 
 echo "<div class=\"row\">\n";
-echo "<div class=\"input-field col s12\">";
+echo "<div class=\"input-field col s12\">\n";
+
 
 if ($con->connect_errno) {
     echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
 }
 
 else {
-        echo "Choose a location to update: <select class=\"icons\" id=\"dynamic_select\">";
+        echo "<form>\n";
+        echo "<select class=\"icons\" id=\"dynamic_select\">\n";
             for($i=1; $i <= $max; $i++){
                 echo "<option value=\"update-location.php?id=" . $i . "\" data-icon=\"" . $objArray[$i-1]->getImage(0) . "\" class=\"left circle\">$i. " .
                 $objArray[$i-1]->getName() .
-                    "</option>";
+                    "</option>\n";
             }
-        echo "</select>";
-        echo " <label>Choose a location to update:</label>";
+        echo "</select>\n";
+        echo " <label>Choose a location to update:</label>\n";
+        echo "</form>\n";
 
         echo "<script>\n";
-        echo "    $(function(){ ";
+        echo "    $(function(){ \n";
         echo "      $('#dynamic_select').on('change', function () {\n";
         echo "          var url = $(this).val(); \n";
         echo "          if (url) { // require a URL\n";
@@ -73,12 +76,12 @@ else {
         echo "          return false;\n";
         echo "      });\n";
         echo "    });\n";
-        echo "</script>";
+        echo "</script>\n";
 }
 
-echo "</div>";
-echo "</div>";
-echo "</div>";
+echo "</div>\n";
+echo "</div>\n";
+echo "</div>\n";
 
 include 'footer.php';
 
