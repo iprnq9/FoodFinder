@@ -61,22 +61,25 @@ else {
                         <i class="material-icons">store</i>Update Name
                     </div>
                     <div class="collapsible-body grey darken-4 green-text">
-                        <form class="col s12 m12 l10 push-l1" method="post" action="<?php $_PHP_SELF ?>">
-                            <div class="collapsible-body grey darken-4 green-text">
-                                <div class="row" style="padding: 10px;">
-                                    <div class="input-field col s12 m12">
-                                        <i class="material-icons prefix">info_outline</i>
-                                        <input placeholder="<?php echo $objArray[$id-1]->getName(); ?>" id="location_name" type="text" length="45" class="validate">
-                                        <label for="location_name">Updated Name</label>
-                                    </div>
+                            <div class="row">
+                              <form class="col s12">
+                                <div class="row">
+                                  <div class="input-field col s6">
+                                    <input id="input_text" type="text" length="10">
+                                    <label for="input_text">Input text</label>
+                                  </div>
                                 </div>
+                                <div class="row">
+                                  <div class="input-field col s12">
+                                    <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+                                    <label for="textarea1">Textarea</label>
+                                  </div>
+                                </div>
+                              </form>
                             </div>
-                            <input class="btn-large waves-effect waves-light green lighten-1" type="submit" name="update1" id="update1">
-                                Update Name<i class="material-icons right">send</i>
-                            </input>
-                        </form>
                     </div>
                 </li>
+
             </ul>
         </div>
 </div>
