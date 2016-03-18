@@ -292,12 +292,12 @@ else {
 
                 else
                 {
-                    echo "The file \"" . basename($_FILES["card1_image"]["name"]) . "\" has been uploaded.";
+                    echo "The file \"" . $filename . "\" has been uploaded.";
                 }
 
             }
             else {
-                echo "Sorry, there was an error uploading your file.";
+                echo "Sorry, there was an error uploading your file \"" . $filename . "\".";
             }
         }
     }
