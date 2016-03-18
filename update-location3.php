@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
-<title>Update Location| FoodFinder</title>
+<title>Update Location | FoodFinder</title>
 
 <!-- CSS  -->
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -47,7 +47,7 @@ include 'pullData2.php';
 $max = sizeof($objArray);
 
 if ($con->connect_errno) {
-    echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
+    echo "<i class=\"material-icons small\">error_outline</i>Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
 }
 
 else {
@@ -69,12 +69,12 @@ else {
 
         if (!$result)
         {
-            echo ('Error: Could not update name.');
+            echo ('<i class="material-icons small">error_outline</i>Error: Could not update name.');
         }
 
         else
         {
-            echo "<h4>Name updated successfully!</h4>";
+            echo "<h4><i class=\"material-icons small\">done</i>Name updated successfully!</h4>";
         }
     }
 
@@ -93,10 +93,11 @@ else {
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
+                          </form>
+                        </div>
 <?php
     }
-echo "                          </form>\n";
-echo "                        </div>\n";
+
 echo "                </div>\n";
 echo "            </li>\n";
 echo "        </ul>\n";
