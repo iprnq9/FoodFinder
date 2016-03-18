@@ -22,6 +22,8 @@
 <body>
 <?php
 
+include 'header.php';
+
 //error_reporting(E_ALL);
 //ini_set('display_errors', 'On');
 //ini_set('html_errors', 'On');
@@ -79,7 +81,7 @@ else {
                             <div class="row" style="padding: 10px;">
                                 <div class="input-field col s12 m12">
                                     <i class="material-icons prefix">info_outline</i>
-                                    <input placeholder='<?php echo $objArray[$id-1]->getName(); ?>' id="location_name"
+                                    <input placeholder="<?php echo $objArray[$id-1]->getName(); ?>" id="location_name"
                                            type="text"
                                     length="45"
                                     class="validate">
