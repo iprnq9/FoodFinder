@@ -75,7 +75,7 @@ else {
 
         else
         {
-            echo "<p style=\"vertical-align: middle;\"><i class=\"material-icons small\">done</i>Name updated successfully!</p>";
+            echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign center-block\">done</i>Name updated successfully!</div>";
         }
     }
 
@@ -98,12 +98,13 @@ else {
 
 <?php
     }
-echo "</div>\n";
-echo "                </div>\n";
-echo "            </li>\n";
-echo "        </ul>\n";
-echo "    </div>";
+    echo "                   </div>\n";
+    echo "                </div>\n";
+    echo "            </li>\n";
+    echo "        </ul>\n";
+    echo "    </div>";
 }
+//close container
 echo "</div>";
 include 'footer.php';
 
