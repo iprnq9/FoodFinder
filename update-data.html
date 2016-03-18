@@ -1,0 +1,88 @@
+<!--Thanks to Russell Bell for his help-->
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+<title>Update Location | FoodFinder</title>
+
+<!-- CSS  -->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<script type="text/javascript" src="js/moment.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:700,300,400' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<link href="custom.css" rel="stylesheet">
+
+<body>
+
+<div class="navbar-fixed">
+    <nav class="green lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo waves-effect waves-light"><img src="images/logo-icon.png" alt="FoodFinder logo image" style="vertical-align: middle;"/>&nbsp;FoodFinder</a>
+            <ul class="right hide-on-med-and-down">
+                <li class="dining"><a href="index.php" class="waves-effect waves-light"><i class="material-icons left">local_dining</i>S&T Dining</a></li>
+                <li class="fundraisers"><a href="food-fundraisers.php" class="waves-effect waves-light"><i class="material-icons left">local_atm</i>Food Fundraisers</a></li>
+                <li class="dashboard"><a href="dashboard.php" class="waves-effect waves-light"><i class="material-icons left">dashboard</i>Dashboard</a></li>
+                <li class="manage"><a href="manage.php" class="waves-effect waves-light"><i class="material-icons left">settings</i>Manage</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li class="dining"><a href="index.php"><i class="material-icons left valign center-block center-align">local_dining</i>S&T Dining</a></li>
+                <li class="fundraisers"><a href="food-fundraisers.php"><i class="material-icons left">local_atm</i>Food Fundraisers</a></li>
+                <li class="dashboard"><a href="dashboard.php"><i class="material-icons left">dashboard</i>Dashboard</a></li>
+                <li class="manage"><a href="manage.php"><i class="material-icons left">settings</i>Manage</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="input-field col s12 m6">
+            <select class="icons">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="" data-icon="images/1.jpg" class="circle">example 1</option>
+                <option value="" data-icon="images/2.jpg" class="circle">example 2</option>
+                <option value="" data-icon="images/3.jpg" class="circle">example 1</option>
+            </select>
+            <label>Images in select</label>
+        </div>
+        <script>
+            $(function(){
+                $('#dynamic_select').on('change', function () {
+                    var url = $(this).val();
+                    //require a URLn
+                    if (url) {
+                        window.location = url;
+                    }
+                return false;
+                });
+            });
+        </script>
+    </div>
+</div>
+
+<footer class="page-footer green hide-on-small-only">
+    <div class="container">
+        <div class="row">
+            <div class="col s8 offset-s2 m4 offset-m4 l2 offset-l5">
+                <img src="images/foodFinderLogo3.png" style="margin-bottom: 15px;" class="responsive-img right" alt="FoodFinder logo image" />
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2015-2016 | <a class="grey-text text-lighten-4" href="foodfinders.php">Made by the coolest kids at Missouri
+            S&T</a>
+            <a class="grey-text text-lighten-4 right" target="_blank" href="http://bebetter.mst.edu/">Missouri S&T ITRSS</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
