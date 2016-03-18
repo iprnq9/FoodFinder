@@ -29,6 +29,7 @@
 include 'header.php';
 
 echo "<div class=\"container\">\n";
+echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">assignment_ind</i>Update a Location</h4>";
 
 include 'food-finderprj2.php';
 
@@ -56,7 +57,7 @@ if ($con->connect_errno) {
 
 else {
         echo "<form class=\"input-field\">\n";
-        echo "<div class=\"input-field col s12\">\n";
+        echo "<div class=\"input-field col s12 m12 l6 push-l3\">\n";
         echo "<select class=\"icons\" id=\"dynamic_select\">\n";
         echo "   <option value=\"\" disabled selected>Choose a location to update</option>";
             for($i=1; $i <= $max; $i++){
