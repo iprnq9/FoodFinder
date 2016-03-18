@@ -83,16 +83,16 @@ else {
     { ?>
                           <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
                             <div class="row" style="padding: 10px;">
+                              <div class="input-field col s3 right">
+                                    <button class="btn waves-effect waves-light" type="submit" name="update1" id="update1">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                              </div>
                               <div class="input-field col s6 left">
                                   <i class="material-icons prefix">label_outline</i>
                                   <input id="location_name" name="location_name" type="text" length="45" placeholder="<?php echo $objArray[$id-1]->getName(); ?>">
                                   <label for="location_name">New Name</label>
                               </div>
-                            </div>
-                            <div class="input-field col s3 right">
-                                <button class="btn waves-effect waves-light" type="submit" name="update1" id="update1">Submit
-                                    <i class="material-icons right">send</i>
-                                </button>
                             </div>
                           </form>
 <?php
