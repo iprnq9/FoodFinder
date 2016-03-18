@@ -58,13 +58,10 @@ else {
             <ul class="collapsible popout" data-collapsible="expandable">
                 <li>
                     <div class="collapsible-header green active">
-                        <i class="material-icons">store</i>Basic Information
+                        <i class="material-icons">store</i>Update Name
                     </div>
                     <div class="collapsible-body grey darken-4 green-text">
                         <form class="col s12 m12 l10 push-l1" method="post" action="<?php $_PHP_SELF ?>">
-                            <div class="collapsible-header green active">
-                                <i class="material-icons">store</i>Update Name
-                            </div>
                             <div class="collapsible-body grey darken-4 green-text">
                                 <div class="row" style="padding: 10px;">
                                     <div class="input-field col s12 m12">
