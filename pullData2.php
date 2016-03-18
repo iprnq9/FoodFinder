@@ -105,7 +105,7 @@ for ($x = 0; $x < $count; $x++) {
     $objArray[$x]->setDescription($desc);
 }
 
-for ($x = 0; $x < 1; $x++){
+for ($x = 0; $x < $count; $x++){
     for($card = 1; $card <=4; $card++){
         $query = "SELECT head" . $card . " FROM descriptions WHERE id=" . ($x+1);
         $colName = "head" . $card;
