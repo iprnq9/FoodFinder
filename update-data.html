@@ -43,27 +43,33 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="input-field col s12 m6">
-            <select class="icons">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="" data-icon="images/1.jpg" class="circle">example 1</option>
-                <option value="" data-icon="images/2.jpg" class="circle">example 2</option>
-                <option value="" data-icon="images/3.jpg" class="circle">example 1</option>
-            </select>
-            <label>Images in select</label>
-        </div>
-        <script>
-            $(function(){
-                $('#dynamic_select').on('change', function () {
-                    var url = $(this).val();
-                    //require a URLn
-                    if (url) {
-                        window.location = url;
-                    }
-                return false;
-                });
-            });
-        </script>
+        <form class="col s12">
+            <div class="input-field col s12 m6">
+                <div class="row">
+                    <div class="col s12">
+                        <select class="icons">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="" data-icon="images/1.jpg" class="circle">example 1</option>
+                            <option value="" data-icon="images/2.jpg" class="circle">example 2</option>
+                            <option value="" data-icon="images/3.jpg" class="circle">example 1</option>
+                        </select>
+                        <label>Images in select</label>
+                    </div>
+                    <script>
+                        $(function(){
+                            $('#dynamic_select').on('change', function () {
+                                var url = $(this).val();
+                                //require a URLn
+                                if (url) {
+                                    window.location = url;
+                                }
+                                return false;
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
