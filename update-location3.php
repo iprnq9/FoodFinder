@@ -971,6 +971,7 @@ include 'footer.php';
 <script>
     $(document).ready(function() {
         $('select').material_select();
+        $('.collapsible-header').addClass('active');
     });
 </script>
 
