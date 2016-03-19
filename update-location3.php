@@ -773,7 +773,7 @@ else {
     echo "</div></div></li>";
 
     echo "            <li>\n";
-    echo "                <div class=\"collapsible-header green black-text\">\n";
+    echo "                <div class=\"collapsible-header active green black-text\">\n";
     echo "                    <i class=\"material-icons\">insert_photo</i>Update Card 3 Image\n";
     echo "                </div>\n";
     echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
