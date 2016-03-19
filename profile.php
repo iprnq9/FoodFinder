@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>Profile | FoodFinder</title>
+    <title><!--TITLE--> | FoodFinder</title>
 
     <!-- CSS  -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -52,6 +52,12 @@ else {
 
     $status = $objArray[$k]->status();
     $name = $objArray[$k]->getName();
+
+    $pageContents = ob_get_contents (); // Get all the page's HTML into a string
+    ob_end_clean (); // Wipe the buffer
+
+    // Replace <!--TITLE--> with $pageTitle variable contents, and print the HTML
+    echo str_replace ('<!--TITLE-->', $name, $pageContents);
 
     echo "<main>\n";
     echo "  <div class=\"container\">\n";

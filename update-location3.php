@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
-<title>Update Location | FoodFinder</title>
+<title>Update <!--TITLE--> | FoodFinder</title>
 
 <!-- CSS  -->
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -52,11 +52,20 @@ include 'pullData2.php';
 
 $max = sizeof($objArray);
 
+
 if ($con->connect_errno) {
     echo "<i class=\"material-icons small\">error_outline</i>Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
 }
 
 else {
+    $name = $objArray[$id-1]->getName();
+
+    $pageContents = ob_get_contents (); // Get all the page's HTML into a string
+    ob_end_clean (); // Wipe the buffer
+
+    // Replace <!--TITLE--> with $pageTitle variable contents, and print the HTML
+    echo str_replace ('<!--TITLE-->', $name, $pageContents);
+
     echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">add_location</i>Update Location:<br>" . $objArray[$id-1]->getName() . "</h4>";
     echo " <div class=\"row\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
@@ -875,7 +884,7 @@ else {
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     // Check if image file is a actual image or fake image
     if(isset($_POST['updateMenu'])) {
-        
+
         // Check file size
         if ($_FILES["menu"]["size"] > 1000000) {
             echo "Sorry, your file is too large.";
