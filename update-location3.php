@@ -486,7 +486,7 @@ else {
 
     if(isset($_POST['update6'])) {
 
-        $card1_heading = $_POST['card2_heading'];
+        $card2_heading = $_POST['card2_heading'];
 
         $sql = "UPDATE descriptions SET head2=\"" . $card2_heading . "\" WHERE id=" . $id;
         $result = mysqli_query($con, $sql);
@@ -532,7 +532,7 @@ else {
 
     if(isset($_POST['update7'])) {
 
-        $card1_paragraph = $_POST['card2_paragraph'];
+        $card2_paragraph = $_POST['card2_paragraph'];
 
         $sql = "UPDATE descriptions SET par2=\"" . $card2_paragraph . "\" WHERE id=" . $id;
         $result = mysqli_query($con, $sql);
@@ -689,7 +689,7 @@ else {
 
     if(isset($_POST['update9'])) {
 
-        $card1_heading = $_POST['card3_heading'];
+        $card3_heading = $_POST['card3_heading'];
 
         $sql = "UPDATE descriptions SET head3=\"" . $card3_heading . "\" WHERE id=" . $id;
         $result = mysqli_query($con, $sql);
@@ -735,7 +735,7 @@ else {
 
     if(isset($_POST['update10'])) {
 
-        $card1_paragraph = $_POST['card3_paragraph'];
+        $card3_paragraph = $_POST['card3_paragraph'];
 
         $sql = "UPDATE descriptions SET par3=\"" . $card3_paragraph . "\" WHERE id=" . $id;
         $result = mysqli_query($con, $sql);
