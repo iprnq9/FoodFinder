@@ -126,6 +126,11 @@ for ($x = 0; $x < $count; $x++){
         $colName = "coverPhoto";
         $val = $con->query($query)->fetch_object()->$colName;
         $objArray[$x]->setCoverPhoto($val);
+
+        $query = "SELECT menu FROM descriptions WHERE id=" . ($x+1);
+        $colName = "menu";
+        $val = $con->query($query)->fetch_object()->$colName;
+        $objArray[$x]->setMenu($val);
     }
 }
 ?>

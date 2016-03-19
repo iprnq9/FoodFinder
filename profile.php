@@ -101,7 +101,8 @@ else {
     echo "          </li>\n";
     echo "\n";
 
-    for($card = 1; $card <= 4; $card++){
+    //create first three cards
+    for($card = 1; $card <= 3; $card++){
         echo "          <li class=\"flex-item\">\n";
         echo "            <div class=\"quick-info grey darken-4 white-text z-depth-2\">\n";
         echo "              <div class=\"card-image\" style=\"background-image: url(images/" . ($locationId+1) . "/" .
@@ -114,6 +115,19 @@ else {
         echo "          </li>\n";
         echo "\n";
     }
+
+    //create download menu card
+    echo "          <li class=\"flex-item\">\n";
+    echo "            <div class=\"quick-info grey darken-4 white-text z-depth-2\">\n";
+    echo "              <div class=\"card-image\" style=\"background-image: url('images/download_menu.png'); background-size: cover; background-repeat: no-repeat;\"></div>\n";
+    echo "              <div class=\"quick-info-text white-text\">\n";
+    echo "                <h3>Download Menu</h3>\n";
+    echo "<p class=\"\">Click below to download our menu!</p>";
+    echo "<a href=\"images/" . $objArray[$k]->getId() . "/". $objArray[$k]->getMenu() . "\" target=\"_blank\"><img src=\"images/foodMenu.png\" class=\"menu-download\" alt=\"Download image\"/></a>";
+    echo "              </div>\n";
+    echo "            </div>\n";
+    echo "          </li>\n";
+    echo "\n";
 
 
     echo "        </ul>\n";

@@ -22,6 +22,7 @@ class joeMinr{
     protected $paragraphArray = array("Test", "Test", "Test", "Test");
     protected $imagesArray = array("bagels.jpg","bagels.jpg","bagels.jpg","bagels.jpg");
     protected $coverPhoto;
+    protected $menu;
 
 
     /* construtor */
@@ -291,6 +292,17 @@ class joeMinr{
             $this->coverPhoto = $val;
         else
             $this->coverPhoto = "../banner.png";
+    }
+
+    public function getMenu(){
+        return $this->menu;
+    }
+
+    public function setMenu($val){
+        if($val)
+            $this->menu = $val;
+        else
+            $this->menu = "../noMenu.pdf";
     }
 }
 
