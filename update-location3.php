@@ -272,13 +272,13 @@ else {
     echo "                <div class=\"collapsible-header black-text green\">\n";
     echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 1\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body white darken-4 green-text\" style=\"padding: 10px;\">\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\" style=\"padding: 10px;\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
     echo "            <li>\n";
     echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">title</i>Update Card 1 Heading\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     if(isset($_POST['update3'])) {
@@ -324,7 +324,7 @@ else {
     echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">subject</i>Update Card 1 Paragraph\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     if(isset($_POST['update4'])) {
@@ -370,7 +370,7 @@ else {
     echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">insert_photo</i>Update Card 1 Image\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     $target_dir = "images/" . $id . "/";
@@ -475,13 +475,13 @@ else {
     echo "                <div class=\"collapsible-header black-text green\">\n";
     echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 2\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body white darken-4 green-text\" style=\"padding: 10px;\">\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\" style=\"padding: 10px;\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
     echo "            <li>\n";
     echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">title</i>Update Card 2 Heading\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     if(isset($_POST['update6'])) {
@@ -527,7 +527,7 @@ else {
     echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">subject</i>Update Card 2 Paragraph\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     if(isset($_POST['update7'])) {
@@ -573,7 +573,7 @@ else {
     echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">insert_photo</i>Update Card 2 Image\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     $target_dir = "images/" . $id . "/";
@@ -678,13 +678,13 @@ else {
     echo "                <div class=\"collapsible-header black-text green\">\n";
     echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 3\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body white darken-4 green-text\" style=\"padding: 10px;\">\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\" style=\"padding: 10px;\">\n";
     echo "        <ul class=\"collapsible popout\" data-collapsible=\"expandable\">\n";
     echo "            <li>\n";
     echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">title</i>Update Card 3 Heading\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     if(isset($_POST['update9'])) {
@@ -730,7 +730,7 @@ else {
     echo "                <div class=\"collapsible-header green black-text\">\n";
     echo "                    <i class=\"material-icons\">subject</i>Update Card 3 Paragraph\n";
     echo "                </div>\n";
-    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                <div class=\"collapsible-body white darken-4 green-text\">\n";
     echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
 
     if(isset($_POST['update10'])) {
