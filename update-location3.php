@@ -52,6 +52,11 @@ include 'pullData2.php';
 
 $max = sizeof($objArray);
 
+if($id > $max || $id <= 0 || $id == NULL){
+    header("Location: update-data.php"); /* Redirect browser */
+    exit();
+}
+
 
 if ($con->connect_errno) {
     echo "<i class=\"material-icons small\">error_outline</i>Failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
