@@ -875,17 +875,7 @@ else {
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     // Check if image file is a actual image or fake image
     if(isset($_POST['updateMenu'])) {
-        $check = getimagesize($_FILES["menu"]["tmp_name"]);
-        if ($check !== false) {
-            $uploadOk = 1;
-        }
-
-        else {
-            echo "File is not an pdf.";
-            $uploadOk = 0;
-        }
-
-
+        
         // Check file size
         if ($_FILES["menu"]["size"] > 1000000) {
             echo "Sorry, your file is too large.";
