@@ -160,6 +160,101 @@ else {
 
     <?php
     echo "            <li>\n";
+    echo "                <div class=\"collapsible-header green\">\n";
+    echo "                    <i class=\"material-icons\">assignment_ind</i>Update Description\n";
+    echo "                </div>\n";
+    echo "                <div class=\"collapsible-body grey darken-4 green-text\">\n";
+    echo "                   <div class=\"row\"  style=\"padding: 10px;\">\n";
+
+    $target_dir = "images/" . $id . "/";
+    $target_file = $target_dir . basename($_FILES["coverPhoto"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+    // Check if image file is a actual image or fake image
+    if(isset($_POST['updateCoverPhoto'])) {
+        $check = getimagesize($_FILES["coverPhoto"]["tmp_name"]);
+        if ($check !== false) {
+            $uploadOk = 1;
+        }
+
+        else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+
+        // Check file size
+        if ($_FILES["coverPhoto"]["size"] > 1000000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+        // Allow certain file formats
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG" && $imageFileType != "PNG") {
+            echo "Sorry, only JPG/JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+
+        }
+
+        // if everything is ok, try to upload file
+        else {
+            $filename = basename($_FILES["coverPhoto"]["name"]);
+            if (move_uploaded_file($_FILES["coverPhoto"]["tmp_name"], $target_file)) {
+                $sql = "UPDATE descriptions SET coverPhoto=\"" . $filename . "\" WHERE id=" . $id;
+                $result = mysqli_query($con, $sql);
+                //echo $sql;
+                //echo $filename;
+
+                if (!$result)
+                {
+                    echo ('Error: Could not update Cover Photo.');
+                }
+
+                else
+                {
+                    echo "The file \"" . $filename . "\" has been uploaded.";
+                }
+
+            }
+            else {
+                echo "Sorry, there was an error uploading your file \"" . $filename . "\".";
+            }
+        }
+    }
+
+    else
+    { ?>
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
+            <div class="row" style="padding: 10px;">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Choose File</span>
+                        <input type="file" name="coverPhoto" id="coverPhoto" placeholder="<?php $objArray[$id-1]->getCoverPhoto();?>">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <button class="btn waves-effect waves-light" type="submit" name="updateCoverPhoto" id="updateCoverPhoto">Update
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+        <?php
+    }
+    echo "                   </div>\n";
+    echo "                </div>\n";
+    echo "            </li>\n";
+    ?>
+
+    <?php
+    echo "            <li>\n";
     echo "                <div class=\"collapsible-header black-text green\">\n";
     echo "                    <i class=\"material-icons\">view_quilt</i>Update Profile Card 1\n";
     echo "                </div>\n";
@@ -288,7 +383,7 @@ else {
         }
         // Allow certain file formats
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif") {
+            && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG" && $imageFileType != "PNG") {
             echo "Sorry, only JPG/JPEG, PNG & GIF files are allowed.";
             $uploadOk = 0;
         }
@@ -491,7 +586,7 @@ else {
         }
         // Allow certain file formats
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif") {
+            && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG" && $imageFileType != "PNG") {
             echo "Sorry, only JPG/JPEG, PNG & GIF files are allowed.";
             $uploadOk = 0;
         }
@@ -694,7 +789,7 @@ else {
         }
         // Allow certain file formats
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif") {
+            && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG" && $imageFileType != "PNG") {
             echo "<div class=\"valign-wrapper\"><i class=\"material-icons small valign\">error_outline</i>&nbsp;Sorry, only JPG/JPEG, PNG & GIF files are allowed.</div>";
             $uploadOk = 0;
         }

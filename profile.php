@@ -57,8 +57,8 @@ else {
     echo "  <div class=\"container\">\n";
     echo "    <div class=\"section\">\n";
     echo "      <div class=\"row\" style=\"text-align: center;\">\n";
-    echo "         <div class=\"profile-image\" style=\"background-image: url(images/" . ($locationId+1) . "/" .
-        $objArray[$k]->getImage(0) . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
+    echo "         <div class=\"profile-image\" style=\"background: url(images/" . ($locationId+1) . "/" .
+        $objArray[$k]->getCoverPhoto() . ") no-repeat center; background-size: cover;\"></div>\n";
     echo "        <div class=\"profile-name grey darken-4 white-text z-depth-2\">" . $name . "</div>\n";
     echo "        <ul class=\"flex-container\">\n";
     echo "          <li class=\"flex-item-wide z-depth-2\">\n";

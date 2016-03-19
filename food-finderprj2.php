@@ -21,6 +21,7 @@ class joeMinr{
     protected $headingArray = array("Test", "Test", "Test", "Test");
     protected $paragraphArray = array("Test", "Test", "Test", "Test");
     protected $imagesArray = array("bagels.jpg","bagels.jpg","bagels.jpg","bagels.jpg");
+    protected $coverPhoto;
 
 
     /* construtor */
@@ -279,6 +280,17 @@ class joeMinr{
 
     public function getImage($index){
         return $this->imagesArray[$index];
+    }
+
+    public function getCoverPhoto(){
+        return $this->coverPhoto;
+    }
+
+    public function setCoverPhoto($val){
+        if($val)
+            $this->coverPhoto = $val;
+        else
+            $this->coverPhoto = "../banner.png";
     }
 }
 
