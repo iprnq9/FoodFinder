@@ -277,6 +277,8 @@ class joeMinr{
     public function setImageArray($index, $val){
         if($val)
             $this->imagesArray[$index] = $val;
+        else
+            $this->imagesArray[$index] = "../banner.png";
     }
 
     public function getImage($index){
