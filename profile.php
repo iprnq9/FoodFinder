@@ -54,6 +54,7 @@ else {
 
     $status = $objArray[$k]->status();
     $name = $objArray[$k]->getName();
+    $location = $objArray[$k]->getLocation();
 
     $pageContents = ob_get_contents (); // Get all the page's HTML into a string
     ob_end_clean (); // Wipe the buffer
@@ -67,7 +68,7 @@ else {
     echo "      <div class=\"row\" style=\"text-align: center;\">\n";
     echo "         <div class=\"profile-image\" style=\"background: url(images/" . ($locationId+1) . "/" .
         $objArray[$k]->getCoverPhoto() . ") no-repeat center; background-size: cover;\"></div>\n";
-    echo "        <div class=\"profile-name grey darken-4 white-text z-depth-2\">" . $name . "</div>\n";
+    echo "        <div class=\"profile-name grey darken-4 white-text z-depth-2\">" . $name . "<br><span class='profile-location'>". $location . "</span></div>\n";
     echo "        <ul class=\"flex-container\">\n";
     echo "          <li class=\"flex-item-wide z-depth-2\">\n";
     echo "            <div class=\"quick-info white-text grey darken-4\">\n";
@@ -76,7 +77,7 @@ else {
     echo "                <h4 class=\"center-align\" style=\"margin-top: -5px;\">Hours of Operation</h4>\n";
     echo "                <h6 class=\"center-align week-of\"></h6>\n";
 
-    echo "<table class=\"responsive-table centered bordered grey darken-4 white-text\">\n";
+    echo "<table class=\"table centered bordered grey darken-4 white-text\">\n";
     echo "  <thead class=\"\"><tr>\n";
     echo "    <th>Day</th>\n";
     for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes(3)); $i++) {

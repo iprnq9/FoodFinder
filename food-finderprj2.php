@@ -23,6 +23,7 @@ class joeMinr{
     protected $imagesArray = array("bagels.jpg","bagels.jpg","bagels.jpg","bagels.jpg");
     protected $coverPhoto;
     protected $menu;
+    protected $location;
 
 
     /* construtor */
@@ -89,6 +90,7 @@ class joeMinr{
         $cls2 = $this->getclsTime($curday, "lnch");
         $open3 = $this->getopnTime($curday, "dnnr");
         $cls3 = $this->getclsTime($curday, "dnnr");
+
         if ($currentMin <= 600){/*if its before 10:00am only check brkfst*/
             $chck = $this->getopnTime($curday, "brkfst");
             if ($chck == NULL){
@@ -107,6 +109,7 @@ class joeMinr{
             }
 
         }
+
         elseif ($currentMin >600 && $currentMin <= 660){/*check brkfst and lnch*/
 
             if($open1 != NULL){
@@ -133,6 +136,7 @@ class joeMinr{
                 return "closed";
             }
         }
+
         elseif($currentMin > 660){/* gotta check em all bra*/ // <--- LOL
             if($open1 != NULL){
                 if($cls1 > $currentMin){
@@ -172,6 +176,7 @@ class joeMinr{
             }
 
         }
+
         else{
             return "closed";
         }
@@ -305,6 +310,17 @@ class joeMinr{
             $this->menu = $val;
         else
             $this->menu = "../noMenu.pdf";
+    }
+
+    public function getLocation(){
+        return $this->location;
+    }
+
+    public function setLocation($val){
+        if($val)
+            $this->location = $val;
+        else
+            $this->location = "On Campus";
     }
 }
 

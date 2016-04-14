@@ -121,16 +121,21 @@ for ($x = 0; $x < $count; $x++){
         $colName = "img" . $card;
         $val = $con->query($query)->fetch_object()->$colName;
         $objArray[$x]->setImageArray(($card-1), $val);
-
-        $query = "SELECT coverPhoto FROM descriptions WHERE id=" . ($x+1);
-        $colName = "coverPhoto";
-        $val = $con->query($query)->fetch_object()->$colName;
-        $objArray[$x]->setCoverPhoto($val);
-
-        $query = "SELECT menu FROM descriptions WHERE id=" . ($x+1);
-        $colName = "menu";
-        $val = $con->query($query)->fetch_object()->$colName;
-        $objArray[$x]->setMenu($val);
     }
+
+    $query = "SELECT coverPhoto FROM descriptions WHERE id=" . ($x+1);
+    $colName = "coverPhoto";
+    $val = $con->query($query)->fetch_object()->$colName;
+    $objArray[$x]->setCoverPhoto($val);
+
+    $query = "SELECT menu FROM descriptions WHERE id=" . ($x+1);
+    $colName = "menu";
+    $val = $con->query($query)->fetch_object()->$colName;
+    $objArray[$x]->setMenu($val);
+
+    $query = "SELECT location FROM descriptions WHERE id=" . ($x+1);
+    $colName = "location";
+    $val = $con->query($query)->fetch_object()->$colName;
+    $objArray[$x]->setLocation($val);
 }
 ?>

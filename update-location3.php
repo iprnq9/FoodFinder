@@ -102,7 +102,7 @@ else {
 
     else
     { ?>
-                          <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+                          <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
                             <div class="row" style="padding: 10px;">
                               <div class="input-field col s6">
                                   <i class="material-icons prefix">label_outline</i>
@@ -151,7 +151,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
@@ -243,7 +243,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="file-field input-field">
                     <div class="btn">
@@ -302,7 +302,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
@@ -348,7 +348,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
@@ -436,7 +436,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="file-field input-field">
                     <div class="btn">
@@ -505,7 +505,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
@@ -551,7 +551,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
@@ -639,7 +639,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="file-field input-field">
                     <div class="btn">
@@ -708,7 +708,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
@@ -754,7 +754,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">label_outline</i>
@@ -843,7 +843,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="file-field input-field">
                     <div class="btn">
@@ -935,7 +935,7 @@ else {
 
     else
     { ?>
-        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
+        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data" target="_blank">
             <div class="row" style="padding: 10px;">
                 <div class="file-field input-field">
                     <div class="btn">
@@ -973,10 +973,12 @@ include 'footer.php';
     $(document).ready(function() {
         $('select').material_select();
         //$('li').addClass('active');
-        //$('.collapsible-header').addClass('active');
+        $('.collapsible-header').addClass('active');
     });
 </script>
 
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
 
 </body>
 </html>

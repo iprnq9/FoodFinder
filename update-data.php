@@ -57,6 +57,9 @@ if ($con->connect_errno) {
 }
 
 else {
+        echo "  <div class=\"col s12 m8 push-m2\">\n";
+        echo "   <div class=\"card-panel white\">\n";
+        echo "<div class=\"row\">\n";
         echo "<form class=\"input-field\">\n";
         echo "<div class=\"input-field col s12 m12 l6 push-l3\">\n";
         echo "<select class=\"icons\" id=\"dynamic_select\">\n";
@@ -81,6 +84,9 @@ else {
         echo "      });\n";
         echo "    });\n";
         echo "</script>\n";
+        echo "</div>\n";
+        echo "</div>\n";
+        echo "</div>\n";
 }
 
 echo "</div>\n";
