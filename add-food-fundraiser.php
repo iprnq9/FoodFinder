@@ -78,7 +78,7 @@ else {
         $close = $_POST['close'];
         $close= date("H:i:s", strtotime($close));
 
-        $sql = "ALTER TABLE `fundraisers` AUTO_INCREMENT = ($count+1);";
+        //$sql = "ALTER TABLE `fundraisers` AUTO_INCREMENT = ($count+1);";
 
         $result = mysqli_query($con, $sql);
 
@@ -88,11 +88,11 @@ else {
         $result = mysqli_query($con, $sql);
 
         if (!$result) {
-            cardActionFail("Error: Food Fundraiser not updated successfully.");
+            cardActionFail("Error: Food Fundraiser not added successfully.");
         }
 
         else {
-            cardActionSuccess("Food Fundraiser updated successfully!");
+            cardActionSuccess("Food Fundraiser added successfully!");
         }
     }
 
@@ -206,8 +206,8 @@ include 'footer.php';
 <script>
     $('#allday').change(function() {
         if ($('input#allday').is(':checked') == true){
-            $('input#open').val('00:00am').prop('readonly', true);
-            $('input#close').val('23:59pm').prop('readonly', true);
+            $('input#open').val('00:00:00').prop('readonly', true);
+            $('input#close').val('23:59:59').prop('readonly', true);
             $('label[for="open"]').hide();
             $('label[for="close"]').hide();
             console.log('checked');
