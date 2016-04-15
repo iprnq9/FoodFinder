@@ -58,9 +58,16 @@ else {
         $openTimes = array();
         $closeTimes = array();
 
+        $status = $objArray[$k]->status();
+        if($status == "closing-soon")
+            $statusText = "Closing in " . $objArray[$k]->getMinToClose() . " min";
+
+        else
+            $statusText = $status;
+
         $imageClass = "imageClass-" . $objArray[$k]->getId();
         echo "      <li class=\"flex-item grey darken-4 white-text card\">\n";
-        echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">" . $objArray[$k]->status() . "</div>\n";
+        echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">" . $statusText . "</div>\n";
         echo "              <div class=\"card-image\" style=\"background-image: url(images/" . ($k+1) . "/" .
             $objArray[$k]->getCoverPhoto() . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
         //echo "        <div class=\"card-image " . $imageClass . "\"></div>\n";

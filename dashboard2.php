@@ -23,14 +23,15 @@
 //ini_set('html_errors', 'On');
 
 include 'food-finderprj2.php';
-
 include 'food-fundraiser-obj.php';
+
 
 include 'db-connect.php';
 
 $con = new mysqli($host, $user, $password, $dbname);
 
 $objArray = array();
+$fundArray = array();
 
 $dayNumber = date("w")+1;
 
@@ -40,6 +41,7 @@ if ($con->connect_errno) {
 
 else {
     include 'pullData2.php';
+    include 'pullFundraisers.php';
 
     $sinceEpoch = strtotime("today");
 
@@ -68,9 +70,40 @@ else {
                 echo "                    <div class=\"card-title-subtitle\">\n";
                 echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
                 echo "          <p class=\"card-subtitle\">" . $objArray[$k]->getDescription() . "</p>\n";
+                echo "          <p class=\"card-location\">" . $objArray[$k]->getLocation() . "</p>\n";
                 echo "                    </div>\n";
                 echo "                </div>\n";
                 echo "            </li>";
+            }
+
+            $max = sizeof($fundArray);
+            for($k=0; $k < $max; $k++) {
+
+                $status = $fundArray[$k]->status();
+                if ($status == "Not Available")
+                    $statusClass = "closed";
+                else
+                    $statusClass = "open";
+
+                if($status !== "Not Within Dates") {
+                    $startTime = new DateTime($fundArray[$k]->getStartTime());
+                    $endTime = new DateTime($fundArray[$k]->getEndTime());
+                    $startDate = new DateTime($fundArray[$k]->getStartDate());
+                    $endDate = new DateTime($fundArray[$k]->getEndDate());
+
+                    echo "            <li class=\"flex-item-dash card\">\n";
+                    echo "                <div class=\"card-status " . $statusClass . "\">" . $fundArray[$k]->status() . "</div>\n";
+                    echo "              <div class=\"card-image-dash\" style=\"background-image: url(images/fundraisers/" . ($k + 1) . "/" .
+                        $fundArray[$k]->getCoverPhoto() . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
+                    echo "                <div class=\"card-info\">\n";
+                    echo "                    <div class=\"card-title-subtitle\">\n";
+                    echo "          <p class=\"card-title\">" . $fundArray[$k]->getOrganization() . ": " . $fundArray[$k]->getName() . "</p>\n";
+                    echo "          <p class=\"card-subtitle\">" . $fundArray[$k]->getDescription() . "</p>\n";
+                    echo "          <p class=\"card-location\">" . $fundArray[$k]->getLocation() . "</p>\n";
+                    echo "                    </div>\n";
+                    echo "                </div>\n";
+                    echo "            </li>";
+                }
             }
 
             ?>
@@ -90,7 +123,7 @@ else {
 } ?>
 
 <script>
-    $(".currently").text("Monday" + ", " + "10:05am" + ": " + "Breakfast");
+    //$(".currently").text("Monday" + ", " + "10:05am" + ": " + "Breakfast");
     $(".currently").append("  <img src=\"images/logo-icon.png\" alt=\"FoodFinder logo image\" style=\"vertical-align: middle;\"/>&nbsp;Food Finder");
 </script>
 

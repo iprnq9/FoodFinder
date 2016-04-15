@@ -112,42 +112,42 @@ else {
                         <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
                             <div class="row" style="padding: 0px;">
                                 <div class="input-field col s12 l6">
-                                    <i class="material-icons prefix">label_outline</i>
+                                    <i class="material-icons prefix">info_outline</i>
                                     <input id="name" name="name" type="text" maxlength="45" length="45">
                                     <label for="name">Fundraiser Name</label>
                                 </div>
                             </div>
                             <div class="row" style="padding: 0px;">
                                 <div class="input-field col s12 l6">
-                                    <i class="material-icons prefix">label_outline</i>
+                                    <i class="material-icons prefix">group_work</i>
                                     <input id="organization" name="organization" type="text" maxlength="45" length="45">
                                     <label for="organization">Organization Name</label>
                                 </div>
                             </div>
                             <div class="row" style="padding: 0px;">
                                 <div class="input-field col s12 l6">
-                                    <i class="material-icons prefix">label_outline</i>
+                                    <i class="material-icons prefix">mail</i>
                                     <input id="contact" name="contact" type="email" class="validate" maxlength="45" length="45">
                                     <label for="contact">Contact Email Address</label>
                                 </div>
                             </div>
                             <div class="row" style="padding: 0px;">
                                 <div class="input-field col s12 l6">
-                                    <i class="material-icons prefix">label_outline</i>
+                                    <i class="material-icons prefix">place</i>
                                     <input id="location" name="location" type="text" class="validate" maxlength="45" length="45">
                                     <label for="location">Fundraiser Location</label>
                                 </div>
                             </div>
                             <div class="row" style="padding: 0px;">
                                 <div class="input-field col s12 l8">
-                                    <i class="material-icons prefix">label_outline</i>
+                                    <i class="material-icons prefix">description</i>
                                     <textarea class="materialize-textarea" id="description" name="description" class="validate" type="text" maxlength="60" length="60"></textarea>
                                     <label for="description">Fundraiser Description</label>
                                 </div>
                             </div>
                             <div class="row" style="padding: 0px;">
                                 <div class="input-field col s12 l4">
-                                    <i class="material-icons prefix">label_outline</i>
+                                    <i class="material-icons prefix">today</i>
                                     <input class="datepicker start" name="start" id="start" type="text">
                                     <label for="startdate" class="active">Start Date</label>
                                 </div>
@@ -158,7 +158,7 @@ else {
                             </div>
                             <div class="row" style="padding: 0px;">
                                 <div class="input-field col s12 l4">
-                                    <i class="material-icons prefix">label_outline</i>
+                                    <i class="material-icons prefix">access_time</i>
                                     <input type="text" class="timepicker" name="open" id="open"/>
                                     <label for="open">Start Time</label>
                                 </div>

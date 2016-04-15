@@ -145,6 +145,7 @@ include 'footer.php';
     $(document).ready(function() {
         $('select').material_select();
         $(".card").addClass('z-depth-1-half');
+        $("li.manage").addClass("active");
     });
 </script>
 

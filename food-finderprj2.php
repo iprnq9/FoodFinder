@@ -24,6 +24,7 @@ class joeMinr{
     protected $coverPhoto;
     protected $menu;
     protected $location;
+    public $minToClose;
 
 
     /* construtor */
@@ -102,6 +103,7 @@ class joeMinr{
             else{
                 if((($this->getclsTime($curday, "brkfst"))-$currentMin) <= 30 ){
                     return "closing-soon";
+                    $this->minToClose = (($this->getclsTime($curday, "brkfst")) - $currentMin);
                 }
                 else{
                     return "open";
@@ -116,6 +118,7 @@ class joeMinr{
                 if($cls1 > $currentMin){
                     if($cls1-$currentMin <= 30){
                         return "closing-soon";
+                        $this->minToClose = ($cls1 - $currentMin);
                     }
                     else {
                         return "open";
@@ -126,6 +129,7 @@ class joeMinr{
                 if($cls2 > $currentMin){
                     if($cls2-$currentMin <= 30){
                         return "closing-soon";
+                        $this->minToClose = ($cls2 - $currentMin);
                     }
                     else {
                         return "open";
@@ -137,11 +141,12 @@ class joeMinr{
             }
         }
 
-        elseif($currentMin > 660){/* gotta check em all bra*/ // <--- LOL
+        elseif($currentMin > 660){/* gotta check em all brah*/ // <--- LOL
             if($open1 != NULL){
                 if($cls1 > $currentMin){
                     if($cls1-$currentMin <= 30){
                         return "closing-soon";
+                        $this->minToClose = ($cls1 - $currentMin);
                     }
                     else {
                         return "open";
@@ -152,6 +157,7 @@ class joeMinr{
                 if($cls2 > $currentMin){
                     if($cls2-$currentMin <= 30){
                         return "closing-soon";
+                        $this->minToClose = ($cls2 - $currentMin);
                     }
                     else {
                         return "open";
@@ -162,6 +168,7 @@ class joeMinr{
                 if($cls3 > $currentMin){
                     if($cls3-$currentMin <= 30){
                         return "closing-soon";
+                        $this->minToClose = ($cls3 - $currentMin);
                     }
                     else {
                         return "open";
@@ -180,6 +187,8 @@ class joeMinr{
         else{
             return "closed";
         }
+
+        //$this->minToClose = 4;//testing
     }
 
     /*set functions */
@@ -321,6 +330,10 @@ class joeMinr{
             $this->location = $val;
         else
             $this->location = "On Campus";
+    }
+
+    public function getMinToClose(){
+        return $this->minToClose;
     }
 }
 
