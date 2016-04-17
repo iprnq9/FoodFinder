@@ -90,11 +90,11 @@ else {
             //echo '<tr><td>' . $startDate->format("F j") . '</td><td> to </td><td>' . $endDate->format("F j") . '</td></tr>';
             echo "            </table>";
             if($startDate == $endDate)
-                echo '<p class="card-date-range">Date: ' . $startDate->format("F j") . '</p>';
+                echo '<p class="card-date-range"><i class="material-icons">today</i>&nbsp;Date: ' . $startDate->format("F j") . '</p>';
             else
-                echo '<p class="card-date-range">Dates: ' . $startDate->format("F j") . ' to ' . $endDate->format("F j") . '</p>';
+                echo '<p class="card-date-range"><i class="material-icons">today</i>&nbsp;Dates: ' . $startDate->format("F j") . ' to ' . $endDate->format("F j") . '</p>';
             echo "          </p>";
-            echo "          <p class=\"card-location\">" . $fundArray[$k]->getLocation() . "</p>\n";
+            echo "          <p class=\"card-location\"><i class=\"material-icons\">place</i>&nbsp;" . $fundArray[$k]->getLocation() . "</p>\n";
             echo "          <div
           class=\"profile-button\"><a href=\"mailto:" . $fundArray[$k]->getContact(). "\" class=\"waves-effect waves-light btn green center-align z-depth-2\"><i class=\"material-icons
           left\">person_pin</i>Email " . $fundArray[$k]->getOrganization() . "</a></div>\n";

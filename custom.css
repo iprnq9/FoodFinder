@@ -378,29 +378,35 @@ hr {
   font-size: 14pt;
   vertical-align: middle;
   margin: 0 auto;
-  margin-bottom: 20px;
-  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-top: 0px;
   text-align: center;
+  width: 100%;
 }
 
+/*
 .card-location:before {
   font-family: "Material Icons";
   content: "place\00a0";
 }
+*/
 
 .card-date-range {
   font-size: 14pt;
   vertical-align: middle;
   margin: 0 auto;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
+  width: 100%;
 }
 
+/*
 .card-date-range:before {
   font-family: "Material Icons";
   content: "today\00a0";
 }
+*/
 
 .brand-logo {
   vertical-align: middle;
