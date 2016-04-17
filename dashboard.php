@@ -62,7 +62,7 @@ else {
             <?php
             $max = sizeof($objArray);
             for($k=0; $k < $max; $k++) {
-                echo "            <li class=\"flex-item-dash card\">\n";
+                echo "            <li class=\"flex-item-dash card grey darken-4 white-text\">\n";
                 echo "                <div class=\"card-status " . $objArray[$k]->status() . "\">" . $objArray[$k]->status() . "</div>\n";
                 echo "              <div class=\"card-image-dash\" style=\"background-image: url(images/" . ($k+1) . "/" .
                     $objArray[$k]->getCoverPhoto() . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
@@ -91,9 +91,9 @@ else {
                     $startDate = new DateTime($fundArray[$k]->getStartDate());
                     $endDate = new DateTime($fundArray[$k]->getEndDate());
 
-                    echo "            <li class=\"flex-item-dash card\">\n";
+                    echo "            <li class=\"flex-item-dash card grey darken-4 white-text\">\n";
                     echo "                <div class=\"card-status " . $statusClass . "\">" . $fundArray[$k]->status() . "</div>\n";
-                    echo "              <div class=\"card-image-dash\" style=\"background-image: url(images/fundraisers/" . ($k + 1) . "/" .
+                    echo "              <div class=\"card-image-dash\" style=\"background-image: url(images/fundraisers/" .
                         $fundArray[$k]->getCoverPhoto() . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
                     echo "                <div class=\"card-info\">\n";
                     echo "                    <div class=\"card-title-subtitle\">\n";

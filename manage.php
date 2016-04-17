@@ -60,9 +60,9 @@ else {
 
     echo "      <div class=\"row\">\n";
     echo "        <div class=\"col s12 m8 push-m2\">\n";
-    echo "          <div class=\"card white\">\n";
+    echo "          <div class=\"card grey darken-4 white-text\">\n";
     echo "            <div class=\"card-content\">\n";
-    echo "              <span class=\"card-title\">Update Existing Dining Location</span>\n";
+    echo "              <span class=\"card-title\"><i class=\"material-icons small\">create</i>&nbsp;Update Existing Dining Location</span>\n";
     echo "              <p>Update the hours of location, a location's text, location, description, images, and other information found on the site.</p>\n";
     echo "            </div>\n";
     echo "            <div class=\"card-action\">\n";
@@ -104,9 +104,9 @@ else {
 
     echo "      <div class=\"row\">\n";
     echo "        <div class=\"col s12 m8 push-m2\">\n";
-    echo "          <div class=\"card white\">\n";
+    echo "          <div class=\"card grey darken-4 white-text\">\n";
     echo "            <div class=\"card-content\">\n";
-    echo "              <span class=\"card-title\">Add New Dining Location</span>\n";
+    echo "              <span class=\"card-title\"><i class=\"material-icons small\">add_location</i>&nbsp;Add New Dining Location</span>\n";
     echo "              <p>Add a new location to the list of S&T Dining options. You'll be prompted to input all of the following: weekly hours, location, short description, four cover photos, three paragraphs of text, and a downloadable menu.</p>\n";
     echo "            </div>\n";
     echo "            <div class=\"card-action\">\n";
@@ -120,13 +120,32 @@ else {
 
     echo "      <div class=\"row\">\n";
     echo "        <div class=\"col s12 m8 push-m2\">\n";
-    echo "          <div class=\"card white\">\n";
+    echo "          <div class=\"card grey darken-4 white-text\">\n";
     echo "            <div class=\"card-content\">\n";
-    echo "              <span class=\"card-title\">Submit Your Food Fundraiser</span>\n";
-    echo "              <p>Submit a request to for FoodFinder to display your organization's food fundraiser. Be aware that confirmation of the fundraiser's credibility may take up to one week.</p>\n";
+    echo "              <span class=\"card-title\"><i class=\"material-icons \">local_atm</i>&nbsp;Submit Your Food Fundraiser</span>\n";
+    echo "              <p>Submit a request to for FoodFinder to display your organization's food fundraiser. You will be prompted for the following: fundraiser name,
+    organization name, contact email address, description, start/end date and time, and a cover photo (jpg, gif, png).</p>
+    <p>Be aware that confirmation of the fundraiser's credibility may take up to one week.</p>\n";
     echo "            </div>\n";
     echo "            <div class=\"card-action\">\n";
     echo "              <a href=\"add-food-fundraiser.php\">Submit Request</a>\n";
+    echo "            </div>\n";
+    echo "          </div>\n";
+    echo "        </div>\n";
+    echo "      </div>";
+
+    //-----------------------------------------------------------------
+
+    echo "<hr />";
+    echo "      <div class=\"row\">\n";
+    echo "        <div class=\"col s12 m8 push-m2\">\n";
+    echo "          <div class=\"card grey darken-4 white-text\">\n";
+    echo "            <div class=\"card-content\">\n";
+    echo "              <span class=\"card-title\"><i class=\"material-icons \">help_outline</i>&nbsp;Needing Help?</span>\n";
+    echo "              <p>The FoodFinders have provided you with a set of Docs to help you with your use of FoodFinder. Click the link below to view the PDF that will guide you through typical use of our site.</p>\n";
+    echo "            </div>\n";
+    echo "            <div class=\"card-action\">\n";
+    echo "              <a href=\"images/docs-site-usage.pdf\">View Docs (PDF)</a>\n";
     echo "            </div>\n";
     echo "          </div>\n";
     echo "        </div>\n";

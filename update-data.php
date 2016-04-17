@@ -58,14 +58,14 @@ if ($con->connect_errno) {
 
 else {
         echo "  <div class=\"col s12 m8 push-m2\">\n";
-        echo "   <div class=\"card-panel white\">\n";
+        echo "   <div class=\"card-panel grey darken-4 white-text\">\n";
         echo "<div class=\"row\">\n";
         echo "<form class=\"input-field\">\n";
-        echo "<div class=\"input-field col s12 m12 l6 push-l3\">\n";
+        echo "<div class=\"input-field col s12 m12 l12\">\n";
         echo "<select class=\"icons\" id=\"dynamic_select\">\n";
         echo "   <option value=\"\" disabled selected>Choose a location to update</option>";
             for($i=1; $i <= $max; $i++){
-                echo "<option value=\"update-location3.php?id=" . $i . "\" data-icon=\"images/$i/" . $objArray[$i-1]->getCoverPhoto() . "\" class=\"left circle\">$i. " .
+                echo "<option value=\"update-location5.php?id=" . $i . "\" data-icon=\"images/$i/" . $objArray[$i-1]->getCoverPhoto() . "\" class=\"left circle\">$i. " .
                 $objArray[$i-1]->getName() .
                     "</option>\n";
             }

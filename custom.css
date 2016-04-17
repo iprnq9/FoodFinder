@@ -89,6 +89,7 @@ nav {
   height: 1210px;
   margin-top: 10px;
   color: black;
+  overflow-x: scroll;
 }
 
 .flex-item-tall {
@@ -98,12 +99,18 @@ nav {
   color: black;
 }
 
+/*for hours table on profile*/
 .flex-item-wide {
   width: 834px;
   height: 600px;
   margin-top: 10px;
   color: black;
 }
+
+.hours-table {
+  overflow: auto;
+}
+
 
 .flex-item-dash {
   width: 400px;
@@ -266,6 +273,7 @@ nav {
 
 /*---------------Location Classes for Images---------------------*/
 
+/*
 .imageClass-1 {
   background-image: url(images/bagels2.jpg);
   background-size: cover;
@@ -338,36 +346,7 @@ nav {
   background-repeat: no-repeat;
   background-position: center center;
 }
-
-.bbq {
-  background-image: url(images/bbq.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.bake {
-  background-image: url(images/bake.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.donuts {
-  background-image: url(images/donuts.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.soup {
-  background-image: url(images/soup.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-
+*/
 
 /*-----------------------------------------------------------------*/
 
@@ -389,6 +368,10 @@ hr {
   vertical-align: middle;
   display: inline-flex;
   margin-bottom: -15px;
+}
+
+.card-title {
+  vertical-align: middle;
 }
 
 .card-location {
@@ -454,8 +437,8 @@ hr {
   font-size: 12pt;
 }
 
-.shrink-grow {
-  flex-shrink: 1;
+.card-action a {
+  color: #66BB6A;
 }
 
 .minerbytes {

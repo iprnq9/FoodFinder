@@ -99,7 +99,7 @@ class foodFund{
         if($val)
             $this->coverPhoto = $val;
         else
-            $this->coverPhoto = "../../banner.png";
+            $this->coverPhoto = "../banner.png";
     }
 
     public function setLocation($val){
@@ -148,7 +148,7 @@ class foodFund{
 
         if($currentDate < $startDate2 || $currentDate > $endDate2){
             return "Not Within Dates";
-            echo "TEst";
+            //echo "TEst";
         }
 
         else if($currentDate >= $startDate2 && $currentDate <= $endDate2) {

@@ -68,16 +68,17 @@ else {
     echo "      <div class=\"row\" style=\"text-align: center;\">\n";
     echo "         <div class=\"profile-image\" style=\"background: url(images/" . ($locationId+1) . "/" .
         $objArray[$k]->getCoverPhoto() . ") no-repeat center; background-size: cover;\"></div>\n";
-    echo "        <div class=\"profile-name grey darken-4 white-text z-depth-2\">" . $name . "<br><span class='profile-location'>". $location . "</span></div>\n";
+    echo "        <div class=\"profile-name grey darken-4 white-text z-depth-2\">" . $name . "<br><i class=\"material-icons\">&#xE55F;</i><span class='profile-location'>
+        ". $location . "</span></div>\n";
     echo "        <ul class=\"flex-container\">\n";
     echo "          <li class=\"flex-item-wide z-depth-2\">\n";
     echo "            <div class=\"quick-info white-text grey darken-4\">\n";
     echo "              <div class=\"card-status " . $status . "\">" . $status . "</div>\n";
     echo "              <div class=\"card-content\">\n";
-    echo "                <h4 class=\"center-align\" style=\"margin-top: -5px;\">Hours of Operation</h4>\n";
+    echo "                <h4 class=\"center-align\" style=\"margin-top: -5px;\"><i class=\"material-icons\">&#xE192;</i>&nbsp;Hours of Operation</h4>\n";
     echo "                <h6 class=\"center-align week-of\"></h6>\n";
 
-    echo "<table class=\"table centered bordered grey darken-4 white-text\">\n";
+    echo "<div class='hours-table'><table class=\"table centered bordered grey darken-4 white-text\">\n";
     echo "  <thead class=\"\"><tr>\n";
     echo "    <th>Day</th>\n";
     for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes(3)); $i++) {
@@ -89,7 +90,7 @@ else {
     for($day = 0; $day < 7; $day++)  {
         echo "  <tr class=\"day-" . ($day+1) . "\">\n";
         echo "    <td>" . $dayArray[$day] . "</td>\n";
-        for($meal = 0; $meal < ($objArray[$k]->getNumOpenCloseTimes(3)); $meal++){
+        for($meal = 0; $meal < ($objArray[$k]->getMaxNumOpenCloseTimes()); $meal++){
             $open = $objArray[$locationId]->getOpenTime($day,$meal);
             $close = $objArray[$locationId]->getCloseTime($day, $meal);
             if($open == NULL) {
@@ -103,7 +104,7 @@ else {
 
         echo "  </tr>\n";
     }
-    echo "</table>\n";
+    echo "</table></div>\n";
 
     echo "              </div>\n";
     echo "            </div>\n";

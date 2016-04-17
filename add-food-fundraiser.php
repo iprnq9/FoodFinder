@@ -76,16 +76,18 @@ else {
         $open = $_POST['open'];
         $open= date("H:i:s", strtotime($open));
         $close = $_POST['close'];
-        $close= date("H:i:s", strtotime($close));
+        $close = date("H:i:s", strtotime($close));
 
         //$sql = "ALTER TABLE `fundraisers` AUTO_INCREMENT = ($count+1);";
-
-        $result = mysqli_query($con, $sql);
 
         $sql = "INSERT INTO fundraisers (name, organization, contact, location, description, start, end, open, close)
                                 VALUES ('$name', '$organization', '$contact', '$location', '$description', '$start', '$end', '$open', '$close')";
 
         $result = mysqli_query($con, $sql);
+
+        $query = "SELECT MAX(id) as max_id FROM fundraisers";
+        $colName = "max_id";
+        $id = $con->query($query)->fetch_object()->$colName;
 
         if (!$result) {
             cardActionFail("Error: Food Fundraiser not added successfully.");
@@ -93,7 +95,68 @@ else {
 
         else {
             cardActionSuccess("Food Fundraiser added successfully!");
+
+            $target_dir = "images/fundraisers/";
+            $target_file = $target_dir . basename($_FILES["coverPhoto"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+            $check = getimagesize($_FILES["coverPhoto"]["tmp_name"]);
+            if ($check !== false) {
+                $uploadOk = 1;
+            } else {
+                $msg = "File is not an image.";
+                $uploadOk = 0;
+            }
+
+            // Check file size
+            if ($_FILES["coverPhoto"]["size"] > 1000000) {
+                $msg .= " Sorry, your file is too large.";
+                $uploadOk = 0;
+            }
+
+            // Allow certain file formats
+            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG" && $imageFileType != "PNG") {
+                $msg .= " Sorry, only JPG/JPEG, PNG & GIF files are allowed.";
+                $uploadOk = 0;
+            }
+
+            // Check if $uploadOk is set to 0 by an error
+            if ($uploadOk == 0) {
+                $msg .= " Sorry, your file was not uploaded.";
+
+            } // if everything is ok, try to upload file
+
+            else {
+                $filename = basename($_FILES["coverPhoto"]["name"]);
+                if (move_uploaded_file($_FILES["coverPhoto"]["tmp_name"], $target_file)) {
+                    $sql = "UPDATE fundraisers SET coverPhoto=\"" . $filename . "\" WHERE id=" . $id;
+                    $result = mysqli_query($con, $sql);
+                    //echo $sql;
+                    //echo $filename;
+
+                    if (!$result) {
+                        $msg .= ' Error: Could not update coverPhoto in database.';
+
+                    } else {
+                        $msg = "The file \"" . $filename . "\" has been uploaded and added to database.";
+                        //cardActionSuccess($msg);
+                    }
+                } else {
+                    $msg .= " Sorry, there was an error uploading your file \"" . $filename . "\".";
+                }
+            }
+
+            if ($uploadOk == 1)
+                cardActionSuccess($msg);
+
+            else
+                cardActionFail($msg);
+
         }
+
+        //$result = mysqli_query($con, $sql);
+
     }
 
     else {
@@ -101,15 +164,16 @@ else {
     ?>
     <div class="row">
         <div class="col s12 l8 push-l2">
-            <div class="card white">
+            <div class="card grey darken-4 white-text">
                 <div class="card-content">
                     <span class="card-title">Fundraiser Details</span>
                     <p>Please fill out the form below to add your food fundraiser. This fundraiser must be through an Registered Student Organization (RSO) at Missouri S&T. Please
                         use proper capitalization and avoid special characters (&, #, @, etc).</p>
+                    <p>Please note that if you are wanting to add a fundraiser for non-consecutive days, you must submit a fundraiser for each day.</p>
                 </div>
                 <div class="card-action">
                     <div class="row">
-                        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
+                        <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data" target="_blank">
                             <div class="row" style="padding: 0px;">
                                 <div class="input-field col s12 l6">
                                     <i class="material-icons prefix">info_outline</i>
@@ -171,6 +235,18 @@ else {
                                     <label for="allday">All Day</label>
                                 </div>
                             </div>
+                            <div class="row" style="padding: 10px;">
+                                <div class="file-field input-field black-text">
+                                    <div class="btn">
+                                        <span>Choose Cover Photo</span>
+                                        <input type="file" name="coverPhoto" id="coverPhoto">
+                                        <label for="coverPhoto">Cover Photo</label>
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="input-field col s6">
                                 <button class="btn waves-effect waves-light" type="submit" name="insert" id="insert">Update
                                     <i class="material-icons right">send</i>
@@ -200,6 +276,8 @@ include 'footer.php';
     });
 
     $('input.timepicker').timepicker();
+
+    $(".card").addClass('z-depth-1-half');
 
 </script>
 

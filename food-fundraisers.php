@@ -67,12 +67,12 @@ else {
             $endDate = new DateTime($fundArray[$k]->getEndDate());
 
             //$imageClass = "imageClass-" . $fundArray[$k]->getId();
-            echo "      <li class=\"flex-item grey darken-4 white-text card\">\n";
+            echo "      <li class=\"flex-item black-text card grey darken-4 white-text\">\n";
 
 
             echo "        <div class=\"card-status " . $statusClass . "\">" . $status . "</div>\n";
             //echo "        <div class=\"card-status closing-soon\"><i class=\"material-icons\">place</i>&nbsp;" . $fundArray[$k]->getLocation() . "</div>";
-            echo "              <div class=\"card-image\" style=\"background-image: url(images/food-fundraisers/" . ($k + 1) . "/" .
+            echo "              <div class=\"card-image\" style=\"background-image: url(images/fundraisers/" .
                 $fundArray[$k]->getCoverPhoto() . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
             //echo "        <div class=\"card-image " . $imageClass . "\"></div>\n";
             echo "        <div class=\"card-info\">\n";

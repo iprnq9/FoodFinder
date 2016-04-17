@@ -60,6 +60,22 @@ else {
     echo '<div class="container">';
     echo "<h4 class=\"heading center-align\"><i class=\"material-icons small\">add_location</i>&nbsp;Add New S&T Dining Location</h4>";
 
+    ?>
+
+    <div class="row">
+    <div class="col s12 l8 push-l2">
+    <div class="card grey darken-4 white-text">
+    <div class="card-content">
+        <span class="card-title">S&T Dining Location Details</span>
+        <p>Please fill out the form below to add your S&T Dining Location. This location must be a permanent dining facility at Missouri
+            S&T. Please use proper capitalization and avoid special characters (&, #, @, etc).<br></p>
+        <p>Once the location has been added, use the link that appears to update its full details. This is just an initial addition of the location.</p>
+    </div>
+    <div class="card-action">
+    <div class="row">
+
+    <?php
+
 
     if (isset($_POST['insert'])) {
 
@@ -67,36 +83,49 @@ else {
 
         //$sql = "ALTER TABLE `fundraisers` AUTO_INCREMENT = ($count+1);";
 
-        $result = mysqli_query($con, $sql);
+        //$result = mysqli_query($con, $sql);
 
-        $sql = "INSERT INTO location_id (location_name) VALUES ('$name')";
+        if($name !== "")
+            $result = 0;
 
-        $result = mysqli_query($con, $sql);
+        else {
+            $sql = "INSERT INTO location_id (location_name) VALUES ('$name')";
+            $result = mysqli_query($con, $sql);
+
+            $sql = "INSERT INTO descriptions (name) VALUES ('$name')";
+            $result = mysqli_query($con, $sql);
+            for($day=1;$day<=7;$day++){
+                $sql = "INSERT INTO breakfast (location_name) VALUES ('$name')";
+                $result = mysqli_query($con, $sql);
+            }
+        }
 
         if (!$result) {
             cardActionFail("Error: S&T Dining Location not added successfully.");
         }
 
         else {
-            cardActionSuccess("S&T Dining Location added successfully! <a href=\"update-data.php\">Click here to input its details!</a>");
+            cardActionSuccess("S&T Dining Location added successfully!&nbsp;<a href=\"update-data.php\"> Click here to input its details!</a>");
         }
+
+        $result = mysqli_query($con, $sql);
+
+        $sql = "INSERT INTO `descriptions` (`location`) VALUES (NULL)";
+
+        $result = mysqli_query($con, $sql);
+
+        if (!$result) {
+            cardActionFail("Error: S&T Dining Location not added to database table 'descriptions' successfully. Do not re-add the location, please contact support.");
+        }
+
+
     }
 
     else {
 
         ?>
-        <div class="row">
-            <div class="col s12 l8 push-l2">
-                <div class="card white">
-                    <div class="card-content">
-                        <span class="card-title">S&T Dining Location Details</span>
-                        <p>Please fill out the form below to add your S&T Dining Location. This location must be a permanent dining facility at Missouri
-                            S&T. Please use proper capitalization and avoid special characters (&, #, @, etc).<br></p>
-                        <p>Once the location has been added, use the link that appears to update it's full details. This is just an initial addition of the location.</p>
-                    </div>
-                    <div class="card-action">
-                        <div class="row">
-                            <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="_blank">
+
+                            <form class="col s12" method="post" action="<?php $_PHP_SELF ?>" target="">
                                 <div class="row" style="padding: 0px;">
                                     <div class="input-field col s12 l6">
                                         <i class="material-icons prefix">info_outline</i>
@@ -105,20 +134,26 @@ else {
                                     </div>
                                 </div>
                                 <div class="input-field col s6">
-                                    <button class="btn waves-effect waves-light" type="submit" name="insert" id="insert">Update
-                                        <i class="material-icons right">send</i>
+                                    <button class="btn waves-effect waves-light" type="submit" name="insert" id="insert">
+                                        <i class="material-icons left">add</i>Add Location
                                     </button>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
 
         <?php
     }
+
+    ?>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+        <?php
     echo "</div>";
 }
 

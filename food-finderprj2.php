@@ -24,7 +24,7 @@ class joeMinr{
     protected $coverPhoto;
     protected $menu;
     protected $location;
-    public $minToClose;
+    protected $minToClose = 0;
 
 
     /* construtor */
@@ -81,6 +81,10 @@ class joeMinr{
         return $this->clstme[$day][$time];
     }
 
+    public function setMinToClose($val){
+        $this->minToClose = $val;
+    }
+
     public function status(){
         /* returns the current status */
         $currentMin = date('H')*60 + date('i');
@@ -91,6 +95,22 @@ class joeMinr{
         $cls2 = $this->getclsTime($curday, "lnch");
         $open3 = $this->getopnTime($curday, "dnnr");
         $cls3 = $this->getclsTime($curday, "dnnr");
+
+        $a = $cls1 - $currentMin;
+        if($a < 0)
+            $a = 9999;
+        $b = $cls2 - $currentMin;
+        if($b < 0)
+            $b = 9999;
+        $c = $cls3 - $currentMin;
+        if($c < 0)
+            $c = 9999;
+        $values = array($a, $b, $c);
+        $min = min($values);
+        if($min == 9999)
+            return "closed";
+
+        $this->setMinToClose($min);
 
         if ($currentMin <= 600){/*if its before 10:00am only check brkfst*/
             $chck = $this->getopnTime($curday, "brkfst");
@@ -103,7 +123,6 @@ class joeMinr{
             else{
                 if((($this->getclsTime($curday, "brkfst"))-$currentMin) <= 30 ){
                     return "closing-soon";
-                    $this->minToClose = (($this->getclsTime($curday, "brkfst")) - $currentMin);
                 }
                 else{
                     return "open";
@@ -118,7 +137,6 @@ class joeMinr{
                 if($cls1 > $currentMin){
                     if($cls1-$currentMin <= 30){
                         return "closing-soon";
-                        $this->minToClose = ($cls1 - $currentMin);
                     }
                     else {
                         return "open";
@@ -129,7 +147,6 @@ class joeMinr{
                 if($cls2 > $currentMin){
                     if($cls2-$currentMin <= 30){
                         return "closing-soon";
-                        $this->minToClose = ($cls2 - $currentMin);
                     }
                     else {
                         return "open";
@@ -146,7 +163,6 @@ class joeMinr{
                 if($cls1 > $currentMin){
                     if($cls1-$currentMin <= 30){
                         return "closing-soon";
-                        $this->minToClose = ($cls1 - $currentMin);
                     }
                     else {
                         return "open";
@@ -157,7 +173,6 @@ class joeMinr{
                 if($cls2 > $currentMin){
                     if($cls2-$currentMin <= 30){
                         return "closing-soon";
-                        $this->minToClose = ($cls2 - $currentMin);
                     }
                     else {
                         return "open";
@@ -168,7 +183,6 @@ class joeMinr{
                 if($cls3 > $currentMin){
                     if($cls3-$currentMin <= 30){
                         return "closing-soon";
-                        $this->minToClose = ($cls3 - $currentMin);
                     }
                     else {
                         return "open";
@@ -217,8 +231,12 @@ class joeMinr{
     }
 
     //$day should be [0-6]
-    public function getNumOpenCloseTimes($day){
-        return $this->numOpenCloseTimes[$day];
+    public function getNumOpenCloseTimes($val){
+        return $this->numOpenCloseTimes[$val];
+    }
+
+    public function getMaxNumOpenCloseTimes(){
+        return max($this->numOpenCloseTimes);
     }
 
     public function setOpenCloseArray(){
@@ -335,6 +353,7 @@ class joeMinr{
     public function getMinToClose(){
         return $this->minToClose;
     }
+
 }
 
 
