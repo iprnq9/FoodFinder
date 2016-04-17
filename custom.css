@@ -377,10 +377,10 @@ hr {
 .card-location {
   font-size: 14pt;
   vertical-align: middle;
-  display: inline-flex;
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 30px;
+  text-align: center;
 }
 
 .card-location:before {
@@ -391,10 +391,10 @@ hr {
 .card-date-range {
   font-size: 14pt;
   vertical-align: middle;
-  display: inline-flex;
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 20px;
+  text-align: center;
 }
 
 .card-date-range:before {
