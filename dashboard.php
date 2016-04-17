@@ -62,6 +62,13 @@ else {
             <?php
             $max = sizeof($objArray);
             for($k=0; $k < $max; $k++) {
+                $status = $objArray[$k]->status();
+                if($status == "closing-soon")
+                    $statusText = "Closing in " . $objArray[$k]->getMinToClose() . " min";
+
+                else
+                    $statusText = $status;
+
                 echo "            <li class=\"flex-item-dash card grey darken-4 white-text\">\n";
                 echo "                <div class=\"card-status " . $objArray[$k]->status() . "\">" . $objArray[$k]->status() . "</div>\n";
                 echo "              <div class=\"card-image-dash\" style=\"background-image: url(images/" . ($k+1) . "/" .
@@ -92,7 +99,7 @@ else {
                     $endDate = new DateTime($fundArray[$k]->getEndDate());
 
                     echo "            <li class=\"flex-item-dash card grey darken-4 white-text\">\n";
-                    echo "                <div class=\"card-status " . $statusClass . "\">" . $fundArray[$k]->status() . "</div>\n";
+                    echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">" . $statusText . "</div>\n";
                     echo "              <div class=\"card-image-dash\" style=\"background-image: url(images/fundraisers/" .
                         $fundArray[$k]->getCoverPhoto() . "); background-size: cover; background-repeat: no-repeat;\"></div>\n";
                     echo "                <div class=\"card-info\">\n";
