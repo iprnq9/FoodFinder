@@ -131,7 +131,7 @@ else {
 
 <script>
     //$(".currently").text("Monday" + ", " + "10:05am" + ": " + "Breakfast");
-    $(".currently").append("  <img src=\"images/logo-icon.png\" alt=\"FoodFinder logo image\" style=\"vertical-align: middle;\"/>&nbsp;Food Finder");
+    $(".currently").append("  <img src=\"images/logo-icon.png\" alt=\"FoodFinder logo image\" style=\"vertical-align: middle;\"/>&nbsp;FoodFinder");
 </script>
 
 

@@ -107,6 +107,7 @@ class joeMinr{
             $c = 9999;
         $values = array($a, $b, $c);
         $min = min($values);
+
         if($min == 9999)
             return "closed";
 
@@ -117,7 +118,7 @@ class joeMinr{
             if ($chck == NULL){
                 return "closed";
             }
-            elseif($chck > $currentMin){
+            if($chck > $currentMin){
                 return "closed";
             }
             else{
@@ -148,6 +149,9 @@ class joeMinr{
                     if($cls2-$currentMin <= 30){
                         return "closing-soon";
                     }
+                    elseif($cls1 < $currentMin && $open2 > $currentMin){
+                        return "closed";
+                    }
                     else {
                         return "open";
                     }
@@ -174,6 +178,9 @@ class joeMinr{
                     if($cls2-$currentMin <= 30){
                         return "closing-soon";
                     }
+                    elseif($cls1 < $currentMin && $open2 > $currentMin){
+                        return "closed";
+                    }
                     else {
                         return "open";
                     }
@@ -183,6 +190,9 @@ class joeMinr{
                 if($cls3 > $currentMin){
                     if($cls3-$currentMin <= 30){
                         return "closing-soon";
+                    }
+                    elseif($cls2 < $currentMin && $open3 > $currentMin){
+                        return "closed";
                     }
                     else {
                         return "open";
