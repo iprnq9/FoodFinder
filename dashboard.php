@@ -77,7 +77,7 @@ else {
                 echo "                    <div class=\"card-title-subtitle\">\n";
                 echo "          <p class=\"card-title\">" . $objArray[$k]->getName() . "</p>\n";
                 echo "          <p class=\"card-subtitle\">" . $objArray[$k]->getDescription() . "</p>\n";
-                echo "          <p class=\"card-location\">" . $objArray[$k]->getLocation() . "</p>\n";
+                echo "          <p class=\"card-location\" style='margin-top: 20px; vertical-align: middle;'><i class=\"material-icons\">place</i>&nbsp;" . $objArray[$k]->getLocation() . "</p>\n";
                 echo "                    </div>\n";
                 echo "                </div>\n";
                 echo "            </li>";
@@ -106,7 +106,7 @@ else {
                     echo "                    <div class=\"card-title-subtitle\">\n";
                     echo "          <p class=\"card-title\">" . $fundArray[$k]->getOrganization() . ": " . $fundArray[$k]->getName() . "</p>\n";
                     echo "          <p class=\"card-subtitle\">" . $fundArray[$k]->getDescription() . "</p>\n";
-                    echo "          <p class=\"card-location\">" . $fundArray[$k]->getLocation() . "</p>\n";
+                    echo "          <p class=\"card-location\" style='margin-top: 20px; vertical-align: middle;'><i class=\"material-icons\">place</i>&nbsp;" . $fundArray[$k]->getLocation() . "</p>\n";
                     echo "                    </div>\n";
                     echo "                </div>\n";
                     echo "            </li>";
