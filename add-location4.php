@@ -85,38 +85,35 @@ else {
 
         //$result = mysqli_query($con, $sql);
 
-        if($name !== "")
-            $result = 0;
+        //echo "name" . $name;
+
+        if($name !== ""){
+            //$sql = "INSERT INTO 'location_id'('location_name') VALUES ('$name')";
+            $sql = "INSERT INTO `location_id`(`location_name`) VALUES (\"$name\")";
+            $result = mysqli_query($con, $sql);
+            //echo "result: " . $result;
+        }
+
+        if (!$result) {
+            cardActionFail("Error: S&T Dining Location '$name' not added to database table 'location_id' successfully.");
+        }
 
         else {
-            $sql = "INSERT INTO location_id (location_name) VALUES ('$name')";
+            //$sql = "SELEC"
+            //insert blank row into descriptions table
+            $sql = "INSERT INTO `descriptions` (`id`) VALUES (NULL)";
             $result = mysqli_query($con, $sql);
 
-            $sql = "INSERT INTO descriptions (name) VALUES ('$name')";
-            $result = mysqli_query($con, $sql);
-            for($day=1;$day<=7;$day++){
-                $sql = "INSERT INTO breakfast (location_name) VALUES ('$name')";
-                $result = mysqli_query($con, $sql);
+            if (!$result) {
+                cardActionFail("Error: S&T Dining Location '$name' not added to database table 'descriptions' successfully. Do not re-add the location, please contact support.");
             }
+
+            else
+                cardActionSuccess("S&T Dining Location '$name' added successfully!&nbsp;<a href=\"update-data.php\"> Click here to input its details!</a>");
         }
 
-        if (!$result) {
-            cardActionFail("Error: S&T Dining Location not added successfully.");
-        }
+        //$result = mysqli_query($con, $sql);
 
-        else {
-            cardActionSuccess("S&T Dining Location added successfully!&nbsp;<a href=\"update-data.php\"> Click here to input its details!</a>");
-        }
-
-        $result = mysqli_query($con, $sql);
-
-        $sql = "INSERT INTO `descriptions` (`location`) VALUES (NULL)";
-
-        $result = mysqli_query($con, $sql);
-
-        if (!$result) {
-            cardActionFail("Error: S&T Dining Location not added to database table 'descriptions' successfully. Do not re-add the location, please contact support.");
-        }
 
 
     }

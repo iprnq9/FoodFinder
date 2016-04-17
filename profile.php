@@ -52,9 +52,16 @@ if ($con->connect_errno) {
 else {
     include 'pullData2.php';
 
-    $status = $objArray[$k]->status();
+    //$status = $objArray[$k]->status();
     $name = $objArray[$k]->getName();
     $location = $objArray[$k]->getLocation();
+
+    $status = $objArray[$k]->status();
+    if($status == "closing-soon")
+        $statusText = "Closing in " . $objArray[$k]->getMinToClose() . " min";
+
+    else
+        $statusText = $status;
 
     $pageContents = ob_get_contents (); // Get all the page's HTML into a string
     ob_end_clean (); // Wipe the buffer
@@ -73,7 +80,8 @@ else {
     echo "        <ul class=\"flex-container\">\n";
     echo "          <li class=\"flex-item-wide z-depth-2\">\n";
     echo "            <div class=\"quick-info white-text grey darken-4\">\n";
-    echo "              <div class=\"card-status " . $status . "\">" . $status . "</div>\n";
+    //echo "              <div class=\"card-status " . $status . "\">" . $status . "</div>\n";
+    echo "        <div class=\"card-status " . $objArray[$k]->status() . "\">" . $statusText . "</div>\n";
     echo "              <div class=\"card-content\">\n";
     echo "                <h4 class=\"center-align\" style=\"margin-top: -5px;\"><i class=\"material-icons\">&#xE192;</i>&nbsp;Hours of Operation</h4>\n";
     echo "                <h6 class=\"center-align week-of\"></h6>\n";
@@ -81,7 +89,7 @@ else {
     echo "<div class='hours-table'><table class=\"table centered bordered grey darken-4 white-text\">\n";
     echo "  <thead class=\"\"><tr>\n";
     echo "    <th>Day</th>\n";
-    for ($i = 0; $i < ($objArray[$k]->getNumOpenCloseTimes(3)); $i++) {
+    for ($i = 0; $i < ($objArray[$k]->getMaxNumOpenCloseTimes()); $i++) {
         echo "    <th>Open</th>\n";
         echo "<th>-</th>";
         echo "    <th>Closed</th>\n";

@@ -207,21 +207,21 @@ else {
 
                         if($openMinutes <= 600){
                             //update breakfast hours
-                            $sql = "UPDATE breakfast SET opentime=$openMinutes, closetime=$closeMinutes WHERE id=$id AND day=$day";
+                            $sql = "INSERT INTO breakfast (id, opentime, closetime, day) VALUES ($id, $openMinutes, $closeMinutes, $day) ON DUPLICATE KEY UPDATE opentime=$openMinutes, closetime=$closeMinutes";
                             $result = mysqli_query($con, $sql);
                             //echo "test";
                         }
 
                         elseif($openMinutes > 990){
                             //update dinner hours
-                            $sql = "UPDATE dinner SET opentime=$openMinutes, closetime=$closeMinutes WHERE id=$id AND day=$day";
+                            $sql = "INSERT INTO dinner (id, opentime, closetime, day) VALUES ($id, $openMinutes, $closeMinutes, $day) ON DUPLICATE KEY UPDATE opentime=$openMinutes, closetime=$closeMinutes";
                             $result = mysqli_query($con, $sql);
                             //echo "test1";
                         }
 
                         else{
                             //update lunch
-                            $sql = "UPDATE lunch SET opentime=$openMinutes, closetime=$closeMinutes WHERE id=$id AND day=$day";
+                            $sql = "INSERT INTO lunch (id, opentime, closetime, day) VALUES ($id, $openMinutes, $closeMinutes, $day) ON DUPLICATE KEY UPDATE opentime=$openMinutes, closetime=$closeMinutes";
                             $result = mysqli_query($con, $sql);
                             //echo "test2";
                         }
@@ -249,6 +249,7 @@ else {
                         <?php
                         $dayArray = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
                         $mealArray = array("Breakfast", "Lunch", "Dinner");
+                        $mealIndex = array("brkfst", "lnch", "dnnr");
                         for($day=1; $day <= 7; $day++){
                             $i = $day - 1;
                             $k = $id - 1;
@@ -258,6 +259,7 @@ else {
                             echo "                                <div class=\"row\" style=\"padding: 0px;\">\n";
                             for($meal=1; $meal <= 3; $meal++){
                                 $j = $meal - 1;
+                                //$j = $mealIndex[$j];
 //                                echo "                                    <div class=\"input-field col s12 l1\">\n";
 //                                echo "                                        Breakfast:";
 //                                echo "                                    </div>\n";
@@ -1324,7 +1326,9 @@ include 'footer.php';
 ?>
 
 <script>
-    $('input.timepicker').timepicker();
+    $('input.timepicker').timepicker({
+        step: 15 // 15 minutes
+    });
     $(document).ready(function() {
         $('select').material_select();
         $(".card").addClass('z-depth-1-half');
